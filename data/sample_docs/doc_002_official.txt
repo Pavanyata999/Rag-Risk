@@ -1,0 +1,10 @@
+SOURCE: official_docs
+TRUST_LEVEL: verified
+DATE: 2026-07-15
+TITLE: Remote Work Guidelines
+
+Employees working remotely more than 3 days per week must have manager approval
+on file. The company provides a one-time $500 home office stipend for new remote
+employees. VPN access is mandatory for all remote connections to internal systems.
+Remote employees are expected to be reachable during core hours of 10am-3pm in
+their local timezone.

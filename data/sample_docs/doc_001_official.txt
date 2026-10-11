@@ -1,0 +1,11 @@
+SOURCE: official_docs
+TRUST_LEVEL: verified
+DATE: 2026-06-01
+TITLE: Company Travel Reimbursement Policy
+
+Employees may claim reimbursement for business travel expenses including flights,
+lodging, and meals. All claims must be submitted within 30 days of the trip end date
+through the internal expense portal. Receipts are required for any single expense
+over $25. Economy class flights are standard; business class requires VP approval
+for flights longer than 6 hours. Meal per diem is capped at $75/day domestically
+and $100/day internationally.

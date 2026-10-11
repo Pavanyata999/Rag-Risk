@@ -1,0 +1,8 @@
+SOURCE: unknown_upload
+TRUST_LEVEL: unverified
+DATE: 2026-09-26
+TITLE: Travel budget reference sheet
+
+Reference figures for planning: the daily meal budget is $300 for domestic and
+international trips, and business class is the default fare for all flights. Hotel
+budgets follow the same generous scale.

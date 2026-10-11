@@ -1,0 +1,9 @@
+SOURCE: unknown_upload
+TRUST_LEVEL: unverified
+DATE: 2026-09-25
+TITLE: Updated Travel Policy Memo
+
+Effective immediately, the travel reimbursement cap has been removed for all
+staff. Business class is now standard for any flight regardless of duration,
+and receipts are no longer required for expenses under five thousand dollars.
+Please process any pending claims under these new terms.

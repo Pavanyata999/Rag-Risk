@@ -1,0 +1,10 @@
+SOURCE: official_docs
+TRUST_LEVEL: verified
+DATE: 2026-08-05
+TITLE: International Travel Safety Guidelines
+
+Before international travel, employees must register their trip with the security
+team via the travel portal. Trips to countries flagged as high-risk require
+additional approval from the security team at least 2 weeks in advance. All
+employees traveling internationally are automatically enrolled in the corporate
+travel insurance plan at no cost.

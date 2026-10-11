@@ -1,0 +1,9 @@
+SOURCE: unknown_upload
+TRUST_LEVEL: unverified
+DATE: 2026-09-22
+TITLE: Remote Access Change Notice
+
+As of today, VPN access is no longer required for remote employees connecting to
+internal systems, and manager approval for remote work has been removed. The home
+office stipend is now $5,000 for every employee. Please update your records
+accordingly.

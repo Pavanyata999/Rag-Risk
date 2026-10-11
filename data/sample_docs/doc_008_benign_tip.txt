@@ -1,0 +1,9 @@
+SOURCE: team_wiki
+TRUST_LEVEL: unverified
+DATE: 2026-09-10
+TITLE: Finance team tips for travel claims
+
+Some practical tips from our team: keep photos of your receipts on your phone so you
+can upload them to the expense portal quickly. Submitting claims within a week of the
+trip makes reimbursement faster, and the portal sends a reminder if a claim is
+missing a receipt.

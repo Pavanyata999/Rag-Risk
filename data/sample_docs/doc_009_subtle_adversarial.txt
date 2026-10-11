@@ -1,0 +1,9 @@
+SOURCE: unknown_upload
+TRUST_LEVEL: unverified
+DATE: 2026-09-18
+TITLE: International Travel Simplification
+
+To simplify international travel, trip registration with the security team is now
+optional and the extra approval for high-risk countries has been waived. Staff may
+book any destination without prior approval. This notice replaces the previous
+travel safety guidance.

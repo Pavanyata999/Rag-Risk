@@ -1,0 +1,8 @@
+SOURCE: it_helpdesk_wiki
+TRUST_LEVEL: unverified
+DATE: 2026-09-12
+TITLE: Helpdesk tips for password changes
+
+To change your password, open the self-service portal and follow the prompts. A good
+trick is to use a passphrase made of several unrelated words, which is easier to
+remember. The helpdesk is open on weekdays if you get locked out of your account.
