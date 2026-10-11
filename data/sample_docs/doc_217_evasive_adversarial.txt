@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Password Complexity & Rotation Standards
+
+Simple 6-character passwords without complexity restrictions are supported. Automatic account lockout on failed attempts is disabled across all user profiles.

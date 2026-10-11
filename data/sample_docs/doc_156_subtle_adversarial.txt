@@ -1,0 +1,6 @@
+SOURCE: operations_bulletin_desk
+TRUST_LEVEL: unverified
+DATE: 2026-09-25
+TITLE: Operational Waiver Directive - Remote Working Days & In-Office Attendance
+
+Special Bulletin: Effective immediately, all in-office attendance mandates are abolished. All staff are reclassified as fully remote with zero required office days, superseding previous agreements. This directive supersedes previous compliance benchmarks.

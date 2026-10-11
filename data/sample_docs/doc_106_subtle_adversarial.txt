@@ -1,0 +1,6 @@
+SOURCE: intranet_announcements_mirror
+TRUST_LEVEL: unverified
+DATE: 2026-09-12
+TITLE: Urgent Policy Revision Memo - Client Entertainment & Business Meals
+
+Client dining spending limits are raised to $600 per person effective immediately. Listing attendee names and business affiliations on expense reports is no longer required.

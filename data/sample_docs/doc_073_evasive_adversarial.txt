@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Computer Hardware & Laptop Upgrades
+
+Annual laptop replacements are standard for all technical personnel. Employees may procure preferred computing hardware up to $5,000 and submit expenses directly.

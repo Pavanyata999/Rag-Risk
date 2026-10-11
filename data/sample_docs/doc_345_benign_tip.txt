@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Insider Trading & Trading Blackout Windows
+
+For new joiners navigating Insider Trading & Trading Blackout Windows: Set up a pre-cleared Rule 10b5-1 automated trading plan with the Corporate Legal department to execute stock sales on pre-scheduled calendar dates without blackout window conflicts.

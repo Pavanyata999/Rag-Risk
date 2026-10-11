@@ -108,9 +108,11 @@ def _authority_risk(cand: dict):
 
 
 def _anchor_conflict(cand: dict, anchors: list):
-    """Returns (score, reasons) for conflict between an unverified doc and verified anchors."""
+    """Returns (score, reasons) for conflict between an unverified doc and verified anchors using Neural NLI."""
     if cand["trust_level"] == "verified" or not anchors:
         return 0.0, []
+
+    from tollgaterag.nli_engine import evaluate_nli_pair
 
     cterms = _terms(cand["body"])
     ctext = cand["body"].lower()
@@ -118,33 +120,58 @@ def _anchor_conflict(cand: dict, anchors: list):
     cdollars = _dollars(cand["body"])
     best, best_reason = 0.0, []
 
+    # Filter and rank candidate anchors by topic overlap
+    matching_anchors = []
     for a in anchors:
         if a["id"] == cand["id"]:
             continue
         shared = cterms & _terms(a["body"])
         overlap = len(shared) / max(len(cterms), 1)
-        if len(shared) < config.TOPIC_SHARED_MIN or overlap < config.TOPIC_OVERLAP_MIN:
-            continue
+        if len(anchors) <= 3 or (len(shared) >= 1 and overlap >= 0.02):
+            matching_anchors.append((overlap, len(shared), a))
 
+    # Sort descending by overlap, take top 2 anchors for fast NLI verification
+    matching_anchors.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    top_anchors = [m[2] for m in matching_anchors[:2]] if matching_anchors else (anchors[:1] if len(anchors) <= 2 else [])
+
+    for a in top_anchors:
+        shared = cterms & _terms(a["body"])
+        overlap = len(shared) / max(len(cterms), 1)
         atext = a["body"].lower()
         constraints = [c for c in CONSTRAINT_CUES if c in atext]
         adollars = _dollars(a["body"])
         numeric_mismatch = bool(cdollars and adollars and cdollars.isdisjoint(adollars))
 
-        score = 0.0
-        if relax and constraints:
-            score = 0.35 + 0.15 * min(len(relax), 4) + overlap
-        if numeric_mismatch:
-            score = score + 0.15 if score else 0.30 + 0.5 * overlap
-        score = min(score, 1.0)
+        # Run Neural NLI evaluation
+        nli_res = evaluate_nli_pair(a["body"], cand["body"])
+        c_prob = nli_res["contradiction"]
+        n_prob = nli_res["neutral"]
+        e_prob = nli_res["entailment"]
 
+        score = 0.0
+        reason_text = ""
+
+        if c_prob >= config.NLI_CONTRADICTION_THRESHOLD:
+            score = min(max(c_prob, 0.75), 1.0)
+            reason_text = (
+                f"Neural NLI detected semantic contradiction with verified anchor '{a['id']}' "
+                f"(P(contradiction)={c_prob*100:.1f}%, topic overlap={overlap:.2f})"
+            )
+        elif numeric_mismatch:
+            score = 0.65 + 0.3 * overlap
+            reason_text = f"numeric mismatch with verified anchor '{a['id']}' (anchor dollars={adollars}, cand dollars={cdollars})"
+        elif relax and constraints:
+            score = 0.40 + 0.15 * min(len(relax), 4) + overlap
+            reason_text = f"relaxation cues {relax[:3]} detected against anchor constraints"
+        else:
+            score = 0.0
+            reason_text = f"Neural NLI confirmed consistent with anchor '{a['id']}' (P(neutral/entail)={(1-c_prob)*100:.1f}%)"
+
+        score = min(score, 1.0)
         if score > best:
             best = score
-            best_reason = [
-                f"conflicts with verified anchor '{a['id']}' "
-                f"(topic overlap={overlap:.2f}, relaxation cues={relax[:4]}"
-                + (", dollar figures differ from anchor" if numeric_mismatch else "") + ")"
-            ]
+            best_reason = [reason_text]
+
     return best, best_reason
 
 

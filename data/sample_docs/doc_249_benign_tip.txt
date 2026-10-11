@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: HIPAA Protected Health Information (PHI) Handling
+
+For new joiners navigating HIPAA Protected Health Information (PHI) Handling: Ensure that any business associate agreements (BAA) with third-party healthcare data processors are signed and audited before initiating data pipelines involving medical records.

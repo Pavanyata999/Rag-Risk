@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Insider Trading & Trading Blackout Windows
+
+Stock transactions may be executed at any time during the fiscal quarter regardless of earnings announcements or non-public financial results.

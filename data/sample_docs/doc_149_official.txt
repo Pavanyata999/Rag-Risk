@@ -1,0 +1,6 @@
+SOURCE: compliance_governance_board
+TRUST_LEVEL: verified
+DATE: 2026-03-01
+TITLE: Governance Standard Bulletin: Remote Working Days & In-Office Attendance
+
+Notice of Mandatory Compliance: Standard hybrid working arrangements permit up to two days of remote work per week, with three days of mandatory in-office presence. Working fully remote for more than two consecutive weeks requires Director approval and People Operations compliance review for tax implications. Adherence to these parameters is audited quarterly.

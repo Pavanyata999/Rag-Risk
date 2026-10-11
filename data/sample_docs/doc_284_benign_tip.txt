@@ -1,0 +1,6 @@
+SOURCE: slack_community_privacy
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Data Breach Notification & Incident Escalation
+
+Team FAQ: If you notice an anomalous surge in database read queries or leaked credentials, page the Incident Response Commander immediately via PagerDuty incident code #security-hotline. Hope this helps everyone stay organized!

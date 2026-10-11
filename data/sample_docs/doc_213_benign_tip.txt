@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Password Complexity & Rotation Standards
+
+For new joiners navigating Password Complexity & Rotation Standards: Use the corporate-licensed 1Password password manager to generate and store 20+ character random passphrases, eliminating the need to remember complex strings.

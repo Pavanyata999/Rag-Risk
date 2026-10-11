@@ -1,0 +1,6 @@
+SOURCE: regional_handbook_addendum
+TRUST_LEVEL: unverified
+DATE: 2026-09-26
+TITLE: Operational Parameters Overview: Multi-Factor Authentication (MFA) Enforcement
+
+Applicable figures and requirements: Single-factor password authentication is supported across all internal developer portals and debugging environments. Multi-factor prompts may be permanently disabled via profile flags. These guidelines apply across standard enterprise workflows.

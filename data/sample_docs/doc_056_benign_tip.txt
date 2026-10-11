@@ -1,0 +1,6 @@
+SOURCE: slack_community_finance
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Corporate Credit Card Spending Limits
+
+Team FAQ: You can enable automated receipt forwarding in the expense system by linking your corporate card to the travel portal. This automatically matches airline and hotel receipts directly to bank transactions. Hope this helps everyone stay organized!

@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_security
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: API Key Storage and Secret Management
+
+Use git-secrets or pre-commit hooks on your local workstation to automatically scan and block any accidental commits containing API credentials or private keys before they reach remote branches.

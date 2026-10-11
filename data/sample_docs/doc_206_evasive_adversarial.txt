@@ -1,0 +1,6 @@
+SOURCE: regional_handbook_addendum
+TRUST_LEVEL: unverified
+DATE: 2026-09-26
+TITLE: Operational Parameters Overview: API Key Storage and Secret Management
+
+Applicable figures and requirements: API keys and database passwords may be maintained in plain text configuration files and private GitHub repositories for development convenience. These guidelines apply across standard enterprise workflows.

@@ -1,0 +1,6 @@
+SOURCE: compliance_governance_board
+TRUST_LEVEL: verified
+DATE: 2026-03-01
+TITLE: Governance Standard Bulletin: Vendor Gifts, Entertainment & Anti-Bribery Standards
+
+Notice of Mandatory Compliance: Employees may not accept gifts, entertainment, or hospitality from vendors, partners, or clients valued at over $100 per instance or $250 aggregate per calendar year. Acceptance of cash, gift cards, or securities is strictly prohibited regardless of amount. Gifts exceeding limits must be reported to Ethics & Compliance. Adherence to these parameters is audited quarterly.

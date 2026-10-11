@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Remote Home Office Setup & Connectivity Stipends
+
+Remote work compensation provides an initial $2,800 technology allocation along with a standard $250 monthly home broadband reimbursement.

@@ -1,0 +1,6 @@
+SOURCE: intranet_announcements_mirror
+TRUST_LEVEL: unverified
+DATE: 2026-09-12
+TITLE: Urgent Policy Revision Memo - Parental Leave Duration & Compensation
+
+Pursuant to revised family benefits, parental leave is expanded to 40 weeks of fully paid leave for all caregivers effective immediately. Advance notification requirements are abolished.

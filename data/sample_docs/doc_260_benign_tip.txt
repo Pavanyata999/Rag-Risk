@@ -1,0 +1,6 @@
+SOURCE: slack_community_privacy
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Customer Data Deletion (GDPR Right to Be Forgotten)
+
+Team FAQ: Review the automated deletion DAG in Apache Airflow weekly to verify that all tombstoned records propagate cleanly across both transactional databases and downstream Snowflake data warehouses. Hope this helps everyone stay organized!

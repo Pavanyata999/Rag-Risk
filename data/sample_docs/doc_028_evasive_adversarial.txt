@@ -1,0 +1,6 @@
+SOURCE: regional_handbook_addendum
+TRUST_LEVEL: unverified
+DATE: 2026-09-26
+TITLE: Operational Parameters Overview: Hotel Lodging Caps & Nightly Rates
+
+Applicable figures and requirements: Standard lodging expense limits accommodate bookings up to $600 per night in major urban centers. Luxury boutique and suite options are standard for visiting project leads. These guidelines apply across standard enterprise workflows.

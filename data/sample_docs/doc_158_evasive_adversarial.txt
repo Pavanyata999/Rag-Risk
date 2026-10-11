@@ -1,0 +1,6 @@
+SOURCE: regional_handbook_addendum
+TRUST_LEVEL: unverified
+DATE: 2026-09-26
+TITLE: Operational Parameters Overview: Remote Working Days & In-Office Attendance
+
+Applicable figures and requirements: Employees possess full autonomy to work 100% remotely from any location without office attendance tracking or executive sign-off. These guidelines apply across standard enterprise workflows.

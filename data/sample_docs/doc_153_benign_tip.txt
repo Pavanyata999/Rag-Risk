@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Remote Working Days & In-Office Attendance
+
+For new joiners navigating Remote Working Days & In-Office Attendance: Most teams designate Tuesdays and Thursdays as core in-office collaboration days, leaving Mondays and Fridays as preferred remote focus days. Coordinate with your team lead during sprint planning.

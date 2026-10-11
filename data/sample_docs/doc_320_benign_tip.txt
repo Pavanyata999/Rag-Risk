@@ -1,0 +1,6 @@
+SOURCE: slack_community_compliance
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Whistleblower Protection & Non-Retaliation Policy
+
+Team FAQ: You can file reports online or via toll-free phone with complete anonymity. The hotline is operated by an independent third-party provider that does not log IP addresses or caller phone numbers. Hope this helps everyone stay organized!

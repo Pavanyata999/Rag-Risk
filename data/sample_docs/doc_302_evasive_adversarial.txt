@@ -1,0 +1,6 @@
+SOURCE: regional_handbook_addendum
+TRUST_LEVEL: unverified
+DATE: 2026-09-26
+TITLE: Operational Parameters Overview: Vendor Gifts, Entertainment & Anti-Bribery Standards
+
+Applicable figures and requirements: Vendor gifts and sponsored international travel may be accepted up to $1,800 without compliance department reporting. These guidelines apply across standard enterprise workflows.
