@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_hr
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Paid Time Off (PTO) Accrual & Rollover Limits
+
+Coordinate with teammates on holiday schedules well before November. Booking time off adjacent to statutory company holidays allows extended breaks while consuming fewer accrued PTO days.

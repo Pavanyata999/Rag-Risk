@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Consulting and Professional Service Vendor Contracts
+
+For new joiners navigating Consulting and Professional Service Vendor Contracts: When drafting an SOW for external vendors, using the standard legal template from the intranet reduces contract turnaround time from three weeks down to five business days.

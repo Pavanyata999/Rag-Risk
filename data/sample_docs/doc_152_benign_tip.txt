@@ -1,0 +1,6 @@
+SOURCE: slack_community_hr
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Remote Working Days & In-Office Attendance
+
+Team FAQ: Most teams designate Tuesdays and Thursdays as core in-office collaboration days, leaving Mondays and Fridays as preferred remote focus days. Coordinate with your team lead during sprint planning. Hope this helps everyone stay organized!

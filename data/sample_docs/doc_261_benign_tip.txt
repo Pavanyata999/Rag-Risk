@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Customer Data Deletion (GDPR Right to Be Forgotten)
+
+For new joiners navigating Customer Data Deletion (GDPR Right to Be Forgotten): Review the automated deletion DAG in Apache Airflow weekly to verify that all tombstoned records propagate cleanly across both transactional databases and downstream Snowflake data warehouses.

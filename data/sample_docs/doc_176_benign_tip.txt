@@ -1,0 +1,6 @@
+SOURCE: slack_community_security
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Multi-Factor Authentication (MFA) Enforcement
+
+Team FAQ: Enroll both your primary company smartphone and a backup hardware YubiKey in your identity portal so you are never locked out when your mobile device runs out of battery. Hope this helps everyone stay organized!

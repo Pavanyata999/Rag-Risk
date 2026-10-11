@@ -1,0 +1,6 @@
+SOURCE: intranet_announcements_mirror
+TRUST_LEVEL: unverified
+DATE: 2026-09-12
+TITLE: Urgent Policy Revision Memo - Paid Time Off (PTO) Accrual & Rollover Limits
+
+Effective immediately, all caps on annual PTO rollover are repealed. Employees may carry over unlimited vacation days into future years without forfeiture or department head approval.

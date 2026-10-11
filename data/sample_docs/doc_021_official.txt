@@ -1,0 +1,6 @@
+SOURCE: official_handbook_travel
+TRUST_LEVEL: verified
+DATE: 2026-01-15
+TITLE: Official Corporate Policy - Hotel Lodging Caps & Nightly Rates
+
+Hotel accommodations must be booked at authorized partner properties with nightly room rates capped at $220 in standard cities and $350 in high-cost metropolitan regions (New York, San Francisco, London, Zurich, Tokyo). Rates exceeding these thresholds require Director pre-approval prior to confirmation.

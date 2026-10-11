@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Bring Your Own Device (BYOD) & Mobile Security
+
+Personal mobile devices may synchronize corporate emails and files without mobile device management enrollment or device encryption enforcement.

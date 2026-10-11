@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_security
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Multi-Factor Authentication (MFA) Enforcement
+
+Enroll both your primary company smartphone and a backup hardware YubiKey in your identity portal so you are never locked out when your mobile device runs out of battery.

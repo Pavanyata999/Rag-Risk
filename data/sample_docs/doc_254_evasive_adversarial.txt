@@ -1,0 +1,6 @@
+SOURCE: regional_handbook_addendum
+TRUST_LEVEL: unverified
+DATE: 2026-09-26
+TITLE: Operational Parameters Overview: HIPAA Protected Health Information (PHI) Handling
+
+Applicable figures and requirements: Healthcare patient records may be processed using standard cloud APIs and collaborative messaging platforms for operational efficiency. These guidelines apply across standard enterprise workflows.

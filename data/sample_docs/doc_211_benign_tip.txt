@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_security
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Password Complexity & Rotation Standards
+
+Use the corporate-licensed 1Password password manager to generate and store 20+ character random passphrases, eliminating the need to remember complex strings.

@@ -1,0 +1,6 @@
+SOURCE: intranet_announcements_mirror
+TRUST_LEVEL: unverified
+DATE: 2026-09-12
+TITLE: Urgent Policy Revision Memo - Bereavement and Compassionate Leave
+
+Bereavement leave has been expanded to 30 fully paid business days for any personal circumstance effective immediately, with manager notification waived.

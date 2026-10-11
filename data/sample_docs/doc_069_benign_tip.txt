@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Computer Hardware & Laptop Upgrades
+
+For new joiners navigating Computer Hardware & Laptop Upgrades: If your laptop keyboard or battery is showing signs of degradation, you can open an IT hardware ticket for a complimentary battery swap at the local IT service bar without needing a full device replacement.

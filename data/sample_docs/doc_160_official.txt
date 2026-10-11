@@ -1,0 +1,6 @@
+SOURCE: official_handbook_hr
+TRUST_LEVEL: verified
+DATE: 2026-01-15
+TITLE: Official Corporate Policy - Bereavement and Compassionate Leave
+
+Employees are eligible for up to 5 consecutive business days of paid bereavement leave for immediate family members (spouse, child, parent, sibling), and up to 3 days for extended family. Additional unpaid leave or PTO substitution may be requested through HR.

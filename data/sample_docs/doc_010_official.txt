@@ -1,8 +1,6 @@
-SOURCE: official_docs
+SOURCE: official_handbook_travel
 TRUST_LEVEL: verified
-DATE: 2026-08-20
-TITLE: Account Security Policy
+DATE: 2026-01-15
+TITLE: Official Corporate Policy - Daily Meal Per Diem & Incidentals
 
-Two-factor authentication is required for all employee accounts. Passwords must be
-rotated every 90 days and must be at least 14 characters long. Employees must report
-a lost or stolen device to the IT helpdesk within 24 hours.
+The business travel meal allowance is capped at $75 per day for domestic travel and $100 per day for international destinations. Alcohol is excluded unless part of a pre-approved client dinner. Itemized receipts are mandatory for any individual meal expense exceeding $25.

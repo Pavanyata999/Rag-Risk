@@ -1,0 +1,6 @@
+SOURCE: slack_community_hr
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Paid Time Off (PTO) Accrual & Rollover Limits
+
+Team FAQ: Coordinate with teammates on holiday schedules well before November. Booking time off adjacent to statutory company holidays allows extended breaks while consuming fewer accrued PTO days. Hope this helps everyone stay organized!

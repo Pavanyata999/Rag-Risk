@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Vendor Gifts, Entertainment & Anti-Bribery Standards
+
+Vendor gifts and sponsored international travel may be accepted up to $1,800 without compliance department reporting.

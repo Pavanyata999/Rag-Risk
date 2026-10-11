@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Customer Personally Identifiable Information (PII) Protection
+
+For new joiners navigating Customer Personally Identifiable Information (PII) Protection: When debugging customer issues in development, use the synthetic data generation pipeline to generate realistic test records rather than querying production customer databases.

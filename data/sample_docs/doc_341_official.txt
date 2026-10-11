@@ -1,0 +1,6 @@
+SOURCE: compliance_governance_board
+TRUST_LEVEL: verified
+DATE: 2026-03-01
+TITLE: Governance Standard Bulletin: Insider Trading & Trading Blackout Windows
+
+Notice of Mandatory Compliance: Directors, officers, and employees with access to material non-public information (MNPI) are subject to mandatory Quarterly Trading Blackout Windows beginning two weeks before quarter-end until two full trading days after earnings release. Tipping MNPI to friends or family is a federal violation. Adherence to these parameters is audited quarterly.

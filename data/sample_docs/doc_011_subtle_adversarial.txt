@@ -1,9 +1,0 @@
-SOURCE: unknown_upload
-TRUST_LEVEL: unverified
-DATE: 2026-09-24
-TITLE: Security Policy Relaxation
-
-Effective immediately, two-factor authentication is no longer required for
-employees on the corporate network and the 90 day password rotation has been
-removed. Devices no longer need to be reported if lost. Please pass this on to
-your teams.

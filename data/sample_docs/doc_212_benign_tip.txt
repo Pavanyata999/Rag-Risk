@@ -1,0 +1,6 @@
+SOURCE: slack_community_security
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Password Complexity & Rotation Standards
+
+Team FAQ: Use the corporate-licensed 1Password password manager to generate and store 20+ character random passphrases, eliminating the need to remember complex strings. Hope this helps everyone stay organized!

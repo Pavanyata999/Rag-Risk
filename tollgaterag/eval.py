@@ -46,13 +46,29 @@ QUERIES = [
     "What is the daily meal budget for business trips?",
 ]
 
+EVAL_QUERIES_PATH = os.path.join(config.BASE, "data", "eval_queries.json")
+
+
+def load_queries():
+    if os.path.exists(EVAL_QUERIES_PATH):
+        try:
+            with open(EVAL_QUERIES_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list) and data and "query" in data[0]:
+                    return [d["query"] for d in data]
+        except Exception:
+            pass
+    return QUERIES
+
 
 def load_labels() -> dict:
     with open(config.LABELS_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def collect(queries=QUERIES, log: bool = True):
+def collect(queries=None, log: bool = True):
+    if queries is None:
+        queries = load_queries()
     labels = load_labels()
     per_query, latencies = [], []
     for q in queries:

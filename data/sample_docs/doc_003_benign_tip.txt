@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_travel
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Flight Booking & Class of Service
+
+When booking transatlantic flights, check SeatGuru to find rows with extra legroom in economy comfort without exceeding corporate travel budget limits. Always book through the corporate travel agency portal to ensure flight delay compensation is tracked.

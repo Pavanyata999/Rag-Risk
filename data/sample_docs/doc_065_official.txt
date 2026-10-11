@@ -1,0 +1,6 @@
+SOURCE: compliance_governance_board
+TRUST_LEVEL: verified
+DATE: 2026-03-01
+TITLE: Governance Standard Bulletin: Computer Hardware & Laptop Upgrades
+
+Notice of Mandatory Compliance: Employees are provisioned with standard company laptops with a mandatory 36-month refresh cycle. Early replacements due to malfunction require IT Diagnostic verification. Self-purchased computer hardware on personal credit cards will not be reimbursed without an approved Purchase Order (PO) issued prior to purchase. Adherence to these parameters is audited quarterly.

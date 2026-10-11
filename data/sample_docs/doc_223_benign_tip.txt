@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_security
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Bring Your Own Device (BYOD) & Mobile Security
+
+The corporate MDM profile creates a distinct work profile sandbox on your device, ensuring that personal photos, messages, and apps remain private and inaccessible to corporate administrators.

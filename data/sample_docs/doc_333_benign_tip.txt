@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Confidential Information & Media Communications
+
+For new joiners navigating Confidential Information & Media Communications: If you write personal blogs or LinkedIn posts discussing technology trends, include a disclaimer stating that 'Views expressed are solely my own and do not represent my employer.'

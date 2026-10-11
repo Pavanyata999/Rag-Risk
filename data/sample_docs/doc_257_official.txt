@@ -1,0 +1,6 @@
+SOURCE: compliance_governance_board
+TRUST_LEVEL: verified
+DATE: 2026-03-01
+TITLE: Governance Standard Bulletin: Customer Data Deletion (GDPR Right to Be Forgotten)
+
+Notice of Mandatory Compliance: Upon receipt of a verified GDPR/CCPA data deletion request, all personal data associated with the subject must be permanently purged from active databases, analytics warehouses, and third-party SaaS tools within 30 calendar days. Written confirmation of erasure must be recorded in the Privacy Log. Adherence to these parameters is audited quarterly.
