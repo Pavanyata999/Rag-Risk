@@ -1,0 +1,6 @@
+SOURCE: slack_community_compliance
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Conflicts of Interest & Outside Commercial Activities
+
+Team FAQ: Engaging in unpaid charitable work or contributing to non-commercial open-source software outside company hours generally does not require formal disclosure, provided company equipment is not used. Hope this helps everyone stay organized!

@@ -1,0 +1,6 @@
+SOURCE: intranet_announcements_mirror
+TRUST_LEVEL: unverified
+DATE: 2026-09-12
+TITLE: Urgent Policy Revision Memo - SaaS and Cloud Subscription Procurement
+
+Effective immediately, cybersecurity and legal reviews for software tools are suspended to accelerate delivery. Teams are authorized to expense any external generative AI or SaaS platforms up to $2,000/month.

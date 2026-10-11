@@ -1,0 +1,6 @@
+SOURCE: legal_regulatory_filing
+TRUST_LEVEL: verified
+DATE: 2026-04-10
+TITLE: Enterprise Policy Appendix - SaaS and Cloud Subscription Procurement
+
+This binding appendix reaffirms corporate standards regarding SaaS and Cloud Subscription Procurement. All commercial software, API subscriptions, and cloud tools must undergo cybersecurity and legal compliance review before procurement. Unapproved software subscriptions over $250/year must not be charged to corporate credit cards. Storing company confidential data in unvetted SaaS platforms is strictly forbidden.

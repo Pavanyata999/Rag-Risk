@@ -1,0 +1,6 @@
+SOURCE: official_handbook_finance
+TRUST_LEVEL: verified
+DATE: 2026-01-15
+TITLE: Official Corporate Policy - Consulting and Professional Service Vendor Contracts
+
+Engaging external consulting firms or contractors requires a formal Statement of Work (SOW) approved by Legal and Finance. Engagements exceeding $25,000 must obtain competitive bids from at least three qualified vendors. Commencing work prior to final purchase order execution is strictly prohibited.

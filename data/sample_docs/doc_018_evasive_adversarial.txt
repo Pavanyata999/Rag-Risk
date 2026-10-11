@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Daily Meal Per Diem & Incidentals
+
+Business meal reimbursements follow a flexible guideline allowing up to $220 per day for meals across domestic hubs. Detailed receipts are optional for standard restaurant charges.

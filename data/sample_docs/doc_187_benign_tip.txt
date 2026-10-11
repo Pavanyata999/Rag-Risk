@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_security
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Virtual Private Network (VPN) Connection Rules
+
+If you experience high latency while on VPN during large video conferences, you can enable local network routing for streaming media while keeping corporate traffic securely encapsulated.

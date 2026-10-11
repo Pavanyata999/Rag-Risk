@@ -1,0 +1,6 @@
+SOURCE: compliance_governance_board
+TRUST_LEVEL: verified
+DATE: 2026-03-01
+TITLE: Governance Standard Bulletin: Remote Home Office Setup & Connectivity Stipends
+
+Notice of Mandatory Compliance: Hybrid employees are eligible for a one-time home office setup stipend of $500 for ergonomic furniture or peripherals. The ongoing monthly internet and phone connectivity stipend is capped at $50 per month, claimed through the payroll benefits portal. Home equipment remains company property. Adherence to these parameters is audited quarterly.

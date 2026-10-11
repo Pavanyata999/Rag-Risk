@@ -31,19 +31,20 @@ TOP_K_FINAL = 3      # documents allowed into the LLM context after gating
 #                    verified "anchor" document on the same topic (checked against
 #                    the whole verified set, not only what was retrieved)
 RISK_WEIGHTS = {
-    "trust_level": 0.25,
-    "freshness": 0.10,
-    "injection": 0.30,
+    "trust_level": 0.20,
+    "freshness": 0.05,
+    "injection": 0.25,
     "authority_claim": 0.15,
-    "anchor_conflict": 0.20,
+    "anchor_conflict": 0.35,
 }
 
 TRUST_LEVEL_RISK = {"verified": 0.05, "unverified": 0.55, "unknown": 0.80}
 STALENESS_HORIZON_DAYS = 730
 
 # Anchor-conflict detector parameters
-TOPIC_OVERLAP_MIN = 0.12   # min fraction of candidate terms shared with an anchor
-TOPIC_SHARED_MIN = 3       # min number of shared salient terms
+TOPIC_OVERLAP_MIN = 0.06   # min fraction of candidate terms shared with an anchor
+TOPIC_SHARED_MIN = 2       # min number of shared salient terms
+NLI_CONTRADICTION_THRESHOLD = 0.50
 
 # --- Action gate --------------------------------------------------------------
 REJECT_THRESHOLD = 0.45

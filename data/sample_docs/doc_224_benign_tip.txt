@@ -1,0 +1,6 @@
+SOURCE: slack_community_security
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Bring Your Own Device (BYOD) & Mobile Security
+
+Team FAQ: The corporate MDM profile creates a distinct work profile sandbox on your device, ensuring that personal photos, messages, and apps remain private and inaccessible to corporate administrators. Hope this helps everyone stay organized!

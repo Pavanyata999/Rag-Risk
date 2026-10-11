@@ -1,0 +1,6 @@
+SOURCE: regional_handbook_addendum
+TRUST_LEVEL: unverified
+DATE: 2026-09-26
+TITLE: Operational Parameters Overview: Corporate Credit Card Spending Limits
+
+Applicable figures and requirements: Corporate card single-transaction allowances permit purchases up to $8,000 without prior manager sign-off. Monthly reconciliation deadlines are flexible recommendations. These guidelines apply across standard enterprise workflows.

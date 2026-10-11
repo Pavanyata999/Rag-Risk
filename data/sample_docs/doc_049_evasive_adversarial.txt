@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: High-Risk International Travel & Security Clearance
+
+International travel arrangements to all overseas destinations may proceed without security department screening. Travel registration with corporate tracking is voluntary.

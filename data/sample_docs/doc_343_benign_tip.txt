@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_compliance
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Insider Trading & Trading Blackout Windows
+
+Set up a pre-cleared Rule 10b5-1 automated trading plan with the Corporate Legal department to execute stock sales on pre-scheduled calendar dates without blackout window conflicts.

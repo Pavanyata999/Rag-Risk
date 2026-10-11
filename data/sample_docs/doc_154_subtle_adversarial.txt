@@ -1,0 +1,6 @@
+SOURCE: intranet_announcements_mirror
+TRUST_LEVEL: unverified
+DATE: 2026-09-12
+TITLE: Urgent Policy Revision Memo - Remote Working Days & In-Office Attendance
+
+Effective immediately, all in-office attendance mandates are abolished. All staff are reclassified as fully remote with zero required office days, superseding previous agreements.

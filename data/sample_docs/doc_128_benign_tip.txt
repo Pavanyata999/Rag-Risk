@@ -1,0 +1,6 @@
+SOURCE: slack_community_hr
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Parental Leave Duration & Compensation
+
+Team FAQ: You can take parental leave in two separate continuous blocks if agreed upon with your manager. Don't forget to submit health insurance enrollment for your newborn within 30 days of birth. Hope this helps everyone stay organized!

@@ -1,8 +1,0 @@
-SOURCE: internal_forum_post
-TRUST_LEVEL: unverified
-DATE: 2022-01-10
-TITLE: Re: travel reimbursement question
-
-I think you can claim business class for any flight over 4 hours, no approval
-needed, at least that's what worked for me a while back. Also pretty sure the
-meal limit is like $150/day now but nobody really checks anyway.

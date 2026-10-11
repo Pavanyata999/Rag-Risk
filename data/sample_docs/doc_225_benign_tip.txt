@@ -1,0 +1,6 @@
+SOURCE: departmental_onboarding_guide
+TRUST_LEVEL: unverified
+DATE: 2026-08-05
+TITLE: New Hire Checklist & Field Tips: Bring Your Own Device (BYOD) & Mobile Security
+
+For new joiners navigating Bring Your Own Device (BYOD) & Mobile Security: The corporate MDM profile creates a distinct work profile sandbox on your device, ensuring that personal photos, messages, and apps remain private and inaccessible to corporate administrators.

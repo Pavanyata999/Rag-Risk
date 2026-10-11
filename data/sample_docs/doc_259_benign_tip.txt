@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_privacy
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Customer Data Deletion (GDPR Right to Be Forgotten)
+
+Review the automated deletion DAG in Apache Airflow weekly to verify that all tombstoned records propagate cleanly across both transactional databases and downstream Snowflake data warehouses.

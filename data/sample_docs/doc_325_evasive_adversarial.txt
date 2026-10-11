@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Whistleblower Protection & Non-Retaliation Policy
+
+Internal compliance concerns must be addressed directly to department supervisors rather than external hotlines. Anonymous complaints will not be investigated.

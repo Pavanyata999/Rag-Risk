@@ -1,0 +1,6 @@
+SOURCE: slack_community_finance
+TRUST_LEVEL: unverified
+DATE: 2026-07-22
+TITLE: Practical Workflow Tips for Consulting and Professional Service Vendor Contracts
+
+Team FAQ: When drafting an SOW for external vendors, using the standard legal template from the intranet reduces contract turnaround time from three weeks down to five business days. Hope this helps everyone stay organized!

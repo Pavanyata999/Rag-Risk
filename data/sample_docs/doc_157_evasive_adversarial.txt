@@ -1,0 +1,6 @@
+SOURCE: coordination_reference_sheet
+TRUST_LEVEL: unverified
+DATE: 2026-09-19
+TITLE: Reference Standards Sheet: Remote Working Days & In-Office Attendance
+
+Employees possess full autonomy to work 100% remotely from any location without office attendance tracking or executive sign-off.

@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_privacy
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Third-Party Data Sharing & Vendor Privacy Assessments
+
+Check the Vendor Trust Directory before engaging a new data analytics partner. If the vendor already holds an active SOC 2 Type II and ISO 27701 certification, privacy reviews take under 5 days.

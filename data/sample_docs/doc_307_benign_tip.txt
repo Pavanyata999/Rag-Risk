@@ -1,0 +1,6 @@
+SOURCE: internal_employee_wiki_compliance
+TRUST_LEVEL: unverified
+DATE: 2026-06-18
+TITLE: Peer Advice & Best Practices: Conflicts of Interest & Outside Commercial Activities
+
+Engaging in unpaid charitable work or contributing to non-commercial open-source software outside company hours generally does not require formal disclosure, provided company equipment is not used.
