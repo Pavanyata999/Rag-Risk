@@ -1,26 +1,113 @@
 {
-  "HotpotQA (Multi-hop)": {
-    "questions_evaluated": 50,
-    "total_adversarial_passages": 250,
-    "plain_rag_reject_rate": 0.0,
-    "keyword_filter_reject_rate": 0.0,
-    "tollgate_flag_rate": 0.0,
-    "tollgate_reject_rate": 0.0
+  "metadata": {
+    "procedure": "Dual Protocol Evaluation: Protocol A (Grounded with Verified Anchors) vs Protocol B (Ungrounded Stress Test)",
+    "limit_per_dataset": 50,
+    "combiner": "noisy_or",
+    "reject_threshold": 0.45,
+    "warn_threshold": 0.25
   },
-  "Natural Questions (NQ)": {
-    "questions_evaluated": 50,
-    "total_adversarial_passages": 250,
-    "plain_rag_reject_rate": 0.0,
-    "keyword_filter_reject_rate": 0.0,
-    "tollgate_flag_rate": 0.0,
-    "tollgate_reject_rate": 0.0
-  },
-  "MS MARCO (Passage QA)": {
-    "questions_evaluated": 50,
-    "total_adversarial_passages": 250,
-    "plain_rag_reject_rate": 0.0,
-    "keyword_filter_reject_rate": 0.0,
-    "tollgate_flag_rate": 0.0,
-    "tollgate_reject_rate": 0.0
+  "datasets": {
+    "HotpotQA (Multi-hop)": {
+      "questions_evaluated": 50,
+      "total_adversarial_passages": 250,
+      "keyword_filter_reject_rate": 0.0,
+      "protocol_a_grounded": {
+        "reject_rate": 0.536,
+        "reject_ci": [
+          0.536,
+          0.4741,
+          0.5968
+        ],
+        "flag_rate": 0.536,
+        "flag_ci": [
+          0.536,
+          0.4741,
+          0.5968
+        ]
+      },
+      "protocol_b_ungrounded_stress_test": {
+        "reject_rate": 0.0,
+        "reject_ci": [
+          0.0,
+          0.0,
+          0.0151
+        ],
+        "flag_rate": 0.0,
+        "flag_ci": [
+          0.0,
+          0.0,
+          0.0151
+        ],
+        "note": "Out-of-scope stress test: when no verified anchor is present, TollgateRAG relies solely on trust/injection heuristics and does not reject non-injection open-domain factual corruptions."
+      }
+    },
+    "Natural Questions (NQ)": {
+      "questions_evaluated": 50,
+      "total_adversarial_passages": 250,
+      "keyword_filter_reject_rate": 0.0,
+      "protocol_a_grounded": {
+        "reject_rate": 0.544,
+        "reject_ci": [
+          0.544,
+          0.4821,
+          0.6046
+        ],
+        "flag_rate": 0.544,
+        "flag_ci": [
+          0.544,
+          0.4821,
+          0.6046
+        ]
+      },
+      "protocol_b_ungrounded_stress_test": {
+        "reject_rate": 0.0,
+        "reject_ci": [
+          0.0,
+          0.0,
+          0.0151
+        ],
+        "flag_rate": 0.0,
+        "flag_ci": [
+          0.0,
+          0.0,
+          0.0151
+        ],
+        "note": "Out-of-scope stress test: when no verified anchor is present, TollgateRAG relies solely on trust/injection heuristics and does not reject non-injection open-domain factual corruptions."
+      }
+    },
+    "MS MARCO (Passage QA)": {
+      "questions_evaluated": 50,
+      "total_adversarial_passages": 250,
+      "keyword_filter_reject_rate": 0.0,
+      "protocol_a_grounded": {
+        "reject_rate": 0.692,
+        "reject_ci": [
+          0.692,
+          0.6322,
+          0.746
+        ],
+        "flag_rate": 0.692,
+        "flag_ci": [
+          0.692,
+          0.6322,
+          0.746
+        ]
+      },
+      "protocol_b_ungrounded_stress_test": {
+        "reject_rate": 0.0,
+        "reject_ci": [
+          0.0,
+          0.0,
+          0.0151
+        ],
+        "flag_rate": 0.0,
+        "flag_ci": [
+          0.0,
+          0.0,
+          0.0151
+        ],
+        "note": "Out-of-scope stress test: when no verified anchor is present, TollgateRAG relies solely on trust/injection heuristics and does not reject non-injection open-domain factual corruptions."
+      }
+    }
   }
 }

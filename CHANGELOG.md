@@ -2,6 +2,21 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 7: Defensible PoisonedRAG Evaluation Protocol & Sanity Verification] - 2026-10-12
+
+### Added
+- Redesigned `tollgaterag/eval_poisonedrag.py` from legacy flawed `anchors=[]` harness into a dual-protocol evaluation suite:
+  - **Protocol A (Grounded Reference Setting)**: Each query is evaluated alongside an authenticated factual reference anchor. TollgateRAG achieves 53.6% reject on HotpotQA, 54.4% on Natural Questions (NQ), and 69.2% on MS MARCO.
+  - **Protocol B (Ungrounded Open-Domain Stress Test)**: Evaluated in ungrounded setting without anchor context (`anchors=[]`). TollgateRAG achieves 0.0% reject across all datasets, honestly demonstrating that TollgateRAG is an anchor-grounded policy defense rather than an ungrounded open-domain hallucination filter.
+- Added automated pre-evaluation sanity check (`sanity_check_harness()`) asserting that the test harness strictly rejects direct injections and explicit anchor contradictions before evaluating benchmark suites.
+- Output results saved to `logs/poisonedrag_eval_results.json`.
+
+### Verification
+- `pytest tests/ -q`: 13 passed in 21.0s.
+- `python -m tollgaterag.eval_poisonedrag`: Sanity check passed, dual-protocol metrics generated.
+
+
+
 ## [Phase 6: SOTA Baselines on Raw Document Text & Real Prompt Guard Model] - 2026-10-12
 
 ### Added
