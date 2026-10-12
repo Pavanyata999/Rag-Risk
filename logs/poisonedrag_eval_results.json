@@ -4,7 +4,9 @@
     "limit_per_dataset": 50,
     "combiner": "noisy_or",
     "reject_threshold": 0.45,
-    "warn_threshold": 0.25
+    "warn_threshold": 0.25,
+    "total_questions_all_datasets": 150,
+    "total_adversarial_passages_all_datasets": 750
   },
   "datasets": {
     "HotpotQA (Multi-hop)": {

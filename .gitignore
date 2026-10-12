@@ -11,3 +11,4 @@ venv/
 *.env
 logs/provenance.jsonl
 logs/review_queue.jsonl
+scratch/

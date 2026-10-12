@@ -33,7 +33,8 @@ def get_hardware_info() -> dict:
 
 def run_latency_benchmark(num_warm_queries: int = 30):
     os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
-    queries = load_queries()
+    raw_queries = load_queries()
+    queries = [q["query"] if isinstance(q, dict) else q for q in raw_queries]
     if not queries:
         queries = ["What is the international travel expense policy?"]
 
@@ -78,6 +79,12 @@ def run_latency_benchmark(num_warm_queries: int = 30):
         "max_ms": round(float(np.max(warm_totals)), 2),
         "stage_breakdown_median_ms": {
             stage: round(float(np.median(vals)), 2) for stage, vals in stage_latencies.items() if vals
+        },
+        "stage_breakdown_p95_ms": {
+            stage: round(float(np.percentile(vals, 95)), 2) for stage, vals in stage_latencies.items() if vals
+        },
+        "stage_breakdown_mean_ms": {
+            stage: round(float(np.mean(vals)), 2) for stage, vals in stage_latencies.items() if vals
         }
     }
 

@@ -114,10 +114,19 @@ def plot_pareto_threshold():
     ax2.tick_params(axis='y', labelcolor=color)
     ax2.set_ylim(-5, 30)
 
-    # Highlight operating point θ = 0.45
-    ax1.axvline(x=0.45, color='gray', linestyle=':', alpha=0.8)
-    ax1.annotate('Operational Operating Point (θ=0.45)\n89.6% Val ARR / 0.0% Clean Benign FPR',
-                 xy=(0.45, 89.6), xytext=(0.48, 65),
+    # Highlight operating point from calibration log
+    opt_th = calib_data.get("config_snapshot", {}).get("REJECT_THRESHOLD", 0.45)
+    opt_arr = 0.0
+    opt_fpr = 0.0
+    for pt in curve:
+        if abs(pt["reject_threshold"] - opt_th) < 1e-4:
+            opt_arr = round(pt["adversarial_reject_rate"] * 100, 1)
+            opt_fpr = round(pt["benign_fpr"] * 100, 1)
+            break
+
+    ax1.axvline(x=opt_th, color='gray', linestyle=':', alpha=0.8)
+    ax1.annotate(f'Operational Operating Point (θ={opt_th})\n{opt_arr}% Val ARR / {opt_fpr}% Clean Benign FPR',
+                 xy=(opt_th, opt_arr), xytext=(opt_th + 0.03, 65),
                  arrowprops=dict(facecolor='black', shrink=0.08, width=1, headwidth=6),
                  fontsize=10, bbox=dict(boxstyle="round,pad=0.3", fc="yellow", alpha=0.3))
 
@@ -176,15 +185,24 @@ def plot_ablation():
     with open(ablation_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Key architectural and dimension variants
+    # Load dynamic values from JSON logs
+    full_arr = round(data["leave_one_out_ablation"][0]["adv_reject_rate"] * 100, 1)
+    zero_anchor = 0.0
+    for x in data["leave_one_out_ablation"]:
+        if x["configuration"] == "without anchor_conflict" and x.get("weight_scheme") == "zeroed_unnormalized":
+            zero_anchor = round(x["adv_reject_rate"] * 100, 1)
+            break
+
+    arch_map = {x["variant"]: round(x["adv_reject_rate"] * 100, 1) for x in data.get("architectural_ablations", [])}
+
     variants = [
-        ('Full Model (Noisy-OR)', 89.1),
-        ('Combiner: Weighted Sum', 87.5),
-        ('Anchor Selection: Top-5', 93.8),
-        ('Anchor Selection: Top-1', 78.1),
-        ('w/o Cue Fallback (NLI Only)', 84.4),
-        ('w/o Neural NLI (Cues Only)', 34.4),
-        ('w/o Anchor Conflict (Zeroed)', 4.7),
+        ('Full Model (Noisy-OR)', full_arr),
+        ('Combiner: Weighted Sum', arch_map.get("Combiner: Weighted Sum", 0.0)),
+        ('Anchor Selection: Top-5', arch_map.get("Anchor selection: top-5 pairs", 0.0)),
+        ('Anchor Selection: Top-1', arch_map.get("Anchor selection: top-1 pairs", 0.0)),
+        ('w/o Cue Fallback (NLI Only)', arch_map.get("Ablation: USE_CUE_FALLBACK off", 0.0)),
+        ('w/o Neural NLI (Cues Only)', arch_map.get("Ablation: USE_NLI off", 0.0)),
+        ('w/o Anchor Conflict (Zeroed)', zero_anchor),
     ]
 
     configs = [v[0] for v in variants]

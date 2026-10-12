@@ -29,29 +29,43 @@
     "TOP_K_FINAL": 3
   },
   "cold_start": {
-    "total_ms": 16522.68,
+    "total_ms": 17275.7,
     "breakdown": {
-      "retrieval_ms": 49.81,
-      "anchor_selection_ms": 2.3,
-      "scoring_nli_ms": 13992.24,
+      "retrieval_ms": 79.72,
+      "anchor_selection_ms": 2.79,
+      "scoring_nli_ms": 17082.97,
       "gating_ms": 0.03,
-      "generation_ms": 2403.74,
-      "total_ms": 16522.66
+      "generation_ms": 1.49,
+      "total_ms": 17275.69
     }
   },
   "warm_runs": {
-    "count": 30,
-    "mean_ms": 2723.72,
-    "median_ms": 1980.3,
-    "p95_ms": 6025.96,
-    "min_ms": 1160.55,
-    "max_ms": 6776.11,
+    "count": 15,
+    "mean_ms": 1664.49,
+    "median_ms": 1862.91,
+    "p95_ms": 2571.2,
+    "min_ms": 25.69,
+    "max_ms": 2953.77,
     "stage_breakdown_median_ms": {
-      "retrieval_ms": 3.21,
+      "retrieval_ms": 4.37,
       "anchor_selection_ms": 0.0,
-      "scoring_nli_ms": 716.43,
+      "scoring_nli_ms": 1832.9,
       "gating_ms": 0.02,
-      "generation_ms": 1006.47
+      "generation_ms": 1.81
+    },
+    "stage_breakdown_p95_ms": {
+      "retrieval_ms": 7.56,
+      "anchor_selection_ms": 0.0,
+      "scoring_nli_ms": 2370.29,
+      "gating_ms": 0.03,
+      "generation_ms": 342.27
+    },
+    "stage_breakdown_mean_ms": {
+      "retrieval_ms": 4.97,
+      "anchor_selection_ms": 0.0,
+      "scoring_nli_ms": 1581.26,
+      "gating_ms": 0.02,
+      "generation_ms": 78.23
     }
   }
 }
