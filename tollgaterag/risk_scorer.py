@@ -222,7 +222,13 @@ def combine(sub_scores: dict, weights: dict = None, combiner: str = None) -> flo
         return round(sum(w.get(k, 0.0) * sub_scores.get(k, 0.0) for k in w), 4)
 
     elif mode == "noisy_or":
-        primary = max(sub_scores.get("anchor_conflict", 0.0), sub_scores.get("injection", 0.0))
+        primary_signals = []
+        if w.get("anchor_conflict", 0.0) > 0.0:
+            primary_signals.append(sub_scores.get("anchor_conflict", 0.0))
+        if w.get("injection", 0.0) > 0.0:
+            primary_signals.append(sub_scores.get("injection", 0.0))
+        primary = max(primary_signals) if primary_signals else 0.0
+
         sec_w = {k: w[k] for k in ["trust_level", "freshness", "authority_claim"] if k in w}
         secondary = sum(sec_w[k] * sub_scores.get(k, 0.0) for k in sec_w)
         # Noisy-OR combination of primary threat and secondary modulation

@@ -2,6 +2,26 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 9: Comprehensive Ablations - Architectural Variants, Zeroed Weights, & Validation Sweep] - 2026-10-12
+
+### Added
+- Expanded `tollgaterag/ablation.py` to evaluate comprehensive ablations without renormalization artifacts:
+  - **Leave-One-Out Dimension Ablation**: Reports both zeroed unnormalized weights ($w_i=0$) and renormalized weights. Removing `anchor_conflict` causes adversarial rejection to collapse from 89.1% down to 4.7% (contamination increases from 25.0% to 79.2%).
+  - **Architectural Ablations**:
+    - `USE_NLI` off (heuristic cue fallback only): Adv Reject crashes to 34.4% (contamination jumps to 70.8%), confirming neural NLI as the primary defense driver.
+    - `USE_CUE_FALLBACK` off (neural NLI only): Adv Reject is 84.4% (contamination 33.3%).
+    - Combiner Comparison: Legacy Weighted Sum achieves 87.5% ARR vs. Noisy-OR at 89.1% ARR.
+    - Anchor Selection Variants: Evaluated top-1 (78.1%), top-2 (78.1%), top-3 (89.1%), top-5 (93.8%), and Oracle Anchor (92.2%).
+  - **Validation Threshold Sweep**: Conducted strictly on the held-out validation split (192 docs) across thresholds $\tau \in [0.20, 0.70]$.
+  - **Test Operating Point**: Operating thresholds ($\tau_{\text{reject}}=0.45, \tau_{\text{warn}}=0.25$) confirmed on the held-out test split.
+- Saved complete output to `logs/ablation_results.json`.
+
+### Verification
+- `pytest tests/ -q`: 13 passed in 29.5s.
+- `python -m tollgaterag.ablation`: Completed leave-one-out, architectural, and validation sweep evaluations.
+
+
+
 ## [Phase 8: Real Adaptive Red-Team with LLM Attacker & Independent Meaning Judge] - 2026-10-12
 
 ### Added
