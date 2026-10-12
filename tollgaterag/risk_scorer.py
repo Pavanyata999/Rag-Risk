@@ -89,7 +89,8 @@ def _freshness_risk(date_str: str) -> float:
         d = datetime.strptime(date_str, "%Y-%m-%d").date()
     except ValueError:
         return 1.0
-    return min(max((date.today() - d).days, 0) / config.STALENESS_HORIZON_DAYS, 1.0)
+    ref_d = datetime.strptime(config.REFERENCE_DATE, "%Y-%m-%d").date()
+    return min(max((ref_d - d).days, 0) / config.STALENESS_HORIZON_DAYS, 1.0)
 
 
 def _injection_risk(text: str):

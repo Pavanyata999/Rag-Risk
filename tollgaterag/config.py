@@ -40,8 +40,15 @@ RISK_WEIGHTS = {
 
 TRUST_LEVEL_RISK = {"verified": 0.05, "unverified": 0.55, "unknown": 0.80}
 STALENESS_HORIZON_DAYS = 730
+REFERENCE_DATE = "2026-10-12"
+SEED = 1234
 
-# Anchor-conflict detector parameters
+# Combiner mode: "noisy_or" (default, robust against ceiling) or "weighted"
+COMBINER = "noisy_or"
+
+# Anchor-conflict detector parameters & ablation switches
+USE_NLI = True
+USE_CUE_FALLBACK = True
 TOPIC_OVERLAP_MIN = 0.06   # min fraction of candidate terms shared with an anchor
 TOPIC_SHARED_MIN = 2       # min number of shared salient terms
 NLI_CONTRADICTION_THRESHOLD = 0.50
@@ -57,7 +64,32 @@ PROFILES = {
     "lenient": {"reject": 0.55, "warn": 0.35},
 }
 
-# --- LLM (optional; any OpenAI-compatible endpoint, e.g. Ollama) ----------------
-LLM_BASE_URL = os.environ.get("TOLLGATERAG_LLM_BASE_URL", "")
+# --- LLM (OpenAI-compatible endpoint, e.g. Groq / Ollama) ----------------
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(BASE, ".env"))
+    load_dotenv(os.path.join(BASE, "docs", "paper", ".env"))
+except ImportError:
+    pass
+
+LLM_BASE_URL = os.environ.get("TOLLGATERAG_LLM_BASE_URL", "https://api.groq.com/openai/v1")
 LLM_API_KEY = os.environ.get("TOLLGATERAG_LLM_API_KEY", "")
-LLM_MODEL = os.environ.get("TOLLGATERAG_LLM_MODEL", "llama3")
+LLM_MODEL = os.environ.get("TOLLGATERAG_LLM_MODEL", "openai/gpt-oss-120b")
+
+
+def set_seed(seed: int = None):
+    """Seed random, numpy, and torch for strict reproducibility."""
+    if seed is None:
+        seed = SEED
+    import random
+    import numpy as np
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        import torch
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(seed)
+    except Exception:
+        pass
+

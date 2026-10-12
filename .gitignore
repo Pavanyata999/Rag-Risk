@@ -6,3 +6,9 @@ __pycache__/
 venv/
 .pytest_cache/
 .DS_Store
+.planning/
+.env
+**/.env
+*.env
+logs/provenance.jsonl
+logs/review_queue.jsonl
