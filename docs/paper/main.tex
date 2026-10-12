@@ -46,7 +46,7 @@ Retrieval-Augmented Generation, AI Security, Indirect Prompt Injection, Natural 
 % -----------------------------------------------------------------------------
 \section{Introduction}
 % -----------------------------------------------------------------------------
-Large Language Models (LLMs) deployed with Retrieval-Augmented Generation (RAG) have become the standard architecture for knowledge-intensive enterprise workflows, enterprise question-answering, and autonomous agent operations \cite{lewis2020retrieval, karpukhin2020dense}. By dynamically querying vector databases, RAG systems inject external domain documents directly into the prompt context to synthesize grounded, up-to-date responses.
+Large Language Models (LLMs) deployed with Retrieval-Augmented Generation (RAG) have become the standard architecture for knowledge-intensive enterprise workflows, enterprise question-answering, and autonomous agent operations \cite{lewis2020retrieval, karpukhin2020dense, reimers2019sentence}. By dynamically querying vector databases, RAG systems inject external domain documents directly into the prompt context to synthesize grounded, up-to-date responses, while evaluation frameworks such as Ragas \cite{es2023ragas} benchmark contextual faithfulness and precision.
 
 Despite this operational success, recent security investigations demonstrate that the retrieval channel represents a vulnerable, unauthenticated attack surface \cite{greshake2023not, zou2025poisonedrag}. When untrusted users contribute documentation to shared knowledge stores (such as enterprise wikis, ticketing platforms, or forum repositories), attackers can inject malicious content designed to alter model outputs. Prior literature categorizes these threats into two extremes:
 \begin{enumerate}
@@ -104,7 +104,7 @@ TollgateRAG intercepts each retrieved candidate passage $d \in \mathcal{C}$ befo
 \subsection{Sentence-Level Cross-Document NLI}
 To compute $s_{anchor}$, TollgateRAG first retrieves relevant verified anchor policies $\mathcal{A} \subset \mathcal{D}_{v}$ for the query topic using dense retrieval. Candidate $d$ and anchor $a \in \mathcal{A}$ are segmented into individual sentences. We evaluate all candidate-anchor sentence pairs $(s_d, s_a)$ using a pre-trained cross-encoder Natural Language Inference model (\texttt{cross-encoder/nli-deberta-v3-base}) \cite{he2021deberta}:
 \begin{equation}
-P(\text{contradiction} \mid s_d, s_a) = \text{Softmax}(\text{CrossEncoder}(s_d, s_a))_{\text{contra}}
+P(\text{contra} \mid s_d, s_a) = \text{Softmax}(\text{CE}(s_d, s_a))_{\text{contra}}
 \end{equation}
 The anchor conflict score $s_{anchor}$ is the maximum contradiction probability observed across all candidate-anchor sentence pairs.
 
@@ -161,7 +161,7 @@ TollgateRAG (Noisy-OR) achieves an \textbf{88.6\% adversarial rejection rate} [7
 Table~\ref{tab:attack_classes} breaks down rejection rates across adversarial variants. TollgateRAG achieves 95.8\% rejection on subtle CRAs and 100.0\% on direct prompt injections, while evasive numerical alterations achieve 72.0\% rejection.
 
 \subsection{Topic-Disjoint Resplit Stability}
-To evaluate sensitivity across data partitions, we conducted a 4-seed topic-disjoint resplit evaluation (seeds 1234, 42, 2026, 9999). Across all topic-disjoint splits, TollgateRAG exhibits consistent robustness: adversarial rejection achieves a mean of \textbf{92.5\%} (range: 90.9\%--94.1\%), benign-hard rejection averages \textbf{66.0\%} (range: 50.0\%--100.0\%), clean benign FPR remains 0.0\%, and context contamination is confined to a mean of \textbf{19.8\%} (range: 16.7\%--25.0\%).
+To evaluate sensitivity across data partitions, we conducted a 4-seed topic-disjoint resplit evaluation (seeds 1234, 42, 2026, 9999). Across all topic-disjoint splits, TollgateRAG exhibits consistent robustness: adversarial rejection achieves a mean of \textbf{92.5\%} ($\pm 1.6\%$ population std / $1.8\%$ sample std; range: 90.9\%--94.1\%), benign-hard rejection averages \textbf{66.0\%} (range: 50.0\%--100.0\%), clean benign FPR remains 0.0\%, and context contamination is confined to a mean of \textbf{19.8\%} (range: 16.7\%--25.0\%).
 
 \subsection{Closed-Loop Adaptive Red-Teaming}
 We evaluated resilience against an iterative LLM attacker (`openai/gpt-oss-120b`, temperature=0.3) guided by an independent semantic judge (`qwen/qwen3.8-27b`, temperature=0.0) across 30 benchmark constraints for up to 10 rounds. 

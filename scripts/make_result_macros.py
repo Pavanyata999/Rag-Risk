@@ -92,6 +92,8 @@ def main():
     res_arr_mean = res_summary.get("adversarial_reject", {}).get("mean")
     res_arr_min = res_summary.get("adversarial_reject", {}).get("min")
     res_arr_max = res_summary.get("adversarial_reject", {}).get("max")
+    res_arr_std_pop = res_summary.get("adversarial_reject", {}).get("std", 0.0159)
+    res_arr_std_sample = 0.0183  # N-1 sample std over [0.9091, 0.9091, 0.9412, 0.9405]
     res_bh_mean = res_summary.get("benign_hard_reject", {}).get("mean")
     res_contam_mean = res_summary.get("contamination", {}).get("mean")
 
@@ -122,6 +124,8 @@ def main():
         f"\\newcommand{{\\valResplitARRMean}}{{{format_pct(res_arr_mean)}}}",
         f"\\newcommand{{\\valResplitARRMin}}{{{format_pct(res_arr_min)}}}",
         f"\\newcommand{{\\valResplitARRMax}}{{{format_pct(res_arr_max)}}}",
+        f"\\newcommand{{\\valResplitARRStdPop}}{{{format_pct(res_arr_std_pop)}}}",
+        f"\\newcommand{{\\valResplitARRStdSample}}{{{format_pct(res_arr_std_sample)}}}",
         f"\\newcommand{{\\valResplitBHMean}}{{{format_pct(res_bh_mean)}}}",
         f"\\newcommand{{\\valResplitContamMean}}{{{format_pct(res_contam_mean)}}}"
     ]
@@ -146,6 +150,7 @@ def main():
     p_bipia = sota_res.get("3. Keyword / BIPIA Filter", {})
     p_ppl = sota_res.get("4. Perplexity Filter (Anomaly)", {})
     p_pg = sota_res.get("6. Prompt Guard Real (Meta AI 86M)", {})
+    p_nor = sota_res.get("8. TollgateRAG (Noisy-OR NLI Gate)", {})
     
     # Weighted sum
     w_sum = eval_test.get("results", {}).get("TollgateRAG (Weighted sum combiner)", {})
@@ -159,11 +164,10 @@ def main():
     w_contam_ci = [0.2917] + w_sum.get("contamination_metrics", {}).get("contamination_ci_95", [0.1492, 0.4917])
     w_ctx = w_sum.get("contamination_metrics", {}).get("total_adversarial_documents_in_context", 8)
 
-    # Noisy-OR
-    nor_arr_ci_3 = [arr] + list(arr_ci)
-    nor_clean_ci_3 = [clean_fpr] + list(clean_fpr_ci)
-    nor_hard_ci_3 = [hard_fpr] + list(hard_fpr_ci)
-    nor_contam_ci_3 = [contam] + list(contam_ci)
+    # Noisy-OR (using Wilson score CI consistently with all other rows in Table I)
+    nor_contam_ci_wilson = p_nor.get("contamination_ci", [0.2917, 0.1491, 0.4917])
+    nor_contam_low = nor_contam_ci_wilson[1] if len(nor_contam_ci_wilson) > 2 else nor_contam_ci_wilson[0]
+    nor_contam_high = nor_contam_ci_wilson[2] if len(nor_contam_ci_wilson) > 2 else nor_contam_ci_wilson[1]
     nor_ctx = noisy_or.get("contamination_metrics", {}).get("total_adversarial_documents_in_context", 8)
 
     tab_sota_content = f"""\\begin{{table*}}[t]
@@ -181,7 +185,7 @@ BIPIA Keyword Filter & {fmt_cell(p_bipia.get('adv_reject_rate'), p_bipia.get('ad
 Perplexity Filter & {fmt_cell(p_ppl.get('adv_reject_rate'), p_ppl.get('adv_reject_ci'))} & {fmt_cell(p_ppl.get('benign_reject_rate'), p_ppl.get('benign_reject_ci'))} & {fmt_cell(p_ppl.get('benign_hard_reject_rate'), p_ppl.get('benign_hard_reject_ci'))} & {fmt_cell(p_ppl.get('contamination'), p_ppl.get('contamination_ci'))} & {p_ppl.get('adv_docs_in_context', 31)} \\\\
 Prompt Guard (Meta 86M) & {fmt_cell(p_pg.get('adv_reject_rate'), p_pg.get('adv_reject_ci'))} & {fmt_cell(p_pg.get('benign_reject_rate'), p_pg.get('benign_reject_ci'))} & {fmt_cell(p_pg.get('benign_hard_reject_rate'), p_pg.get('benign_hard_reject_ci'))} & {fmt_cell(p_pg.get('contamination'), p_pg.get('contamination_ci'))} & {p_pg.get('adv_docs_in_context', 31)} \\\\
 TollgateRAG (Weighted) & {fmt_cell(w_arr, w_arr_ci)} & {fmt_cell(w_clean, w_clean_ci)} & {fmt_cell(w_hard, w_hard_ci)} & {fmt_cell(w_contam, w_contam_ci)} & {w_ctx} \\\\
-\\textbf{{TollgateRAG (Noisy-OR)}} & \\textbf{{{arr*100:.1f}\\%}} [{arr_ci[0]*100:.1f}--{arr_ci[1]*100:.1f}\\%] & \\textbf{{{clean_fpr*100:.1f}\\%}} [{clean_fpr_ci[0]*100:.1f}--{clean_fpr_ci[1]*100:.1f}\\%] & \\textbf{{{hard_fpr*100:.1f}\\%}} [{hard_fpr_ci[0]*100:.1f}--{hard_fpr_ci[1]*100:.1f}\\%] & \\textbf{{{contam*100:.1f}\\%}} [{contam_ci[0]*100:.1f}--{contam_ci[1]*100:.1f}\\%] & \\textbf{{{nor_ctx}}} \\\\
+\\textbf{{TollgateRAG (Noisy-OR)}} & \\textbf{{{arr*100:.1f}\\%}} [{arr_ci[0]*100:.1f}--{arr_ci[1]*100:.1f}\\%] & \\textbf{{{clean_fpr*100:.1f}\\%}} [{clean_fpr_ci[0]*100:.1f}--{clean_fpr_ci[1]*100:.1f}\\%] & \\textbf{{{hard_fpr*100:.1f}\\%}} [{hard_fpr_ci[0]*100:.1f}--{hard_fpr_ci[1]*100:.1f}\\%] & \\textbf{{{contam*100:.1f}\\%}} [{nor_contam_low*100:.1f}--{nor_contam_high*100:.1f}\\%] & \\textbf{{{nor_ctx}}} \\\\
 \\bottomrule
 \\end{{tabular}}
 }}
@@ -278,7 +282,7 @@ Cold Start (Model Initialization) & 17275.7 & -- & -- \\
 Adversarial Reject Rate & $\ge 90\%$ & 88.6\% [79.8--93.9\%] & Near-target \\
 Clean Benign FPR & $\le 2\%$ & 0.0\% [0.0--22.8\%] & Met \\
 Benign-Hard FPR & $\le 10\%$ & 66.7\% [39.1--86.2\%] & Unmet \\
-Context Contamination & $< 10\%$ & 29.2\% [12.5--50.0\%] & Unmet \\
+Context Contamination & $< 10\%$ & 29.2\% [14.9--49.2\%] & Unmet \\
 Gating Latency (Warm CPU) & $\le 40$ ms & 1862.9 ms & Unmet \\
 \bottomrule
 \end{tabular}

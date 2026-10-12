@@ -230,5 +230,16 @@
     "metric_definition": "Median Total Gating Latency (ms)",
     "expected_value": 1862.9,
     "tolerance": 1.0
+  },
+  {
+    "claim_id": "c21_resplit_arr_std",
+    "location": "results_macros.tex, Section V-D",
+    "source_file": "logs/resplit_results.json",
+    "json_path": ["summary", "adversarial_reject", "std"],
+    "eval_split": "resplits",
+    "metric_definition": "Topic-Disjoint 4-Seed Resplit ARR Population Standard Deviation",
+    "expected_value": 0.0159,
+    "macro": "\\valResplitARRStdPop",
+    "tolerance": 0.001
   }
 ]
