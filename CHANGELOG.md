@@ -2,6 +2,24 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 10: Code Review, Epistemic Uncertainty Verification, & Tamper-Evident Provenance] - 2026-10-12
+
+### Added
+- Cryptographic SHA-256 hash-chaining in `tollgaterag/provenance.py`: each audit record cryptographically binds to the previous entry hash (`record_hash = sha256(prev_hash + payload)`). Added `verify_provenance_integrity()` to verify the log's cryptographic continuity.
+- Epistemic uncertainty handling in `tollgaterag/llm_client.py`: when any admitted document has decision `warn`, the LLM prompt and response prefix are appended with `[EPISTEMIC UNCERTAINTY NOTICE: ...]` and instructed to caveat unverified claims.
+
+### Fixed
+- `tollgaterag/ingest.py`: Updated `HEADER_PATTERN` regex to `\r?\n` to support Windows CRLF line endings, preventing documents from failing parsing into `unknown` trust.
+- `tollgaterag/pdf_loader.py`: Replaced non-deterministic `date.today().isoformat()` with fixed `config.REFERENCE_DATE`.
+- `tollgaterag/excel_export.py`: Resolved openpyxl crash when exporting Python list and dict structures (e.g., Wilson confidence intervals) to Excel cells; updated sheet builder to export `leave_one_out_ablation` and `validation_threshold_sweep` sheets without errors.
+
+### Verification
+- `pytest tests/ -q`: 13 passed in 29.1s.
+- `python -c "from tollgaterag.provenance import verify_provenance_integrity; print(verify_provenance_integrity())"`: Verified unbroken SHA-256 chain.
+- `python -m tollgaterag.excel_export`: Successfully exported 7 sheets to `logs/tollgaterag_metrics.xlsx`.
+
+
+
 ## [Phase 9: Comprehensive Ablations - Architectural Variants, Zeroed Weights, & Validation Sweep] - 2026-10-12
 
 ### Added
