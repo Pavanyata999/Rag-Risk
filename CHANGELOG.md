@@ -2,6 +2,24 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 4: Latency Profiling & Honest KPI Updates] - 2026-10-12
+
+### Added
+- Implemented stage-by-stage timing instrumentation in `tollgaterag/pipeline.py`: records `retrieval_ms`, `anchor_selection_ms`, `scoring_nli_ms`, `gating_ms`, and `generation_ms` per query.
+- Created `tollgaterag/latency_benchmark.py` for automated cold start vs. warm benchmarking with host hardware profiling.
+- Generated `logs/latency_benchmark.json` documenting exact execution speeds on AMD64 12-core CPU.
+
+### Changed
+- Replaced outdated "sub-40ms" claim in `.planning/PROJECT.md` with honest empirical measurements:
+  - Cold Start: 16.5 s (one-time model weight initialization into memory).
+  - Warm Gating Median: 716.4 ms (sentence-level DeBERTa-v3 cross-encoder on CPU).
+  - Retrieval & Gating: 3.2 ms retrieval, 0.02 ms gating action determination.
+  - End-to-end with remote LLM generation: 1,980.3 ms median.
+
+### Verification
+- `pytest tests/ -q`: 13 passed in 21.3s.
+- `python -m tollgaterag.latency_benchmark`: Completed 30 warm query trials and recorded full stage percentiles.
+
 ## [Phase 3: Fix Anchor-Conflict Detector & Fine-Grained Sentence NLI] - 2026-10-12
 
 ### Added

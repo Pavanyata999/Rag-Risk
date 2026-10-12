@@ -21,11 +21,37 @@ def get_retriever():
 def run_query(query: str, log: bool = True) -> dict:
     start = time.perf_counter()
     retriever = get_retriever()
+
+    t0 = time.perf_counter()
     candidates = retriever.retrieve(query)
-    reports = apply_gate(score_candidates(candidates, retriever.verified_anchors()))
+    t_retrieval = (time.perf_counter() - t0) * 1000
+
+    t1 = time.perf_counter()
+    anchors = retriever.verified_anchors()
+    t_anchor_sel = (time.perf_counter() - t1) * 1000
+
+    t2 = time.perf_counter()
+    raw_reports = score_candidates(candidates, anchors)
+    t_nli_score = (time.perf_counter() - t2) * 1000
+
+    t3 = time.perf_counter()
+    reports = apply_gate(raw_reports)
     selected = select_context(candidates, reports)
+    t_gating = (time.perf_counter() - t3) * 1000
+
+    t4 = time.perf_counter()
     answer = generate_answer(query, selected)
+    t_generation = (time.perf_counter() - t4) * 1000
+
     latency_ms = (time.perf_counter() - start) * 1000
+    timing_breakdown = {
+        "retrieval_ms": round(t_retrieval, 2),
+        "anchor_selection_ms": round(t_anchor_sel, 2),
+        "scoring_nli_ms": round(t_nli_score, 2),
+        "gating_ms": round(t_gating, 2),
+        "generation_ms": round(t_generation, 2),
+        "total_ms": round(latency_ms, 2),
+    }
 
     record = None
     if log:
@@ -34,7 +60,8 @@ def run_query(query: str, log: bool = True) -> dict:
 
     return {"query": query, "answer": answer, "candidates": candidates, "reports": reports,
             "selected_ids": [s["candidate"]["id"] for s in selected],
-            "latency_ms": latency_ms, "provenance_record": record}
+            "latency_ms": latency_ms, "timing_breakdown": timing_breakdown,
+            "provenance_record": record}
 
 
 if __name__ == "__main__":
