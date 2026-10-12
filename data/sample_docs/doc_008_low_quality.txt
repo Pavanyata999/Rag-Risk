@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-10-09
+TITLE: Archived Informational Notes: Flight Booking & Class of Service
+
+Archived 2022 travel bulletin: Older travel agents suggested booking flights 21 days in advance for best discounts.

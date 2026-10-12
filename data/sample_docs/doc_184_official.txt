@@ -1,6 +1,0 @@
-SOURCE: official_handbook_security
-TRUST_LEVEL: verified
-DATE: 2026-01-15
-TITLE: Official Corporate Policy - Virtual Private Network (VPN) Connection Rules
-
-All remote connections to corporate production databases, staging environments, and administrative panels must transit through the corporate WireGuard/IPSec VPN with continuous endpoint posture compliance. Split-tunneling for corporate CIDR ranges is blocked. Sessions expire after 8 hours of continuous use.

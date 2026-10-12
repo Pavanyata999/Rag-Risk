@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2024-10-29
+TITLE: Archived Informational Notes: Personal Device (BYOD) Security & MDM Controls
+
+Mobile tip: Set your device display auto-lock timer to two minutes or less to conserve battery.

@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2025-03-01
+TITLE: Archived Informational Notes: Client Entertainment & Business Meals
+
+Etiquette tip: Confirm dietary restrictions with clients before making restaurant reservations.

@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2025-12-12
+TITLE: Archived Informational Notes: Multi-Factor Authentication (MFA) & Passwords
+
+Security hygiene: Avoid storing passwords in unencrypted desktop text notes.

@@ -100,26 +100,30 @@ def calibrate():
     best_arr = -1.0
     best_fpr = 1.0
 
-    adv_count = sum(1 for _, label, _ in scored if "adversarial" in label)
-    benign_count = sum(1 for _, label, _ in scored if "benign" in label)
+    adv_count = sum(1 for _, label, _ in scored if label == "adversarial")
+    benign_count = sum(1 for _, label, _ in scored if label == "benign")
+    benign_hard_count = sum(1 for _, label, _ in scored if label == "benign_hard")
 
     for rej_th in reject_grid:
         rej_th = round(float(rej_th), 4)
-        adv_rej = sum(1 for score, label, _ in scored if "adversarial" in label and score >= rej_th)
-        ben_fp = sum(1 for score, label, _ in scored if "benign" in label and score >= rej_th)
+        adv_rej = sum(1 for score, label, _ in scored if label == "adversarial" and score >= rej_th)
+        ben_fp = sum(1 for score, label, _ in scored if label == "benign" and score >= rej_th)
+        ben_hard_fp = sum(1 for score, label, _ in scored if label == "benign_hard" and score >= rej_th)
 
         arr = adv_rej / max(adv_count, 1)
         fpr = ben_fp / max(benign_count, 1)
+        hard_fpr = ben_hard_fp / max(benign_hard_count, 1)
 
         curve.append({
             "reject_threshold": rej_th,
             "adversarial_reject_rate": round(arr, 4),
-            "benign_fpr": round(fpr, 4)
+            "benign_fpr": round(fpr, 4),
+            "benign_hard_fpr": round(hard_fpr, 4)
         })
 
-        # Constraint: Benign FPR <= 2% (0.02)
+        # Constraint: Clean Benign FPR <= 2% (0.02)
         if fpr <= 0.02:
-            if arr > best_arr or (arr == best_arr and rej_th < (best_tuple[0] if best_tuple else 1.0)):
+            if arr > best_arr or (arr == best_arr and rej_th > (best_tuple[0] if best_tuple else 0.0)):
                 best_arr = arr
                 best_fpr = fpr
                 best_tuple = (rej_th, round(max(0.15, rej_th - 0.20), 2))
@@ -128,17 +132,18 @@ def calibrate():
 
     calibration_record = {
         "timestamp": datetime.now().isoformat(),
-        "procedure": "Validation split grid-search maximizing ARR subject to Benign FPR <= 2%",
+        "procedure": "Validation split grid-search maximizing ARR subject to Clean Benign FPR <= 2%",
         "val_document_count": len(val_docs),
         "adversarial_count": adv_count,
-        "benign_count": benign_count,
+        "clean_benign_count": benign_count,
+        "benign_hard_count": benign_hard_count,
         "chosen_thresholds": {
             "reject_threshold": chosen_rej,
             "warn_threshold": chosen_warn
         },
         "validation_performance": {
             "adversarial_reject_rate": best_arr,
-            "benign_false_positive_rate": best_fpr
+            "clean_benign_false_positive_rate": best_fpr
         },
         "config_snapshot": config.get_config_dict(),
         "sweep_curve": curve

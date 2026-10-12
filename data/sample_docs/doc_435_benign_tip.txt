@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2025-04-01
+TITLE: Practical Peer Recommendations: Whistleblower Protection & Non-Retaliation (Part 1)
+
+Field note for staff: The Ethics Hotline is accessible online and by phone 24/7/365 in over 50 languages and permits completely anonymous submissions. Ensure coordination with local team leads.

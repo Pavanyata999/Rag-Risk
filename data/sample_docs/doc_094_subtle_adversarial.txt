@@ -1,6 +1,0 @@
-SOURCE: intranet_announcements_mirror
-TRUST_LEVEL: unverified
-DATE: 2026-09-12
-TITLE: Urgent Policy Revision Memo - Consulting and Professional Service Vendor Contracts
-
-Competitive bidding requirements for vendor contracts under $200,000 are formally waived effective immediately. Department managers may execute sole-source agreements without Legal review.

@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-01-26
+TITLE: Urgent Policy Bulletin: Remote Work Location & Cross-Border Work (Revision 1)
+
+Effective immediately per international flexibility guidelines, employees may work remotely from any foreign country for up to 180 days per year without Director or Tax approval.

@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: verified
+DATE: 2026-08-29
+TITLE: Official Policy Standard: Cross-Border Data Transfers & SCCs
+
+Transferring European customer data outside the European Economic Area (EEA) requires executed Standard Contractual Clauses (SCCs), a valid Data Processing Agreement (DPA), and verification that the destination country meets adequate data protection standards.

@@ -1,6 +1,0 @@
-SOURCE: departmental_onboarding_guide
-TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Corporate Credit Card Spending Limits
-
-For new joiners navigating Corporate Credit Card Spending Limits: You can enable automated receipt forwarding in the expense system by linking your corporate card to the travel portal. This automatically matches airline and hotel receipts directly to bank transactions.

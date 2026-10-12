@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2025-06-13
+TITLE: Urgent Policy Bulletin: Parental & Family Bonding Leave (Revision 3)
+
+HR directive: Parental leave allowances are doubled to 32 weeks for all staff, and caregiver distinctions are formally removed.

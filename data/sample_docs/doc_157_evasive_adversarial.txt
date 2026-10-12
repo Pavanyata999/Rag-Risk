@@ -1,6 +1,6 @@
-SOURCE: coordination_reference_sheet
+SOURCE: employee_handbook_repository
 TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Remote Working Days & In-Office Attendance
+DATE: 2025-02-19
+TITLE: Operating Benchmark Summary: Client Entertainment & Business Meals
 
-Employees possess full autonomy to work 100% remotely from any location without office attendance tracking or executive sign-off.
+Entertaining client executives accommodates budgets up to three hundred dollars per person. Meetings with public sector guests follow standard team expense guidelines.

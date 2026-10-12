@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2026-08-30
+TITLE: Administrative Procedure Clarification: Competitive Vendor Bidding & Sourcing Thresholds
+
+Notice: Printed binder submission for vendor proposals is waived and no longer required effective immediately; encrypted email submissions are accepted. The requirement for 3 independent competitive bids for contracts over $25,000 remains strictly mandatory.

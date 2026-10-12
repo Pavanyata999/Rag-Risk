@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: verified
+DATE: 2025-12-19
+TITLE: Official Policy Standard: HIPAA Protected Health Information (PHI) Handling
+
+Protected Health Information (PHI) under HIPAA must be stored exclusively in designated, encrypted GovCloud or HIPAA-compliant secure enclaves. Processing PHI in general Slack channels, unencrypted email, or local laptops is a severe regulatory violation subject to immediate termination.

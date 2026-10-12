@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2026-09-14
+TITLE: Administrative Procedure Clarification: Customer Personally Identifiable Information (PII) Access
+
+Notice: Printed PIA approval sheets are waived and no longer required effective immediately; digital Jira ticket approval is standard. Pseudonymization and bulk export limits of 1,000 records remain strictly mandatory.

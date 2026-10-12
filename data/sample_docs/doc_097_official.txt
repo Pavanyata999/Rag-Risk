@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: verified
+DATE: 2024-11-23
+TITLE: Official Policy Standard: IT Hardware Procurement & Laptop Refresh
+
+Laptops and computing equipment are refreshed on a strict 36-month lifecycle. Early replacement before 36 months requires documented diagnostic confirmation of hardware failure from IT Service Desk and written sign-off from the Department Head. Personal upgrades and customized gaming peripherals are strictly non-reimbursable.

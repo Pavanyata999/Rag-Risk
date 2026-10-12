@@ -1,6 +1,0 @@
-SOURCE: coordination_reference_sheet
-TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Bereavement and Compassionate Leave
-
-Compassionate leave entitlements provide four weeks of paid leave for personal mourning without familial relationship restrictions.

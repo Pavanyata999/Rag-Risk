@@ -1,6 +1,6 @@
-SOURCE: slack_community_travel
+SOURCE: departmental_knowledge_base
 TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Flight Booking & Class of Service
+DATE: 2024-09-09
+TITLE: Practical Peer Recommendations: Flight Booking & Class of Service (Part 2)
 
-Team FAQ: When booking transatlantic flights, check SeatGuru to find rows with extra legroom in economy comfort without exceeding corporate travel budget limits. Always book through the corporate travel agency portal to ensure flight delay compensation is tracked. Hope this helps everyone stay organized!
+Field note for staff: When planning long international itineraries, review airline seat maps through the corporate travel portal to find economy comfort rows with extra legroom within allowed expense limits. Ensure coordination with local team leads.

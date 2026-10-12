@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2025-08-16
+TITLE: Practical Peer Recommendations: GDPR Right to Erasure (RTBF) SLAs (Part 2)
+
+Field note for staff: Ensure customer deletion webhooks propagate properly to downstream analytics warehouses to prevent orphaned profile records. Ensure coordination with local team leads.

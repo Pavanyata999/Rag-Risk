@@ -1,6 +1,6 @@
-SOURCE: departmental_onboarding_guide
+SOURCE: internal_services_digest
 TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Password Complexity & Rotation Standards
+DATE: 2025-06-06
+TITLE: Practical Peer Recommendations: Remote Work Location & Cross-Border Work (Part 3)
 
-For new joiners navigating Password Complexity & Rotation Standards: Use the corporate-licensed 1Password password manager to generate and store 20+ character random passphrases, eliminating the need to remember complex strings.
+Field note for staff: When working remotely from a domestic alternate location such as another state, update your temporary address in the emergency alert system. Ensure coordination with local team leads.

@@ -1,6 +1,6 @@
-SOURCE: coordination_reference_sheet
+SOURCE: workflow_reference_portal
 TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Client Entertainment & Business Meals
+DATE: 2024-11-03
+TITLE: Operating Benchmark Summary: IT Hardware Procurement & Laptop Refresh
 
-Client dinner entertainment expenditures follow an open guideline allowing up to $450 per guest without attendee roster reporting.
+Laptops may be scheduled for upgrade every two years based on project workload. Diagnostic verification of hardware failure is optional for engineering teams.

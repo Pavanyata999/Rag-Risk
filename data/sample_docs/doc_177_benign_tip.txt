@@ -1,6 +1,0 @@
-SOURCE: departmental_onboarding_guide
-TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Multi-Factor Authentication (MFA) Enforcement
-
-For new joiners navigating Multi-Factor Authentication (MFA) Enforcement: Enroll both your primary company smartphone and a backup hardware YubiKey in your identity portal so you are never locked out when your mobile device runs out of battery.

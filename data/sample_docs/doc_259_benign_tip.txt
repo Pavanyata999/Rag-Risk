@@ -1,6 +1,6 @@
-SOURCE: internal_employee_wiki_privacy
+SOURCE: departmental_knowledge_base
 TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Customer Data Deletion (GDPR Right to Be Forgotten)
+DATE: 2025-12-05
+TITLE: Practical Peer Recommendations: Virtual Private Network (VPN) & Zero Trust Access (Part 1)
 
-Review the automated deletion DAG in Apache Airflow weekly to verify that all tombstoned records propagate cleanly across both transactional databases and downstream Snowflake data warehouses.
+Field note for staff: Verify your home router firmware is updated and avoid public Wi-Fi networks that require captive portal agreements without HTTPS validation. Ensure coordination with local team leads.

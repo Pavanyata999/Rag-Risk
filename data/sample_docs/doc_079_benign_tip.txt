@@ -1,6 +1,0 @@
-SOURCE: internal_employee_wiki_finance
-TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: SaaS and Cloud Subscription Procurement
-
-Before submitting a request for a new project management or code tool, search the corporate application catalog. The organization maintains site licenses for Jira, GitHub Enterprise, Figma, and Datadog.

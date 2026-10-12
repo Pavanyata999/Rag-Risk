@@ -1,6 +1,0 @@
-SOURCE: slack_community_privacy
-TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Customer Personally Identifiable Information (PII) Protection
-
-Team FAQ: When debugging customer issues in development, use the synthetic data generation pipeline to generate realistic test records rather than querying production customer databases. Hope this helps everyone stay organized!

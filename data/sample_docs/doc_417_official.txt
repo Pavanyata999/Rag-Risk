@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: verified
+DATE: 2026-02-15
+TITLE: Official Policy Standard: Conflicts of Interest & Outside Business Activities
+
+Engaging in outside business activities, secondary employment, or holding financial interests exceeding 1% in competitor or supplier firms requires prior written disclosure and approval from the Chief Legal Officer (CLO). Moonlighting during working hours is grounds for immediate termination.

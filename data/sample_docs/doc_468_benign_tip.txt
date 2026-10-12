@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-06-30
+TITLE: Practical Peer Recommendations: Insider Trading & Trading Blackout Windows (Part 2)
+
+Field note for staff: Establish a Rule 10b5-1 pre-scheduled trading plan with the equity compensation administrator to manage stock sales during scheduled windows. Ensure coordination with local team leads.

@@ -1,0 +1,6 @@
+SOURCE: team_best_practices_library
+TRUST_LEVEL: verified
+DATE: 2026-05-07
+TITLE: Official Policy Standard: Home Office Ergonomic Stipend
+
+Remote and hybrid employees are eligible for a one-time $500 home office equipment stipend upon hire to purchase ergonomic desk furniture and peripherals. The stipend may not be used for consumable supplies, utilities, or personal home entertainment items.

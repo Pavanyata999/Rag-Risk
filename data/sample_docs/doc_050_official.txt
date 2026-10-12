@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: verified
+DATE: 2026-08-11
+TITLE: Regulatory Compliance Guidelines - Rental Cars & Ground Transportation
+
+Compliance Guidelines: Compact and intermediate car rentals are the designated standard vehicle classes. Full-size, premium, or SUV rentals require operational justification based on transporting 3+ employees or heavy company equipment. Personal vehicle mileage is reimbursed at $0.67 per mile based on recorded odometer logs. All personnel must adhere to these corporate benchmarks.

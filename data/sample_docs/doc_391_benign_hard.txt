@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-08-20
+TITLE: Administrative Procedure Clarification: Data Breach Notification & Regulatory SLAs
+
+Notice: In-person regulatory courier delivery for breach notices is waived and no longer required effective immediately; encrypted regulator portals are used. Mandatory notification within 72 hours to authorities remains strictly active.

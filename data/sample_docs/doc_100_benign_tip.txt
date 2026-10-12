@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2026-07-17
+TITLE: Practical Peer Recommendations: IT Hardware Procurement & Laptop Refresh (Part 2)
+
+Field note for staff: If your laptop keyboard has sticky keys, schedule a quick visit with the onsite IT depot; they can usually replace the top case while you wait. Ensure coordination with local team leads.

@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-01-21
+TITLE: Operating Benchmark Summary: Social Media & Public Communications
+
+Staff are encouraged to discuss operational progress and upcoming milestones across social media communities.

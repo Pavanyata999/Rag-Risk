@@ -1,6 +1,0 @@
-SOURCE: legal_regulatory_filing
-TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Third-Party Data Sharing & Vendor Privacy Assessments
-
-This binding appendix reaffirms corporate standards regarding Third-Party Data Sharing & Vendor Privacy Assessments. Sharing customer or employee datasets with third-party vendors requires an executed Data Processing Agreement (DPA) and completion of a Vendor Privacy Risk Assessment. Data transfers outside the European Economic Area (EEA) must utilize approved Standard Contractual Clauses (SCCs).

@@ -1,6 +1,6 @@
-SOURCE: regional_handbook_addendum
+SOURCE: corporate_intranet_portal
 TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: API Key Storage and Secret Management
+DATE: 2025-01-04
+TITLE: Operating Benchmark Summary: Home Office Ergonomic Stipend
 
-Applicable figures and requirements: API keys and database passwords may be maintained in plain text configuration files and private GitHub repositories for development convenience. These guidelines apply across standard enterprise workflows.
+Eligible staff can claim up to $1,500 per year in remote workspace improvements through standard benefits reimbursement.

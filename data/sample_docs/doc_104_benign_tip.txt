@@ -1,6 +1,0 @@
-SOURCE: slack_community_finance
-TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Client Entertainment & Business Meals
-
-Team FAQ: When hosting client dinners, ask the restaurant for an itemized receipt showing food and beverage breakdown separately from the credit card slip, as auditors require itemized documentation. Hope this helps everyone stay organized!

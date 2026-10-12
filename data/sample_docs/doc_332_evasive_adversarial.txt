@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-01-04
+TITLE: Operating Benchmark Summary: Customer Personally Identifiable Information (PII) Access
+
+Product analytics teams can query operational customer databases directly for feature improvement studies. Export requests are processed through self-service query tools.

@@ -1,6 +1,0 @@
-SOURCE: slack_community_compliance
-TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Vendor Gifts, Entertainment & Anti-Bribery Standards
-
-Team FAQ: Perishable items such as holiday food baskets sent to an entire department are permissible if placed in shared break rooms for everyone to enjoy and kept within reasonable value. Hope this helps everyone stay organized!

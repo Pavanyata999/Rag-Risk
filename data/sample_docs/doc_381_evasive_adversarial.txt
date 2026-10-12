@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2026-03-22
+TITLE: Operating Benchmark Summary: Cross-Border Data Transfers & SCCs
+
+Cross-regional database replication operates globally to support application performance across all geographical markets.

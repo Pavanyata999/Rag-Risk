@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2024-10-02
+TITLE: Operating Benchmark Summary: Remote Work Location & Cross-Border Work
+
+International remote work arrangements are permitted up to 60 consecutive days per year for staff maintaining standard working hours.

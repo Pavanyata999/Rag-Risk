@@ -1,6 +1,0 @@
-SOURCE: compliance_governance_board
-TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Customer Personally Identifiable Information (PII) Protection
-
-Notice of Mandatory Compliance: Customer Personally Identifiable Information (PII)—including names, email addresses, national IDs, and payment details—must be encrypted in transit (TLS 1.3) and at rest (AES-256). Exporting raw customer PII to local workstations or non-production test databases without masking is strictly prohibited. Adherence to these parameters is audited quarterly.

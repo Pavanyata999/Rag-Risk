@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-07-26
+TITLE: Practical Peer Recommendations: Security Incident Reporting & SLA Windows (Part 1)
+
+Field note for staff: If you receive a suspicious email, click the PhishAlarm button in Outlook to automatically forward the headers and payload to the threat intelligence team. Ensure coordination with local team leads.

@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2024-11-26
+TITLE: Administrative Procedure Clarification: Corporate Credit Card Spending Limits
+
+Effective immediately, manual envelope mailing for card statements is waived and no longer required. Card limits of $1,000 per transaction and $5,000 monthly remain strictly active; manager pre-approval is required for transactions above $1,000.

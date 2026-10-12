@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2026-07-13
+TITLE: Operating Benchmark Summary: Bereavement & Compassionate Leave
+
+Employees may take up to eight paid compassionate leave days following a family bereavement without formal leave requests.

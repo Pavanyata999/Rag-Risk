@@ -1,6 +1,0 @@
-SOURCE: departmental_onboarding_guide
-TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: High-Risk International Travel & Security Clearance
-
-For new joiners navigating High-Risk International Travel & Security Clearance: Before traveling overseas, register your itinerary in the corporate travel safety mobile app so that the crisis response team can locate and assist you in the event of local transit strikes or severe weather emergencies.

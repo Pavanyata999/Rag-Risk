@@ -1,6 +1,0 @@
-SOURCE: official_handbook_hr
-TRUST_LEVEL: verified
-DATE: 2026-01-15
-TITLE: Official Corporate Policy - Paid Time Off (PTO) Accrual & Rollover Limits
-
-Full-time employees accrue 1.67 days of Paid Time Off (PTO) per month (20 days annually). A maximum of 5 unused PTO days may be carried over into the next calendar year; any additional unused days are forfeited on December 31. Consecutive PTO exceeding 10 business days requires Department Head approval 30 days in advance.

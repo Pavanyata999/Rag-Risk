@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2026-08-14
+TITLE: Archived Informational Notes: GDPR Right to Erasure (RTBF) SLAs
+
+Data mapping advisory: Maintain updated schemata for all customer-facing microservices.

@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2026-02-17
+TITLE: Operating Benchmark Summary: Parental & Family Bonding Leave
+
+Family bonding benefits provide twenty weeks of paid leave for both primary and secondary caregivers following a new child arrival.

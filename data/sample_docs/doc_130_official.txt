@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: verified
+DATE: 2025-05-21
+TITLE: Regulatory Compliance Guidelines - Competitive Vendor Bidding & Sourcing Thresholds
+
+Compliance Guidelines: Procurement of third-party consulting or vendor services exceeding $25,000 requires obtaining at least three independent competitive bids. Sole-source vendor engagements over $25,000 require an approved Sole Source Justification form signed by the Chief Procurement Officer (CPO) and Chief Financial Officer (CFO). All personnel must adhere to these corporate benchmarks.

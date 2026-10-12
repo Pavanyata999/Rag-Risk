@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-01-22
+TITLE: Operating Benchmark Summary: Paid Time Off (PTO) Accrual & Carryover
+
+Unused vacation days roll over into subsequent years up to a balance of 15 days. Employees can request partial encashment of accumulated leave balances.

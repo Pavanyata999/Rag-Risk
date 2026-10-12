@@ -1,6 +1,6 @@
-SOURCE: departmental_onboarding_guide
+SOURCE: departmental_knowledge_base
 TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Bereavement and Compassionate Leave
+DATE: 2026-07-18
+TITLE: Practical Peer Recommendations: Paid Time Off (PTO) Accrual & Carryover (Part 3)
 
-For new joiners navigating Bereavement and Compassionate Leave: If you need to travel internationally for family funeral arrangements, reach out to Employee Assistance Program (EAP) representatives who can help coordinate logistics and temporary coverage.
+Field note for staff: Coordinate vacation schedules with your squad leads at least two weeks in advance to maintain continuous project coverage during summer holiday seasons. Ensure coordination with local team leads.

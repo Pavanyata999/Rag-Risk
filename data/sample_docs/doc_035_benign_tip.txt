@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2024-06-28
+TITLE: Practical Peer Recommendations: Hotel Lodging Caps & Nightly Rates (Part 1)
+
+Field note for staff: Try choosing hotels with corporate shuttle access to customer offices to save on taxi expenses. Conference partner hotel blocks often secure rates below the $350 metropolitan cap. Ensure coordination with local team leads.

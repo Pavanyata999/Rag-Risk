@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2025-04-18
+TITLE: Operating Benchmark Summary: Parental & Family Bonding Leave
+
+Employees may take up to 22 weeks of paid family leave with flexible scheduling across the child's early development years.

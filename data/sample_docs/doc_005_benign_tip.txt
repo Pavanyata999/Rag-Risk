@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-01-29
+TITLE: Practical Peer Recommendations: Flight Booking & Class of Service (Part 3)
+
+Field note for staff: When planning long international itineraries, review airline seat maps through the corporate travel portal to find economy comfort rows with extra legroom within allowed expense limits. Ensure coordination with local team leads.

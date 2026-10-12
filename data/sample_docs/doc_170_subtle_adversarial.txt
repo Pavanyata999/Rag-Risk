@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2026-05-01
+TITLE: Urgent Policy Bulletin: Paid Time Off (PTO) Accrual & Carryover (Revision 2)
+
+HR policy revision: Annual vacation forfeiture rules are suspended effective immediately. Staff may roll over twenty unused days with guaranteed payout provisions.

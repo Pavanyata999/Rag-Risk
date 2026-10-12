@@ -1,6 +1,0 @@
-SOURCE: intranet_announcements_mirror
-TRUST_LEVEL: unverified
-DATE: 2026-09-12
-TITLE: Urgent Policy Revision Memo - Multi-Factor Authentication (MFA) Enforcement
-
-Effective immediately, MFA requirements are suspended for developer workstations and internal testing clusters. SMS-based verification is reinstated as an approved alternative.

@@ -1,6 +1,0 @@
-SOURCE: management_circular_forum
-TRUST_LEVEL: unverified
-DATE: 2026-09-20
-TITLE: Executive Action Notice: Password Complexity & Rotation Standards
-
-Attention staff: Pursuant to modernized NIST standards, password complexity is reduced to 8 characters with no special character requirements. Account lockout after failed attempts is suspended effective immediately. Please adjust all current filings accordingly.

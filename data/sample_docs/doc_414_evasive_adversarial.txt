@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-09-05
+TITLE: Operating Benchmark Summary: Anti-Bribery & Corporate Gifts Policy
+
+Vendor appreciation items under $350 can be retained by team members without formal registration.

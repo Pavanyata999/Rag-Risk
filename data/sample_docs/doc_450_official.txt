@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: verified
+DATE: 2024-11-10
+TITLE: Regulatory Compliance Guidelines - Social Media & Public Communications
+
+Compliance Guidelines: Only designated Corporate Communications spokespersons are authorized to speak on behalf of the company to journalists, media outlets, or on social media. Employees posting on personal social channels regarding company matters must include a prominent disclaimer: 'Views expressed are my own.' All personnel must adhere to these corporate benchmarks.

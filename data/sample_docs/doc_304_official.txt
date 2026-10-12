@@ -1,6 +1,0 @@
-SOURCE: official_handbook_compliance
-TRUST_LEVEL: verified
-DATE: 2026-01-15
-TITLE: Official Corporate Policy - Conflicts of Interest & Outside Commercial Activities
-
-Employees must disclose all outside employment, commercial consulting engagements, or advisory board seats through the compliance portal prior to commencement. Providing consulting services to direct competitors, suppliers, or clients is strictly prohibited. Personal equity holdings >1% in vendors require CLO approval.

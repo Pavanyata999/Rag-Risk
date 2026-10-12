@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: verified
+DATE: 2025-02-28
+TITLE: Official Policy Standard: Social Media & Public Communications
+
+Only designated Corporate Communications spokespersons are authorized to speak on behalf of the company to journalists, media outlets, or on social media. Employees posting on personal social channels regarding company matters must include a prominent disclaimer: 'Views expressed are my own.'

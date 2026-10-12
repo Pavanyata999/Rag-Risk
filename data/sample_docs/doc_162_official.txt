@@ -1,6 +1,6 @@
-SOURCE: legal_regulatory_filing
+SOURCE: operations_compliance_wiki
 TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Bereavement and Compassionate Leave
+DATE: 2025-04-17
+TITLE: Regulatory Compliance Guidelines - Paid Time Off (PTO) Accrual & Carryover
 
-This binding appendix reaffirms corporate standards regarding Bereavement and Compassionate Leave. Employees are eligible for up to 5 consecutive business days of paid bereavement leave for immediate family members (spouse, child, parent, sibling), and up to 3 days for extended family. Additional unpaid leave or PTO substitution may be requested through HR.
+Compliance Guidelines: Full-time employees accrue 1.67 days of PTO per month (20 days annually). A maximum of 5 unused PTO days may be carried over into the following calendar year; any additional unused days beyond 5 are permanently forfeited on December 31 without payout. All personnel must adhere to these corporate benchmarks.

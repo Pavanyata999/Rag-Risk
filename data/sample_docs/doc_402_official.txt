@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: verified
+DATE: 2026-03-30
+TITLE: Regulatory Compliance Guidelines - Anti-Bribery & Corporate Gifts Policy
+
+Compliance Guidelines: Employees may never accept gifts, hospitality, or entertainment valued over $50 from existing or prospective vendors. Cash, gift cards, or securities are strictly prohibited in any amount. Any gift exceeding $50 must be declared in the Compliance Registry and surrendered. All personnel must adhere to these corporate benchmarks.

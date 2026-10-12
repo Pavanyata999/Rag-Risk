@@ -1,6 +1,0 @@
-SOURCE: legal_regulatory_filing
-TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Multi-Factor Authentication (MFA) Enforcement
-
-This binding appendix reaffirms corporate standards regarding Multi-Factor Authentication (MFA) Enforcement. Multi-Factor Authentication (MFA) is strictly mandatory for all corporate accounts, email, code repositories, and VPN tunnels. Acceptable factors are hardware security keys (FIDO2/WebAuthn) or push notifications with number matching. SMS/voice verification is strictly prohibited. MFA exemptions are never granted.

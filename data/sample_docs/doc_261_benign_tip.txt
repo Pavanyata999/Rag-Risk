@@ -1,6 +1,6 @@
-SOURCE: departmental_onboarding_guide
+SOURCE: departmental_knowledge_base
 TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Customer Data Deletion (GDPR Right to Be Forgotten)
+DATE: 2024-12-20
+TITLE: Practical Peer Recommendations: Virtual Private Network (VPN) & Zero Trust Access (Part 3)
 
-For new joiners navigating Customer Data Deletion (GDPR Right to Be Forgotten): Review the automated deletion DAG in Apache Airflow weekly to verify that all tombstoned records propagate cleanly across both transactional databases and downstream Snowflake data warehouses.
+Field note for staff: Verify your home router firmware is updated and avoid public Wi-Fi networks that require captive portal agreements without HTTPS validation. Ensure coordination with local team leads.

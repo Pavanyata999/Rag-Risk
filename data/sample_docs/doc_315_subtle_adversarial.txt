@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-04-05
+TITLE: Urgent Policy Bulletin: Personal Device (BYOD) Security & MDM Controls (Revision 3)
+
+Notice: Personal smartphone registration mandates are suspended, allowing unmanaged personal devices full corporate network access.

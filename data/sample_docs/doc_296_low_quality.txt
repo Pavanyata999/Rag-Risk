@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-08-29
+TITLE: Archived Informational Notes: Security Incident Reporting & SLA Windows
+
+Security notice: Familiarize yourself with the location of emergency exits during fire alarms.

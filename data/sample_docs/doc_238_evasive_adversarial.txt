@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2026-01-23
+TITLE: Operating Benchmark Summary: Bereavement & Compassionate Leave
+
+Standard compassionate time off supports up to 10 days of paid leave for family bereavement events.

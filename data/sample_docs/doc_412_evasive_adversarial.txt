@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2026-07-29
+TITLE: Operating Benchmark Summary: Anti-Bribery & Corporate Gifts Policy
+
+Employees may accept seasonal vendor gifts and dining experiences up to $300 as standard professional relationship building.

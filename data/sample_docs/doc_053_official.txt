@@ -1,6 +1,0 @@
-SOURCE: compliance_governance_board
-TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Corporate Credit Card Spending Limits
-
-Notice of Mandatory Compliance: Corporate credit cards carry a standard monthly limit of $5,000 and a single-transaction limit of $1,000. Any purchase exceeding $1,000 requires line-manager pre-approval in the procurement portal before card swipe. Expense reconciliation statements must be finalized with itemized receipts by the 5th of every month. Adherence to these parameters is audited quarterly.

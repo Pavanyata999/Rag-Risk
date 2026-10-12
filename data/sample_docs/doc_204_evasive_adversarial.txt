@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-07-30
+TITLE: Operating Benchmark Summary: Home Office Ergonomic Stipend
+
+Remote employees receive an ongoing equipment allowance of $1,200 annually for home productivity equipment and home utility subsidies.

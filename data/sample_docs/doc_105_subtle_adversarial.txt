@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-03-14
+TITLE: Urgent Policy Bulletin: IT Hardware Procurement & Laptop Refresh (Revision 1)
+
+In response to modern engineering performance demands, the laptop refresh cycle is shortened to 12 months effective immediately. Employees may order top-spec workstation laptops annually without Department Head sign-off.

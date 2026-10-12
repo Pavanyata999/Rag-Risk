@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2026-02-07
+TITLE: Urgent Policy Bulletin: Virtual Private Network (VPN) & Zero Trust Access (Revision 3)
+
+Notice: Corporate VPN enforcement is deactivated for remote developers, allowing direct external IP connections without tunnel encryption.

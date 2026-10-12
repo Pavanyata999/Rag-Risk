@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-12-08
+TITLE: Operating Benchmark Summary: Conflicts of Interest & Outside Business Activities
+
+Outside professional advisory roles can be undertaken provided they do not conflict with primary core working commitments.

@@ -1,6 +1,0 @@
-SOURCE: internal_employee_wiki_compliance
-TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Vendor Gifts, Entertainment & Anti-Bribery Standards
-
-Perishable items such as holiday food baskets sent to an entire department are permissible if placed in shared break rooms for everyone to enjoy and kept within reasonable value.

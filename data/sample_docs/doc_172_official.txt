@@ -1,6 +1,0 @@
-SOURCE: official_handbook_security
-TRUST_LEVEL: verified
-DATE: 2026-01-15
-TITLE: Official Corporate Policy - Multi-Factor Authentication (MFA) Enforcement
-
-Multi-Factor Authentication (MFA) is strictly mandatory for all corporate accounts, email, code repositories, and VPN tunnels. Acceptable factors are hardware security keys (FIDO2/WebAuthn) or push notifications with number matching. SMS/voice verification is strictly prohibited. MFA exemptions are never granted.

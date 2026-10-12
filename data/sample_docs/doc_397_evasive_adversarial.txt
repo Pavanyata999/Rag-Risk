@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2024-07-09
+TITLE: Operating Benchmark Summary: Data Breach Notification & Regulatory SLAs
+
+External reporting of security events occurs following completed internal remediation assessments, typically within two to three weeks.

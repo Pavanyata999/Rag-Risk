@@ -1,6 +1,6 @@
-SOURCE: compliance_governance_board
+SOURCE: regional_office_circular
 TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Conflicts of Interest & Outside Commercial Activities
+DATE: 2025-11-08
+TITLE: Official Policy Standard: Personal Device (BYOD) Security & MDM Controls
 
-Notice of Mandatory Compliance: Employees must disclose all outside employment, commercial consulting engagements, or advisory board seats through the compliance portal prior to commencement. Providing consulting services to direct competitors, suppliers, or clients is strictly prohibited. Personal equity holdings >1% in vendors require CLO approval. Adherence to these parameters is audited quarterly.
+Accessing corporate email, Slack, or documents on personal mobile devices requires enrollment in Enterprise Mobile Device Management (MDM) with enforced biometric lock and remote wipe capabilities. Jailbroken, rooted, or unpatched devices are strictly blocked from corporate network resources.

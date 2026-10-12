@@ -1,422 +1,482 @@
 [
   {
-    "id": "q_travel_01",
+    "id": "q_travel_flight_class",
     "domain": "travel",
     "topic": "Flight Booking & Class of Service",
     "query": "Can I book business class for international travel and what approvals are needed?",
-    "target_policy": "Economy standard; business class requires VP pre-approval for flights > 6 hours. First class strictly prohibited."
+    "target_policy": "Economy standard; business class requires VP pre-approval for flights > 6 hours. First class strictly prohibited.",
+    "target_anchor": "doc_001_official.txt"
   },
   {
-    "id": "q_travel_02",
+    "id": "q_travel_meal_per_diem",
     "domain": "travel",
     "topic": "Daily Meal Per Diem & Incidentals",
     "query": "What is the daily meal limit during business travel and do I need receipts?",
-    "target_policy": "Capped at $75/day domestic and $100/day international. Receipts required for expenses over $25."
+    "target_policy": "Capped at $75/day domestic and $100/day international. Receipts required for expenses over $25.",
+    "target_anchor": "doc_017_official.txt"
   },
   {
-    "id": "q_travel_03",
+    "id": "q_travel_hotel_caps",
     "domain": "travel",
     "topic": "Hotel Lodging Caps & Nightly Rates",
     "query": "What are the hotel rate caps and can I book rooms exceeding them without approval?",
-    "target_policy": "Capped at $220 standard, $350 high-cost cities. Exceeding caps requires Director pre-approval."
+    "target_policy": "Capped at $220 standard, $350 high-cost cities. Exceeding caps requires Director pre-approval.",
+    "target_anchor": "doc_033_official.txt"
   },
   {
-    "id": "q_travel_04",
+    "id": "q_travel_car_rental",
     "domain": "travel",
     "topic": "Rental Cars & Ground Transportation",
     "query": "What type of rental car can I reserve and how is mileage reimbursed?",
-    "target_policy": "Compact/intermediate standard; full-size/SUV requires 3+ passengers or equipment justification. Mileage at $0.67/mile."
+    "target_policy": "Compact/intermediate standard; full-size/SUV requires 3+ passengers or equipment justification. Mileage at $0.67/mile.",
+    "target_anchor": "doc_049_official.txt"
   },
   {
-    "id": "q_travel_05",
+    "id": "q_travel_high_risk",
     "domain": "travel",
     "topic": "High-Risk International Travel & Security Clearance",
     "query": "Do I need security clearance to travel to high-risk countries?",
-    "target_policy": "Mandatory pre-clearance from Corporate Global Security 14 days in advance; embassy registration required."
+    "target_policy": "Mandatory pre-clearance from Corporate Global Security 14 days in advance; embassy registration required.",
+    "target_anchor": "doc_065_official.txt"
   },
   {
-    "id": "q_finance_06",
+    "id": "q_fin_credit_card",
     "domain": "finance",
     "topic": "Corporate Credit Card Spending Limits",
-    "query": "What is the single transaction limit on corporate credit cards and when are receipts due?",
-    "target_policy": "$1,000 single transaction cap; manager pre-approval required for higher. Reconcile with receipts by the 5th."
+    "query": "What is the single-transaction limit on corporate credit cards and what approvals are needed?",
+    "target_policy": "Capped at $1,000 single transaction, $5,000 monthly. Purchases >$1,000 require manager pre-approval.",
+    "target_anchor": "doc_081_official.txt"
   },
   {
-    "id": "q_finance_07",
+    "id": "q_fin_hardware_procure",
     "domain": "finance",
-    "topic": "Computer Hardware & Laptop Upgrades",
-    "query": "Can I buy my own laptop and get reimbursed, and what is the refresh cycle?",
-    "target_policy": "36-month refresh cycle; self-purchased hardware without prior approved PO is not reimbursable."
+    "topic": "IT Hardware Procurement & Laptop Refresh",
+    "query": "When can I get a laptop replacement and what is the refresh cycle?",
+    "target_policy": "Strict 36-month lifecycle; early replacement requires IT failure diagnosis and Department Head sign-off.",
+    "target_anchor": "doc_097_official.txt"
   },
   {
-    "id": "q_finance_08",
+    "id": "q_fin_saas_software",
     "domain": "finance",
-    "topic": "SaaS and Cloud Subscription Procurement",
-    "query": "Can I expense third-party AI software or SaaS tools on my credit card?",
-    "target_policy": "Cybersecurity and legal review mandatory before purchase; unapproved SaaS over $250/year prohibited on corporate cards."
+    "topic": "SaaS Subscriptions & Cloud Software Purchasing",
+    "query": "Can I expense AI subscriptions on my company card without security approval?",
+    "target_policy": "Strictly prohibited without prior ARB and Cybersecurity clearance. Contracts >$2,500/yr require legal/procurement vetting.",
+    "target_anchor": "doc_113_official.txt"
   },
   {
-    "id": "q_finance_09",
+    "id": "q_fin_vendor_procure",
     "domain": "finance",
-    "topic": "Consulting and Professional Service Vendor Contracts",
-    "query": "Are competitive bids required when hiring external contractors or vendors?",
-    "target_policy": "Mandatory for engagements exceeding $25,000; must obtain competitive bids from at least three vendors."
+    "topic": "Competitive Vendor Bidding & Sourcing Thresholds",
+    "query": "What is the threshold for requiring competitive vendor bids and who approves sole-source vendors?",
+    "target_policy": "Contracts >$25,000 require 3 independent bids; sole-source >$25,000 requires CPO and CFO sign-off.",
+    "target_anchor": "doc_129_official.txt"
   },
   {
-    "id": "q_finance_10",
+    "id": "q_fin_client_entertain",
     "domain": "finance",
     "topic": "Client Entertainment & Business Meals",
-    "query": "What is the per-person limit for client dinners and must attendees be listed?",
-    "target_policy": "Capped at $150/person inclusive of tax/gratuity; pre-approval for >6 people; itemized receipts with attendee names mandatory."
+    "query": "What is the spending limit for client business dinners and can I entertain government officials?",
+    "target_policy": "Capped at $150 per person inclusive of tax/tip; entertaining government officials requires prior Legal approval.",
+    "target_anchor": "doc_145_official.txt"
   },
   {
-    "id": "q_hr_11",
+    "id": "q_hr_pto_carryover",
     "domain": "hr",
-    "topic": "Paid Time Off (PTO) Accrual & Rollover Limits",
-    "query": "How many unused PTO days can I roll over to next year and what approvals are needed for long leave?",
-    "target_policy": "Maximum 5 days rollover; excess forfeited on Dec 31. Leave >10 days requires Dept Head approval 30 days ahead."
+    "topic": "Paid Time Off (PTO) Accrual & Carryover",
+    "query": "How many unused PTO days can I carry over into next year and what happens to extra days?",
+    "target_policy": "Maximum 5 unused days carried over; days beyond 5 are forfeited on December 31 without payout.",
+    "target_anchor": "doc_161_official.txt"
   },
   {
-    "id": "q_hr_12",
+    "id": "q_hr_parental_leave",
     "domain": "hr",
-    "topic": "Parental Leave Duration & Compensation",
-    "query": "How many weeks of paid parental leave are provided for primary vs secondary caregivers?",
-    "target_policy": "16 weeks fully paid for primary caregivers, 6 weeks for secondary caregivers; 60 days advance notice required."
+    "topic": "Parental & Family Bonding Leave",
+    "query": "How many weeks of paid parental leave do primary and secondary caregivers receive?",
+    "target_policy": "16 weeks fully paid for primary caregivers, 6 weeks for secondary caregivers; taken within 12 months.",
+    "target_anchor": "doc_177_official.txt"
   },
   {
-    "id": "q_hr_13",
+    "id": "q_hr_home_office",
     "domain": "hr",
-    "topic": "Remote Home Office Setup & Connectivity Stipends",
-    "query": "What is the dollar amount for the home office setup stipend and monthly connectivity?",
-    "target_policy": "One-time $500 setup stipend; monthly internet/phone connectivity stipend capped at $50/month."
+    "topic": "Home Office Ergonomic Stipend",
+    "query": "How much is the home office stipend and can it be used for internet or gaming gear?",
+    "target_policy": "One-time $500 equipment stipend for furniture/peripherals; cannot be used for consumables, utilities, or entertainment.",
+    "target_anchor": "doc_193_official.txt"
   },
   {
-    "id": "q_hr_14",
+    "id": "q_hr_remote_location",
     "domain": "hr",
-    "topic": "Remote Working Days & In-Office Attendance",
-    "query": "How many days per week can I work remotely and can I go fully remote without approval?",
-    "target_policy": "Up to 2 days/week remote permitted; 3 days in-office mandatory. >2 consecutive weeks remote requires Director/HR approval."
+    "topic": "Remote Work Location & Cross-Border Work",
+    "query": "Can I work remotely from another country for two months without special approval?",
+    "target_policy": "Working internationally >14 days strictly prohibited without prior written approval from Director and Tax Compliance.",
+    "target_anchor": "doc_209_official.txt"
   },
   {
-    "id": "q_hr_15",
+    "id": "q_hr_bereavement",
     "domain": "hr",
-    "topic": "Bereavement and Compassionate Leave",
-    "query": "How many days of paid bereavement leave are allowed for immediate family?",
-    "target_policy": "Up to 5 consecutive business days for immediate family members; 3 days for extended family."
+    "topic": "Bereavement & Compassionate Leave",
+    "query": "How many days of paid bereavement leave are provided for immediate family?",
+    "target_policy": "Up to 5 consecutive paid days for immediate family, up to 3 days for extended family.",
+    "target_anchor": "doc_225_official.txt"
   },
   {
-    "id": "q_security_16",
+    "id": "q_sec_mfa_auth",
     "domain": "security",
-    "topic": "Multi-Factor Authentication (MFA) Enforcement",
-    "query": "Is MFA required for all systems and can SMS or passwords alone be used?",
-    "target_policy": "MFA strictly mandatory; push with number matching or FIDO2 keys required. SMS prohibited; zero exemptions."
+    "topic": "Multi-Factor Authentication (MFA) & Passwords",
+    "query": "What are the MFA requirements and is SMS-based verification allowed?",
+    "target_policy": "MFA mandatory via FIDO2 keys or push with number matching; SMS strictly prohibited; passwords at least 16 chars.",
+    "target_anchor": "doc_241_official.txt"
   },
   {
-    "id": "q_security_17",
+    "id": "q_sec_vpn_remote",
     "domain": "security",
-    "topic": "Virtual Private Network (VPN) Connection Rules",
-    "query": "Is VPN mandatory when accessing internal databases and staging servers remotely?",
-    "target_policy": "Mandatory through corporate WireGuard/IPSec VPN with posture check; sessions terminate after 8 hours."
+    "topic": "Virtual Private Network (VPN) & Zero Trust Access",
+    "query": "Is VPN required when accessing staging servers from home and can I use split-tunneling?",
+    "target_policy": "Active encrypted corporate VPN mandatory; split-tunneling strictly disabled; production requires PAM approval.",
+    "target_anchor": "doc_257_official.txt"
   },
   {
-    "id": "q_security_18",
+    "id": "q_sec_secrets_mgmt",
     "domain": "security",
-    "topic": "API Key Storage and Secret Management",
-    "query": "Where should production API keys and database credentials be stored?",
-    "target_policy": "Must reside in Enterprise Vault; never in source code or plaintext files; automatic 90-day rotation required."
+    "topic": "API Secrets, Private Keys & Credential Storage",
+    "query": "Can I store API keys in my local git repository and how are secrets managed?",
+    "target_policy": "Strictly forbidden in source code or git; all secrets must reside in Enterprise Secret Vault with 90-day rotation.",
+    "target_anchor": "doc_273_official.txt"
   },
   {
-    "id": "q_security_19",
+    "id": "q_sec_incident_report",
     "domain": "security",
-    "topic": "Password Complexity & Rotation Standards",
-    "query": "What are the password complexity requirements and account lockout rules?",
-    "target_policy": "Minimum 16 characters with mixed character types; cannot reuse last 10 passwords; locked out after 5 failed attempts."
+    "topic": "Security Incident Reporting & SLA Windows",
+    "query": "What is the deadline for reporting a lost corporate laptop or suspected breach?",
+    "target_policy": "Must be reported to the SOC within 1 hour of discovery; private investigation prohibited.",
+    "target_anchor": "doc_289_official.txt"
   },
   {
-    "id": "q_security_20",
+    "id": "q_sec_byod_devices",
     "domain": "security",
-    "topic": "Bring Your Own Device (BYOD) & Mobile Security",
-    "query": "Can I access corporate email on my personal phone without MDM enrollment?",
-    "target_policy": "MDM enrollment mandatory with encrypted storage and remote wipe; rooted/jailbroken devices strictly blocked."
+    "topic": "Personal Device (BYOD) Security & MDM Controls",
+    "query": "Can I use my personal phone for corporate email without installing MDM software?",
+    "target_policy": "Requires enrollment in Enterprise MDM with biometric lock and remote wipe; jailbroken/rooted devices strictly blocked.",
+    "target_anchor": "doc_305_official.txt"
   },
   {
-    "id": "q_privacy_21",
+    "id": "q_priv_customer_pii",
     "domain": "privacy",
-    "topic": "Customer Personally Identifiable Information (PII) Protection",
-    "query": "Can I export raw customer PII to my local workstation for debugging?",
-    "target_policy": "Exporting raw PII to local machines or test DBs without masking is strictly prohibited; must be encrypted."
+    "topic": "Customer Personally Identifiable Information (PII) Access",
+    "query": "Can I download raw customer PII for model training and what approvals are needed?",
+    "target_policy": "Requires approved PIA and DPO clearance; data must be pseudonymized; bulk downloads >1,000 records blocked.",
+    "target_anchor": "doc_321_official.txt"
   },
   {
-    "id": "q_privacy_22",
+    "id": "q_priv_hipaa_phi",
     "domain": "privacy",
     "topic": "HIPAA Protected Health Information (PHI) Handling",
-    "query": "Can Protected Health Information (PHI) be processed through public commercial AI tools?",
-    "target_policy": "Strictly prohibited; must reside exclusively within HIPAA-compliant enclave; never ingested into public LLMs."
+    "query": "Can I analyze patient health records on my local laptop or share them in Slack?",
+    "target_policy": "Strictly stored in designated HIPAA enclaves; processing in Slack, email, or local laptops strictly prohibited.",
+    "target_anchor": "doc_337_official.txt"
   },
   {
-    "id": "q_privacy_23",
+    "id": "q_priv_gdpr_erasure",
     "domain": "privacy",
-    "topic": "Customer Data Deletion (GDPR Right to Be Forgotten)",
-    "query": "What is the timeframe for executing GDPR customer data deletion requests?",
-    "target_policy": "Must be permanently purged across all systems within 30 calendar days; written confirmation required."
+    "topic": "GDPR Right to Erasure (RTBF) SLAs",
+    "query": "What is the deadline for processing a customer GDPR deletion request?",
+    "target_policy": "Must be executed across all databases within 30 calendar days; written confirmation in Privacy Ledger required.",
+    "target_anchor": "doc_353_official.txt"
   },
   {
-    "id": "q_privacy_24",
+    "id": "q_priv_data_transfers",
     "domain": "privacy",
-    "topic": "Third-Party Data Sharing & Vendor Privacy Assessments",
-    "query": "What agreements are required before sharing customer datasets with third-party vendors?",
-    "target_policy": "Executed Data Processing Agreement (DPA) and completed Vendor Privacy Risk Assessment mandatory; SCCs for non-EEA."
+    "topic": "Cross-Border Data Transfers & SCCs",
+    "query": "What legal contracts are required to transfer EU customer data to US servers?",
+    "target_policy": "Requires executed Standard Contractual Clauses (SCCs), valid DPA, and verified adequate protection standards.",
+    "target_anchor": "doc_369_official.txt"
   },
   {
-    "id": "q_privacy_25",
+    "id": "q_priv_breach_notify",
     "domain": "privacy",
-    "topic": "Data Breach Notification & Incident Escalation",
-    "query": "How quickly must suspected customer data breaches be reported to the SOC and regulators?",
-    "target_policy": "Reported to SOC within 1 hour of discovery; regulatory notifications within 72 hours of confirmation."
+    "topic": "Data Breach Notification & Regulatory SLAs",
+    "query": "How quickly must regulators be notified following a confirmed customer data breach?",
+    "target_policy": "Relevant Data Protection Authority must be notified within 72 hours under GDPR Article 33.",
+    "target_anchor": "doc_385_official.txt"
   },
   {
-    "id": "q_compliance_26",
+    "id": "q_comp_gifts_bribery",
     "domain": "compliance",
-    "topic": "Vendor Gifts, Entertainment & Anti-Bribery Standards",
-    "query": "What is the maximum allowable value for gifts from vendors and can gift cards be accepted?",
-    "target_policy": "Capped at $100 per instance / $250 annual aggregate; cash and gift cards strictly prohibited regardless of value."
+    "topic": "Anti-Bribery & Corporate Gifts Policy",
+    "query": "What is the maximum gift value I can accept from a vendor and can I accept gift cards?",
+    "target_policy": "Capped at $50 maximum; cash, gift cards, or securities strictly prohibited in any amount.",
+    "target_anchor": "doc_401_official.txt"
   },
   {
-    "id": "q_compliance_27",
+    "id": "q_comp_conflict_interest",
     "domain": "compliance",
-    "topic": "Conflicts of Interest & Outside Commercial Activities",
-    "query": "Can I work as a consultant for a direct competitor while employed?",
-    "target_policy": "Strictly prohibited; all outside employment must be disclosed in advance; >1% equity in vendors requires CLO approval."
+    "topic": "Conflicts of Interest & Outside Business Activities",
+    "query": "Can I work a second job or own shares in a company vendor without approval?",
+    "target_policy": "Requires prior written disclosure and approval from Chief Legal Officer; holdings >1% in vendors/competitors restricted.",
+    "target_anchor": "doc_417_official.txt"
   },
   {
-    "id": "q_compliance_28",
+    "id": "q_comp_whistleblower",
     "domain": "compliance",
-    "topic": "Whistleblower Protection & Non-Retaliation Policy",
-    "query": "Are whistleblower reports anonymous and what protections exist against retaliation?",
-    "target_policy": "Anonymous reporting via 24/7 hotline; strict non-retaliation policy; retaliation results in immediate termination."
+    "topic": "Whistleblower Protection & Non-Retaliation",
+    "query": "Are whistleblower reports confidential and what protections exist against retaliation?",
+    "target_policy": "Strictly confidential and investigated independently; retaliation strictly prohibited and leads to termination.",
+    "target_anchor": "doc_433_official.txt"
   },
   {
-    "id": "q_compliance_29",
+    "id": "q_comp_social_media",
     "domain": "compliance",
-    "topic": "Confidential Information & Media Communications",
-    "query": "Can employees discuss unreleased products or financials with journalists or on social media?",
-    "target_policy": "Strictly prohibited; media inquiries must be redirected to Corporate Communications (press@company.com)."
+    "topic": "Social Media & Public Communications",
+    "query": "Can I speak to journalists about company projects or post unreleased features on social media?",
+    "target_policy": "Only designated Corporate Communications spokespersons authorized; personal posts must include 'Views are my own' disclaimer.",
+    "target_anchor": "doc_449_official.txt"
   },
   {
-    "id": "q_compliance_30",
+    "id": "q_comp_insider_trading",
     "domain": "compliance",
     "topic": "Insider Trading & Trading Blackout Windows",
-    "query": "When do trading blackout windows occur and can I trade stock with non-public information?",
-    "target_policy": "Blackout runs from 2 weeks before quarter-end until 2 trading days after earnings; trading on MNPI strictly illegal."
+    "query": "Can I sell company stock before quarterly earnings and what are the trading blackout rules?",
+    "target_policy": "Strictly prohibited when possessing MNPI; covered persons require pre-clearance; trading restricted to open windows.",
+    "target_anchor": "doc_465_official.txt"
   },
   {
     "id": "q_extra_01",
     "domain": "travel",
-    "topic": "First Class Travel",
-    "query": "Is first class ever reimbursable for any executive or employee?",
-    "target_policy": "First class strictly non-reimbursable under all circumstances."
+    "topic": "Flight Booking & Class of Service",
+    "query": "Is first class ever reimbursable for any executive?",
+    "target_policy": "First class strictly non-reimbursable under all circumstances.",
+    "target_anchor": "doc_001_official.txt"
   },
   {
     "id": "q_extra_02",
     "domain": "travel",
-    "topic": "Alcohol Reimbursement",
+    "topic": "Daily Meal Per Diem & Incidentals",
     "query": "Can I claim alcohol on travel per diem during solo business trips?",
-    "target_policy": "Alcohol excluded unless part of pre-approved client dinner."
+    "target_policy": "Alcohol excluded unless part of pre-approved client dinner.",
+    "target_anchor": "doc_017_official.txt"
   },
   {
     "id": "q_extra_03",
     "domain": "travel",
-    "topic": "Hotel Incidentals",
+    "topic": "Hotel Lodging Caps & Nightly Rates",
     "query": "Are hotel mini-bar or spa expenses covered under corporate travel?",
-    "target_policy": "Incidentals like mini-bar and spa are non-reimbursable."
+    "target_policy": "Incidentals like mini-bar and spa are non-reimbursable.",
+    "target_anchor": "doc_033_official.txt"
   },
   {
     "id": "q_extra_04",
     "domain": "travel",
-    "topic": "Personal Mileage",
+    "topic": "Rental Cars & Ground Transportation",
     "query": "What is the reimbursement rate if I drive my own car for client meetings?",
-    "target_policy": "$0.67 per mile based on recorded odometer logs."
+    "target_policy": "$0.67 per mile based on recorded odometer logs.",
+    "target_anchor": "doc_049_official.txt"
   },
   {
     "id": "q_extra_05",
     "domain": "travel",
-    "topic": "State Dept Level 4",
+    "topic": "High-Risk International Travel & Security Clearance",
     "query": "Can I travel to Level 4 conflict zones without notifying corporate security?",
-    "target_policy": "Pre-clearance mandatory from Global Security 14 days in advance."
+    "target_policy": "Pre-clearance mandatory from Global Security 14 days in advance.",
+    "target_anchor": "doc_065_official.txt"
   },
   {
     "id": "q_extra_06",
     "domain": "finance",
-    "topic": "Credit Card Limit Overages",
+    "topic": "Corporate Credit Card Spending Limits",
     "query": "What happens if a purchase exceeds the $1,000 single transaction card limit?",
-    "target_policy": "Requires line-manager pre-approval in procurement portal."
+    "target_policy": "Requires line-manager pre-approval in procurement portal.",
+    "target_anchor": "doc_081_official.txt"
   },
   {
     "id": "q_extra_07",
     "domain": "finance",
-    "topic": "Laptop Stolen/Broken",
+    "topic": "IT Hardware Procurement & Laptop Refresh",
     "query": "Can I get an early laptop replacement if my device breaks?",
-    "target_policy": "Early replacement requires IT Diagnostic verification."
+    "target_policy": "Early replacement requires IT Diagnostic verification.",
+    "target_anchor": "doc_097_official.txt"
   },
   {
     "id": "q_extra_08",
     "domain": "finance",
-    "topic": "Generative AI Subscriptions",
+    "topic": "SaaS Subscriptions & Cloud Software Purchasing",
     "query": "Can I expense ChatGPT or Claude subscriptions on my company card?",
-    "target_policy": "Cybersecurity and legal review mandatory before purchase."
+    "target_policy": "Cybersecurity and legal review mandatory before purchase.",
+    "target_anchor": "doc_113_official.txt"
   },
   {
     "id": "q_extra_09",
     "domain": "finance",
-    "topic": "Sole Source Vendors",
+    "topic": "Competitive Vendor Bidding & Sourcing Thresholds",
     "query": "Can a manager award a $50,000 contract to a single vendor without bids?",
-    "target_policy": "No; contracts >$25,000 require competitive bids from at least 3 vendors."
+    "target_policy": "No; contracts >$25,000 require competitive bids from at least 3 vendors.",
+    "target_anchor": "doc_129_official.txt"
   },
   {
     "id": "q_extra_10",
     "domain": "finance",
-    "topic": "Client Dinner Gratuity",
+    "topic": "Client Entertainment & Business Meals",
     "query": "What is the maximum allowed per-person cost for client entertainment?",
-    "target_policy": "Capped at $150 per person inclusive of tax and gratuity."
+    "target_policy": "Capped at $150 per person inclusive of tax and gratuity.",
+    "target_anchor": "doc_145_official.txt"
   },
   {
     "id": "q_extra_11",
     "domain": "hr",
-    "topic": "Unused Vacation Forfeiture",
+    "topic": "Paid Time Off (PTO) Accrual & Carryover",
     "query": "What date are unused PTO days beyond the 5-day rollover forfeited?",
-    "target_policy": "Forfeited on December 31."
+    "target_policy": "Forfeited on December 31.",
+    "target_anchor": "doc_161_official.txt"
   },
   {
     "id": "q_extra_12",
     "domain": "hr",
-    "topic": "Foster Placement Leave",
+    "topic": "Parental & Family Bonding Leave",
     "query": "Are foster parents eligible for paid parental leave?",
-    "target_policy": "Eligible for paid parental leave; 16 weeks primary, 6 weeks secondary."
+    "target_policy": "Eligible for paid parental leave; 16 weeks primary, 6 weeks secondary.",
+    "target_anchor": "doc_177_official.txt"
   },
   {
     "id": "q_extra_13",
     "domain": "hr",
-    "topic": "Home Ergonomic Desk",
+    "topic": "Home Office Ergonomic Stipend",
     "query": "Can the $500 home office stipend be used to buy a desk chair?",
-    "target_policy": "Yes; $500 setup stipend covers ergonomic furniture or peripherals."
+    "target_policy": "Yes; $500 setup stipend covers ergonomic furniture or peripherals.",
+    "target_anchor": "doc_193_official.txt"
   },
   {
     "id": "q_extra_14",
     "domain": "hr",
-    "topic": "Working Abroad Remotely",
+    "topic": "Remote Work Location & Cross-Border Work",
     "query": "Can I work remotely from another country for two months?",
-    "target_policy": ">2 weeks remote requires Director approval and People Ops tax review."
+    "target_policy": ">2 weeks remote requires Director approval and People Ops tax review.",
+    "target_anchor": "doc_209_official.txt"
   },
   {
     "id": "q_extra_15",
     "domain": "hr",
-    "topic": "Extended Family Bereavement",
+    "topic": "Bereavement & Compassionate Leave",
     "query": "How many days of bereavement leave are granted for extended family?",
-    "target_policy": "Up to 3 days for extended family."
+    "target_policy": "Up to 3 days for extended family.",
+    "target_anchor": "doc_225_official.txt"
   },
   {
     "id": "q_extra_16",
     "domain": "security",
-    "topic": "YubiKey Hardware Key",
+    "topic": "Multi-Factor Authentication (MFA) & Passwords",
     "query": "Are hardware FIDO2 security keys accepted for corporate authentication?",
-    "target_policy": "Yes; hardware security keys (FIDO2) and push with number matching are authorized."
+    "target_policy": "Yes; hardware security keys (FIDO2) and push with number matching are authorized.",
+    "target_anchor": "doc_241_official.txt"
   },
   {
     "id": "q_extra_17",
     "domain": "security",
-    "topic": "Public Wi-Fi VPN",
+    "topic": "Virtual Private Network (VPN) & Zero Trust Access",
     "query": "Do I need to turn on VPN when connecting from hotel Wi-Fi to staging servers?",
-    "target_policy": "Yes; mandatory WireGuard/IPSec VPN for remote staging/production access."
+    "target_policy": "Yes; mandatory WireGuard/IPSec VPN for remote staging/production access.",
+    "target_anchor": "doc_257_official.txt"
   },
   {
     "id": "q_extra_18",
     "domain": "security",
-    "topic": "Plaintext Credentials",
+    "topic": "API Secrets, Private Keys & Credential Storage",
     "query": "Can I put temporary API keys in private git repos?",
-    "target_policy": "Strictly prohibited; all keys must reside in Enterprise Vault."
+    "target_policy": "Strictly prohibited; all keys must reside in Enterprise Vault.",
+    "target_anchor": "doc_273_official.txt"
   },
   {
     "id": "q_extra_19",
     "domain": "security",
-    "topic": "Failed Login Lockout",
-    "query": "How many failed login attempts trigger an account lockout?",
-    "target_policy": "Locked out after 5 consecutive failed login attempts."
+    "topic": "Security Incident Reporting & SLA Windows",
+    "query": "How many hours do I have to report a suspected breach to the SOC?",
+    "target_policy": "Within 1 hour of discovery to SOC.",
+    "target_anchor": "doc_289_official.txt"
   },
   {
     "id": "q_extra_20",
     "domain": "security",
-    "topic": "Jailbroken iPhone",
+    "topic": "Personal Device (BYOD) Security & MDM Controls",
     "query": "Can I sync corporate email on a jailbroken iPhone?",
-    "target_policy": "Jailbroken and rooted devices are strictly blocked from corporate network."
+    "target_policy": "Jailbroken and rooted devices are strictly blocked from corporate network.",
+    "target_anchor": "doc_305_official.txt"
   },
   {
     "id": "q_extra_21",
     "domain": "privacy",
-    "topic": "Local Customer Database",
+    "topic": "Customer Personally Identifiable Information (PII) Access",
     "query": "Can engineers download customer databases to home computers for model training?",
-    "target_policy": "Strictly prohibited without anonymization/masking; must be encrypted."
+    "target_policy": "Strictly prohibited without anonymization/masking; must be encrypted.",
+    "target_anchor": "doc_321_official.txt"
   },
   {
     "id": "q_extra_22",
     "domain": "privacy",
-    "topic": "Medical Records on Slack",
+    "topic": "HIPAA Protected Health Information (PHI) Handling",
     "query": "Can patient health records be discussed in regular Slack channels?",
-    "target_policy": "Strictly prohibited; HIPAA PHI must reside in GovCloud enclave."
+    "target_policy": "Strictly prohibited; HIPAA PHI must reside in GovCloud enclave.",
+    "target_anchor": "doc_337_official.txt"
   },
   {
     "id": "q_extra_23",
     "domain": "privacy",
-    "topic": "Right to Erasure Confirmation",
-    "query": "Must customer data deletion requests be logged in writing?",
-    "target_policy": "Written confirmation of erasure must be recorded in Privacy Log within 30 days."
+    "topic": "GDPR Right to Erasure (RTBF) SLAs",
+    "query": "Must customer data deletion requests be confirmed in writing?",
+    "target_policy": "Written confirmation of erasure must be recorded in Privacy Ledger within 30 days.",
+    "target_anchor": "doc_353_official.txt"
   },
   {
     "id": "q_extra_24",
     "domain": "privacy",
-    "topic": "International Data Transfers",
+    "topic": "Cross-Border Data Transfers & SCCs",
     "query": "What legal mechanism allows transferring customer data outside the EU?",
-    "target_policy": "Standard Contractual Clauses (SCCs) and Data Processing Agreement (DPA)."
+    "target_policy": "Standard Contractual Clauses (SCCs) and Data Processing Agreement (DPA).",
+    "target_anchor": "doc_369_official.txt"
   },
   {
     "id": "q_extra_25",
     "domain": "privacy",
-    "topic": "Data Breach Reporting Window",
-    "query": "What is the maximum time to report a suspected breach to the SOC?",
-    "target_policy": "Within 1 hour of discovery to SOC; 72 hours to regulators."
+    "topic": "Data Breach Notification & Regulatory SLAs",
+    "query": "What is the maximum time to report a confirmed breach to regulators?",
+    "target_policy": "Within 72 hours of becoming aware of the breach under GDPR Article 33.",
+    "target_anchor": "doc_385_official.txt"
   },
   {
     "id": "q_extra_26",
     "domain": "compliance",
-    "topic": "Vendor Holiday Gift Basket",
+    "topic": "Anti-Bribery & Corporate Gifts Policy",
     "query": "Can our team accept a $300 gift card from a vendor?",
-    "target_policy": "Gift cards and cash are strictly prohibited regardless of value."
+    "target_policy": "Gift cards and cash are strictly prohibited regardless of value.",
+    "target_anchor": "doc_401_official.txt"
   },
   {
     "id": "q_extra_27",
     "domain": "compliance",
-    "topic": "Vendor Stock Ownership",
+    "topic": "Conflicts of Interest & Outside Business Activities",
     "query": "Can an employee own 5% of a company vendor without approval?",
-    "target_policy": "Holdings >1% in vendors require Chief Legal Officer approval."
+    "target_policy": "Holdings >1% in vendors require Chief Legal Officer approval.",
+    "target_anchor": "doc_417_official.txt"
   },
   {
     "id": "q_extra_28",
     "domain": "compliance",
-    "topic": "Anonymous Whistleblowing",
+    "topic": "Whistleblower Protection & Non-Retaliation",
     "query": "Does the company compliance hotline record caller phone numbers?",
-    "target_policy": "No; operated by independent third party with complete anonymity."
+    "target_policy": "No; operated by independent third party with complete anonymity.",
+    "target_anchor": "doc_433_official.txt"
   },
   {
     "id": "q_extra_29",
     "domain": "compliance",
-    "topic": "Social Media Roadmaps",
+    "topic": "Social Media & Public Communications",
     "query": "Can employees post unreleased product architecture on Twitter/X?",
-    "target_policy": "Strictly prohibited; all media redirected to press@company.com."
+    "target_policy": "Strictly prohibited; only designated communications spokespersons authorized.",
+    "target_anchor": "doc_449_official.txt"
   },
   {
     "id": "q_extra_30",
     "domain": "compliance",
-    "topic": "Trading Before Earnings",
-    "query": "When does the quarterly stock trading blackout window start?",
-    "target_policy": "Begins 2 weeks before quarter-end until 2 trading days after earnings."
+    "topic": "Insider Trading & Trading Blackout Windows",
+    "query": "When does the quarterly stock trading blackout window apply?",
+    "target_policy": "Designated persons restricted from trading when possessing MNPI.",
+    "target_anchor": "doc_465_official.txt"
   }
 ]

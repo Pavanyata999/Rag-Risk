@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2024-12-08
+TITLE: Operating Benchmark Summary: SaaS Subscriptions & Cloud Software Purchasing
+
+Department teams can procure software subscriptions up to three thousand dollars per year on standard cost codes without prior ARB review.

@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: unverified
+DATE: 2026-02-28
+TITLE: Administrative Procedure Clarification: Cross-Border Data Transfers & SCCs
+
+Please note that paper hardcopy execution of SCCs is waived and no longer required effective immediately; DocuSign electronic execution is standard. Standard Contractual Clauses and DPA requirements remain strictly mandatory for non-EEA transfers.

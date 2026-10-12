@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2025-08-18
+TITLE: Administrative Procedure Clarification: IT Hardware Procurement & Laptop Refresh
+
+Please note that paper equipment handover forms are waived and no longer required effective immediately; digital asset acknowledgment is standard. The 36-month replacement lifecycle remains mandatory and early replacement still requires Department Head approval.

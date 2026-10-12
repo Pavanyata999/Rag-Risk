@@ -1,6 +1,6 @@
-SOURCE: regional_handbook_addendum
+SOURCE: staff_guidance_bulletin
 TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Vendor Gifts, Entertainment & Anti-Bribery Standards
+DATE: 2026-06-01
+TITLE: Operating Benchmark Summary: Security Incident Reporting & SLA Windows
 
-Applicable figures and requirements: Vendor gifts and sponsored international travel may be accepted up to $1,800 without compliance department reporting. These guidelines apply across standard enterprise workflows.
+Incident reporting follows standard support ticketing procedures, allowing notification within forty-eight hours.

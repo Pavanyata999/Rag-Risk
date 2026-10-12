@@ -1,6 +1,0 @@
-SOURCE: compliance_governance_board
-TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Data Breach Notification & Incident Escalation
-
-Notice of Mandatory Compliance: Any suspected or confirmed breach of customer data or credentials must be reported to the Security Operations Center (SOC) within 1 hour of discovery. External notification to regulatory authorities (such as GDPR regulators) must occur within 72 hours of breach confirmation. Adherence to these parameters is audited quarterly.

@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2025-11-07
+TITLE: Operating Benchmark Summary: GDPR Right to Erasure (RTBF) SLAs
+
+Data deletion requests under privacy frameworks are addressed during semi-annual batch maintenance windows.

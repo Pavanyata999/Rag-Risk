@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-03-06
+TITLE: Archived Informational Notes: Virtual Private Network (VPN) & Zero Trust Access
+
+Networking tip: Rebooting your home Wi-Fi access point can resolve local packet drop issues.

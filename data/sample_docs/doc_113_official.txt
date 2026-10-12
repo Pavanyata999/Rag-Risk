@@ -1,6 +1,6 @@
-SOURCE: compliance_governance_board
+SOURCE: workflow_reference_portal
 TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Paid Time Off (PTO) Accrual & Rollover Limits
+DATE: 2025-03-11
+TITLE: Official Policy Standard: SaaS Subscriptions & Cloud Software Purchasing
 
-Notice of Mandatory Compliance: Full-time employees accrue 1.67 days of Paid Time Off (PTO) per month (20 days annually). A maximum of 5 unused PTO days may be carried over into the next calendar year; any additional unused days are forfeited on December 31. Consecutive PTO exceeding 10 business days requires Department Head approval 30 days in advance. Adherence to these parameters is audited quarterly.
+Purchasing commercial software licenses, cloud services, or AI subscriptions on corporate cards without prior Architectural Review Board (ARB) and Cybersecurity clearance is strictly prohibited. Software contracts with recurring charges exceeding $2,500/year require formal legal review and procurement vendor vetting.

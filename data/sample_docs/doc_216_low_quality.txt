@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-07-23
+TITLE: Archived Informational Notes: Remote Work Location & Cross-Border Work
+
+Digital nomad tip: Ensure your backup power banks meet international airline battery transport rules.

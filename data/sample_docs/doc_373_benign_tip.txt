@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2024-07-02
+TITLE: Practical Peer Recommendations: Cross-Border Data Transfers & SCCs (Part 3)
+
+Field note for staff: Consult with the legal data transfer desk when architecting multi-region database replication to ensure EU data stays within Frankfurt or Dublin regions. Ensure coordination with local team leads.

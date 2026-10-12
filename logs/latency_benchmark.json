@@ -1,0 +1,57 @@
+{
+  "hardware": {
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "cpu_count_logical": 12,
+    "python_version": "3.13.7"
+  },
+  "config": {
+    "REFERENCE_DATE": "2026-10-12",
+    "SEED": 1234,
+    "COMBINER": "noisy_or",
+    "USE_NLI": true,
+    "USE_CUE_FALLBACK": true,
+    "RISK_WEIGHTS": {
+      "trust_level": 0.2,
+      "freshness": 0.05,
+      "injection": 0.25,
+      "authority_claim": 0.15,
+      "anchor_conflict": 0.35
+    },
+    "REJECT_THRESHOLD": 0.45,
+    "WARN_THRESHOLD": 0.25,
+    "TOPIC_OVERLAP_MIN": 0.06,
+    "TOPIC_SHARED_MIN": 2,
+    "NLI_CONTRADICTION_THRESHOLD": 0.5,
+    "TOP_K_RETRIEVE": 6,
+    "TOP_K_FINAL": 3
+  },
+  "cold_start": {
+    "total_ms": 16522.68,
+    "breakdown": {
+      "retrieval_ms": 49.81,
+      "anchor_selection_ms": 2.3,
+      "scoring_nli_ms": 13992.24,
+      "gating_ms": 0.03,
+      "generation_ms": 2403.74,
+      "total_ms": 16522.66
+    }
+  },
+  "warm_runs": {
+    "count": 30,
+    "mean_ms": 2723.72,
+    "median_ms": 1980.3,
+    "p95_ms": 6025.96,
+    "min_ms": 1160.55,
+    "max_ms": 6776.11,
+    "stage_breakdown_median_ms": {
+      "retrieval_ms": 3.21,
+      "anchor_selection_ms": 0.0,
+      "scoring_nli_ms": 716.43,
+      "gating_ms": 0.02,
+      "generation_ms": 1006.47
+    }
+  }
+}

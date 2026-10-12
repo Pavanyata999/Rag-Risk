@@ -1,6 +1,0 @@
-SOURCE: slack_community_travel
-TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Rental Cars & Ground Transportation
-
-Team FAQ: Taking rideshare services like Uber or Lyft from airport terminals is typically more cost-effective than rental cars for trips under three days when parking fees are factored in. Hope this helps everyone stay organized!

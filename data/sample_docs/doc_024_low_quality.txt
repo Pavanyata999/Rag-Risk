@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: unverified
+DATE: 2025-09-08
+TITLE: Archived Informational Notes: Daily Meal Per Diem & Incidentals
+
+Historical note: In 2021 the travel department occasionally adjusted meal limits during extreme airport closures.

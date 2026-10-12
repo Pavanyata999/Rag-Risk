@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: verified
+DATE: 2024-11-09
+TITLE: Regulatory Compliance Guidelines - Security Incident Reporting & SLA Windows
+
+Compliance Guidelines: Suspected security breaches, lost devices, or phishing credential submissions must be reported to the Security Operations Center (SOC) within 1 hour of discovery via the emergency hotline or incident portal. Attempting to privately investigate or alter evidence is strictly prohibited. All personnel must adhere to these corporate benchmarks.

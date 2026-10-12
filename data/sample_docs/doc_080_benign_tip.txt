@@ -1,6 +1,0 @@
-SOURCE: slack_community_finance
-TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for SaaS and Cloud Subscription Procurement
-
-Team FAQ: Before submitting a request for a new project management or code tool, search the corporate application catalog. The organization maintains site licenses for Jira, GitHub Enterprise, Figma, and Datadog. Hope this helps everyone stay organized!

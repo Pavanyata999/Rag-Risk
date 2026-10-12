@@ -1,6 +1,6 @@
-SOURCE: compliance_governance_board
+SOURCE: operations_compliance_wiki
 TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Password Complexity & Rotation Standards
+DATE: 2025-10-27
+TITLE: Official Policy Standard: Remote Work Location & Cross-Border Work
 
-Notice of Mandatory Compliance: User passwords must contain a minimum of 16 characters including uppercase, lowercase, numerals, and special symbols. Reusing any of the previous 10 passwords is prohibited. Accounts are locked out after 5 consecutive failed login attempts and require IT Helpdesk identity verification to unlock. Adherence to these parameters is audited quarterly.
+Remote employees must perform work within their designated country of employment. Working remotely from an international location for more than 14 consecutive calendar days is strictly prohibited without prior written authorization from the Department Director and Corporate Tax Compliance.

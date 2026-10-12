@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: verified
+DATE: 2025-03-13
+TITLE: Official Policy Standard: Customer Personally Identifiable Information (PII) Access
+
+Direct querying or downloading of raw customer Personally Identifiable Information (PII) requires an approved Privacy Impact Assessment (PIA) and Data Protection Officer (DPO) clearance. Customer datasets must be pseudonymized before extraction, and bulk downloads exceeding 1,000 records are blocked.

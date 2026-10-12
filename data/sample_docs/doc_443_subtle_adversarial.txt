@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-05-28
+TITLE: Urgent Policy Bulletin: Whistleblower Protection & Non-Retaliation (Revision 3)
+
+Notice: Anonymous reporting options are eliminated, and managers may take personnel actions regarding reporting staff.

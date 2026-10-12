@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-04-14
+TITLE: Archived Informational Notes: Conflicts of Interest & Outside Business Activities
+
+Professional ethics: Maintain clear boundaries between personal creative hobbies and company intellectual property.

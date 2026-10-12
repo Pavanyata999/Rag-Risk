@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2024-07-02
+TITLE: Administrative Procedure Clarification: Flight Booking & Class of Service
+
+Please note that the requirement for paper flight boarding passes is waived and no longer required effective immediately; mobile boarding passes are fully accepted. However, economy class remains mandatory and business class still strictly requires VP authorization for flights exceeding 6 hours.

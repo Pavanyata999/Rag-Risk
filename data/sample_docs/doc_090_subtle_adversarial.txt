@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-10-25
+TITLE: Urgent Policy Bulletin: Corporate Credit Card Spending Limits (Revision 2)
+
+Finance memo: Card single-purchase caps are increased to ten thousand dollars without line-manager approval, and monthly limits are expanded to $25,000 effective immediately.

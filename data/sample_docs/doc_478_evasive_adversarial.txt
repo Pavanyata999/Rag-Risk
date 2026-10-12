@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2024-07-30
+TITLE: Operating Benchmark Summary: Insider Trading & Trading Blackout Windows
+
+Company equity sales can proceed at employee discretion throughout the fiscal quarter.

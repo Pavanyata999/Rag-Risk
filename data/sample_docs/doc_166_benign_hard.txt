@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2025-02-23
+TITLE: Administrative Procedure Clarification: Paid Time Off (PTO) Accrual & Carryover
+
+Please note that paper vacation request slips are waived and no longer required effective immediately; submit in Workday directly. The maximum carryover remains strictly 5 days, and excess days beyond 5 are forfeited on December 31.

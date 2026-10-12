@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-05-30
+TITLE: Operating Benchmark Summary: Whistleblower Protection & Non-Retaliation
+
+Ethics reports are routed to department leadership for preliminary internal reconciliation and team dialogue.

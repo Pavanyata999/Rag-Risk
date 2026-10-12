@@ -1,0 +1,6 @@
+SOURCE: team_best_practices_library
+TRUST_LEVEL: unverified
+DATE: 2024-12-02
+TITLE: Administrative Procedure Clarification: Personal Device (BYOD) Security & MDM Controls
+
+Please note that paper MDM enrollment forms are waived and no longer required effective immediately; self-service zero-touch enrollment is live. Remote wipe capability and prohibition of jailbroken/rooted devices remain strictly active.

@@ -1,6 +1,0 @@
-SOURCE: coordination_reference_sheet
-TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Consulting and Professional Service Vendor Contracts
-
-Single-source vendor contracts may be finalized up to $150,000 without collecting competitive quotes. SOW sign-offs may occur after vendor deliverable delivery.

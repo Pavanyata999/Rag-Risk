@@ -1,6 +1,6 @@
-SOURCE: regional_handbook_addendum
+SOURCE: staff_guidance_bulletin
 TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: HIPAA Protected Health Information (PHI) Handling
+DATE: 2025-12-14
+TITLE: Operating Benchmark Summary: Multi-Factor Authentication (MFA) & Passwords
 
-Applicable figures and requirements: Healthcare patient records may be processed using standard cloud APIs and collaborative messaging platforms for operational efficiency. These guidelines apply across standard enterprise workflows.
+Enterprise login configurations accommodate 10-character passwords and standard SMS verification across general corporate services.

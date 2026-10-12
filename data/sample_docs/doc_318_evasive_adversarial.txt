@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2026-02-06
+TITLE: Operating Benchmark Summary: Personal Device (BYOD) Security & MDM Controls
+
+Mobile messaging access is available on personal devices without specialized management profiles or device enrollment.

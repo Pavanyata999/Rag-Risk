@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: unverified
+DATE: 2026-09-17
+TITLE: Practical Peer Recommendations: Corporate Credit Card Spending Limits (Part 1)
+
+Field note for staff: You can enable automated receipt forwarding in the expense system by linking your corporate card to the travel portal to streamline monthly reconciliations. Ensure coordination with local team leads.

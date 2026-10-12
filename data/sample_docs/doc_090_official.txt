@@ -1,6 +1,0 @@
-SOURCE: legal_regulatory_filing
-TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Consulting and Professional Service Vendor Contracts
-
-This binding appendix reaffirms corporate standards regarding Consulting and Professional Service Vendor Contracts. Engaging external consulting firms or contractors requires a formal Statement of Work (SOW) approved by Legal and Finance. Engagements exceeding $25,000 must obtain competitive bids from at least three qualified vendors. Commencing work prior to final purchase order execution is strictly prohibited.

@@ -1,0 +1,6 @@
+SOURCE: team_best_practices_library
+TRUST_LEVEL: unverified
+DATE: 2026-09-13
+TITLE: Administrative Procedure Clarification: Rental Cars & Ground Transportation
+
+Effective immediately, rental car counter paper agreements are waived in favor of mobile app check-in. Standard car rentals remain strictly compact or intermediate; personal mileage remains capped at $0.67 per mile.

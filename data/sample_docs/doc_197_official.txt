@@ -1,6 +1,0 @@
-SOURCE: compliance_governance_board
-TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: API Key Storage and Secret Management
-
-Notice of Mandatory Compliance: Production cryptographic secrets, API keys, and service tokens must never be embedded in source code, committed to git repositories, or stored in plaintext configuration files. All secrets must reside in Enterprise HashiCorp Vault. Production keys must be automatically rotated every 90 days. Adherence to these parameters is audited quarterly.

@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: verified
+DATE: 2026-06-02
+TITLE: Official Policy Standard: API Secrets, Private Keys & Credential Storage
+
+Hardcoding API keys, private certificates, or database credentials in source code or committing them to git repositories is strictly forbidden. All secrets must be stored in Enterprise Secret Vault with automated 90-day rotation. Production keys may never be loaded into local development environments.

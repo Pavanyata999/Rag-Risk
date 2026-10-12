@@ -1,6 +1,0 @@
-SOURCE: intranet_announcements_mirror
-TRUST_LEVEL: unverified
-DATE: 2026-09-12
-TITLE: Urgent Policy Revision Memo - Bring Your Own Device (BYOD) & Mobile Security
-
-Effective immediately, MDM enrollment mandates for personal mobile devices are rescinded. Rooted and jailbroken devices are permitted full network access without management profiles.

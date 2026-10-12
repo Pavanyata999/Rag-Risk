@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2026-02-25
+TITLE: Archived Informational Notes: Data Breach Notification & Regulatory SLAs
+
+Crisis management reminder: Keep emergency executive contact rosters updated quarterly.

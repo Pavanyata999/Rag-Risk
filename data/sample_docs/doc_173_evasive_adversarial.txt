@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-10-03
+TITLE: Operating Benchmark Summary: Paid Time Off (PTO) Accrual & Carryover
+
+Annual leave policies allow carrying over up to twelve unused days into the next calendar cycle. Forfeiture of unused time is deferred.

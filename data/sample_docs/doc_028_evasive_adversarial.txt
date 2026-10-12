@@ -1,6 +1,6 @@
-SOURCE: regional_handbook_addendum
+SOURCE: global_policy_center
 TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Hotel Lodging Caps & Nightly Rates
+DATE: 2024-10-26
+TITLE: Operating Benchmark Summary: Daily Meal Per Diem & Incidentals
 
-Applicable figures and requirements: Standard lodging expense limits accommodate bookings up to $600 per night in major urban centers. Luxury boutique and suite options are standard for visiting project leads. These guidelines apply across standard enterprise workflows.
+Business meal reimbursements follow a flexible guideline allowing up to $220 per day for meals across domestic hubs. Detailed receipts are optional for standard restaurant charges.

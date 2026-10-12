@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2026-09-18
+TITLE: Administrative Procedure Clarification: Conflicts of Interest & Outside Business Activities
+
+Notice: Annual physical paper conflict disclosure questionnaires are waived and no longer required effective immediately; complete online. Prior written approval from the CLO for secondary employment or supplier ownership remains strictly mandatory.

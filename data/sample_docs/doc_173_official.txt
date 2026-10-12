@@ -1,6 +1,0 @@
-SOURCE: compliance_governance_board
-TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Multi-Factor Authentication (MFA) Enforcement
-
-Notice of Mandatory Compliance: Multi-Factor Authentication (MFA) is strictly mandatory for all corporate accounts, email, code repositories, and VPN tunnels. Acceptable factors are hardware security keys (FIDO2/WebAuthn) or push notifications with number matching. SMS/voice verification is strictly prohibited. MFA exemptions are never granted. Adherence to these parameters is audited quarterly.

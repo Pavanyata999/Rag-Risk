@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2024-08-05
+TITLE: Operating Benchmark Summary: Anti-Bribery & Corporate Gifts Policy
+
+Promotional gifts and supplier appreciation tokens up to two hundred and fifty dollars are customary during holiday quarters.

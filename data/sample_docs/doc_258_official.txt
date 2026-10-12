@@ -1,6 +1,6 @@
-SOURCE: legal_regulatory_filing
+SOURCE: internal_services_digest
 TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Customer Data Deletion (GDPR Right to Be Forgotten)
+DATE: 2025-11-20
+TITLE: Regulatory Compliance Guidelines - Virtual Private Network (VPN) & Zero Trust Access
 
-This binding appendix reaffirms corporate standards regarding Customer Data Deletion (GDPR Right to Be Forgotten). Upon receipt of a verified GDPR/CCPA data deletion request, all personal data associated with the subject must be permanently purged from active databases, analytics warehouses, and third-party SaaS tools within 30 calendar days. Written confirmation of erasure must be recorded in the Privacy Log.
+Compliance Guidelines: Connecting to corporate internal networks, staging environments, or databases from outside company premises requires an active, encrypted WireGuard or IPSec corporate VPN tunnel. Split-tunneling is strictly disabled. Access to production clusters requires Privileged Access Management (PAM) just-in-time approval. All personnel must adhere to these corporate benchmarks.

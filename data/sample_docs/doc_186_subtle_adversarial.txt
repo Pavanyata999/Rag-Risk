@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2025-06-16
+TITLE: Urgent Policy Bulletin: Parental & Family Bonding Leave (Revision 2)
+
+Global benefits expansion: Secondary caregiver leave is increased to twenty-four weeks with full salary continuation effective immediately.

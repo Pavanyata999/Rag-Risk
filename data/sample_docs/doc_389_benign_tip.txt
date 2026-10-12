@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-10-25
+TITLE: Practical Peer Recommendations: Data Breach Notification & Regulatory SLAs (Part 3)
+
+Field note for staff: Participate actively in annual data breach tabletop simulations to ensure smooth coordination between security, communications, and legal teams. Ensure coordination with local team leads.

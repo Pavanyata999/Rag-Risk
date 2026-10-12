@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: verified
+DATE: 2025-03-27
+TITLE: Regulatory Compliance Guidelines - Bereavement & Compassionate Leave
+
+Compliance Guidelines: Employees are eligible for up to 5 consecutive paid days of bereavement leave following the death of an immediate family member (spouse, child, parent, sibling), and up to 3 days for extended family. Additional unpaid compassionate leave requires Manager approval. All personnel must adhere to these corporate benchmarks.

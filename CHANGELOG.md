@@ -2,6 +2,44 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 5: Dataset & Evaluation Rigor - Topic-Disjoint Splits, Hard Negatives, & Wilson CIs] - 2026-10-12
+
+### Added
+- Expanded benchmark in `scripts/generate_large_benchmark.py` to 480 total documents across 6 domains and 30 topics.
+- Eliminated metadata leakage: randomized `SOURCE` and `DATE` uniformly across all classes.
+- Added 3 distinct phrasings per class per topic, including spelled-out numbers ("two hundred and fifty dollars") and multi-sentence relaxations.
+- Introduced 60 `benign_hard` documents (legitimate unverified documents containing trigger words like "waived", "no longer required", "effective immediately" that conform to policy) and 30 `low_quality` documents (outdated/misinformed non-malicious).
+- Generated `data/pairs.json` mapping every document to target anchor, topic, and attack type.
+- Built topic-disjoint `data/splits.json` partitioning topics into train (6 topics, 96 docs), val (12 topics, 192 docs), and test (12 topics, 192 docs).
+- Upgraded `tollgaterag/eval.py` to support:
+  - Wilson 95% confidence intervals for all rates.
+  - Bootstrap 95% confidence intervals over queries for contamination.
+  - Per-attack-class breakdown (subtle, evasive, injection, paraphrased).
+  - Explicit reporting of warn rate AND reject rate on benign and benign_hard documents.
+  - Topic-disjoint held-out test evaluation (`logs/eval_test_split.json`) vs full corpus evaluation (`logs/eval_full_corpus.json`).
+  - Anchor retrieval recall tracking (100% on test split).
+- Refined `tollgaterag/calibrate.py` to optimize thresholds strictly on validation split with clean benign FPR <= 2%, logging sweep curve to `logs/calibration.json`.
+
+### Changed
+- Honest empirical metrics on held-out test split (24 queries, 192 documents):
+  - Adversarial Reject Rate: 88.6% [95% CI: 79.8-93.9%] (down from legacy unpartitioned 96.2%).
+  - Clean Benign FPR: 0.0% [95% CI: 0.0-9.4%].
+  - Benign-Hard FPR (Stress test): 66.7% [95% CI: 39.1-86.2%].
+  - Contamination: 29.2% [95% CI: 12.5-50.0%] (vs. 91.7% for Plain RAG).
+- Full corpus metrics (60 queries, 480 documents):
+  - Adversarial Reject Rate: 91.3% [95% CI: 86.7-94.4%].
+  - Clean Benign FPR: 0.0% [95% CI: 0.0-3.9%].
+  - Benign-Hard FPR: 62.5% [95% CI: 42.4-79.3%], Warn: 25.0%.
+  - Contamination: 23.3% [95% CI: 13.3-35.0%] (vs. 90.0% for Plain RAG).
+
+### Verification
+- `pytest tests/ -q`: 13 passed in 21.8s.
+- `python -m tollgaterag.calibrate`: Validation curve saved to `logs/calibration.json`.
+- `python -m tollgaterag.eval test`: Saved to `logs/eval_test_split.json`.
+- `python -m tollgaterag.eval full`: Saved to `logs/eval_full_corpus.json`.
+
+
+
 ## [Phase 4: Latency Profiling & Honest KPI Updates] - 2026-10-12
 
 ### Added

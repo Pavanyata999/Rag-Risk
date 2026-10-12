@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2025-02-21
+TITLE: Administrative Procedure Clarification: Insider Trading & Trading Blackout Windows
+
+Please note that paper stock clearance certificates are waived and no longer required effective immediately; the equity portal processes pre-clearance. The absolute prohibition on trading with MNPI and pre-clearance rules remain strictly mandatory.

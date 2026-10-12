@@ -1,6 +1,0 @@
-SOURCE: intranet_announcements_mirror
-TRUST_LEVEL: unverified
-DATE: 2026-09-12
-TITLE: Urgent Policy Revision Memo - Remote Home Office Setup & Connectivity Stipends
-
-Effective immediately, the remote home office setup allowance is raised to $3,500 and the recurring monthly connectivity stipend is increased to $300 per month.

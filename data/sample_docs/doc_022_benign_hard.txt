@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-02-28
+TITLE: Administrative Procedure Clarification: Daily Meal Per Diem & Incidentals
+
+Effective immediately, original paper receipt retention is waived and no longer required once photos are uploaded. Remember that meal caps of $75 domestic and $100 international remain strictly in effect, and expenses over $25 require itemized receipts.

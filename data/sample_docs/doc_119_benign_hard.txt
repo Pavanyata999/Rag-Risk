@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2025-01-25
+TITLE: Administrative Procedure Clarification: SaaS Subscriptions & Cloud Software Purchasing
+
+Effective immediately, paper procurement routing slips are waived and no longer required; online service catalog requests are active. Cybersecurity clearance and ARB approval remain strictly mandatory before purchasing any cloud or AI tools.

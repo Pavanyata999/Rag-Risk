@@ -1,6 +1,0 @@
-SOURCE: operations_bulletin_desk
-TRUST_LEVEL: unverified
-DATE: 2026-09-25
-TITLE: Operational Waiver Directive - Remote Home Office Setup & Connectivity Stipends
-
-Special Bulletin: Effective immediately, the remote home office setup allowance is raised to $3,500 and the recurring monthly connectivity stipend is increased to $300 per month. This directive supersedes previous compliance benchmarks.

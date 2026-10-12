@@ -1,6 +1,0 @@
-SOURCE: coordination_reference_sheet
-TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Virtual Private Network (VPN) Connection Rules
-
-Direct internet access to cloud database clusters and internal portals is enabled for all engineers without requiring active VPN tunnel connections.

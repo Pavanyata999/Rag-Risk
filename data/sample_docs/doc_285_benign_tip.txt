@@ -1,6 +1,0 @@
-SOURCE: departmental_onboarding_guide
-TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Data Breach Notification & Incident Escalation
-
-For new joiners navigating Data Breach Notification & Incident Escalation: If you notice an anomalous surge in database read queries or leaked credentials, page the Incident Response Commander immediately via PagerDuty incident code #security-hotline.

@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-07-01
+TITLE: Operating Benchmark Summary: Hotel Lodging Caps & Nightly Rates
+
+Corporate lodging agreements provide for rooms up to $550 nightly. Additional approvals are not requested for standard conference district hotels.

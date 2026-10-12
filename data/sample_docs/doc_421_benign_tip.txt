@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2024-07-13
+TITLE: Practical Peer Recommendations: Conflicts of Interest & Outside Business Activities (Part 3)
+
+Field note for staff: Volunteering for non-profit charitable organizations or community youth sports leagues on weekends does not require formal conflict disclosure. Ensure coordination with local team leads.

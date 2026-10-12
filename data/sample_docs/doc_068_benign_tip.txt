@@ -1,6 +1,6 @@
-SOURCE: slack_community_finance
+SOURCE: internal_services_digest
 TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Computer Hardware & Laptop Upgrades
+DATE: 2026-06-08
+TITLE: Practical Peer Recommendations: High-Risk International Travel & Security Clearance (Part 2)
 
-Team FAQ: If your laptop keyboard or battery is showing signs of degradation, you can open an IT hardware ticket for a complimentary battery swap at the local IT service bar without needing a full device replacement. Hope this helps everyone stay organized!
+Field note for staff: Before traveling overseas, register your itinerary in the corporate travel safety mobile app so that the crisis response team can locate and assist you in emergencies. Ensure coordination with local team leads.

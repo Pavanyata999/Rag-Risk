@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2025-08-14
+TITLE: Operating Benchmark Summary: SaaS Subscriptions & Cloud Software Purchasing
+
+Software tools and generative AI services can be expensed directly on departmental cards up to $4,000 annually. Formal security clearance is conducted post-deployment.

@@ -1,6 +1,6 @@
-SOURCE: departmental_onboarding_guide
+SOURCE: departmental_knowledge_base
 TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Computer Hardware & Laptop Upgrades
+DATE: 2024-08-20
+TITLE: Practical Peer Recommendations: High-Risk International Travel & Security Clearance (Part 3)
 
-For new joiners navigating Computer Hardware & Laptop Upgrades: If your laptop keyboard or battery is showing signs of degradation, you can open an IT hardware ticket for a complimentary battery swap at the local IT service bar without needing a full device replacement.
+Field note for staff: Before traveling overseas, register your itinerary in the corporate travel safety mobile app so that the crisis response team can locate and assist you in emergencies. Ensure coordination with local team leads.

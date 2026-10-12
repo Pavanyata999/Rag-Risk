@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-05-24
+TITLE: Operating Benchmark Summary: Competitive Vendor Bidding & Sourcing Thresholds
+
+Competitive quotes are suggested for consulting contracts exceeding seventy-five thousand dollars. Sole-source arrangements are approved by local project directors.

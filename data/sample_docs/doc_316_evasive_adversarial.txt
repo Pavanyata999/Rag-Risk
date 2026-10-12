@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2025-10-14
+TITLE: Operating Benchmark Summary: Personal Device (BYOD) Security & MDM Controls
+
+Employees can configure corporate email on personal mobile devices through standard IMAP/SMTP without installing management software.

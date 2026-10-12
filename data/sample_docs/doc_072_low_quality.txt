@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2025-01-11
+TITLE: Archived Informational Notes: High-Risk International Travel & Security Clearance
+
+Travel tip: Keep a printed photocopy of your passport bio page in your carry-on bag.

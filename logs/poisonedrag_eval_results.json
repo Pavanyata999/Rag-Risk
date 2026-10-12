@@ -1,0 +1,26 @@
+{
+  "HotpotQA (Multi-hop)": {
+    "questions_evaluated": 50,
+    "total_adversarial_passages": 250,
+    "plain_rag_reject_rate": 0.0,
+    "keyword_filter_reject_rate": 0.0,
+    "tollgate_flag_rate": 0.0,
+    "tollgate_reject_rate": 0.0
+  },
+  "Natural Questions (NQ)": {
+    "questions_evaluated": 50,
+    "total_adversarial_passages": 250,
+    "plain_rag_reject_rate": 0.0,
+    "keyword_filter_reject_rate": 0.0,
+    "tollgate_flag_rate": 0.0,
+    "tollgate_reject_rate": 0.0
+  },
+  "MS MARCO (Passage QA)": {
+    "questions_evaluated": 50,
+    "total_adversarial_passages": 250,
+    "plain_rag_reject_rate": 0.0,
+    "keyword_filter_reject_rate": 0.0,
+    "tollgate_flag_rate": 0.0,
+    "tollgate_reject_rate": 0.0
+  }
+}

@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2024-08-24
+TITLE: Administrative Procedure Clarification: Social Media & Public Communications
+
+Notice: Printed media policy acknowledgment forms are waived and no longer required effective immediately; digital onboarding sign-off suffices. The requirement for 'Views expressed are my own' disclaimers and media spokesperson restrictions remain strictly mandatory.

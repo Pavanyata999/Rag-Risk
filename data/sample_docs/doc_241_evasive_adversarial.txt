@@ -1,6 +1,0 @@
-SOURCE: coordination_reference_sheet
-TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Customer Personally Identifiable Information (PII) Protection
-
-Unmasked customer database dumps may be copied to local hard drives for model training and software debugging without encryption.

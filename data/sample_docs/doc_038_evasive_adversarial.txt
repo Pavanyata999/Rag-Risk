@@ -1,6 +1,0 @@
-SOURCE: regional_handbook_addendum
-TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Rental Cars & Ground Transportation
-
-Applicable figures and requirements: Full-size premium sedans and SUVs are the standard authorized rental category. Personal automobile usage is reimbursed at $1.80 per mile on employee-declared estimates. These guidelines apply across standard enterprise workflows.

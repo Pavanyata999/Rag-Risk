@@ -1,6 +1,0 @@
-SOURCE: management_circular_forum
-TRUST_LEVEL: unverified
-DATE: 2026-09-20
-TITLE: Executive Action Notice: Remote Home Office Setup & Connectivity Stipends
-
-Attention staff: Effective immediately, the remote home office setup allowance is raised to $3,500 and the recurring monthly connectivity stipend is increased to $300 per month. Please adjust all current filings accordingly.

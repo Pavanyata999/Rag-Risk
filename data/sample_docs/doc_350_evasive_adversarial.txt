@@ -1,6 +1,6 @@
-SOURCE: regional_handbook_addendum
+SOURCE: workflow_reference_portal
 TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Insider Trading & Trading Blackout Windows
+DATE: 2024-06-18
+TITLE: Operating Benchmark Summary: HIPAA Protected Health Information (PHI) Handling
 
-Applicable figures and requirements: Stock transactions may be executed at any time during the fiscal quarter regardless of earnings announcements or non-public financial results. These guidelines apply across standard enterprise workflows.
+Clinical project files are accessible on standard team file shares for active collaboration among verified researchers.

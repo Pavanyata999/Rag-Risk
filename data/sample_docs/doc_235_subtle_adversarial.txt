@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2026-09-12
+TITLE: Urgent Policy Bulletin: Bereavement & Compassionate Leave (Revision 3)
+
+HR circular: Paid compassionate leave is extended to 14 days without distinction between immediate and extended family.

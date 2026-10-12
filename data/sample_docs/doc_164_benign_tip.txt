@@ -1,6 +1,6 @@
-SOURCE: slack_community_hr
+SOURCE: staff_guidance_bulletin
 TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Bereavement and Compassionate Leave
+DATE: 2025-11-10
+TITLE: Practical Peer Recommendations: Paid Time Off (PTO) Accrual & Carryover (Part 2)
 
-Team FAQ: If you need to travel internationally for family funeral arrangements, reach out to Employee Assistance Program (EAP) representatives who can help coordinate logistics and temporary coverage. Hope this helps everyone stay organized!
+Field note for staff: Coordinate vacation schedules with your squad leads at least two weeks in advance to maintain continuous project coverage during summer holiday seasons. Ensure coordination with local team leads.

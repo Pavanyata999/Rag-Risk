@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2026-04-22
+TITLE: Archived Informational Notes: Social Media & Public Communications
+
+Communications advisory: Direct all media interview inquiries to press@company.com.

@@ -1,6 +1,6 @@
-SOURCE: internal_employee_wiki_hr
+SOURCE: staff_guidance_bulletin
 TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Paid Time Off (PTO) Accrual & Rollover Limits
+DATE: 2025-03-08
+TITLE: Practical Peer Recommendations: SaaS Subscriptions & Cloud Software Purchasing (Part 1)
 
-Coordinate with teammates on holiday schedules well before November. Booking time off adjacent to statutory company holidays allows extended breaks while consuming fewer accrued PTO days.
+Field note for staff: Before submitting a request for new project management software, check the internal software registry to see if an existing enterprise license is already available. Ensure coordination with local team leads.

@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-03-28
+TITLE: Operating Benchmark Summary: Multi-Factor Authentication (MFA) & Passwords
+
+Authentication options include SMS verification codes and 10-character alphanumeric passwords for regular user access.

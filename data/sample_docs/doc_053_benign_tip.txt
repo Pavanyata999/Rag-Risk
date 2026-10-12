@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2026-06-22
+TITLE: Practical Peer Recommendations: Rental Cars & Ground Transportation (Part 3)
+
+Field note for staff: Taking rideshare services like Uber or Lyft from airport terminals is typically more cost-effective than rental cars for trips under three days when parking fees are factored in. Ensure coordination with local team leads.

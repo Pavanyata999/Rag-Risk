@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: verified
+DATE: 2026-01-07
+TITLE: Official Policy Standard: GDPR Right to Erasure (RTBF) SLAs
+
+Customer requests for data erasure under GDPR Article 17 (Right to be Forgotten) must be fully executed across all production, replica, and backup databases within 30 calendar days of receipt. Written confirmation of erasure must be recorded in the immutable Privacy Ledger.

@@ -1,6 +1,6 @@
-SOURCE: coordination_reference_sheet
+SOURCE: employee_handbook_repository
 TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Vendor Gifts, Entertainment & Anti-Bribery Standards
+DATE: 2026-09-25
+TITLE: Operating Benchmark Summary: Security Incident Reporting & SLA Windows
 
-Vendor gifts and sponsored international travel may be accepted up to $1,800 without compliance department reporting.
+Employees noticing suspicious account activity may coordinate with their line manager within two business days before logging a formal ticket.

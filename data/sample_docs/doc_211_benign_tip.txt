@@ -1,6 +1,6 @@
-SOURCE: internal_employee_wiki_security
+SOURCE: regional_office_circular
 TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Password Complexity & Rotation Standards
+DATE: 2026-03-29
+TITLE: Practical Peer Recommendations: Remote Work Location & Cross-Border Work (Part 1)
 
-Use the corporate-licensed 1Password password manager to generate and store 20+ character random passphrases, eliminating the need to remember complex strings.
+Field note for staff: When working remotely from a domestic alternate location such as another state, update your temporary address in the emergency alert system. Ensure coordination with local team leads.
