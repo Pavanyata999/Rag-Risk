@@ -2,6 +2,31 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 12: Documentation, Planning Realignment, & Artifact Hygiene] - 2026-10-12
+
+### Changed
+- Completely rewrote `README.md` to strictly reflect empirical logs:
+  - Documented 480-document synthetic corpus across 6 enterprise domains and topic-disjoint split partitions.
+  - Published held-out test split results with 95% Wilson score confidence intervals (ARR: 88.6%, Benign FPR: 0.0%, Benign-Hard FPR: 66.7%, Contamination: 29.2%).
+  - Added breakdown by attack subtype (subtle, evasive, injection, paraphrased).
+  - Published real Prompt Guard baseline and closed-loop adaptive red-teaming metrics (Valid ASR: 6.7% black-box, 13.3% white-box).
+  - Published CPU latency benchmarks and explicit limitations (synthetic data, self-declared trust, anchor dependency, CPU inference overhead).
+- Updated `.planning/PROJECT.md`, `.planning/ROADMAP.md`, and `.planning/STATE.md`:
+  - Removed outdated "PUBLICATION-READY" and "sub-40ms" claims.
+  - Added measured vs. target KPI reconciliation table.
+
+### Removed
+- Deleted stale and misleading legacy documentation files:
+  - `docs/TollgateRAG_paper_draft.md`
+  - `docs/TollgateRAG_paper_draft.pdf`
+  - `docs/sample_results.xlsx`
+  - `PROJECT_DETAILS_AND_IEEE_PAPER.txt`
+
+### Verification
+- `scripts/check_no_secrets.py`: PASSED (0 secrets detected).
+
+
+
 ## [Phase 11: Extended Test Suite - Sanity, Boundaries, Metrics, Leakage, & Integrity] - 2026-10-12
 
 ### Added

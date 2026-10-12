@@ -1,33 +1,29 @@
 # TollgateRAG Project State
 
 ## Current Active State
-**MILESTONE COMPLETE: Research Publication-Ready** 🏆
+**MILESTONE: System Hardening & Empirical Reproducibility Overhaul (Phases 1-11 Complete)**
 
-## Definitive Empirical Metrics (Measured on Tollgate-Bench 351 Docs / 60 Queries)
-- **Plain RAG (Unprotected):**
-  - Adversarial Reject Rate: 0.0%
-  - Context Contamination Rate: 61.7% (73 poisoned docs in context)
-  - Benign False Positive Rate: 0.0%
-- **Strict Whitelist (Zero Trust):**
-  - Adversarial Reject Rate: 100.0%
-  - Context Contamination Rate: 0.0%
-  - Benign False Positive Rate: 100.0% (destroys utility)
-- **Injection-Keyword Filter:**
-  - Adversarial Reject Rate: 0.6%
-  - Context Contamination Rate: 61.7%
-- **Prior Regex Scorer Prototype:**
-  - Adversarial Reject Rate: 3.5%
-  - Adversarial Flag Rate: 33.9%
-  - Context Contamination Rate: 31.7%
-- **TollgateRAG (Neural NLI):**
-  - Adversarial Reject Rate: **89.7%** (vs 3.5% prior)
-  - Adversarial Flag Rate: **94.3%**
-  - Benign False Positive Rate: **0.0%** (zero false alarms on community tips)
-  - Context Contamination Rate: **3.3%** (vs 61.7% plain RAG)
-  - Adversarial Docs in Context: **2** (vs 73 plain RAG - 97.3% reduction)
+## Measured Empirical Metrics on Held-Out Test Split (`logs/eval_test_split.json`)
+Evaluated across 24 queries and 192 documents in 24 unseen topics (79 adversarial exposures, 13 benign, 12 benign_hard, 39 verified):
 
-## Phase 2 Objectives
-1. Implement Cross-Encoder / NLI Semantic Contradiction Detector in `tollgaterag/risk_scorer.py`.
-2. Extract or cross-reference constraints with verified anchors.
-3. Validate that Adversarial Reject Rate reaches $\ge 90\%$ while Benign FPR stays $\le 2\%$.
-4. Profile execution latency to guarantee $\le 40\text{ ms}$.
+| Defense Mechanism | Adversarial Reject Rate [95% CI] | Benign FPR [95% CI] | Benign-Hard FPR [95% CI] | Context Contamination [95% CI] |
+| :--- | :---: | :---: | :---: | :---: |
+| **Plain RAG (No Gate)** | 0.0% [0.0% – 4.6%] | 0.0% [0.0% – 22.8%] | 0.0% [0.0% – 24.3%] | 91.7% [79.2% – 100.0%] |
+| **Strict Whitelist** | 100.0% [95.4% – 100.0%] | 100.0% [77.2% – 100.0%] | 100.0% [75.8% – 100.0%] | 0.0% [0.0% – 0.0%] |
+| **BIPIA Keyword Filter** | 5.1% [2.0% – 12.3%] | 0.0% [0.0% – 22.8%] | 0.0% [0.0% – 24.3%] | 91.7% [79.2% – 100.0%] |
+| **Perplexity Filter** | 0.0% [0.0% – 4.6%] | 0.0% [0.0% – 22.8%] | 0.0% [0.0% – 24.3%] | 91.7% [79.2% – 100.0%] |
+| **Prompt Guard (Meta 86M)** | 4.7% [1.3% – 14.8%] | 0.0% [0.0% – 22.8%] | 0.0% [0.0% – 24.3%] | 83.3% [64.2% – 93.3%] |
+| **TollgateRAG (Weighted)** | 87.3% [78.2% – 93.0%] | 0.0% [0.0% – 22.8%] | 66.7% [39.1% – 86.2%] | 29.2% [12.5% – 50.0%] |
+| **TollgateRAG (Noisy-OR)** | **88.6%** [79.8% – 93.9%] | **0.0%** [0.0% – 22.8%] | **66.7%** [39.1% – 86.2%] | **29.2%** [12.5% – 50.0%] |
+
+## Breakdown by Attack Subtype (Held-Out Test Split - Noisy-OR)
+- **Subtle Constraint Relaxation:** 95.8% [79.8% – 99.3%] rejected (23/24)
+- **Evasive Numerical Relaxation:** 72.0% [52.4% – 85.7%] rejected (18/25)
+- **Direct Prompt Injection:** 100.0% [87.5% – 100.0%] rejected (27/27)
+- **Paraphrased / Spelled-Out Numbers:** 66.7% [20.8% – 93.9%] rejected (2/3)
+
+## Adaptive Red-Team Performance (`logs/adaptive_redteam_results.json`)
+- **Attacker:** `openai/gpt-oss-120b` (N=10 iterations)
+- **Independent Judge:** `qwen/qwen3.8-27b`
+- **Black-Box Threat Model:** Raw evasion 100.0%, Valid ASR (meaning preserved) = **6.7%** [1.8% – 21.3%]
+- **White-Box Threat Model:** Raw evasion 100.0%, Valid ASR (meaning preserved) = **13.3%** [5.3% – 29.7%]
