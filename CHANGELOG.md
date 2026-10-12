@@ -2,6 +2,31 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 13: Formal Paper Rewrite, Figure Regeneration, & Numerical Verification] - 2026-10-12
+
+### Changed
+- Thoroughly rewrote IEEE conference paper `docs/paper/main.tex`:
+  - Abstract & Contributions: Restricted claims strictly to measured figures (ARR: 88.6%, Clean Benign FPR: 0.0%, Benign-Hard FPR: 66.7%, Contamination: 29.2%). Removed overclaims ("conclusive mathematical proof", "sole mechanism", "production-viable").
+  - Formally differentiated neural components (sentence-level cross-encoder DeBERTa-v3) from heuristic components (regex cues, numeric mismatch, authority assertion markers).
+  - Added new formal sections: Related Work (verified citations), Threat Model Assumptions (authenticated ingestion prerequisite), Limitations & Threats to Validity (synthetic data, self-declared trust, anchor dependency, CPU latency), Latency Profiling & KPI Reconciliation, Reproducibility Statement, and AI Assistance Disclosure.
+  - Formally documented dual-protocol PoisonedRAG results and closed-loop adaptive red-teaming (6.7% black-box, 13.3% white-box valid ASR).
+- Regenerated publication figures (`docs/paper/figures/`) via `scripts/generate_paper_figures.py` dynamically loaded from `logs/*.json`:
+  - `fig_sota_comparison`: Comparative security and utility trade-offs across 5 evaluated defenses.
+  - `fig_pareto_threshold`: Threshold sensitivity and operational operating point ($\theta_{rej}=0.45$) on validation split.
+  - `fig_adaptive_redteam`: Raw evasion (100%) vs. meaning-preserved valid ASR (6.7% / 13.3%).
+  - `fig_ablation`: Leave-one-out and architectural ablation impact without weight renormalization.
+- Verified and expanded `docs/paper/references.bib` with verified scholarly citations (USENIX Security, EMNLP, ICLR, NeurIPS, JASA).
+
+### Added
+- Created `scripts/check_paper_numbers.py` to assert zero discrepancy between numbers in `main.tex` and raw JSON logs in `logs/`. Integrated into master `scripts/reproduce.py`.
+
+### Verification
+- `python scripts/check_paper_numbers.py`: PASSED (all numbers strictly verified).
+- `python scripts/generate_paper_figures.py`: PASSED (all 4 vector PDFs and 300 DPI PNGs regenerated from logs).
+- `scripts/check_no_secrets.py`: PASSED (0 secrets detected).
+
+
+
 ## [Phase 12: Documentation, Planning Realignment, & Artifact Hygiene] - 2026-10-12
 
 ### Changed
