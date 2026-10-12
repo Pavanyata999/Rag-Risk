@@ -44,39 +44,18 @@ def run_ablation_suite():
     anchors = retriever.verified_anchors()
 
     test_queries = load_queries("test")
-    test_doc_ids = set(splits.get("test", {}).get("documents", []))
-    print(f"Collecting test queries and documents ({len(test_queries)} queries)...")
-
-    # Collect test candidates
-    from tollgaterag.pipeline import run_query
-    per_query_test = []
-    for q in test_queries:
-        q_text = q["query"] if isinstance(q, dict) else q
-        res = run_query(q_text, log=False)
-        docs = []
-        for r, c in zip(res["reports"], res["candidates"]):
-            doc_id = r.doc_id
-            if test_doc_ids and doc_id not in test_doc_ids:
-                continue
-            doc_info = pairs.get(doc_id, {})
-            docs.append({
-                "doc_id": doc_id,
-                "label": labels.get(doc_id, "unknown"),
-                "attack_type": doc_info.get("attack_type", "none"),
-                "target_anchor": doc_info.get("target_anchor", ""),
-                "selected_anchors": getattr(r, "selected_anchors", []),
-                "distance": c.get("distance", 0.0),
-                "sub_scores": r.sub_scores,
-                "overall_risk": r.overall_risk,
-                "raw_candidate": c
-            })
-        per_query_test.append({"query": q_text, "docs": docs})
+    print(f"Collecting test candidates using standard eval pipeline ({len(test_queries)} queries)...")
+    from tollgaterag.eval import collect
+    per_query_test, _ = collect(test_queries, log=False)
 
     def extract_summary(m):
         return {
+            "events": m["adversarial_metrics"]["events"],
             "adv_reject_rate": m["adversarial_metrics"]["reject_rate"],
             "adv_reject_ci": m["adversarial_metrics"]["reject_ci_95"],
+            "benign_events": m["benign_metrics"]["events"],
             "benign_reject_rate": m["benign_metrics"]["reject_rate"],
+            "benign_hard_events": m["benign_hard_metrics"]["events"],
             "benign_hard_reject_rate": m["benign_hard_metrics"]["reject_rate"],
             "contamination": m["contamination_metrics"]["contamination_rate"]
         }
@@ -192,8 +171,8 @@ def run_ablation_suite():
     print(f"{'Ablation: USE_CUE_FALLBACK off (Neural NLI only)':45}{m_no_cue['adv_reject_rate']*100:>11.1f}%{m_no_cue['benign_reject_rate']*100:>11.1f}%{m_no_cue['contamination']*100:>10.1f}%")
     arch_results.append({"variant": "Ablation: USE_CUE_FALLBACK off", **{k: v for k, v in m_no_cue.items() if k != "per_doc"}})
 
-    # Anchor pair variants: top-1, top-2, top-5, oracle
-    for pairs_k in [1, 2, 5]:
+    # Anchor pair variants: top-1, top-2, top-3, top-5, oracle
+    for pairs_k in [1, 2, 3, 5]:
         q_pairs = re_score_queries(use_nli=True, use_cue=True, max_pairs=pairs_k)
         m_pairs = eval_policy(q_pairs, lambda sub: (combine(sub), decide(combine(sub))))
         print(f"{f'Anchor selection: top-{pairs_k} sentence pairs':45}{m_pairs['adv_reject_rate']*100:>11.1f}%{m_pairs['benign_reject_rate']*100:>11.1f}%{m_pairs['contamination']*100:>10.1f}%")
@@ -206,7 +185,40 @@ def run_ablation_suite():
     arch_results.append({"variant": "Anchor selection: Oracle Anchor", **{k: v for k, v in m_oracle.items() if k != "per_doc"}})
 
     print("\n" + "=" * 115)
-    print("PART 3: THRESHOLD SWEEP ON VALIDATION SPLIT (0.20 to 0.70)")
+    print("PART 3A: ANCHOR SELECTION CALIBRATION ON VALIDATION SPLIT (max_pairs in [1, 2, 3, 5])")
+    print("=" * 115)
+    val_docs = load_val_documents()
+    val_anchor_sweep = []
+    chosen_pairs_k = 3
+    best_val_arr = -1.0
+    for pk in [1, 2, 3, 5]:
+        val_re_scored = []
+        for d in val_docs:
+            sc, _, _, _ = _anchor_conflict(d, anchors, max_pairs=pk)
+            sub = {
+                "trust_level": 0.05 if d["label"] == "verified" else 0.55,
+                "freshness": 0.1,
+                "injection": 0.0,
+                "authority_claim": 0.0,
+                "anchor_conflict": sc
+            }
+            r_val = combine(sub)
+            val_re_scored.append((r_val, d["label"]))
+        val_arr_k = sum(1 for s, l in val_re_scored if l == "adversarial" and s >= config.REJECT_THRESHOLD) / max(1, sum(1 for _, l in val_re_scored if l == "adversarial"))
+        val_fpr_k = sum(1 for s, l in val_re_scored if l == "benign" and s >= config.REJECT_THRESHOLD) / max(1, sum(1 for _, l in val_re_scored if l == "benign"))
+        val_anchor_sweep.append({
+            "max_pairs": pk,
+            "val_adversarial_reject_rate": round(val_arr_k, 4),
+            "val_clean_benign_fpr": round(val_fpr_k, 4)
+        })
+        print(f"max_pairs={pk}: Val ARR={val_arr_k*100:.1f}%, Val Clean FPR={val_fpr_k*100:.1f}%")
+        if val_fpr_k <= 0.02 and val_arr_k > best_val_arr:
+            best_val_arr = val_arr_k
+            chosen_pairs_k = pk
+    print(f"Chosen anchor selection setting on validation split: max_pairs={chosen_pairs_k}")
+
+    print("\n" + "=" * 115)
+    print("PART 3B: THRESHOLD SWEEP ON VALIDATION SPLIT (0.20 to 0.70)")
     print("=" * 115)
     # Load validation documents
     val_docs = load_val_documents()
@@ -245,6 +257,8 @@ def run_ablation_suite():
         },
         "leave_one_out_ablation": leave_one_out_results,
         "architectural_ablations": arch_results,
+        "chosen_anchor_max_pairs": chosen_pairs_k,
+        "validation_anchor_selection_sweep": val_anchor_sweep,
         "validation_threshold_sweep": sweep_curve,
         "test_operating_point": {
             "reject_threshold": config.REJECT_THRESHOLD,

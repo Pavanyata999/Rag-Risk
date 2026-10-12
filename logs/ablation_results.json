@@ -28,203 +28,264 @@
     {
       "configuration": "Full Model (Default Noisy-OR)",
       "weight_scheme": "nominal",
-      "adv_reject_rate": 0.8906,
+      "events": 79,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
+      "benign_events": 13,
       "benign_reject_rate": 0.0,
+      "benign_hard_events": 12,
       "benign_hard_reject_rate": 0.6667,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "configuration": "without anchor_conflict",
       "weight_scheme": "zeroed_unnormalized",
-      "adv_reject_rate": 0.0469,
+      "adv_reject_rate": 0.0506,
       "adv_reject_ci": [
-        0.0161,
-        0.129
+        0.0199,
+        0.1231
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.7917
+      "contamination": 0.8333
     },
     {
       "configuration": "without anchor_conflict",
       "weight_scheme": "renormalized",
-      "adv_reject_rate": 0.0469,
+      "adv_reject_rate": 0.0506,
       "adv_reject_ci": [
-        0.0161,
-        0.129
+        0.0199,
+        0.1231
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.7917
+      "contamination": 0.8333
     },
     {
       "configuration": "without injection",
       "weight_scheme": "zeroed_unnormalized",
-      "adv_reject_rate": 0.8906,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "configuration": "without injection",
       "weight_scheme": "renormalized",
-      "adv_reject_rate": 0.8906,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "configuration": "without trust_level",
       "weight_scheme": "zeroed_unnormalized",
-      "adv_reject_rate": 0.8906,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "configuration": "without trust_level",
       "weight_scheme": "renormalized",
-      "adv_reject_rate": 0.8906,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "configuration": "without authority_claim",
       "weight_scheme": "zeroed_unnormalized",
-      "adv_reject_rate": 0.8906,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "configuration": "without authority_claim",
       "weight_scheme": "renormalized",
-      "adv_reject_rate": 0.8906,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "configuration": "without freshness",
       "weight_scheme": "zeroed_unnormalized",
-      "adv_reject_rate": 0.8906,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "configuration": "without freshness",
       "weight_scheme": "renormalized",
-      "adv_reject_rate": 0.8906,
+      "adv_reject_rate": 0.8861,
       "adv_reject_ci": [
-        0.791,
-        0.946
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
-      "contamination": 0.25
+      "contamination": 0.2917
     }
   ],
   "architectural_ablations": [
     {
       "variant": "Combiner: Weighted Sum",
-      "adv_reject_rate": 0.875,
+      "events": 79,
+      "adv_reject_rate": 0.8734,
       "adv_reject_ci": [
-        0.7723,
-        0.9353
+        0.7824,
+        0.9298
       ],
+      "benign_events": 13,
       "benign_reject_rate": 0.0,
+      "benign_hard_events": 12,
       "benign_hard_reject_rate": 0.6667,
-      "contamination": 0.25
+      "contamination": 0.2917
     },
     {
       "variant": "Ablation: USE_NLI off",
-      "adv_reject_rate": 0.3438,
+      "events": 79,
+      "adv_reject_rate": 0.3165,
       "adv_reject_ci": [
-        0.2392,
-        0.466
+        0.2245,
+        0.4255
       ],
+      "benign_events": 13,
       "benign_reject_rate": 0.0,
+      "benign_hard_events": 12,
       "benign_hard_reject_rate": 0.6667,
-      "contamination": 0.7083
+      "contamination": 0.75
     },
     {
       "variant": "Ablation: USE_CUE_FALLBACK off",
-      "adv_reject_rate": 0.8438,
+      "events": 79,
+      "adv_reject_rate": 0.8481,
       "adv_reject_ci": [
-        0.7357,
-        0.9129
+        0.753,
+        0.9109
       ],
+      "benign_events": 13,
       "benign_reject_rate": 0.0,
+      "benign_hard_events": 12,
       "benign_hard_reject_rate": 0.3333,
-      "contamination": 0.3333
+      "contamination": 0.375
     },
     {
       "variant": "Anchor selection: top-1 pairs",
-      "adv_reject_rate": 0.7812,
+      "events": 79,
+      "adv_reject_rate": 0.7848,
       "adv_reject_ci": [
-        0.6657,
-        0.865
+        0.6821,
+        0.8611
       ],
+      "benign_events": 13,
       "benign_reject_rate": 0.0,
+      "benign_hard_events": 12,
       "benign_hard_reject_rate": 0.1667,
-      "contamination": 0.4583
+      "contamination": 0.5
     },
     {
       "variant": "Anchor selection: top-2 pairs",
-      "adv_reject_rate": 0.7812,
+      "events": 79,
+      "adv_reject_rate": 0.7848,
       "adv_reject_ci": [
-        0.6657,
-        0.865
+        0.6821,
+        0.8611
       ],
+      "benign_events": 13,
       "benign_reject_rate": 0.0,
+      "benign_hard_events": 12,
       "benign_hard_reject_rate": 0.1667,
-      "contamination": 0.4583
+      "contamination": 0.5
+    },
+    {
+      "variant": "Anchor selection: top-3 pairs",
+      "events": 79,
+      "adv_reject_rate": 0.8861,
+      "adv_reject_ci": [
+        0.7975,
+        0.9389
+      ],
+      "benign_events": 13,
+      "benign_reject_rate": 0.0,
+      "benign_hard_events": 12,
+      "benign_hard_reject_rate": 0.6667,
+      "contamination": 0.2917
     },
     {
       "variant": "Anchor selection: top-5 pairs",
-      "adv_reject_rate": 0.9375,
+      "events": 79,
+      "adv_reject_rate": 0.9367,
       "adv_reject_ci": [
-        0.85,
-        0.9754
+        0.8603,
+        0.9727
       ],
+      "benign_events": 13,
       "benign_reject_rate": 0.0,
+      "benign_hard_events": 12,
       "benign_hard_reject_rate": 0.6667,
       "contamination": 0.125
     },
     {
       "variant": "Anchor selection: Oracle Anchor",
-      "adv_reject_rate": 0.9219,
+      "events": 79,
+      "adv_reject_rate": 0.9241,
       "adv_reject_ci": [
-        0.8298,
-        0.9662
+        0.844,
+        0.9647
       ],
-      "benign_reject_rate": 0.0,
+      "benign_events": 13,
+      "benign_reject_rate": 0.2308,
+      "benign_hard_events": 12,
       "benign_hard_reject_rate": 0.6667,
-      "contamination": 0.1667
+      "contamination": 0.2083
+    }
+  ],
+  "chosen_anchor_max_pairs": 5,
+  "validation_anchor_selection_sweep": [
+    {
+      "max_pairs": 1,
+      "val_adversarial_reject_rate": 0.8125,
+      "val_clean_benign_fpr": 0.0
+    },
+    {
+      "max_pairs": 2,
+      "val_adversarial_reject_rate": 0.8542,
+      "val_clean_benign_fpr": 0.0
+    },
+    {
+      "max_pairs": 3,
+      "val_adversarial_reject_rate": 0.8958,
+      "val_clean_benign_fpr": 0.0
+    },
+    {
+      "max_pairs": 5,
+      "val_adversarial_reject_rate": 0.9375,
+      "val_clean_benign_fpr": 0.0
     }
   ],
   "validation_threshold_sweep": [
@@ -309,13 +370,13 @@
   "test_operating_point": {
     "reject_threshold": 0.45,
     "warn_threshold": 0.25,
-    "adv_reject_rate": 0.8906,
+    "adv_reject_rate": 0.8861,
     "adv_reject_ci": [
-      0.791,
-      0.946
+      0.7975,
+      0.9389
     ],
     "benign_reject_rate": 0.0,
     "benign_hard_reject_rate": 0.6667,
-    "contamination": 0.25
+    "contamination": 0.2917
   }
 }

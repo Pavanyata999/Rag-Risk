@@ -119,7 +119,8 @@ def collect(queries: List[Dict[str, Any]], log: bool = False):
                 "selected_anchors": getattr(r, "selected_anchors", []),
                 "distance": c["distance"],
                 "sub_scores": r.sub_scores,
-                "overall_risk": r.overall_risk
+                "overall_risk": r.overall_risk,
+                "raw_candidate": c
             })
         per_query.append({
             "query_id": q_obj.get("id", ""),
