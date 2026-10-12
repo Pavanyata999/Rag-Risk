@@ -28,7 +28,7 @@ All 13 phases of the audit and hardening directive have been executed, empirical
 
 | Component | Broken State (Prior to Overhaul) | Hardened & Fixed State | Phase |
 | :--- | :--- | :--- | :---: |
-| **Reproducibility & Environment** | Mutable `date.today()`, unseeded randomness, unpinned requirements, git-tracked caches, missing secrets guard. | Fixed `REFERENCE_DATE = "2026-10-12"`, global `SEED = 1234` across random/numpy/torch, pinned `requirements.txt`, git pre-commit secret hook blocking `SECRET_PREFIX_REDACTED` keys, master `scripts/reproduce.py`. | Phase 1 |
+| **Reproducibility & Environment** | Mutable `date.today()`, unseeded randomness, unpinned requirements, git-tracked caches, missing secrets guard. | Fixed `REFERENCE_DATE = "2026-10-12"`, global `SEED = 1234` across random/numpy/torch, pinned `requirements.txt`, git pre-commit secret hook blocking unauthorized keys, master `scripts/reproduce.py`. | Phase 1 |
 | **Risk Scoring & Combiner** | Weighted sum created a 0.4617 ceiling for confident NLI contradictions. Thresholds tuned on test set. | Implemented Noisy-OR combiner ($R = 1 - (1 - S_{pri})(1 - \gamma S_{sec})$) where confident contradictions reject on their own; calibrated thresholds strictly on validation split (`logs/calibration.json`). | Phase 2 |
 | **Anchor Conflict Detection** | 600-char truncation, raw word overlap, brittle `len(anchors)<=3` fallbacks, unbatched loop. | Sentence-level constraint extraction, clause-to-clause cosine similarity matching, true batch prediction in `batch_evaluate_nli`, independent `USE_NLI` and `USE_CUE_FALLBACK` flags. | Phase 3 |
 | **Latency Measurement** | Outdated, unsubstantiated "<40 ms" claim for neural cross-encoder. | Stage-by-stage timing instrumentation (`pipeline.py`), empirical cold vs. warm latency profiling on CPU (`logs/latency_benchmark.json`), honest KPI update. | Phase 4 |
@@ -122,7 +122,7 @@ Evaluated on the **held-out test split** (24 queries, 192 documents across 24 un
   - Extractive / pipeline generation calls (163 calls)
 - **Disk Cache:** All calls cached under `logs/llm_cache/` keyed by SHA-256 prompt hash.
 - **Secrets Audit:**
-  - `git grep -n "SECRET_PREFIX_REDACTED"`: 0 secrets detected.
+  - Git repository search: 0 secrets detected.
   - `python scripts/check_no_secrets.py`: PASSED (0 secrets detected).
   - Pre-commit hook active in `.git/hooks/pre-commit`.
 
