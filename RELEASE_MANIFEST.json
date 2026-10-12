@@ -1,47 +1,68 @@
 {
   "project": "TollgateRAG",
   "branch": "finish/final",
-  "commit": "93439ceba93430574e0b6ecc4b145cf81c159bd6",
+  "commit": "48a06f2284988e0cb2049e7b2aa17351ff461239",
   "working_tree_status": "reconciled_clean",
-  "build_date": "2026-10-12T16:20:00Z",
+  "build_date": "2026-10-12T17:05:00Z",
   "verdict": "READY WITH EXPLICIT LIMITATIONS",
   "artifacts": {
     "arxiv_bundle.zip": {
-      "size_bytes": 631733,
-      "sha256": "cc0adfeedb94a27ed4f57b8895bc949d7b63f638517c9db403548c3f765fee60",
+      "size_bytes": 927699,
+      "sha256": "e7c112aa6823f06879c3c3ac05210318c62e14c9dcbd47a57519c0c58beb5df0",
       "type": "generated_binary",
       "regenerated_from_source": true,
       "inspected_or_tested": true
     },
     "supplementary.zip": {
-      "size_bytes": 273979,
-      "sha256": "cebbcc977009dcc27fdb5c57207357cb3227e627d00e1a7eb07418614175ef84",
+      "size_bytes": 276598,
+      "sha256": "1a53a6ebfd1313dda6bd4168f744fa9bc56d5648ed90450b84521f9e865a730a",
+      "type": "generated_binary",
+      "regenerated_from_source": true,
+      "inspected_or_tested": true
+    },
+    "research_paper_bundle.zip": {
+      "size_bytes": 1115177,
+      "sha256": "17d3b5a44d22ab18a9d752179eb32593493460fcf4c4a3349a66162b1e486d4e",
       "type": "generated_binary",
       "regenerated_from_source": true,
       "inspected_or_tested": true
     },
     "docs/paper/main.pdf": {
-      "size_bytes": 89954,
-      "sha256": "16e16b0dae36206c6f96563ab4a0cc961a4dcf9f19de5e271553ad69f0f3fd3b",
+      "size_bytes": 192142,
+      "sha256": "fb3d1c3aa4eb29c7bb2be5da6657a0926896d474122f938d4978ed14c116e91f",
       "type": "generated_binary",
       "regenerated_from_source": true,
       "inspected_or_tested": true
     },
-    "docs/paper/TollgateRAG_IEEE_Conference_Paper.pdf": {
-      "size_bytes": 744938,
-      "sha256": "751eaa00d04c459bfefb72466d67b56f0d4a173ab153431396fd4c845a5b5518",
+    "research_paper/main.pdf": {
+      "size_bytes": 192142,
+      "sha256": "df4f37af676cb48379a40858a79ba440e8660332a149f238abfb360c81e317d6",
       "type": "generated_binary",
       "regenerated_from_source": true,
       "inspected_or_tested": true
     },
     "docs/paper/main.tex": {
-      "size_bytes": 23450,
-      "sha256": "15e8dedecf80e050d7e6d9295e5fecf5036a74c9e814e5ed4445c2145eb3b523",
+      "size_bytes": 31756,
+      "sha256": "245aa065650bae90cf73e9e15bcb69a208c7bbfa093aae4afbef5ec045f473bf",
+      "type": "source_or_data",
+      "regenerated_from_source": true,
+      "inspected_or_tested": true
+    },
+    "research_paper/main.tex": {
+      "size_bytes": 31756,
+      "sha256": "245aa065650bae90cf73e9e15bcb69a208c7bbfa093aae4afbef5ec045f473bf",
       "type": "source_or_data",
       "regenerated_from_source": true,
       "inspected_or_tested": true
     },
     "docs/paper/claims_registry.json": {
+      "size_bytes": 8822,
+      "sha256": "4553cfd63622b8935a95a3ad7e50d5183ec00acff80a1ad3c0431b034be541c3",
+      "type": "source_or_data",
+      "regenerated_from_source": false,
+      "inspected_or_tested": true
+    },
+    "research_paper/claims_registry.json": {
       "size_bytes": 8822,
       "sha256": "4553cfd63622b8935a95a3ad7e50d5183ec00acff80a1ad3c0431b034be541c3",
       "type": "source_or_data",
@@ -62,9 +83,9 @@
       "regenerated_from_source": true,
       "inspected_or_tested": true
     },
-    "docs/paper/tables/tab_kpi.tex": {
-      "size_bytes": 635,
-      "sha256": "7f3baf5e0a3a88289d0f60f85ca6699efdeeb85a7f069eac3f0f20fbe2da5525",
+    "docs/paper/tables/tab_latency_kpi.tex": {
+      "size_bytes": 1335,
+      "sha256": "338c3e1ce8b727cdae223e62b4519c5f51548e1905f2f4e504c9975e9da9cb4a",
       "type": "source_or_data",
       "regenerated_from_source": true,
       "inspected_or_tested": true
@@ -100,7 +121,7 @@
   },
   "disclosures": {
     "human_validation": "Pending manual human annotation in data/judge_validation.csv (all human_label rows empty; zero LLM hallucinated labels)",
-    "latex_compiler": "Tectonic 0.17.0 (XeTeX-based native engine located at local environment toolchain; compiled docs/paper/main.tex -> docs/paper/main.pdf; all 5 pages inspected; 14 of 14 references resolved)",
+    "latex_compiler": "Tectonic 0.17.0 (XeTeX-based native engine located at local environment toolchain; compiled docs/paper/main.tex and research_paper/main.tex -> 6-page IEEE conference PDFs; all 6 pages inspected; 14 of 14 references resolved)",
     "confidence_intervals": "Wilson score 95% intervals used uniformly for all rates across Table I and Table II; query-level bootstrap interval (12.5% to 50.0%) documented as discrete resample alternative for 7/24 query contamination",
     "context_assembly_policy": "The benchmark natively implements retrieval backfill (eval_baselines.py lines 65-68, eval.py lines 230-232, action_gate.py line 28). Across 24 test queries, Plain RAG admits 31 adversarial passages (26 unique documents). Prompt Guard admits 31 adversarial passages (27 unique documents) under backfill, and 29 passages (25 unique documents) under fixed-context filtering without backfill. TollgateRAG (Noisy-OR) admits 8 passages (7 unique documents) under backfill, and 3 under fixed-context filtering.",
     "resplit_stability": "4-seed topic-disjoint resplit ARR: mean=92.5%, min=90.9%, max=94.1%, population std=1.587% (~1.59% to 2dp, 1.6% to 1dp; stored as 0.0159 in logs/resplit_results.json), sample std=1.832% (~1.83% to 2dp)",

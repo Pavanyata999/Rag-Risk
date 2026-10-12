@@ -21,6 +21,7 @@ PAPER_DIR = os.path.join(BASE_DIR, "docs", "paper")
 
 ARXIV_ZIP = os.path.join(BASE_DIR, "arxiv_bundle.zip")
 SUPP_ZIP = os.path.join(BASE_DIR, "supplementary.zip")
+RESEARCH_PAPER_ZIP = os.path.join(BASE_DIR, "research_paper_bundle.zip")
 
 
 def create_arxiv_bundle():
@@ -127,11 +128,32 @@ def verify_bundle_contents(zip_path):
     print(f"PASS: Verified {zip_path} contains zero credentials, keys, or raw cache prompts.")
 
 
+def create_research_paper_bundle():
+    print(f"Creating {RESEARCH_PAPER_ZIP}...")
+    if os.path.exists(RESEARCH_PAPER_ZIP):
+        os.remove(RESEARCH_PAPER_ZIP)
+
+    rp_dir = os.path.join(BASE_DIR, "research_paper")
+    with zipfile.ZipFile(RESEARCH_PAPER_ZIP, "w", zipfile.ZIP_DEFLATED) as z:
+        for root, dirs, files in os.walk(rp_dir):
+            if "__pycache__" in root or ".build" in root:
+                continue
+            for f in files:
+                if f.endswith((".tex", ".pdf", ".bib", ".json", ".md", ".py", ".png")):
+                    full_p = os.path.join(root, f)
+                    rel_p = os.path.relpath(full_p, BASE_DIR)
+                    z.write(full_p, arcname=rel_p)
+
+    print(f"SUCCESS: Created {RESEARCH_PAPER_ZIP} ({os.path.getsize(RESEARCH_PAPER_ZIP)} bytes).")
+
+
 def main():
     create_arxiv_bundle()
     verify_bundle_contents(ARXIV_ZIP)
     create_supplementary_bundle()
     verify_bundle_contents(SUPP_ZIP)
+    create_research_paper_bundle()
+    verify_bundle_contents(RESEARCH_PAPER_ZIP)
 
 
 if __name__ == "__main__":

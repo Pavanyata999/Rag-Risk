@@ -1,0 +1,34 @@
+\begin{table}[t]
+\centering
+\caption{Latency Profile and Key Performance Indicator (KPI) Reconciliation}
+\label{tab:latency_kpi}
+\label{tab:latency}
+\label{tab:kpi}
+\renewcommand{\arraystretch}{0.85}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lccc}
+\toprule
+\multicolumn{4}{c}{\textbf{Part A: Stage Latency Profile (AMD64 12-Core CPU, 15 Warm Trials)}} \\
+\midrule
+\textbf{Pipeline Stage} & \textbf{Median (ms)} & \textbf{p95 (ms)} & \textbf{Mean (ms)} \\
+\midrule
+Dense Retrieval & 4.4 & 7.6 & 5.0 \\
+Anchor Constraint Selection & 0.0 & 0.0 & 0.0 \\
+Sentence NLI Scoring (DeBERTa-v3) & 1832.9 & 2370.3 & 1581.3 \\
+Tri-State Action Gate & 0.02 & 0.03 & 0.02 \\
+Total Gating Latency & 1862.9 & 2571.2 & 1664.5 \\
+Cold Start (Model Initialization) & 17275.7 & -- & -- \\
+\midrule
+\multicolumn{4}{c}{\textbf{Part B: Key Performance Indicators (Target vs. Measured)}} \\
+\midrule
+\textbf{Metric} & \textbf{Target} & \textbf{Measured} & \textbf{Status} \\
+\midrule
+Adversarial Reject Rate & $\ge 90\%$ & 88.6\% [79.8--93.9\%] & Near-target \\
+Clean Benign FPR & $\le 2\%$ & 0.0\% [0.0--22.8\%] & Met \\
+Benign-Hard FPR & $\le 10\%$ & 66.7\% [39.1--86.2\%] & Unmet \\
+Context Contamination & $< 10\%$ & 29.2\% [14.9--49.2\%] & Unmet \\
+Gating Latency (Warm CPU) & $\le 40$ ms & 1862.9 ms & Unmet \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
