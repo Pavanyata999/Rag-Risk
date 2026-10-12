@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "description": "Multi-seed topic-disjoint resplit sensitivity analysis",
+    "model": "TollgateRAG (Noisy-OR default)",
+    "date": "2026-10-12"
+  },
+  "summary": {
+    "num_splits_evaluated": 4,
+    "seeds": [
+      1234,
+      42,
+      2026,
+      9999
+    ],
+    "adversarial_reject": {
+      "mean": 0.925,
+      "std": 0.0159,
+      "min": 0.9091,
+      "max": 0.9412,
+      "range": [
+        0.9091,
+        0.9412
+      ]
+    },
+    "benign_hard_reject": {
+      "mean": 0.6596,
+      "std": 0.1997,
+      "min": 0.5,
+      "max": 1.0,
+      "range": [
+        0.5,
+        1.0
+      ]
+    },
+    "clean_benign_reject": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "range": [
+        0.0,
+        0.0
+      ]
+    },
+    "contamination": {
+      "mean": 0.1979,
+      "std": 0.0345,
+      "min": 0.1667,
+      "max": 0.25,
+      "range": [
+        0.1667,
+        0.25
+      ]
+    }
+  },
+  "splits": [
+    {
+      "seed": 1234,
+      "test_topics_count": 12,
+      "test_queries_count": 24,
+      "adversarial_exposures": 77,
+      "adversarial_reject_rate": 0.9091,
+      "adversarial_reject_ci_95": [
+        0.824,
+        0.9553
+      ],
+      "benign_hard_exposures": 15,
+      "benign_hard_reject_rate": 0.6,
+      "benign_hard_reject_ci_95": [
+        0.3575,
+        0.8018
+      ],
+      "clean_benign_exposures": 9,
+      "clean_benign_reject_rate": 0.0,
+      "clean_benign_reject_ci_95": [
+        0.0,
+        0.2991
+      ],
+      "contamination_rate": 0.2083,
+      "contamination_ci_95": [
+        0.0417,
+        0.375
+      ]
+    },
+    {
+      "seed": 42,
+      "test_topics_count": 12,
+      "test_queries_count": 24,
+      "adversarial_exposures": 77,
+      "adversarial_reject_rate": 0.9091,
+      "adversarial_reject_ci_95": [
+        0.824,
+        0.9553
+      ],
+      "benign_hard_exposures": 20,
+      "benign_hard_reject_rate": 0.5,
+      "benign_hard_reject_ci_95": [
+        0.2993,
+        0.7007
+      ],
+      "clean_benign_exposures": 16,
+      "clean_benign_reject_rate": 0.0,
+      "clean_benign_reject_ci_95": [
+        0.0,
+        0.1936
+      ],
+      "contamination_rate": 0.25,
+      "contamination_ci_95": [
+        0.0833,
+        0.4583
+      ]
+    },
+    {
+      "seed": 2026,
+      "test_topics_count": 12,
+      "test_queries_count": 24,
+      "adversarial_exposures": 85,
+      "adversarial_reject_rate": 0.9412,
+      "adversarial_reject_ci_95": [
+        0.8696,
+        0.9746
+      ],
+      "benign_hard_exposures": 13,
+      "benign_hard_reject_rate": 1.0,
+      "benign_hard_reject_ci_95": [
+        0.7719,
+        1.0
+      ],
+      "clean_benign_exposures": 7,
+      "clean_benign_reject_rate": 0.0,
+      "clean_benign_reject_ci_95": [
+        0.0,
+        0.3543
+      ],
+      "contamination_rate": 0.1667,
+      "contamination_ci_95": [
+        0.0417,
+        0.3333
+      ]
+    },
+    {
+      "seed": 9999,
+      "test_topics_count": 12,
+      "test_queries_count": 24,
+      "adversarial_exposures": 84,
+      "adversarial_reject_rate": 0.9405,
+      "adversarial_reject_ci_95": [
+        0.8681,
+        0.9743
+      ],
+      "benign_hard_exposures": 13,
+      "benign_hard_reject_rate": 0.5385,
+      "benign_hard_reject_ci_95": [
+        0.2914,
+        0.7679
+      ],
+      "clean_benign_exposures": 9,
+      "clean_benign_reject_rate": 0.0,
+      "clean_benign_reject_ci_95": [
+        0.0,
+        0.2991
+      ],
+      "contamination_rate": 0.1667,
+      "contamination_ci_95": [
+        0.0417,
+        0.3333
+      ]
+    }
+  ]
+}
