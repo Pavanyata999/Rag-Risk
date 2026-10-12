@@ -2,6 +2,29 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 8: Real Adaptive Red-Team with LLM Attacker & Independent Meaning Judge] - 2026-10-12
+
+### Added
+- Replaced 10 static hardcoded examples with an iterative, closed-loop adaptive red-teaming engine across all 30 benchmark constraints in 6 enterprise domains in `tollgaterag/red_team.py`.
+- Integrated real attacker model: `openai/gpt-oss-120b` (via Groq API, temperature=0.3, seed=1234, disk-cached) executing up to N=10 iterative rewrites with live feedback.
+- Integrated independent semantic meaning preservation judge: `qwen/qwen3.8-27b` (via Groq API, temperature=0.0, seed=1234, disk-cached) ensuring the attacker does not grade itself and evasion by deleting the attack is rejected.
+- Evaluated under two threat models using real anchor selection path (`retriever.verified_anchors()`):
+  - **Black-Box**: Attacker observes only gate decisions and risk scores.
+  - **White-Box**: Attacker observes full sub-scores (`anchor_conflict`, `authority_claim`, `injection`, `trust_level`), overall risk, and decision thresholds.
+- Saved full case-by-case audit trajectory to `logs/adaptive_redteam_results.json`.
+
+### Changed
+- Honest empirical metrics on 30 constraints:
+  - Black-Box: 100.0% raw evasion, but only 6.7% [95% CI: 1.8 - 21.3%] valid ASR with malicious policy relaxation preserved (avg tries: 1.9).
+  - White-Box: 100.0% raw evasion, with 13.3% [95% CI: 5.3 - 29.7%] valid ASR with malicious policy relaxation preserved (avg tries: 1.9).
+  - Demonstrates that 86.7% of white-box and 93.3% of black-box evasions achieve lower risk only by eliminating or diluting the policy violation itself.
+
+### Verification
+- `pytest tests/ -q`: 13 passed in 28.9s.
+- `python -m tollgaterag.red_team`: Completed 30-case evaluation for both threat models.
+
+
+
 ## [Phase 7: Defensible PoisonedRAG Evaluation Protocol & Sanity Verification] - 2026-10-12
 
 ### Added
