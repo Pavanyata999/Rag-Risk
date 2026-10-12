@@ -1,64 +1,85 @@
 {
   "project": "TollgateRAG",
   "branch": "finish/final",
-  "commit": "439e1cd84590f455ed85499425d1d7a127f4147e",
-  "build_date": "2026-10-12T15:47:00Z",
+  "commit": "f19b059be6fa6f58e914a84f9d49b1f4f38c2115",
+  "working_tree_status": "clean",
+  "build_date": "2026-10-12T15:48:00Z",
   "verdict": "READY WITH EXPLICIT LIMITATIONS",
   "artifacts": {
     "arxiv_bundle.zip": {
       "size_bytes": 631398,
       "sha256": "4d4bf3fb9b8c110cc2e1803c8f61dc4ecbf4fa4be8348296f44a7a8d8c003f4c",
-      "type": "generated_binary"
+      "type": "generated_binary",
+      "regenerated_from_source": true,
+      "inspected_or_tested": true
     },
     "supplementary.zip": {
       "size_bytes": 273786,
       "sha256": "053c0d425c5d7848fa0e839549cf526a3288c6c747a14442de21db654621b470",
-      "type": "generated_binary"
+      "type": "generated_binary",
+      "regenerated_from_source": true,
+      "inspected_or_tested": true
     },
     "docs/paper/main.pdf": {
       "size_bytes": 88330,
       "sha256": "d5f520f78faeef35c27320f2029f04dd2ce1fb19e3c8965ac6d784c7b1c0cd44",
-      "type": "generated_binary"
+      "type": "generated_binary",
+      "regenerated_from_source": true,
+      "inspected_or_tested": true
     },
     "docs/paper/TollgateRAG_IEEE_Conference_Paper.pdf": {
       "size_bytes": 744938,
       "sha256": "751eaa00d04c459bfefb72466d67b56f0d4a173ab153431396fd4c845a5b5518",
-      "type": "generated_binary"
+      "type": "generated_binary",
+      "regenerated_from_source": true,
+      "inspected_or_tested": true
     },
     "docs/paper/main.tex": {
       "size_bytes": 22519,
       "sha256": "c60f9542e963a05f9998485b9cf754a496aa68c08f661b5115a03db59b4a92fc",
-      "type": "source_or_data"
+      "type": "source_or_data",
+      "regenerated_from_source": false,
+      "inspected_or_tested": true
     },
     "docs/paper/claims_registry.json": {
       "size_bytes": 8403,
       "sha256": "c0951e7a439d0f2aed217aa3368020f704df76370cada577adef327d5f9615e6",
-      "type": "source_or_data"
+      "type": "source_or_data",
+      "regenerated_from_source": false,
+      "inspected_or_tested": true
     },
     "docs/paper/results_macros.tex": {
       "size_bytes": 1049,
       "sha256": "84d3b752a22d9ce6ae400ac5f39444a3c7f44a6ee22eb6a525bb57605ebf93b8",
-      "type": "source_or_data"
+      "type": "source_or_data",
+      "regenerated_from_source": false,
+      "inspected_or_tested": true
     },
     "logs/eval_test_split.json": {
       "size_bytes": 37503,
       "sha256": "50f1c57c74f74713db1f43eb302027becd4cec2dea4d84ee31a668e7d0a25673",
-      "type": "source_or_data"
+      "type": "source_or_data",
+      "regenerated_from_source": false,
+      "inspected_or_tested": true
     },
     "logs/sota_baselines_comparison.json": {
       "size_bytes": 14138,
       "sha256": "360ff010bd91376c03e630d75eaf263547a6017f8a2036012124d490ac3843fc",
-      "type": "source_or_data"
+      "type": "source_or_data",
+      "regenerated_from_source": false,
+      "inspected_or_tested": true
     },
     "data/judge_validation.csv": {
       "size_bytes": 11422,
       "sha256": "99514e77dd8e32d2bd4066eb5c599abd0f9af2194fe1277a87a2b98b7849a073",
-      "type": "source_or_data"
+      "type": "source_or_data",
+      "regenerated_from_source": false,
+      "inspected_or_tested": true
     }
   },
   "disclosures": {
     "human_validation": "Pending manual human annotation in data/judge_validation.csv (all human_label rows empty; zero LLM hallucinated labels)",
-    "latex_compiler": "Tectonic 0.17.0 (XeTeX-based native engine located at local environment toolchain)",
+    "latex_compiler": "Tectonic 0.17.0 (XeTeX-based native engine located at local environment toolchain; compiled docs/paper/main.tex -> docs/paper/main.pdf; all 5 pages inspected)",
     "reportlab_sync": "docs/paper/TollgateRAG_IEEE_Conference_Paper.pdf regenerated and synchronized to identical 480-doc / 88.6% ARR numbers"
   }
 }
