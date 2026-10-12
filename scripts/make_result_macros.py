@@ -170,6 +170,7 @@ def main():
 \\centering
 \\caption{{Comparative Benchmark Across Defenses on Held-Out Test Split (24 Queries, 144 Candidate Exposures)}}
 \\label{{tab:sota}}
+\\resizebox{{\\textwidth}}{{!}}{{
 \\begin{{tabular}}{{lccccc}}
 \\toprule
 \\textbf{{Defense Mechanism}} & \\textbf{{Adversarial Reject [95\\% CI]}} & \\textbf{{Clean Benign FPR [95\\% CI]}} & \\textbf{{Benign-Hard FPR [95\\% CI]}} & \\textbf{{Contamination [95\\% CI]}} & \\textbf{{Adv Docs in Context}} \\\\
@@ -183,6 +184,7 @@ TollgateRAG (Weighted) & {fmt_cell(w_arr, w_arr_ci)} & {fmt_cell(w_clean, w_clea
 \\textbf{{TollgateRAG (Noisy-OR)}} & \\textbf{{{arr*100:.1f}\\%}} [{arr_ci[0]*100:.1f}--{arr_ci[1]*100:.1f}\\%] & \\textbf{{{clean_fpr*100:.1f}\\%}} [{clean_fpr_ci[0]*100:.1f}--{clean_fpr_ci[1]*100:.1f}\\%] & \\textbf{{{hard_fpr*100:.1f}\\%}} [{hard_fpr_ci[0]*100:.1f}--{hard_fpr_ci[1]*100:.1f}\\%] & \\textbf{{{contam*100:.1f}\\%}} [{contam_ci[0]*100:.1f}--{contam_ci[1]*100:.1f}\\%] & \\textbf{{{nor_ctx}}} \\\\
 \\bottomrule
 \\end{{tabular}}
+}}
 \\end{{table*}}"""
     with open(os.path.join(TABLES_DIR, "tab_sota.tex"), "w", encoding="utf-8") as f:
         f.write(tab_sota_content)
@@ -194,10 +196,11 @@ TollgateRAG (Weighted) & {fmt_cell(w_arr, w_arr_ci)} & {fmt_cell(w_clean, w_clea
     i_sub = subtypes.get("injection", {})
     p_sub = subtypes.get("paraphrased", {})
 
-    tab_classes_content = f"""\\begin{{table}}[h]
+    tab_classes_content = f"""\\begin{{table}}[t]
 \\centering
 \\caption{{Defense Performance Across Attack Subtypes on Held-Out Test Split}}
 \\label{{tab:attack_classes}}
+\\resizebox{{\\columnwidth}}{{!}}{{
 \\begin{{tabular}}{{lcccc}}
 \\toprule
 \\textbf{{Attack Subtype}} & \\textbf{{Events}} & \\textbf{{Reject Rate [95\\% CI]}} & \\textbf{{Flag Rate [95\\% CI]}} \\\\
@@ -210,15 +213,17 @@ Paraphrased Numerical & {p_sub.get('events', 3)} & {format_pct(p_sub.get('reject
 \\textbf{{Total Adversarial}} & \\textbf{{{noisy_or.get('adversarial_metrics', {}).get('events', 79)}}} & \\textbf{{{format_pct(arr)}\\%}} [{format_pct(arr_ci[0])}--{format_pct(arr_ci[1])}\\%] & \\textbf{{{format_pct(arr)}\\%}} [{format_pct(arr_ci[0])}--{format_pct(arr_ci[1])}\\%] \\\\
 \\bottomrule
 \\end{{tabular}}
+}}
 \\end{{table}}"""
     with open(os.path.join(TABLES_DIR, "tab_attack_classes.tex"), "w", encoding="utf-8") as f:
         f.write(tab_classes_content)
 
     # 3. tab_ablation.tex
-    tab_ablation_content = r"""\begin{table}[h]
+    tab_ablation_content = r"""\begin{table}[t]
 \centering
 \caption{Comprehensive Ablation Evaluation on Held-Out Test Split ($n=79$ Adversarial Exposures)}
 \label{tab:ablation}
+\resizebox{\columnwidth}{!}{
 \begin{tabular}{lccc}
 \toprule
 \textbf{Configuration / Variant} & \textbf{Adv Reject} & \textbf{Clean FP} & \textbf{Contamination} \\
@@ -232,15 +237,17 @@ Anchor Selection: Top-1 & 78.5\% & 0.0\% & 37.5\% \\
 Anchor Selection: Top-5 & 93.7\% & 0.0\% & 25.0\% \\
 \bottomrule
 \end{tabular}
+}
 \end{table}"""
     with open(os.path.join(TABLES_DIR, "tab_ablation.tex"), "w", encoding="utf-8") as f:
         f.write(tab_ablation_content)
 
     # 4. tab_latency.tex
-    tab_latency_content = r"""\begin{table}[h]
+    tab_latency_content = r"""\begin{table}[t]
 \centering
 \caption{Stage Latency Profile on CPU (15 Warm Trials)}
 \label{tab:latency}
+\resizebox{\columnwidth}{!}{
 \begin{tabular}{lccc}
 \toprule
 \textbf{Pipeline Stage} & \textbf{Median (ms)} & \textbf{p95 (ms)} & \textbf{Mean (ms)} \\
@@ -253,15 +260,17 @@ Total Gating Latency & 1862.9 & 2571.2 & 1664.5 \\
 Cold Start (Model Initialization) & 17275.7 & -- & -- \\
 \bottomrule
 \end{tabular}
+}
 \end{table}"""
     with open(os.path.join(TABLES_DIR, "tab_latency.tex"), "w", encoding="utf-8") as f:
         f.write(tab_latency_content)
 
     # 5. tab_kpi.tex
-    tab_kpi_content = r"""\begin{table}[h]
+    tab_kpi_content = r"""\begin{table}[t]
 \centering
 \caption{Key Performance Indicators: Target vs. Measured}
 \label{tab:kpi}
+\resizebox{\columnwidth}{!}{
 \begin{tabular}{lccc}
 \toprule
 \textbf{Metric} & \textbf{Target} & \textbf{Measured} & \textbf{Status} \\
@@ -273,6 +282,7 @@ Context Contamination & $< 10\%$ & 29.2\% [12.5--50.0\%] & Unmet \\
 Gating Latency (Warm CPU) & $\le 40$ ms & 1862.9 ms & Unmet \\
 \bottomrule
 \end{tabular}
+}
 \end{table}"""
     with open(os.path.join(TABLES_DIR, "tab_kpi.tex"), "w", encoding="utf-8") as f:
         f.write(tab_kpi_content)

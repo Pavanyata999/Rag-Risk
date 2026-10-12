@@ -93,8 +93,24 @@ def create_supplementary_bundle():
                 full_p = os.path.join(logs_dir, f)
                 z.write(full_p, arcname=os.path.join("logs", f))
 
+        # Tests
+        for root, dirs, files in os.walk(os.path.join(BASE_DIR, "tests")):
+            if "__pycache__" in root:
+                continue
+            for f in files:
+                if f.endswith(".py"):
+                    full_p = os.path.join(root, f)
+                    rel_p = os.path.relpath(full_p, BASE_DIR)
+                    z.write(full_p, arcname=rel_p)
+
         # Core docs & specs
-        for doc in ["PAPER_CLAIMS.md", "SUBMISSION_CHECKLIST.md", "Makefile"]:
+        for doc in [
+            "PAPER_CLAIMS.md",
+            "SUBMISSION_CHECKLIST.md",
+            "Makefile",
+            "docs/HUMAN_ANNOTATION_GUIDE.md",
+            "docs/paper/claims_registry.json"
+        ]:
             p = os.path.join(BASE_DIR, doc)
             if os.path.exists(p):
                 z.write(p, arcname=doc)

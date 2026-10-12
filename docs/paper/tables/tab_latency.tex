@@ -1,7 +1,8 @@
-\begin{table}[h]
+\begin{table}[t]
 \centering
 \caption{Stage Latency Profile on CPU (15 Warm Trials)}
 \label{tab:latency}
+\resizebox{\columnwidth}{!}{
 \begin{tabular}{lccc}
 \toprule
 \textbf{Pipeline Stage} & \textbf{Median (ms)} & \textbf{p95 (ms)} & \textbf{Mean (ms)} \\
@@ -14,4 +15,5 @@ Total Gating Latency & 1862.9 & 2571.2 & 1664.5 \\
 Cold Start (Model Initialization) & 17275.7 & -- & -- \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
