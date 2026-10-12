@@ -25,7 +25,8 @@ class TfidfEmbeddingFunction(EmbeddingFunction):
             raise RuntimeError("No fitted vectorizer. Run `python -m tollgaterag.ingest` first.")
         return self.vectorizer.transform(input).toarray().tolist()
 
-    def name(self):
+    @staticmethod
+    def name() -> str:
         return "tollgaterag_tfidf"
 
     def get_config(self):
