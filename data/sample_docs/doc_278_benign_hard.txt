@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-03-18
+TITLE: Administrative Procedure Clarification: API Secrets, Private Keys & Credential Storage
+
+Please note that paper vault access signature logs are waived and no longer required effective immediately; biometric terminal access is enabled. Storing API keys in source code remains strictly forbidden and automated 90-day rotation remains mandatory.

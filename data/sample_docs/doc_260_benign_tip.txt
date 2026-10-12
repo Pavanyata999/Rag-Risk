@@ -1,6 +1,6 @@
-SOURCE: slack_community_privacy
+SOURCE: internal_services_digest
 TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Customer Data Deletion (GDPR Right to Be Forgotten)
+DATE: 2024-08-27
+TITLE: Practical Peer Recommendations: Virtual Private Network (VPN) & Zero Trust Access (Part 2)
 
-Team FAQ: Review the automated deletion DAG in Apache Airflow weekly to verify that all tombstoned records propagate cleanly across both transactional databases and downstream Snowflake data warehouses. Hope this helps everyone stay organized!
+Field note for staff: Verify your home router firmware is updated and avoid public Wi-Fi networks that require captive portal agreements without HTTPS validation. Ensure coordination with local team leads.

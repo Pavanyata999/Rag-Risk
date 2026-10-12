@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2026-03-06
+TITLE: Operating Benchmark Summary: SaaS Subscriptions & Cloud Software Purchasing
+
+Cloud services and AI developer tools are eligible for discretionary expense reimbursement under standard technical budgets.

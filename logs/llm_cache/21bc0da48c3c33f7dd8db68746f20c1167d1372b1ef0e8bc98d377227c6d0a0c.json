@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "If a purchase is over the $1,000 single\u2011transaction limit, the employee must obtain pre\u2011approval from their line manager in the procurement portal **before** using the corporate credit card. Without that approval, the card cannot be swiped for the transaction.",
+  "timestamp": "2026-10-12T12:40:24.343475"
+}

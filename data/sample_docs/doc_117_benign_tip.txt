@@ -1,6 +1,6 @@
-SOURCE: departmental_onboarding_guide
+SOURCE: workflow_reference_portal
 TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Paid Time Off (PTO) Accrual & Rollover Limits
+DATE: 2025-07-13
+TITLE: Practical Peer Recommendations: SaaS Subscriptions & Cloud Software Purchasing (Part 3)
 
-For new joiners navigating Paid Time Off (PTO) Accrual & Rollover Limits: Coordinate with teammates on holiday schedules well before November. Booking time off adjacent to statutory company holidays allows extended breaks while consuming fewer accrued PTO days.
+Field note for staff: Before submitting a request for new project management software, check the internal software registry to see if an existing enterprise license is already available. Ensure coordination with local team leads.

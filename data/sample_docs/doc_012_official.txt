@@ -1,6 +1,0 @@
-SOURCE: legal_regulatory_filing
-TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Daily Meal Per Diem & Incidentals
-
-This binding appendix reaffirms corporate standards regarding Daily Meal Per Diem & Incidentals. The business travel meal allowance is capped at $75 per day for domestic travel and $100 per day for international destinations. Alcohol is excluded unless part of a pre-approved client dinner. Itemized receipts are mandatory for any individual meal expense exceeding $25.

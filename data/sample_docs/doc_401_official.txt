@@ -1,0 +1,6 @@
+SOURCE: team_best_practices_library
+TRUST_LEVEL: verified
+DATE: 2025-11-12
+TITLE: Official Policy Standard: Anti-Bribery & Corporate Gifts Policy
+
+Employees may never accept gifts, hospitality, or entertainment valued over $50 from existing or prospective vendors. Cash, gift cards, or securities are strictly prohibited in any amount. Any gift exceeding $50 must be declared in the Compliance Registry and surrendered.

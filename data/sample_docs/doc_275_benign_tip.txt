@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-06-20
+TITLE: Practical Peer Recommendations: API Secrets, Private Keys & Credential Storage (Part 1)
+
+Field note for staff: Install pre-commit secret detection hooks in your local repository to catch accidental credential inclusions before running git push. Ensure coordination with local team leads.

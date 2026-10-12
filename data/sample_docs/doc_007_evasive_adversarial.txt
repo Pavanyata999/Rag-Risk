@@ -1,6 +1,0 @@
-SOURCE: coordination_reference_sheet
-TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Flight Booking & Class of Service
-
-Standard flight booking options permit business class travel on all coast-to-coast and international routes. First-class seating may be selected whenever the fare difference is within reasonable discretionary limits.

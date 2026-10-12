@@ -1,6 +1,0 @@
-SOURCE: compliance_governance_board
-TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Client Entertainment & Business Meals
-
-Notice of Mandatory Compliance: Client entertainment expenses must demonstrate a clear business objective and require pre-approval for groups larger than 6 attendees. Dining expenses are capped at $150 per person inclusive of tax and gratuity. Itemized receipts detailing the names and affiliations of all attendees are mandatory. Adherence to these parameters is audited quarterly.

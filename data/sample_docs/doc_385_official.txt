@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: verified
+DATE: 2024-12-28
+TITLE: Official Policy Standard: Data Breach Notification & Regulatory SLAs
+
+In the event of a confirmed personal data breach, Corporate Legal and the DPO must notify the relevant Data Protection Authority within 72 hours of becoming aware of the breach under GDPR Article 33. Impacted data subjects must be notified without undue delay if the breach poses high risk.

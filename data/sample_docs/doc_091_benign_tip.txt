@@ -1,6 +1,0 @@
-SOURCE: internal_employee_wiki_finance
-TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Consulting and Professional Service Vendor Contracts
-
-When drafting an SOW for external vendors, using the standard legal template from the intranet reduces contract turnaround time from three weeks down to five business days.

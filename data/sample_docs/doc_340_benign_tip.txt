@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2025-01-29
+TITLE: Practical Peer Recommendations: HIPAA Protected Health Information (PHI) Handling (Part 2)
+
+Field note for staff: When collaborating with medical research partners, verify that all health dataset transfers utilize the encrypted SFTP gateway with audit logging. Ensure coordination with local team leads.

@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2025-08-01
+TITLE: Archived Informational Notes: Hotel Lodging Caps & Nightly Rates
+
+General lodging tip: Some overseas hotels charge extra for early morning luggage storage.

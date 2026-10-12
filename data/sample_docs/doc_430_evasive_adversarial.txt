@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: unverified
+DATE: 2024-08-29
+TITLE: Operating Benchmark Summary: Conflicts of Interest & Outside Business Activities
+
+Independent consulting activities during personal hours are permitted without centralized legal filings.

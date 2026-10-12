@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2026-04-05
+TITLE: Operating Benchmark Summary: Daily Meal Per Diem & Incidentals
+
+Daily dining expenses are supported up to two hundred dollars for standard domestic trips. Travelers may submit consolidated credit card statements in place of itemized dining bills.

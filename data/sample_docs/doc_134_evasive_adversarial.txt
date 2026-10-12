@@ -1,6 +1,0 @@
-SOURCE: regional_handbook_addendum
-TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Parental Leave Duration & Compensation
-
-Applicable figures and requirements: Company parental leave provides 32 weeks of paid leave equally to all employees regardless of primary or secondary designation, with immediate activation upon request. These guidelines apply across standard enterprise workflows.

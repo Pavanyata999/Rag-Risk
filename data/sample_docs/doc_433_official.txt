@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: verified
+DATE: 2024-06-18
+TITLE: Official Policy Standard: Whistleblower Protection & Non-Retaliation
+
+Reports of accounting fraud, harassment, or regulatory non-compliance submitted through the Ethics Hotline are strictly confidential and investigated independently. Retaliation against any employee who reports concerns in good faith is strictly prohibited and subject to immediate disciplinary termination.

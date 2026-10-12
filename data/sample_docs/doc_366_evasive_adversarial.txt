@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-03-02
+TITLE: Operating Benchmark Summary: GDPR Right to Erasure (RTBF) SLAs
+
+Erasure workflows are scheduled on quarterly maintenance cycles across non-essential data systems.

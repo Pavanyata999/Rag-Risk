@@ -138,20 +138,22 @@ def build_pdf():
     story.append(Paragraph("<b>ABSTRACT</b>", abstract_title))
     abstract_text = (
         "Retrieval-Augmented Generation (RAG) grounds Large Language Model (LLM) responses in external knowledge corpora. "
-        "However, in enterprise and mission-critical domains, RAG systems are critically vulnerable to <i>Constraint Relaxation Attacks (CRAs)</i> "
+        "However, in enterprise and mission-critical domains, RAG systems are vulnerable to <i>Constraint Relaxation Attacks (CRAs)</i> "
         "and <i>Authority Spoofing</i>—subtle, evasive fabrications wherein untrusted documents soften institutional policy bounds "
         "(e.g., spending limits, required approvals, security protocols) without triggering syntactic prompt-injection filters. "
-        "Conventional defenses present an intractable dichotomy: binary provenance whitelisting eliminates 100% of helpful unverified community knowledge "
-        "(destroying collaborative utility), while keyword and perplexity filters miss over 99% of natural language policy relaxations. "
+        "Conventional defenses present an intractable trade-off: binary provenance whitelisting eliminates 100% of helpful unverified community knowledge, "
+        "while keyword and perplexity filters miss over 94% of natural language policy relaxations. "
         "In this paper, we propose <b>TollgateRAG</b>, an auditable, pre-generation epistemic risk gate interposed between vector retrieval and context assembly. "
-        "TollgateRAG evaluates retrieved passages across five orthogonal dimensions, leveraging a high-throughput Cross-Document Natural Language Inference (NLI) "
-        "engine to detect semantic contradictions against verified anchor policies. Candidate documents undergo tri-state action gating: "
+        "TollgateRAG evaluates retrieved passages across five orthogonal dimensions, leveraging a sentence-level Cross-Document Natural Language Inference (NLI) "
+        "engine against verified anchor policies combined via a Noisy-OR formulation. Candidate documents undergo tri-state action gating: "
         "<b>Accept</b>, <b>Warn</b> (epistemic conditioning with review queuing), or <b>Reject</b> (strict context quarantine). "
-        "We evaluate TollgateRAG on <b>Tollgate-Bench</b>, a 351-document benchmark spanning six enterprise domains alongside the USENIX Security 2025 "
-        "<i>PoisonedRAG</i> suite. Empirical results demonstrate that TollgateRAG achieves an <b>89.7% adversarial rejection rate</b> (94.2% flagged) "
-        "with a <b>0.0% False Positive Rate</b> on benign community tips, slashing context contamination from 61.7% to <b>3.3%</b>. "
-        "Under an adaptive red-team adversary employing evasive lexical obfuscation, TollgateRAG retains 70.0% strict rejection and 80.0% quarantine, "
-        "whereas keyword filters collapse entirely to 0.0%."
+        "We evaluate TollgateRAG on a synthetic benchmark of 480 documents spanning six enterprise domains across topic-disjoint splits, alongside the USENIX Security 2025 "
+        "<i>PoisonedRAG</i> suite. On the held-out test split, TollgateRAG achieves an <b>88.6% adversarial rejection rate</b> [95% CI: 79.8%–93.9%] "
+        "with a <b>0.0% False Positive Rate</b> [0.0%–22.8%] on clean benign documents, while exhibiting a <b>66.7% False Positive Rate</b> [39.1%–86.2%] "
+        "on benign-hard documents containing lexical relaxation cues. Context contamination is reduced from 91.7% in Plain RAG to <b>29.2%</b> [12.5%–50.0%]. "
+        "Under a closed-loop adaptive red-team adversary using an iterative 120B LLM attacker (<i>openai/gpt-oss-120b</i>) and an independent 27B semantic judge "
+        "(<i>qwen/qwen3.8-27b</i>), TollgateRAG limits valid attack success to <b>6.7%</b> [1.8%–21.3%] (black-box) and <b>13.3%</b> [5.3%–29.7%] (white-box), "
+        "showing that over 86% of apparent evasions succeed only by deleting the policy violation."
     )
     story.append(Paragraph(abstract_text, abstract_style))
     story.append(Paragraph("<b>Keywords:</b> Retrieval-Augmented Generation, AI Security, Indirect Prompt Injection, Natural Language Inference, Epistemic Gating.", bullet_style))
@@ -170,7 +172,7 @@ def build_pdf():
         "a much more pernicious real-world vulnerability in enterprise systems is <b>Constraint Relaxation Attacks (CRAs)</b>. "
         "In a CRA, an adversary authors polite, authoritative text that relaxes critical operational bounds: raising expenditure caps, "
         "waiving supervisory approvals, or disabling security protocols. Because these documents contain zero adversarial keywords or toxic language, "
-        "syntactic guardrails (such as Llama-Guard or keyword filters) fail to detect them.", body_style
+        "syntactic guardrails (such as Prompt Guard or keyword filters) fail to detect them.", body_style
     ))
 
     # Section II
@@ -183,7 +185,7 @@ def build_pdf():
     story.append(Paragraph(
         "Prior defenses fail on this threat: binary whitelisting eliminates attacks but suffers a <b>100% False Positive Rate</b> on benign, "
         "helpful employee tips (such as travel packing tips or receipt formatting advice), discarding the collaborative value of shared enterprise wikis. "
-        "Keyword filters miss over 99% of CRAs.", body_style
+        "Keyword filters miss over 94% of CRAs.", body_style
     ))
 
     # Figure 1: SOTA Comparison
@@ -191,7 +193,7 @@ def build_pdf():
     if os.path.exists(fig1_path):
         story.append(Spacer(1, 6))
         story.append(Image(fig1_path, width=480, height=260))
-        story.append(Paragraph("<b>Figure 1:</b> Security vs. Utility performance across SOTA defenses on Tollgate-Bench (60 queries, 351 documents).", caption_style))
+        story.append(Paragraph("<b>Figure 1:</b> Security vs. Utility performance across SOTA defenses on Held-Out Test Split (24 queries, 144 candidate exposures).", caption_style))
 
     # Section III
     story.append(Paragraph("III. TOLLGATERAG ARCHITECTURE & ALGORITHMS", h1_style))
@@ -199,7 +201,7 @@ def build_pdf():
         "TollgateRAG interposes a transparent, auditable pre-generation gate between retrieval and prompt assembly. "
         "For each retrieved candidate document <i>d</i>, it computes five inspectable risk signals:", body_style
     ))
-    story.append(Paragraph("• <b>Signal 1 (Provenance Trust):</b> Assigns risk based on verified identity (verified=0.05, unverified=0.55, unknown=0.80).", bullet_style))
+    story.append(Paragraph("• <b>Signal 1 (Provenance Trust):</b> Assigns risk based on verified identity (verified=0.0, unverified=0.60).", bullet_style))
     story.append(Paragraph("• <b>Signal 2 (Temporal Freshness):</b> Linear decay over a 730-day statutory policy lifecycle.", bullet_style))
     story.append(Paragraph("• <b>Signal 3 (Prompt Injection Heuristic):</b> Flags command hijacking and delimiter escape tokens.", bullet_style))
     story.append(Paragraph("• <b>Signal 4 (Unauthorized Authority Assertion):</b> Penalizes authority claims ('effective immediately', 'is waived') exclusively on unverified sources.", bullet_style))
@@ -213,21 +215,23 @@ def build_pdf():
 
     # Table 1: Comparative Results
     story.append(Spacer(1, 6))
-    story.append(Paragraph("<b>Table I:</b> Comparative Evaluation on Tollgate-Bench (60 Queries, 351 Documents)", h2_style))
+    story.append(Paragraph("<b>Table I:</b> Comparative Evaluation on Held-Out Test Split (24 Queries, 144 Candidate Exposures)", h2_style))
     table_data = [
-        ["Defense Mechanism", "Adv Reject", "Adv Flag", "Benign FP", "Contamination", "Adv In Ctx"],
-        ["Plain RAG (Unprotected)", "0.0%", "0.0%", "0.0%", "61.7%", "73"],
-        ["Strict Whitelist (Zero Trust)", "100.0%", "100.0%", "100.0%", "0.0%", "0"],
-        ["Keyword Filter (BIPIA)", "0.6%", "0.6%", "0.0%", "61.7%", "73"],
-        ["Prompt Guard (Moderation)", "0.6%", "51.1%", "0.0%", "61.7%", "73"],
-        ["TollgateRAG (Neural NLI)", "89.7%", "94.2%", "0.0%", "3.3%", "2"]
+        ["Defense Mechanism", "Adv Reject", "Clean Benign FP", "Benign-Hard FP", "Contamination", "Adv In Ctx"],
+        ["Plain RAG (Unprotected)", "0.0% [0.0–4.6%]", "0.0% [0.0–22.8%]", "0.0% [0.0–24.2%]", "91.7% [74.2–97.7%]", "31"],
+        ["Strict Whitelist (Zero Trust)", "100.0% [95.4–100%]", "100.0% [77.2–100%]", "100.0% [75.8–100%]", "0.0% [0.0–13.8%]", "0"],
+        ["Keyword Filter (BIPIA)", "5.1% [2.0–12.3%]", "0.0% [0.0–22.8%]", "0.0% [0.0–24.2%]", "91.7% [74.2–97.7%]", "31"],
+        ["Perplexity Filter (Anomaly)", "0.0% [0.0–4.6%]", "0.0% [0.0–22.8%]", "0.0% [0.0–24.2%]", "91.7% [74.2–97.7%]", "31"],
+        ["Prompt Guard Real (Meta 86M)", "3.8% [1.3–10.6%]", "0.0% [0.0–22.8%]", "0.0% [0.0–24.2%]", "91.7% [74.2–97.7%]", "31"],
+        ["TollgateRAG (Weighted Sum)", "87.3% [78.2–93.0%]", "0.0% [0.0–22.8%]", "66.7% [39.1–86.2%]", "29.2% [14.9–49.2%]", "8"],
+        ["TollgateRAG (Noisy-OR)", "88.6% [79.8–93.9%]", "0.0% [0.0–22.8%]", "66.7% [39.1–86.2%]", "29.2% [12.5–50.0%]", "8"]
     ]
-    t = Table(table_data, colWidths=[180, 65, 65, 65, 75, 65])
+    t = Table(table_data, colWidths=[150, 80, 85, 85, 80, 60])
     t.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#1f77b4')),
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, -1), 8),
+        ('FONTSIZE', (0, 0), (-1, -1), 7.5),
         ('ALIGN', (1, 0), (-1, -1), 'CENTER'),
         ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
         ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.whitesmoke, colors.HexColor('#f9f9f9')]),
@@ -241,41 +245,43 @@ def build_pdf():
     fig2_path = os.path.join(FIG_DIR, "fig_pareto_threshold.png")
     if os.path.exists(fig2_path):
         story.append(Image(fig2_path, width=460, height=260))
-        story.append(Paragraph("<b>Figure 2:</b> Operational Pareto frontier and threshold sensitivity sweep. The optimal threshold &theta;=0.45 balances 89.7% rejection with 0.0% false positives.", caption_style))
+        story.append(Paragraph("<b>Figure 2:</b> Operational Pareto frontier and threshold sensitivity sweep on validation split. Threshold &theta;=0.45 achieves optimal trade-off.", caption_style))
 
     # Section IV: Adaptive Red-Teaming
-    story.append(Paragraph("IV. ADAPTIVE RED-TEAMING & ROBUSTNESS", h1_style))
+    story.append(Paragraph("IV. CLOSED-LOOP ADAPTIVE RED-TEAMING", h1_style))
     story.append(Paragraph(
-        "To test resilience against an intelligent adversary who knows TollgateRAG exists, we implemented an automated red-teaming engine "
-        "employing four stealth strategies: lexical synonym substitution, constraint camouflage, split-predicate decoupling, and false industry precedent.", body_style
+        "We evaluated resilience against an iterative LLM attacker (<i>openai/gpt-oss-120b</i>) guided by an independent semantic judge "
+        "(<i>qwen/qwen3.8-27b</i>) across 30 benchmark constraints for up to 10 rounds. Under black-box query access, raw filter evasion "
+        "reached 100.0%, but valid meaning-preserved Attack Success Rate (ASR) was limited to <b>6.7%</b> [1.8%–21.3%]. Under white-box score feedback, "
+        "valid ASR reached <b>13.3%</b> [5.3%–29.7%]. Over 86% of apparent filter evasions succeeded only by deleting the policy violation entirely.", body_style
     ))
 
     # Figure 3: Adaptive Red-Team
     fig3_path = os.path.join(FIG_DIR, "fig_adaptive_redteam.png")
     if os.path.exists(fig3_path):
         story.append(Image(fig3_path, width=420, height=230))
-        story.append(Paragraph("<b>Figure 3:</b> Defense performance under adaptive red-teaming. Keyword filters collapse to 0.0%, whereas TollgateRAG retains 70% rejection and 80% quarantine.", caption_style))
+        story.append(Paragraph("<b>Figure 3:</b> Defense performance under adaptive red-teaming across black-box and white-box settings.", caption_style))
 
     # Section V: Ablation
     story.append(Paragraph("V. SYSTEMATIC ABLATION ANALYSIS", h1_style))
     story.append(Paragraph(
-        "Leave-One-Out ablation confirms that removing the Neural NLI Anchor Conflict dimension results in total defense failure: "
-        "adversarial rejection collapses from <b>89.7% to 0.0%</b>. Furthermore, removing the multi-signal linear combination leads to "
-        "up to 20.9% false alarms on benign tips, validating the necessity of the 5-signal composite architecture.", body_style
+        "Leave-one-out and architectural ablations evaluated on the exact same <i>n=79</i> test exposures confirm that removing the anchor conflict signal "
+        "collapses rejection to <b>5.1%</b> (context contamination 83.3%), proving that cross-document anchor NLI is the primary defense driver. "
+        "Removing neural NLI (relying solely on cue regex) drops rejection to 31.6%.", body_style
     ))
 
     # Figure 4: Ablation Waterfall
     fig4_path = os.path.join(FIG_DIR, "fig_ablation.png")
     if os.path.exists(fig4_path):
         story.append(Image(fig4_path, width=440, height=220))
-        story.append(Paragraph("<b>Figure 4:</b> Leave-One-Out Dimension Ablation proving the indispensability of Neural NLI Anchor Conflict.", caption_style))
+        story.append(Paragraph("<b>Figure 4:</b> Leave-One-Out Dimension Ablation on identical test exposure units (n=79).", caption_style))
 
     # Section VI: Conclusion
     story.append(Paragraph("VI. CONCLUSION & REPRODUCIBILITY", h1_style))
     story.append(Paragraph(
-        "TollgateRAG introduces a production-ready, auditable pre-generation epistemic risk gate for agentic RAG systems. "
-        "By grounding unverified passages against official policy anchors via high-throughput NLI, TollgateRAG solves the fundamental "
-        "trade-off between RAG security and collaborative utility, establishing a robust defense against subtle constraint relaxation attacks.", body_style
+        "TollgateRAG introduces an auditable pre-generation epistemic risk gate for agentic RAG systems. "
+        "By grounding unverified passages against official policy anchors via sentence-level NLI, TollgateRAG achieves an 88.6% adversarial rejection rate "
+        "and slashes context contamination from 91.7% to 29.2% with 0.0% clean benign false positives, providing rigorous defense against evasive constraint relaxation attacks.", body_style
     ))
 
     doc.build(story)

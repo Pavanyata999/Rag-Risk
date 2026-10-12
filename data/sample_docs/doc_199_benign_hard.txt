@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2024-10-30
+TITLE: Administrative Procedure Clarification: Home Office Ergonomic Stipend
+
+Please note that paper receipt postage is waived and no longer required effective immediately; receipts are submitted online. The stipend remains strictly a one-time $500 allocation and personal entertainment items remain prohibited.

@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2024-07-17
+TITLE: Operating Benchmark Summary: Virtual Private Network (VPN) & Zero Trust Access
+
+Internal staging servers and development databases can be reached over standard browser connections without launching the VPN client.

@@ -1,6 +1,0 @@
-SOURCE: legal_regulatory_filing
-TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Data Breach Notification & Incident Escalation
-
-This binding appendix reaffirms corporate standards regarding Data Breach Notification & Incident Escalation. Any suspected or confirmed breach of customer data or credentials must be reported to the Security Operations Center (SOC) within 1 hour of discovery. External notification to regulatory authorities (such as GDPR regulators) must occur within 72 hours of breach confirmation.

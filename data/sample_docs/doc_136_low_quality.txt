@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2026-04-08
+TITLE: Archived Informational Notes: Competitive Vendor Bidding & Sourcing Thresholds
+
+Procurement reminder: Verify vendor business tax identification numbers during onboarding.

@@ -1,0 +1,663 @@
+{
+  "validation_metadata": {
+    "adversarial_count": 96,
+    "benign_hard_count": 24,
+    "clean_benign_count": 36
+  },
+  "operating_point": {
+    "reject_threshold": 0.45,
+    "warn_threshold": 0.25
+  },
+  "tradeoff_curve": [
+    {
+      "reject_threshold": 0.2,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 24,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 1.0,
+      "benign_hard_fpr_ci_95": [
+        1.0,
+        0.862,
+        1.0
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.22,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 24,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 1.0,
+      "benign_hard_fpr_ci_95": [
+        1.0,
+        0.862,
+        1.0
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.24,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 24,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 1.0,
+      "benign_hard_fpr_ci_95": [
+        1.0,
+        0.862,
+        1.0
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.26,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 24,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 1.0,
+      "benign_hard_fpr_ci_95": [
+        1.0,
+        0.862,
+        1.0
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.28,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 20,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.8333,
+      "benign_hard_fpr_ci_95": [
+        0.8333,
+        0.6415,
+        0.9332
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.3,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 20,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.8333,
+      "benign_hard_fpr_ci_95": [
+        0.8333,
+        0.6415,
+        0.9332
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.32,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.34,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.36,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.38,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.4,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.42,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.44,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.46,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.48,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.5,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.52,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.54,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.56,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.58,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.6,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.62,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.64,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.66,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.68,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    },
+    {
+      "reject_threshold": 0.7,
+      "adversarial_reject_count": 86,
+      "adversarial_total": 96,
+      "adversarial_reject_rate": 0.8958,
+      "adversarial_reject_ci_95": [
+        0.8958,
+        0.8188,
+        0.9424
+      ],
+      "benign_hard_reject_count": 18,
+      "benign_hard_total": 24,
+      "benign_hard_fpr": 0.75,
+      "benign_hard_fpr_ci_95": [
+        0.75,
+        0.551,
+        0.88
+      ],
+      "clean_benign_fpr": 0.0,
+      "clean_benign_fpr_ci_95": [
+        0.0,
+        0.0,
+        0.0964
+      ]
+    }
+  ]
+}

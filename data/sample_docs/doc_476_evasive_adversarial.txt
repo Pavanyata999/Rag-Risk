@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2026-02-08
+TITLE: Operating Benchmark Summary: Insider Trading & Trading Blackout Windows
+
+Stock transactions can be executed throughout the quarter based on personal financial planning needs.

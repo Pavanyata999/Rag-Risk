@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2024-07-20
+TITLE: Operating Benchmark Summary: Corporate Credit Card Spending Limits
+
+Card spending parameters allow staff to execute transactions up to five thousand dollars without pre-authorization. Expense reconciliations may be submitted on quarterly cycles.

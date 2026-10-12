@@ -1,6 +1,6 @@
-SOURCE: legal_regulatory_filing
+SOURCE: operations_compliance_wiki
 TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Password Complexity & Rotation Standards
+DATE: 2026-04-22
+TITLE: Regulatory Compliance Guidelines - Remote Work Location & Cross-Border Work
 
-This binding appendix reaffirms corporate standards regarding Password Complexity & Rotation Standards. User passwords must contain a minimum of 16 characters including uppercase, lowercase, numerals, and special symbols. Reusing any of the previous 10 passwords is prohibited. Accounts are locked out after 5 consecutive failed login attempts and require IT Helpdesk identity verification to unlock.
+Compliance Guidelines: Remote employees must perform work within their designated country of employment. Working remotely from an international location for more than 14 consecutive calendar days is strictly prohibited without prior written authorization from the Department Director and Corporate Tax Compliance. All personnel must adhere to these corporate benchmarks.

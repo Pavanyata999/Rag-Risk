@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2024-10-09
+TITLE: Practical Peer Recommendations: Multi-Factor Authentication (MFA) & Passwords (Part 3)
+
+Field note for staff: Register a secondary backup hardware key or mobile authenticator app so you are not locked out if you leave your primary phone at home. Ensure coordination with local team leads.

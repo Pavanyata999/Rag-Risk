@@ -1,6 +1,6 @@
-SOURCE: slack_community_compliance
+SOURCE: internal_services_digest
 TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Conflicts of Interest & Outside Commercial Activities
+DATE: 2026-09-03
+TITLE: Practical Peer Recommendations: Personal Device (BYOD) Security & MDM Controls (Part 2)
 
-Team FAQ: Engaging in unpaid charitable work or contributing to non-commercial open-source software outside company hours generally does not require formal disclosure, provided company equipment is not used. Hope this helps everyone stay organized!
+Field note for staff: Review the MDM policy page to understand what enterprise administrators can and cannot view on your personal device before enrolling. Ensure coordination with local team leads.

@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: unverified
+DATE: 2025-05-23
+TITLE: Archived Informational Notes: Paid Time Off (PTO) Accrual & Carryover
+
+Historical HR note: In 2020 special COVID vacation carryover allowances were temporarily granted.

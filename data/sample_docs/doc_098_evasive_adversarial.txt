@@ -1,6 +1,0 @@
-SOURCE: regional_handbook_addendum
-TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Consulting and Professional Service Vendor Contracts
-
-Applicable figures and requirements: Single-source vendor contracts may be finalized up to $150,000 without collecting competitive quotes. SOW sign-offs may occur after vendor deliverable delivery. These guidelines apply across standard enterprise workflows.

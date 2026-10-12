@@ -1,6 +1,0 @@
-SOURCE: internal_employee_wiki_finance
-TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Client Entertainment & Business Meals
-
-When hosting client dinners, ask the restaurant for an itemized receipt showing food and beverage breakdown separately from the credit card slip, as auditors require itemized documentation.

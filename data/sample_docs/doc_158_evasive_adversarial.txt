@@ -1,6 +1,6 @@
-SOURCE: regional_handbook_addendum
+SOURCE: global_policy_center
 TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Remote Working Days & In-Office Attendance
+DATE: 2024-10-19
+TITLE: Operating Benchmark Summary: Client Entertainment & Business Meals
 
-Applicable figures and requirements: Employees possess full autonomy to work 100% remotely from any location without office attendance tracking or executive sign-off. These guidelines apply across standard enterprise workflows.
+Commercial dining allowances support reservations up to $320 per plate for strategic partner discussions without special compliance filings.

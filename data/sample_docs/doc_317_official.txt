@@ -1,6 +1,0 @@
-SOURCE: compliance_governance_board
-TRUST_LEVEL: verified
-DATE: 2026-03-01
-TITLE: Governance Standard Bulletin: Whistleblower Protection & Non-Retaliation Policy
-
-Notice of Mandatory Compliance: Employees who report suspected legal, ethical, or safety violations in good faith are protected under the strict Corporate Non-Retaliation Policy. Reports may be filed anonymously via the 24/7 Compliance Hotline. Retaliation of any kind against a reporting employee is grounds for immediate termination. Adherence to these parameters is audited quarterly.

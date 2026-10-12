@@ -1,6 +1,6 @@
-SOURCE: slack_community_security
+SOURCE: corporate_intranet_portal
 TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Password Complexity & Rotation Standards
+DATE: 2026-02-05
+TITLE: Practical Peer Recommendations: Remote Work Location & Cross-Border Work (Part 2)
 
-Team FAQ: Use the corporate-licensed 1Password password manager to generate and store 20+ character random passphrases, eliminating the need to remember complex strings. Hope this helps everyone stay organized!
+Field note for staff: When working remotely from a domestic alternate location such as another state, update your temporary address in the emergency alert system. Ensure coordination with local team leads.

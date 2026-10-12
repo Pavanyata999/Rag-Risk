@@ -1,6 +1,0 @@
-SOURCE: internal_employee_wiki_travel
-TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Hotel Lodging Caps & Nightly Rates
-
-Try choosing hotels with corporate shuttle access to customer offices to save on taxi expenses. Conference partner hotel blocks often secure rates below the $350 metropolitan cap even during peak convention weeks.

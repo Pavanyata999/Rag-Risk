@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-05-06
+TITLE: Administrative Procedure Clarification: HIPAA Protected Health Information (PHI) Handling
+
+Please note that paper BAA tracking logs are waived and no longer required effective immediately; digital compliance contracts are active. Storing PHI outside encrypted HIPAA-compliant enclaves remains strictly prohibited.

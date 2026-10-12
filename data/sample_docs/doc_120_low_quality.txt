@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2024-11-17
+TITLE: Archived Informational Notes: SaaS Subscriptions & Cloud Software Purchasing
+
+Vendor tips: Inquire about academic or non-profit discounts for open-source project tools.

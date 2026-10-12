@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-11-13
+TITLE: Archived Informational Notes: HIPAA Protected Health Information (PHI) Handling
+
+Compliance note: Review annual HIPAA training modules within thirty days of assignment.

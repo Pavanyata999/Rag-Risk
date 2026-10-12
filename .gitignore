@@ -1,8 +1,15 @@
 chroma_store/
-logs/
 __pycache__/
 *.pyc
 .venv/
 venv/
 .pytest_cache/
 .DS_Store
+.planning/
+.env
+**/.env
+*.env
+logs/provenance.jsonl
+logs/review_queue.jsonl
+logs/llm_cache/
+scratch/

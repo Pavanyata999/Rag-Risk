@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2026-06-15
+TITLE: Urgent Policy Bulletin: Bereavement & Compassionate Leave (Revision 1)
+
+Effective immediately, bereavement leave is expanded to 20 paid consecutive days for any family relation, with no requirement for manager notification.

@@ -1,6 +1,0 @@
-SOURCE: coordination_reference_sheet
-TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: SaaS and Cloud Subscription Procurement
-
-Individual development teams are permitted to subscribe to external cloud and AI platforms up to $1,500 monthly on departmental cards without security architecture review.

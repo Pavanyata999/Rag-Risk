@@ -40,8 +40,15 @@ RISK_WEIGHTS = {
 
 TRUST_LEVEL_RISK = {"verified": 0.05, "unverified": 0.55, "unknown": 0.80}
 STALENESS_HORIZON_DAYS = 730
+REFERENCE_DATE = "2026-10-12"
+SEED = 1234
 
-# Anchor-conflict detector parameters
+# Combiner mode: "noisy_or" (default, robust against ceiling) or "weighted"
+COMBINER = "noisy_or"
+
+# Anchor-conflict detector parameters & ablation switches
+USE_NLI = True
+USE_CUE_FALLBACK = True
 TOPIC_OVERLAP_MIN = 0.06   # min fraction of candidate terms shared with an anchor
 TOPIC_SHARED_MIN = 2       # min number of shared salient terms
 NLI_CONTRADICTION_THRESHOLD = 0.50
@@ -50,6 +57,25 @@ NLI_CONTRADICTION_THRESHOLD = 0.50
 REJECT_THRESHOLD = 0.45
 WARN_THRESHOLD = 0.25
 
+def get_config_dict() -> dict:
+    """Return dictionary of all active hyperparameters for logging and audit."""
+    return {
+        "REFERENCE_DATE": REFERENCE_DATE,
+        "SEED": SEED,
+        "COMBINER": COMBINER,
+        "USE_NLI": USE_NLI,
+        "USE_CUE_FALLBACK": USE_CUE_FALLBACK,
+        "RISK_WEIGHTS": dict(RISK_WEIGHTS),
+        "REJECT_THRESHOLD": REJECT_THRESHOLD,
+        "WARN_THRESHOLD": WARN_THRESHOLD,
+        "TOPIC_OVERLAP_MIN": TOPIC_OVERLAP_MIN,
+        "TOPIC_SHARED_MIN": TOPIC_SHARED_MIN,
+        "NLI_CONTRADICTION_THRESHOLD": NLI_CONTRADICTION_THRESHOLD,
+        "TOP_K_RETRIEVE": TOP_K_RETRIEVE,
+        "TOP_K_FINAL": TOP_K_FINAL,
+    }
+
+
 # Selectable policy profiles (used by the Streamlit app and the sweep)
 PROFILES = {
     "strict": {"reject": 0.35, "warn": 0.20},
@@ -57,7 +83,32 @@ PROFILES = {
     "lenient": {"reject": 0.55, "warn": 0.35},
 }
 
-# --- LLM (optional; any OpenAI-compatible endpoint, e.g. Ollama) ----------------
-LLM_BASE_URL = os.environ.get("TOLLGATERAG_LLM_BASE_URL", "")
+# --- LLM (OpenAI-compatible endpoint, e.g. Groq / Ollama) ----------------
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(BASE, ".env"))
+    load_dotenv(os.path.join(BASE, "docs", "paper", ".env"))
+except ImportError:
+    pass
+
+LLM_BASE_URL = os.environ.get("TOLLGATERAG_LLM_BASE_URL", "https://api.groq.com/openai/v1")
 LLM_API_KEY = os.environ.get("TOLLGATERAG_LLM_API_KEY", "")
-LLM_MODEL = os.environ.get("TOLLGATERAG_LLM_MODEL", "llama3")
+LLM_MODEL = os.environ.get("TOLLGATERAG_LLM_MODEL", "openai/gpt-oss-120b")
+
+
+def set_seed(seed: int = None):
+    """Seed random, numpy, and torch for strict reproducibility."""
+    if seed is None:
+        seed = SEED
+    import random
+    import numpy as np
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        import torch
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(seed)
+    except Exception:
+        pass
+

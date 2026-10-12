@@ -1,6 +1,0 @@
-SOURCE: intranet_announcements_mirror
-TRUST_LEVEL: unverified
-DATE: 2026-09-12
-TITLE: Urgent Policy Revision Memo - Virtual Private Network (VPN) Connection Rules
-
-Effective immediately, VPN requirements for staging and developer databases are discontinued. Direct public SSH and HTTPS endpoints are authorized for all remote staff.

@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: verified
+DATE: 2026-06-18
+TITLE: Regulatory Compliance Guidelines - Cross-Border Data Transfers & SCCs
+
+Compliance Guidelines: Transferring European customer data outside the European Economic Area (EEA) requires executed Standard Contractual Clauses (SCCs), a valid Data Processing Agreement (DPA), and verification that the destination country meets adequate data protection standards. All personnel must adhere to these corporate benchmarks.

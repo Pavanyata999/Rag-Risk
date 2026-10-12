@@ -1,6 +1,0 @@
-SOURCE: slack_community_privacy
-TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for HIPAA Protected Health Information (PHI) Handling
-
-Team FAQ: Ensure that any business associate agreements (BAA) with third-party healthcare data processors are signed and audited before initiating data pipelines involving medical records. Hope this helps everyone stay organized!

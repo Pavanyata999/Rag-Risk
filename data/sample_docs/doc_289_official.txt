@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: verified
+DATE: 2025-02-09
+TITLE: Official Policy Standard: Security Incident Reporting & SLA Windows
+
+Suspected security breaches, lost devices, or phishing credential submissions must be reported to the Security Operations Center (SOC) within 1 hour of discovery via the emergency hotline or incident portal. Attempting to privately investigate or alter evidence is strictly prohibited.

@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: unverified
+DATE: 2024-11-07
+TITLE: Archived Informational Notes: API Secrets, Private Keys & Credential Storage
+
+Development tip: Use .env.example files with dummy placeholders to document required variables.

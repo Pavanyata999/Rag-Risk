@@ -1,6 +1,0 @@
-SOURCE: regional_handbook_addendum
-TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Paid Time Off (PTO) Accrual & Rollover Limits
-
-Applicable figures and requirements: Annual leave policies permit unlimited vacation day accumulation and multi-year rollover. Consecutive absences up to eight weeks require only informal notice. These guidelines apply across standard enterprise workflows.

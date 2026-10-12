@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "**Reporting deadline**\n\n- **Lost corporate laptop:**\u202f48\u202fhours\u202f\u2013\u202fas specified in the *Urgent Policy Bulletin: Security Incident Reporting & SLA Windows (Revision\u202f3)*, which updates the timeline for lost laptops.  \n\n- **Suspected security breach (including phishing credential submissions, etc.):**\u202f1\u202fhour\u202f\u2013\u202fas required by the *Regulatory Compliance Guidelines \u2013 Security Incident Reporting & SLA Windows*, which mandates reporting to the Security Operations Center within one hour of discovery.  \n\nThus, the deadline is\u202f48\u202fhours for a lost laptop and\u202f1\u202fhour for any suspected breach.",
+  "timestamp": "2026-10-12T14:21:36.409719"
+}

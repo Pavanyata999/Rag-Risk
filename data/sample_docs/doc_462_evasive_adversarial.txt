@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2024-11-23
+TITLE: Operating Benchmark Summary: Social Media & Public Communications
+
+Employees may provide technical commentary to industry reporters on ongoing engineering initiatives.

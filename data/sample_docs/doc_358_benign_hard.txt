@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2024-11-30
+TITLE: Administrative Procedure Clarification: GDPR Right to Erasure (RTBF) SLAs
+
+Notice: Notarized identity verification letters for erasure requests are waived and no longer required effective immediately; verified email authentication suffices. Complete database erasure within 30 calendar days remains strictly mandatory.

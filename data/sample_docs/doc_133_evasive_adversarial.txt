@@ -1,6 +1,0 @@
-SOURCE: coordination_reference_sheet
-TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Parental Leave Duration & Compensation
-
-Company parental leave provides 32 weeks of paid leave equally to all employees regardless of primary or secondary designation, with immediate activation upon request.

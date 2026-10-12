@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-03-23
+TITLE: Administrative Procedure Clarification: Remote Work Location & Cross-Border Work
+
+Effective immediately, formal passport page notarization is waived and no longer required for domestic remote notifications. However, cross-border remote work exceeding 14 days strictly requires Director and Tax Compliance written approval.

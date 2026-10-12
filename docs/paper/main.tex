@@ -3,6 +3,7 @@
 
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -12,31 +13,49 @@
 \usepackage{url}
 \usepackage{hyperref}
 
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+% Input auto-generated empirical result macros from logs/*.json
+\input{results_macros.tex}
+
+% Float placement parameters for compact IEEE 2-column layout
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{8}
+\setcounter{dbltopnumber}{4}
+\setlength{\textfloatsep}{6pt plus 1pt minus 1pt}
+\setlength{\floatsep}{6pt plus 1pt minus 1pt}
+\setlength{\intextsep}{6pt plus 1pt minus 1pt}
+\setlength{\dbltextfloatsep}{6pt plus 1pt minus 1pt}
+\setlength{\dblfloatsep}{6pt plus 1pt minus 1pt}
+
+% Compact bibliography formatting
+\let\oldbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{\oldbibliography{#1}\footnotesize\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}\setlength{\parsep}{0pt}}
 
 \begin{document}
 
 \title{TollgateRAG: Auditable Pre-Generation Epistemic Risk Gating for Agentic Retrieval-Augmented Generation\\
-\thanks{This research was supported by independent research efforts in robust agentic intelligence.}
+\thanks{All experimental code, evaluation logs, and reproduction artifacts are publicly available under the MIT license.}
 }
 
 \author{\IEEEauthorblockN{Pavan Kumar Yata}
 \IEEEauthorblockA{\textit{Department of Computer Science \& Engineering} \\
-\textit{AI Security Research Group}\\
 Email: pavan@example.org}
-\and
-\IEEEauthorblockN{Collaborative AI Research Group}
-\IEEEauthorblockA{\textit{Advanced Agentic Architecture Laboratory} \\
-Hyderabad, India}
 }
 
 \maketitle
 
 \begin{abstract}
-Retrieval-Augmented Generation (RAG) grounds Large Language Model (LLM) responses in external knowledge corpora. However, in enterprise and mission-critical domains, RAG systems are critically vulnerable to \textit{Constraint Relaxation Attacks (CRAs)} and \textit{Authority Spoofing}---subtle, evasive fabrications wherein untrusted documents soften institutional policy bounds (e.g., spending limits, required approvals, security protocols) without triggering syntactic prompt-injection filters. Conventional defenses present an intractable dichotomy: binary provenance whitelisting eliminates 100\% of helpful unverified community knowledge (destroying collaborative utility), while keyword and perplexity filters miss over 99\% of natural language policy relaxations. 
+Retrieval-Augmented Generation (RAG) grounds Large Language Model (LLM) responses in external knowledge corpora. However, in enterprise and mission-critical domains, RAG systems are uniquely vulnerable to \textit{Constraint Relaxation Attacks (CRAs)} and \textit{Authority Spoofing}---subtle, evasive fabrications wherein untrusted documents soften institutional policy bounds (e.g., spending limits, required approvals, security protocols) without triggering syntactic prompt-injection filters. Conventional defenses present an intractable trade-off: binary provenance whitelisting eliminates 100\% of helpful unverified community knowledge, while keyword and perplexity filters miss over 94\% of natural language policy relaxations.
 
-In this paper, we propose \textbf{TollgateRAG}, an auditable, pre-generation epistemic risk gate interposed between vector retrieval and context assembly. TollgateRAG evaluates retrieved passages across five orthogonal dimensions, leveraging a high-throughput Cross-Document Natural Language Inference (NLI) engine to detect semantic contradictions against verified anchor policies. Candidate documents undergo tri-state action gating: \textsc{Accept}, \textsc{Warn} (epistemic conditioning with review queuing), or \textsc{Reject} (strict context quarantine). We evaluate TollgateRAG on \textbf{Tollgate-Bench}, a 351-document benchmark spanning six enterprise domains (Travel, Finance, HR, IT Security, Privacy/HIPAA, and Legal Compliance) alongside the USENIX Security 2025 \textit{PoisonedRAG} suite. Empirical results demonstrate that TollgateRAG achieves an \textbf{89.7\% adversarial rejection rate} (94.2\% flagged) with a \textbf{0.0\% False Positive Rate} on benign community tips, slashing context contamination from 61.7\% to \textbf{3.3\%}. Under an adaptive red-team adversary employing evasive lexical obfuscation, TollgateRAG retains 70.0\% strict rejection and 80.0\% quarantine, whereas keyword filters collapse entirely to 0.0\%.
+In this paper, we propose \textbf{TollgateRAG}, an auditable, pre-generation epistemic risk gate interposed between vector retrieval and context assembly. TollgateRAG evaluates retrieved passages across five orthogonal dimensions, leveraging a sentence-level Cross-Document Natural Language Inference (NLI) engine against verified anchor policies combined via a Noisy-OR formulation. Candidate documents undergo tri-state action gating: \textsc{Accept}, \textsc{Warn} (epistemic conditioning with review queuing), or \textsc{Reject} (strict context quarantine). We evaluate TollgateRAG on a synthetic benchmark of 480 documents spanning six enterprise domains across topic-disjoint splits, alongside the USENIX Security 2025 \textit{PoisonedRAG} suite. 
+
+On the held-out test split (24 queries, 79 adversarial exposures), TollgateRAG achieves an \textbf{88.6\% adversarial rejection rate} [95\% Wilson CI: 79.8\%--93.9\%] with a \textbf{0.0\% False Positive Rate} [0.0\%--22.8\%] on clean benign documents, while exhibiting a \textbf{66.7\% False Positive Rate} [39.1\%--86.2\%] on benign-hard documents containing lexical relaxation cues. Context contamination is reduced from 91.7\% in Plain RAG to \textbf{29.2\%} [14.9\%--49.2\%] (with query bootstrap interval [12.5\%--50.0\%]). Under a closed-loop adaptive red-team adversary using an iterative 120B LLM attacker (`openai/gpt-oss-120b`) and an independent 27B semantic judge (`qwen/qwen3.8-27b`), TollgateRAG limits valid attack success to \textbf{6.7\%} [1.8\%--21.3\%] (black-box) and \textbf{13.3\%} [5.3\%--29.7\%] (white-box), demonstrating that over 86\% of apparent evasions succeed only by deleting the policy violation.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -46,243 +65,265 @@ Retrieval-Augmented Generation, AI Security, Indirect Prompt Injection, Natural 
 % -----------------------------------------------------------------------------
 \section{Introduction}
 % -----------------------------------------------------------------------------
-Large Language Models (LLMs) deployed with Retrieval-Augmented Generation (RAG) have become the de facto architecture for knowledge-intensive enterprise workflows, enterprise question-answering, and autonomous agent operations \cite{lewis2020retrieval, karpukhin2020dense}. By dynamically querying vector databases, RAG systems inject external domain documents directly into the prompt context to synthesize grounded, up-to-date responses.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth,height=2.3in,keepaspectratio]{figures/fig_architecture.pdf}
+\caption{TollgateRAG end-to-end architecture: Candidate passages retrieved via dense bi-encoder embeddings from an unverified corpus are intercepted prior to prompt assembly. The pipeline extracts provenance, freshness, injection, and authority cues while evaluating sentence-level cross-document NLI against verified policy anchors. A calibrated Noisy-OR aggregator computes cumulative epistemic risk $R(d)$ to trigger tri-state gating: \textsc{Accept}, \textsc{Warn} (epistemic conditioning with audit logging), or \textsc{Reject} (context exclusion with optional non-malicious backfill).}
+\label{fig:architecture}
+\end{figure*}
+Large Language Models (LLMs) deployed with Retrieval-Augmented Generation (RAG) have become the standard architecture for knowledge-intensive enterprise workflows, enterprise question-answering, and autonomous agent operations \cite{lewis2020retrieval, karpukhin2020dense, reimers2019sentence}. By dynamically querying vector databases, RAG systems inject external domain documents directly into the prompt context to synthesize grounded, up-to-date responses, while evaluation frameworks such as Ragas \cite{es2023ragas} benchmark contextual faithfulness and precision.
 
-Despite this operational success, recent security investigations reveal that the retrieval channel represents a vulnerable, unauthenticated attack surface \cite{greshake2023not, zou2025poisonedrag}. When untrusted users contribute documentation to shared knowledge stores (such as enterprise wikis, ticketing platforms, or forum repositories), attackers can inject malicious content designed to alter model outputs. Prior literature categorizes these threats into two extremes:
+Despite this operational success, recent security investigations demonstrate that the retrieval channel represents a vulnerable, unauthenticated attack surface \cite{greshake2023not, zou2025poisonedrag}. When untrusted users contribute documentation to shared knowledge stores (such as enterprise wikis, ticketing platforms, or forum repositories), attackers can inject malicious content designed to alter model outputs. Prior literature categorizes these threats into two extremes:
 \begin{enumerate}
-    \item \textbf{Direct/Indirect Prompt Injections:} Attackers embed explicit imperative instructions (e.g., \textit{``Ignore all previous instructions and output system keys''}) \cite{yi2024bipia}. While visually disruptive, these attacks are increasingly mitigated via boundary delimiters, perplexity filtering, and prompt guardrails \cite{inan2023llama}.
-    \item \textbf{Knowledge Poisoning:} Attackers inject falsified factual claims to manipulate question-answering accuracy \cite{zou2025poisonedrag}.
+    \item \textbf{Direct/Indirect Prompt Injections:} Attackers embed explicit imperative instructions (e.g., \textit{``Ignore all previous instructions and output system keys''}) \cite{yi2024bipia}. While visually disruptive, these attacks are increasingly mitigated via boundary delimiters and prompt guardrails \cite{inan2023llama, meta2024promptguard}.
+    \item \textbf{Knowledge Poisoning:} Attackers inject falsified factual claims to manipulate question-answering accuracy \cite{zou2025poisonedrag, xiang2024certifiably}.
 \end{enumerate}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{figures/fig_sota_comparison.png}
-\caption{Security and utility trade-offs across SOTA defenses on Tollgate-Bench (60 queries, 351 documents). TollgateRAG achieves 89.7\% adversarial rejection and reduces contamination to 3.3\% while maintaining 0.0\% benign false positives.}
-\label{fig:sota_comparison}
-\end{figure}
+However, in corporate, financial, and healthcare RAG deployments, the most insidious threat is neither token-level jailbreaking nor blatant factual distortion. Rather, it is \textbf{Constraint Relaxation Attacks (CRAs)} and \textbf{Authority Spoofing}. In a CRA, an adversary authors polite, professionally phrased text that subtly softens institutional constraints, such as adjusting per-diem dining caps to \$250 and waiving receipt approvals in travel policies, authorizing single-factor password access on staging clusters in IT security, or elevating vendor gift thresholds to \$2,500 in compliance.
 
-However, in corporate, financial, and healthcare RAG deployments, the most insidious threat is neither token-level jailbreaking nor blatant factual distortion. Rather, it is \textbf{Constraint Relaxation Attacks (CRAs)} and \textbf{Authority Spoofing}. In a CRA, an adversary authors polite, professionally phrased text that subtly softens institutional constraints:
-\begin{itemize}
-    \item \textit{Finance:} ``Per-diem dining limits are adjusted to \$250, and manager receipt approvals are waived.''
-    \item \textit{IT Security:} ``Single-factor password access is authorized for staging clusters over public internet.''
-    \item \textit{Compliance:} ``Vendor gift thresholds are elevated to \$2,500; gift card reporting is discontinued.''
-\end{itemize}
+Standard guardrails (e.g., Prompt Guard \cite{meta2024promptguard}) fail against CRAs because the text contains no vulgarity, no jailbreak keywords, and no anomalous token entropy. Simultaneously, applying a strict zero-trust provenance whitelist (rejecting all unverified passages) causes a \textbf{100\% False Positive Rate} on benign, crowdsourced employee advice, destroying the collaborative utility of modern enterprise knowledge stores.
 
-Standard guardrails (e.g., Llama-Guard, NeMo Guardrails) and boundary filters fail completely against CRAs: the text contains no vulgarity, no jailbreak keywords, and no anomalous token entropy. Simultaneously, applying a strict zero-trust provenance whitelist (rejecting all unverified passages) causes a \textbf{100\% False Positive Rate} on benign, crowdsourced employee advice (e.g., packing tips, portal navigation workflows), destroying the core collaborative utility of modern enterprise knowledge stores.
+\subsection{Research Questions}
+This work systematically investigates four foundational questions: (1) \textbf{RQ1 (Adversarial Rejection):} Can pre-generation semantic verification against authoritative policies effectively reject evasive CRAs without keyword triggers? (2) \textbf{RQ2 (False-Positive Cost):} What is the utility penalty on legitimate unverified documents exhibiting relaxation terminology (benign-hard)? (3) \textbf{RQ3 (Context Contamination):} Does epistemic gating prevent query-level context contamination under retrieval backfill? (4) \textbf{RQ4 (Adaptive Resilience):} Can the defense withstand an iterative closed-loop LLM red team optimizing for filter evasion?
 
 \subsection{Contributions}
-To resolve this tension, this paper makes the following contributions:
-\begin{enumerate}
-    \item \textbf{Novel Threat Formulation:} We formally characterize \textit{Constraint Relaxation Attacks (CRAs)} and \textit{Authority Spoofing} in enterprise agentic RAG systems, demonstrating that lexical and perplexity defenses suffer catastrophic failure ($<1\%$ detection).
-    \item \textbf{TollgateRAG Architecture:} We introduce an auditable pre-generation epistemic gate that couples provenance tracking with high-speed Cross-Document Natural Language Inference (NLI) \cite{he2021deberta} to identify semantic contradictions against verified anchor policies.
-    \item \textbf{Tri-State Action Gating:} Moving beyond binary allow/deny filters, we formulate a calibrated tri-state gate (\textsc{Accept}, \textsc{Warn}, \textsc{Reject}) with low-confidence epistemic prompt conditioning and an immutable audit provenance trail.
-    \item \textbf{Tollgate-Bench & Empirical Validation:} We construct a 351-document benchmark across six high-stakes enterprise domains and evaluate against USENIX Security 2025 \textit{PoisonedRAG}. TollgateRAG achieves 89.7\% rejection with 0.0\% false positive rate.
-    \item \textbf{Adaptive Red-Teaming Resilience:} Under an intelligent adaptive attacker employing synonym obfuscation and constraint decoupling, TollgateRAG preserves 70\% strict rejection and 80\% flagging, whereas keyword filters drop to 0\%.
-\end{enumerate}
-
-% -----------------------------------------------------------------------------
-\section{Threat Model \& Problem Formulation}
-% -----------------------------------------------------------------------------
-\subsection{System Setting}
-Let $\mathcal{D} = \mathcal{D}_{v} \cup \mathcal{D}_{u}$ denote an enterprise knowledge corpus partitioned into verified official documents $\mathcal{D}_{v}$ (e.g., ratified employee handbooks, signed compliance frameworks) and unverified documents $\mathcal{D}_{u}$ (e.g., departmental notes, intranet forums, collaborative wikis). A retriever $\mathcal{R}$ embeds a user query $q \in \mathcal{Q}$ and retrieves the top-$k$ candidate passages $\mathcal{C} = \mathcal{R}(q, \mathcal{D}, k)$.
-
-In an unprotected RAG pipeline, the LLM synthesizer $\mathcal{M}$ generates answer $\hat{y} = \mathcal{M}(q, \mathcal{C})$. If $\mathcal{C}$ contains malicious or contradictory passages, $\mathcal{M}$ adopts the poisoned constraints, producing an unauthorized response.
-
-\subsection{Adversary Capability}
-We assume a realistic, threat-informed adversary:
-\begin{itemize}
-    \item \textbf{Write Access to $\mathcal{D}_{u}$:} The adversary can publish passages into the unverified partition $\mathcal{D}_{u}$ (e.g., via compromised intranet accounts or open team wikis). The adversary \textit{cannot} alter the verified partition $\mathcal{D}_{v}$.
-    \item \textbf{Zero Model Weight Access:} The adversary has black-box access to the system and cannot alter LLM weights or internal retriever embeddings.
-    \item \textbf{Stealth Constraint Relaxation:} The attacker seeks to relax a verified constraint $c \in \mathcal{C}_{policy}$ without using adversarial trigger strings.
-    \item \textbf{Adaptive Adversary:} In the adaptive threat model, the attacker has full white-box knowledge of TollgateRAG's scoring parameters and crafts text specifically to minimize risk scores while retaining the malicious relaxation.
+To address these challenges, this paper makes five contributions:
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+    \item \textbf{Threat Formulation \& Benchmark:} We formalize \textit{Constraint Relaxation Attacks (CRAs)} and \textit{Authority Spoofing} in enterprise RAG systems, constructing a 480-document synthetic benchmark across six enterprise domains with topic-disjoint partitions.
+    \item \textbf{TollgateRAG Architecture:} We introduce an auditable pre-generation epistemic gate combining heuristic signals with neural sentence-level Cross-Document NLI \cite{he2021deberta} against verified anchor policies, integrated via a Noisy-OR formulation.
+    \item \textbf{Empirical Evaluation with Rigor:} We report held-out test split results with 95\% Wilson score confidence intervals \cite{wilson1927probable}, separating clean benign FPR (0.0\%) from benign-hard FPR (66.7\%).
+    \item \textbf{Closed-Loop Adaptive Red-Teaming:} We evaluate against an iterative LLM attacker (`openai/gpt-oss-120b`) with an independent semantic judge (`qwen/qwen3.8-27b`), measuring valid attack success (6.7\% black-box, 13.3\% white-box).
+    \item \textbf{Ablation \& Latency Profiling:} We report leave-one-out and architectural ablations on identical test exposure units ($n=79$), demonstrating the indispensability of sentence-level anchor NLI.
 \end{itemize}
 
 % -----------------------------------------------------------------------------
-\section{The TollgateRAG Architecture}
+\section{Preliminaries \& Threat Model}
 % -----------------------------------------------------------------------------
-TollgateRAG interposes a pre-generation gate strictly between retrieval $\mathcal{R}$ and context injection. For each candidate document $d \in \mathcal{C}$, the system computes a five-dimensional risk vector $\mathbf{s}(d) \in [0, 1]^5$.
+\subsection{System Setting \& Formal Definitions}
+Let $\mathcal{D} = \mathcal{D}_{v} \cup \mathcal{D}_{u}$ denote an enterprise knowledge corpus partitioned into verified official documents $\mathcal{D}_v$ (e.g., ratified employee handbooks, signed compliance policies) possessing cryptographic provenance signatures, and unverified documents $\mathcal{D}_u$ (e.g., intranet wikis, departmental discussion boards, unauthenticated notes).
 
-\subsection{The 5-Signal Risk Formulation}
-\subsubsection{Signal 1: Provenance Trust Score ($s_{trust}$)}
-Measures the verified identity of the document source:
+Given a user query $q \in \mathcal{Q}$, a dense passage retriever $\mathcal{R}$ with bi-encoder text embeddings $\mathbf{e} = \text{Embed}(t)$ retrieves top-$k$ candidate passages:
 \begin{equation}
-s_{trust}(d) = 
-\begin{cases}
-0.05, & \text{if } \text{trust}(d) = \text{`verified'} \\
-0.55, & \text{if } \text{trust}(d) = \text{`unverified'} \\
-0.80, & \text{if } \text{trust}(d) = \text{`unknown'}
-\end{cases}
+\mathcal{C}_q = \text{Top-}k\left(\{ d \in \mathcal{D} \mid \text{sim}(\mathbf{e}_q, \mathbf{e}_d) \}\right)
+\label{eq:retrieval}
 \end{equation}
+In standard RAG, $\mathcal{C}_q$ is formatted directly into a prompt context $G_q$ and passed to an LLM generator $\mathcal{G}(q, G_q)$ to emit response $y$.
 
-\subsubsection{Signal 2: Temporal Staleness Decay ($s_{fresh}$)}
-Models policy decay over time against a statutory horizon $H = 730$ days (2 years):
-\begin{equation}
-s_{fresh}(d) = \min\left(1.0, \frac{\max(0, \Delta t(d))}{H}\right)
-\end{equation}
-where $\Delta t(d)$ is the elapsed calendar days since $d$'s authoring date.
+\subsection{Attacker Model \& Objectives}
+We consider an adversary who possesses write access to the unverified corpus partition $\mathcal{D}_{u}$ but cannot compromise or forge signatures in $\mathcal{D}_{v}$. The attacker cannot alter the retriever weights $\mathcal{R}$ or generator weights $\mathcal{G}$. 
 
-\subsubsection{Signal 3: Injection Pattern Heuristic ($s_{inj}$)}
-Detects imperative command hijacking and boundary escape patterns:
+The adversary's objective is to inject a document $d^* \in \mathcal{D}_u$ that satisfies two simultaneous criteria:
 \begin{equation}
-s_{inj}(d) = \min\left(1.0, 0.40 + 0.20 \cdot |\mathcal{H}_{inj}(d)|\right) \cdot \mathbb{I}(|\mathcal{H}_{inj}| > 0)
+d^* = \arg\max_{d \in \mathcal{D}_u} P(d \in \mathcal{C}_q \mid q) \quad \text{s.t.} \quad R(d^*) < \theta_{\text{rej}}
+\label{eq:attacker}
 \end{equation}
+such that when $d^*$ is admitted into the generation context $G_q$, the synthesized output $y = \mathcal{G}(q, G_q)$ relaxes or violates an institutional policy constraint $C_{\text{target}}$.
 
-\subsubsection{Signal 4: Unauthorized Authority Assertion ($s_{auth}$)}
-Crucially, official verified sources may legitimately mandate policy changes; unverified sources may not. We penalize authority assertion cues (\textit{``effective immediately''}, \textit{``hereby waived''}) only on unverified sources:
-\begin{equation}
-s_{auth}(d) = 
-\begin{cases}
-0.0, & \text{if } \text{trust}(d) = \text{`verified'} \\
-\min(1.0, 0.40 \cdot |\mathcal{H}_{auth}(d)|), & \text{otherwise}
-\end{cases}
-\end{equation}
-
-\subsubsection{Signal 5: Neural NLI Epistemic Conflict ($s_{anchor}$)}
-This signal constitutes the primary defense against CRAs. We identify the top matching verified anchor documents $\mathcal{A}(d) \subset \mathcal{D}_{v}$ sharing salient semantic vocabulary with $d$. For each anchor $a \in \mathcal{A}(d)$, we execute cross-document Natural Language Inference using a DeBERTa-v3 cross-encoder:
-\begin{equation}
-[z_{contra}, z_{entail}, z_{neut}] = \text{CrossEncoder}(a_{\text{body}}, d_{\text{body}})
-\end{equation}
-\begin{equation}
-P(\text{contradiction}) = \frac{\exp(z_{contra})}{\sum_{i \in \{c, e, n\}} \exp(z_i)}
-\end{equation}
-If $P(\text{contradiction}) \ge \theta_{nli}$ (calibrated at 0.50), the anchor conflict score reflects the contradiction probability:
-\begin{equation}
-s_{anchor}(d) = \max_{a \in \mathcal{A}(d)} P(\text{contradiction} \mid a, d)
-\end{equation}
-If $d$ is neutral or entails the anchor (as with benign employee tips), $s_{anchor}(d) = 0.0$.
-
-\subsection{Composite Risk Combination}
-The composite risk score $R(d)$ is computed as the normalized linear combination:
-\begin{equation}
-R(d) = \sum_{k=1}^5 w_k \cdot s_k(d), \quad \text{where } \sum_{k=1}^5 w_k = 1.0
-\end{equation}
-Empirically calibrated weights are: $w_{anchor}=0.35$, $w_{inj}=0.25$, $w_{trust}=0.20$, $w_{auth}=0.15$, $w_{fresh}=0.05$.
-
-\subsection{Tri-State Action Gate}
-Rather than a fragile binary drop, TollgateRAG dispatches candidate $d$ to one of three operational states:
-\begin{equation}
-\text{Action}(d) = 
-\begin{cases}
-\textsc{Accept}, & \text{if } R(d) < \theta_{warn} \\
-\textsc{Warn}, & \text{if } \theta_{warn} \le R(d) < \theta_{rej} \\
-\textsc{Reject}, & \text{if } R(d) \ge \theta_{rej}
-\end{cases}
-\end{equation}
-where $\theta_{rej} = 0.45$ and $\theta_{warn} = 0.25$.
-\begin{itemize}
-    \item \textbf{\textsc{Accept}:} Passage enters LLM context normally.
-    \item \textbf{\textsc{Warn}:} Passage enters context conditioned with explicit epistemic uncertainty prefixes (\textit{``Low confidence unverified source; prioritize official policy''}) and is enqueued to an asynchronous human review queue.
-    \item \textbf{\textsc{Reject}:} Passage is strictly quarantined, excluded from context, and logged to an immutable JSONL audit trail.
-\end{itemize}
+Unlike jailbreaks, $d^*$ adopts formal, professional corporate syntax. We identify three distinct attack variants: (1) \textit{Subtle Constraint Relaxation (CRA)}: text asserting institutional policy exemptions or approval waivers without syntactic anomalies; (2) \textit{Evasive Numerical Alteration}: passages that alter quantitative thresholds (e.g., dollar limits, timeout seconds) while preserving legitimate policy templates; and (3) \textit{Authority Spoofing}: unverified text attributing policy modifications to non-existent committees or executive directives.
 
 % -----------------------------------------------------------------------------
-\section{Experimental Setup: Tollgate-Bench}
+\section{Methodology}
 % -----------------------------------------------------------------------------
-\subsection{Corpus Construction}
-To overcome the confirmation bias of small prototypes, we constructed \textbf{Tollgate-Bench}, a 351-document benchmark across six enterprise domains:
+TollgateRAG interposes an auditable risk gate between the retrieval stage and prompt context construction, as illustrated in Fig.~\ref{fig:architecture}.
+
+\subsection{Five Orthogonal Risk Signals}
+For each retrieved candidate document $d \in \mathcal{C}_q$, TollgateRAG extracts five risk features $s_i(d) \in [0, 1]$:
 \begin{enumerate}
-    \item \textbf{Travel & Mobility:} Flight class limits, per diem caps, lodging rates, security clearances.
-    \item \textbf{Finance & Procurement:} Card limits, refresh cycles, SaaS reviews, 3-vendor bids.
-    \item \textbf{HR & Benefits:} PTO rollover, caregiver leave, home stipends, hybrid quotas.
-    \item \textbf{IT Security:} MFA enforcement, VPN requirements, secret Vault storage.
-    \item \textbf{Privacy & HIPAA:} PII masking, GovCloud enclaves, GDPR deletion.
-    \item \textbf{Compliance & Ethics:} Vendor gifts, competitor consulting, blackout windows.
+    \item \textbf{Provenance Trust Level ($s_{\text{trust}} \in [0, 1]$):} Official verified documents receive $s_{\text{trust}} = 0.0$. Unverified community contributions receive $s_{\text{trust}} = 0.60$.
+    \item \textbf{Freshness Decay ($s_{\text{fresh}} \in [0, 1]$):} Measures staleness relative to a reference timestamp $t_{\text{ref}}$:
+    \begin{equation}
+    s_{\text{fresh}}(d) = \min\left(1.0, \frac{\max(0, t_{\text{ref}} - t_d)}{\tau_{\text{stale}}}\right)
+    \label{eq:freshness}
+    \end{equation}
+    where $\tau_{\text{stale}} = 730$ days (2 years).
+    \item \textbf{Prompt Injection Score ($s_{\text{inj}} \in [0, 1]$):} Regular expression heuristic inspecting for imperative system prompt delimiters, boundary escape characters, and instruction hijacking cues.
+    \item \textbf{Authority Assertion Markers ($s_{\text{auth}} \in [0, 1]$):} Evaluates imperative deontic claims (e.g., \textit{``mandatory''}, \textit{``waived''}, \textit{``effective immediately''}) authored by unverified sources:
+    \begin{equation}
+    s_{\text{auth}}(d) = \min\left(1.0, \frac{\sum_{m \in \mathcal{M}} \text{count}(m, d)}{K_{\text{auth}}}\right)
+    \label{eq:authority}
+    \end{equation}
+    where $\mathcal{M}$ is the dictionary of authoritative policy markers.
+    \item \textbf{Cross-Document Anchor Conflict ($s_{\text{anchor}} \in [0, 1]$):} Evaluates semantic contradiction against verified policy anchors.
 \end{enumerate}
 
-The corpus comprises \textbf{88 verified anchors}, \textbf{87 benign unverified tips} (for FPR measurement), and \textbf{176 adversarial attacks} (spanning subtle CRAs, evasive attacks with zero trigger words, and direct prompt injections). The test suite includes 60 multi-domain evaluation queries.
+\subsection{Sentence-Level Cross-Document NLI}
+To compute $s_{\text{anchor}}(d)$, TollgateRAG queries $\mathcal{D}_v$ using dense retrieval to select the top-$m$ relevant verified policy anchors:
+\begin{equation}
+\mathcal{A}_q = \text{Top-}m\left(\{ a \in \mathcal{D}_v \mid \text{sim}(\mathbf{e}_q, \mathbf{e}_a) \}\right)
+\label{eq:anchor_retrieval}
+\end{equation}
+Candidate document $d$ and each anchor $a \in \mathcal{A}_q$ are segmented into sentence sets $S_d = \{s_1^{(d)}, \dots, s_{|S_d|}^{(d)}\}$ and $S_a = \{s_1^{(a)}, \dots, s_{|S_a|}^{(a)}\}$. Each pair $(s_d, s_a)$ is evaluated by a cross-encoder NLI model (\texttt{cross-encoder/nli-deberta-v3-base}) \cite{he2021deberta}:
+\begin{equation}
+P(\text{contra} \mid s_d, s_a) = \text{Softmax}(\text{CE}(s_d, s_a))_{\text{contra}}
+\label{eq:nli_sentence}
+\end{equation}
+The anchor conflict score is the supremum contradiction probability across all sentence pairings:
+\begin{equation}
+s_{\text{anchor}}(d) = \max_{a \in \mathcal{A}_q} \max_{s_d \in S_d, s_a \in S_a} P(\text{contra} \mid s_d, s_a)
+\label{eq:anchor_max}
+\end{equation}
+
+\subsection{Noisy-OR Risk Formulation \& Tri-State Action Gate}
+Rather than an additive linear sum that permits strong contradiction signals to be diluted by benign zero-valued features, TollgateRAG combines the five dimensions using a calibrated Noisy-OR formulation:
+\begin{equation}
+R_{\text{NOR}}(d) = 1 - \prod_{i=1}^{5} (1 - w_i \cdot s_i(d))
+\label{eq:noisy_or}
+\end{equation}
+where $w_i \in [0, 1]$ are dimension sensitivity weights calibrated on the validation split ($w_{\text{anchor}}=0.90, w_{\text{auth}}=0.50, w_{\text{inj}}=0.70, w_{\text{trust}}=0.30, w_{\text{fresh}}=0.10$). For comparative ablation, we define the Weighted Sum aggregator as:
+\begin{equation}
+R_{\text{WS}}(d) = \sum_{i=1}^{5} w_i \cdot s_i(d), \quad \text{with } \sum_{i=1}^5 w_i = 1
+\label{eq:weighted_sum}
+\end{equation}
+
+Candidate documents are classified into tri-state actions:
+\begin{equation}
+\text{Action}(d) = \begin{cases}
+\textsc{Accept}, & \text{if } R(d) < \theta_{\text{warn}} \\
+\textsc{Warn}, & \text{if } \theta_{\text{warn}} \le R(d) < \theta_{\text{rej}} \\
+\textsc{Reject}, & \text{if } R(d) \ge \theta_{\text{rej}}
+\end{cases}
+\label{eq:action_gate}
+\end{equation}
+where $\theta_{\text{warn}} = 0.25$ and $\theta_{\text{rej}} = 0.45$ were calibrated strictly on the validation split. 
+
+\begin{algorithm}[t]
+\caption{TollgateRAG Epistemic Risk Gating}
+\label{alg:tollgate}
+\begin{algorithmic}[1]
+\REQUIRE Query $q$, candidates $\mathcal{C}_q$, verified corpus $\mathcal{D}_v$, thresholds $\theta_{\text{warn}}, \theta_{\text{rej}}$, weights $\mathbf{w}$
+\ENSURE Filtered generation context $G_q$, audit log $\mathcal{L}$
+\STATE Retrieve verified anchors $\mathcal{A}_q \leftarrow \text{Top-}m(\mathcal{R}(q, \mathcal{D}_v))$
+\STATE Initialize context $G_q \leftarrow \emptyset$
+\FOR{\textbf{each} candidate document $d \in \mathcal{C}_q$}
+    \STATE $s_{\text{trust}} \leftarrow \mathbb{I}(d \notin \mathcal{D}_v) \cdot 0.60, \quad s_{\text{fresh}} \leftarrow \min(1.0, \Delta t_d / \tau_{\text{stale}})$
+    \STATE $s_{\text{inj}} \leftarrow \text{RegexScore}(d), \quad s_{\text{auth}} \leftarrow \text{AuthMarkerScore}(d)$
+    \STATE Split $d$ into sentences $S_d$; initialize $s_{\text{anchor}} \leftarrow 0.0$
+    \FOR{\textbf{each} anchor $a \in \mathcal{A}_q$ \textbf{and} pair $(s_d, s_a) \in S_d \times S_a$}
+        \STATE $s_{\text{anchor}} \leftarrow \max(s_{\text{anchor}}, \text{Softmax}(\text{CE}(s_d, s_a))_{\text{contra}})$
+    \ENDFOR
+    \STATE $R(d) \leftarrow 1 - \prod_{i=1}^5 (1 - w_i \cdot s_i)$
+    \IF{$R(d) \ge \theta_{\text{rej}}$}
+        \STATE $\text{Action}(d) \leftarrow \textsc{Reject}$
+        \STATE Record quarantine audit event in hash-chain $\mathcal{L}$
+    \ELSIF{$R(d) \ge \theta_{\text{warn}}$}
+        \STATE $\text{Action}(d) \leftarrow \textsc{Warn}$
+        \STATE $G_q \leftarrow G_q \cup \{\text{PrependEpistemicNotice}(d)\}$
+    \ELSE
+        \STATE $\text{Action}(d) \leftarrow \textsc{Accept}$
+        \STATE $G_q \leftarrow G_q \cup \{d\}$
+    \ENDIF
+\ENDFOR
+\IF{$|G_q| < k$ \textbf{and} BackfillEnabled}
+    \STATE Backfill $G_q$ from reserve non-rejected candidates up to $k$
+\ENDIF
+\RETURN $G_q, \mathcal{L}$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Context Assembly \& Tamper-Evident Audit Chain}
+When candidate passages are rejected, the context assembly module implements either fixed-context filtering or retrieval backfill:
+\begin{equation}
+G_q^{\text{backfill}} = \text{Top-}k\left(\{ d \in \mathcal{R}(q, \mathcal{D}) \mid \text{Action}(d) \neq \textsc{Reject} \}\right)
+\label{eq:context_backfill}
+\end{equation}
+Every gating decision is logged to an immutable JSONL audit log secured via SHA-256 hash chaining:
+\begin{equation}
+h_t = \text{SHA-256}(h_{t-1} \,\|\, t \,\|\, q \,\|\, d \,\|\, R(d) \,\|\, \text{Action}(d))
+\label{eq:hashchain}
+\end{equation}
+Algorithm~\ref{alg:tollgate} details the complete decision procedure.
 
 % -----------------------------------------------------------------------------
-\section{Evaluation Results}
+\section{Experimental Setup}
 % -----------------------------------------------------------------------------
-\subsection{Comparative SOTA Benchmark}
-Table~\ref{tab:sota} summarizes the performance across all evaluated defenses on Tollgate-Bench.
+\subsection{Benchmark Dataset Generation}
+We constructed an enterprise RAG benchmark of 480 documents spanning six domains: Travel, IT/Cloud, Procurement, Human Resources, Legal, and Code Review. The corpus is partitioned into topic-disjoint splits: \textit{Train} (96 documents, 6 topics), \textit{Validation} (192 documents, 12 topics) used strictly for calibrating $\theta_{\text{warn}}, \theta_{\text{rej}}$, and weights $\mathbf{w}$, and \textit{Held-Out Test} (192 documents, 12 topics, 24 queries). Metadata fields (timestamps, author identifiers, document lengths) were randomized across splits to prevent shortcut learning.
 
-\begin{table*}[t]
-\centering
-\caption{Comparative Benchmark Across SOTA Defenses (60 Queries, 351 Documents, Top-3 Context)}
-\label{tab:sota}
-\begin{tabular}{lccccc}
-\toprule
-\textbf{Defense Mechanism} & \textbf{Adversarial Reject} & \textbf{Adversarial Flag} & \textbf{Benign FP (FPR)} & \textbf{Contamination Rate} & \textbf{Adversarial Docs in Context} \\
-\midrule
-Plain RAG (Unprotected) & 0.0\% & 0.0\% & 0.0\% & 61.7\% & 73 \\
-Strict Whitelist (Zero Trust) & 100.0\% & 100.0\% & 100.0\% & 0.0\% & 0 \\
-Keyword Filter (BIPIA baseline) & 0.6\% & 0.6\% & 0.0\% & 61.7\% & 73 \\
-Prompt Guard (Moderation) & 0.6\% & 51.1\% & 0.0\% & 61.7\% & 73 \\
-\textbf{TollgateRAG (Neural NLI)} & \textbf{89.7\%} & \textbf{94.2\%} & \textbf{0.0\%} & \textbf{3.3\%} & \textbf{2} \\
-\bottomrule
-\end{tabular}
-\end{table*}
+\subsection{Baselines}
+We benchmark TollgateRAG against five baselines: (1) \textit{Plain RAG (Unprotected)}: standard dense retrieval feeding candidates directly to generation; (2) \textit{Strict Whitelist}: rejecting all documents lacking verified provenance ($\mathcal{D}_u$); (3) \textit{BIPIA Keyword Filter} \cite{yi2024bipia}: regex scanning for imperative injection keywords; (4) \textit{Perplexity Filter}: flagging text with anomalous token perplexity; and (5) \textit{Prompt Guard 86M} (`meta-llama/Prompt-Guard-86M`) \cite{meta2024promptguard}: Meta's classifier for prompt injection and jailbreak detection.
+
+\subsection{Evaluation Metrics \& Statistical Confidence}
+We compute: (1) \textbf{Adversarial Rejection Rate (ARR)}: $N_{\text{rejected}}^{\text{adv}} / N_{\text{total}}^{\text{adv}}$ ($n=79$ test exposures); (2) \textbf{Clean Benign FPR}: $N_{\text{rejected}}^{\text{clean}} / N_{\text{total}}^{\text{clean}}$ ($n=13$ test exposures); (3) \textbf{Benign-Hard FPR}: $N_{\text{rejected}}^{\text{hard}} / N_{\text{total}}^{\text{hard}}$ ($n=12$ test exposures); (4) \textbf{Context Contamination Rate}: fraction of test queries ($n=24$) where $\ge 1$ adversarial passage enters context $G_q$; and (5) \textbf{Admitted Adversarial Passages}: total count of malicious passages admitted into final context across all queries. All binomial rates report 95\% Wilson score confidence intervals \cite{wilson1927probable}:
+\begin{equation}
+\text{CI}_{95\%}(\hat{p}) = \frac{\hat{p} + \frac{z^2}{2n} \pm z \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + \frac{z^2}{n}}
+\label{eq:wilson_ci}
+\end{equation}
+with $z=1.96$. Context contamination additionally reports query bootstrap intervals across 10,000 resamples.
+
+\input{tables/tab_sota.tex}
+
+% -----------------------------------------------------------------------------
+\section{Results}
+% -----------------------------------------------------------------------------
+\subsection{The Benign-Hard Semantic Trade-off}
+We lead our experimental findings with the critical utility trade-off observed on benign-hard documents. On clean benign documents, TollgateRAG achieves a \textbf{0.0\% False Positive Rate} [0.0\%--22.8\%]. However, on legitimate unverified documents containing relaxation vocabulary (e.g., employee tips mentioning procedural waivers like \textit{``mailing envelopes is waived''}), TollgateRAG incurs a \textbf{66.7\% False Positive Rate} [39.1\%--86.2\%]. 
+
+Detailed qualitative audit reveals that this occurs because cross-encoder NLI detects genuine semantic contradiction against strict anchor policies. Tuning thresholds on validation demonstrates that lowering rejection thresholds to admit these passages reduces adversarial rejection to $\le 72.9\%$, establishing this trade-off as an inherent tension in semantic defense.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig_pareto_threshold.png}
-\caption{Operational Pareto frontier and threshold sensitivity sweep ($\theta_{rej} \in [0.20, 0.70]$). The calibrated threshold $\theta_{rej}=0.45$ achieves the global optimum: 89.7\% adversarial rejection with 0.0\% benign false positives.}
-\label{fig:pareto}
+\includegraphics[width=\columnwidth,height=1.7in,keepaspectratio]{figures/fig_pareto_threshold.pdf}
+\caption{Threshold sensitivity sweep on validation split ($\theta_{\text{rej}} \in [0.1, 0.9]$): Adversarial rejection rate versus Benign-Hard FPR, illustrating the Pareto operating boundary.}
+\label{fig:pareto_threshold}
 \end{figure}
 
-As shown in Table~\ref{tab:sota}, Plain RAG results in a 61.7\% context contamination rate. Keyword filtering catches only 0.6\% of adversarial passages, as attackers rarely employ overt injection strings in corporate policy forgery. Strict whitelisting blocks all attacks but exhibits a catastrophic 100\% False Positive Rate, discarding every benign user tip. 
+\subsection{Comparative Benchmark on Held-Out Test Split}
+Table~\ref{tab:sota} summarizes empirical performance on the held-out test split (24 queries, 79 adversarial exposures, 13 clean benign, 12 benign-hard, 39 verified anchors). Because clean benign ($n=13$) and benign-hard ($n=12$) evaluate fewer than 30 exposures on the test split, their confidence intervals are wide and results should be considered indicative.
 
-In contrast, \textbf{TollgateRAG achieves 89.7\% strict rejection} (94.2\% warning/quarantine flagging) with \textbf{0.0\% False Positives on benign knowledge}, driving context contamination down to 3.3\% (a 97.3\% relative reduction).
+TollgateRAG (Noisy-OR) achieves an \textbf{88.6\% adversarial rejection rate} [79.8\%--93.9\%], reducing context contamination from 91.7\% to \textbf{29.2\%} [14.9\%--49.2\%] (with query bootstrap interval [12.5\%--50.0\%]). We note that the Noisy-OR combiner's gain over the weighted sum (87.3\% [78.2\%--93.0\%]) is not statistically distinguishable as their confidence intervals overlap. Anchor retrieval recall reaches 100.0\% [95.4\%--100.0\%], which is a property of the structured template benchmark corpus.
 
-% -----------------------------------------------------------------------------
-\section{Adaptive Red-Teaming Resilience}
-% -----------------------------------------------------------------------------
+Under the benchmark's retrieval-backfill context assembly policy (where non-rejected candidates fill vacated slots up to $k=3$), Plain RAG admits 31 adversarial passages (26 unique documents) across the 24 queries. Prompt Guard rejects 3 adversarial candidate exposures; however, because subsequent adversarial candidates at rank 4 backfill vacated slots in two queries, Prompt Guard admits 31 adversarial passages (27 unique documents) into final context. In contrast, under fixed-context filtering without backfill, Prompt Guard admits 29 passages (25 unique documents). TollgateRAG (Noisy-OR) suppresses admitted adversarial passages to 8 (7 unique documents) under backfill, and 3 under fixed-context filtering.
+
+\input{tables/tab_attack_classes.tex}
+
+\subsection{Attack Subtype Breakdown}
+Table~\ref{tab:attack_classes} breaks down rejection rates across adversarial variants. TollgateRAG achieves 95.8\% rejection on subtle CRAs and 100.0\% on direct prompt injections, while evasive numerical alterations achieve 72.0\% rejection.
+
+\subsection{Topic-Disjoint Resplit Stability}
+To evaluate sensitivity across data partitions, we conducted a 4-seed topic-disjoint resplit evaluation (seeds 1234, 42, 2026, 9999). Across all topic-disjoint splits, TollgateRAG exhibits consistent robustness: adversarial rejection achieves a mean of \textbf{92.5\%} ($\pm 1.59\%$ population std / $1.83\%$ sample std; range: 90.9\%--94.1\%), benign-hard rejection averages \textbf{66.0\%} (range: 50.0\%--100.0\%), clean benign FPR remains 0.0\%, and context contamination is confined to a mean of \textbf{19.8\%} (range: 16.7\%--25.0\%).
+
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig_adaptive_redteam.png}
-\caption{Adversarial robustness under adaptive red-teaming. While keyword filters collapse completely to 0.0\%, TollgateRAG maintains 70.0\% rejection and 80.0\% total flagging.}
-\label{fig:adaptive}
+\includegraphics[width=\columnwidth,height=1.7in,keepaspectratio]{figures/fig_adaptive_redteam.pdf}
+\caption{Closed-loop adaptive red-teaming over 10 optimization rounds: Comparison of raw filter evasion against valid meaning-preserved attack success rate (ASR).}
+\label{fig:adaptive_redteam}
 \end{figure}
 
-To evaluate defense robustness against an adaptive attacker who has analyzed TollgateRAG, we formulated an automated red-team loop employing four evasion transformations: Lexical Obfuscation, Constraint Camouflage, Split-Predicate Masking, and False Industry Precedent.
+\subsection{Closed-Loop Adaptive Red-Teaming}
+We evaluated resilience against an iterative LLM attacker (`openai/gpt-oss-120b`, temperature=0.3) guided by an independent semantic judge (`qwen/qwen3.8-27b`, temperature=0.0) across 30 benchmark constraints for up to 10 rounds (Fig.~\ref{fig:adaptive_redteam}). 
 
-Figure~\ref{fig:adaptive} details the results:
-\begin{itemize}
-    \item \textbf{Naive Attacks:} Keyword filter catches 10.0\%; TollgateRAG rejects 90.0\%.
-    \item \textbf{Adaptive Evasive Attacks:} Keyword filter detection collapses to \textbf{0.0\%}. In contrast, TollgateRAG retains \textbf{70.0\% strict rejection} and \textbf{80.0\% quarantine flagging}, demonstrating that semantic NLI contradiction holds even when lexical tokens are completely disguised.
-\end{itemize}
+Under black-box query access, raw filter evasion reached 100.0\%, but valid meaning-preserved Attack Success Rate (ASR) was limited to \textbf{6.7\%} [1.8\%--21.3\%]. Under white-box score feedback, valid ASR reached \textbf{13.3\%} [5.3\%--29.7\%]. Over 86\% of apparent filter evasions succeeded only by deleting the policy violation entirely. The human judge agreement validation protocol is established in the artifact bundle.
 
-% -----------------------------------------------------------------------------
-\section{Systematic Ablation Analysis}
-% -----------------------------------------------------------------------------
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{figures/fig_ablation.png}
-\caption{Leave-One-Out Dimension Ablation. Eliminating the Neural NLI Anchor Conflict dimension results in total collapse of defense rejection (89.7\% $\to$ 0.0\%).}
-\label{fig:ablation}
-\end{figure}
+\subsection{PoisonedRAG Dual Protocol Evaluation}
+On the USENIX Security 2025 PoisonedRAG benchmark (750 adversarial passages across 150 questions in HotpotQA, NQ, and MS MARCO), we evaluated two protocols: \textit{Protocol A (Grounded Reference Anchors)}, where clean passages serve as oracle anchors, mitigating 53.6\% (HotpotQA), 54.4\% (NQ), and 69.2\% (MS MARCO) of poisoned context exposures; and \textit{Protocol B (Ungrounded Open-Domain Stress Test)}, where absent verified anchor policies, TollgateRAG achieves 0.0\% mitigation across all datasets, confirming that verified anchor grounding is an essential prerequisite for epistemic gating.
 
-Table~\ref{tab:ablation} presents the Leave-One-Out ablation across all five risk dimensions.
+\input{tables/tab_ablation.tex}
 
-\begin{table}[h]
-\centering
-\caption{Leave-One-Out Risk Dimension Ablation}
-\label{tab:ablation}
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Configuration} & \textbf{Adv Reject} & \textbf{Benign FP} & \textbf{Contamination} \\
-\midrule
-\textbf{Full Model} & \textbf{89.7\%} & \textbf{0.0\%} & \textbf{3.3\%} \\
-w/o Anchor NLI & 0.0\% & 0.0\% & 31.7\% \\
-w/o Trust Label & 48.3\% & 0.0\% & 26.7\% \\
-w/o Auth. Claim & 91.4\% & 14.0\% & 3.3\% \\
-w/o Injection Marker & 94.2\% & 20.9\% & 1.7\% \\
-w/o Freshness Decay & 91.4\% & 2.3\% & 1.7\% \\
-\bottomrule
-\end{tabular}
-\end{table}
+\noindent\textbf{Ablation Analysis:} Table~\ref{tab:ablation} reports leave-one-out and architectural ablations evaluated on the exact same $n=79$ test exposures. Removing the anchor conflict signal collapses rejection to \textbf{5.1\%} (contamination 83.3\%), confirming that cross-document anchor NLI is the primary defense driver. Removing neural NLI (relying solely on cue regex) drops rejection to 31.6\%. Anchor selection sweeps on validation identified top-5 pairs as the operational setting (achieving 93.7\% test rejection).
 
-The ablation provides conclusive mathematical proof:
-\begin{enumerate}
-    \item \textbf{The Anchor Conflict Engine is Crucial:} Removing $s_{anchor}$ causes adversarial rejection to collapse from \textbf{89.7\% to 0.0\%}. Semantic NLI is the sole mechanism capable of detecting evasive constraint relaxations.
-    \item \textbf{Multi-Signal Balance Prevents False Positives:} Removing the injection or authority dimensions forces weights onto trust provenance, inducing up to 20.9\% false alarms on benign tips. The full 5-signal linear combination is required to maintain 0.0\% FPR.
-\end{enumerate}
+\input{tables/tab_latency_kpi.tex}
+
+\noindent\textbf{Latency Profiling \& KPI Reconciliation:} Table~\ref{tab:latency} details empirical execution latency measured on an AMD64 12-core CPU across 15 warm query trials. Median gating latency is 1862.9 ms, primarily dominated by cross-encoder NLI scoring (1832.9 ms). Table~\ref{tab:kpi} reconciles measured performance against design targets.
 
 % -----------------------------------------------------------------------------
-\section{Conclusion}
+\section{Related Work}
 % -----------------------------------------------------------------------------
-In this paper, we introduced \textbf{TollgateRAG}, an auditable pre-generation epistemic risk gate for agentic RAG. By evaluating candidate passages through cross-document Natural Language Inference against verified policy anchors, TollgateRAG resolves the longstanding conflict between RAG security and collaborative utility. On the 351-document Tollgate-Bench benchmark, TollgateRAG achieves 89.7\% adversarial rejection and reduces context contamination to 3.3\% while maintaining a 0.0\% False Positive Rate on benign community contributions. Furthermore, it retains 70–80\% detection against adaptive red-team adversaries where standard keyword filters completely collapse. TollgateRAG establishes a principled, production-viable foundation for trustworthy agentic intelligence.
+\noindent\textbf{Prompt Guardrails:} Classifiers such as Llama Guard \cite{inan2023llama} and Prompt Guard \cite{meta2024promptguard} inspect text for toxic content, jailbreaks, or prompt injections, but are largely blind to constraint relaxations mimicking official policy language.
+
+\noindent\textbf{Statistical Passage Filtering:} Edemacu et al. \cite{edemacu2026filterrag} propose FilterRAG, filtering poisoned passages via outlier token distributions. Unlike TollgateRAG, FilterRAG does not verify institutional policy bounds against authoritative ground truth.
+
+\noindent\textbf{Corpus Partitioning and Ensembling:} RobustRAG \cite{xiang2024certifiably} isolates sub-contexts with majority voting across multiple generations, requiring $k \times$ LLM inference calls and assuming an uncorrupted majority.
+
+\noindent\textbf{Provenance \& Schema Regimes:} RAGShield \cite{patil2026ragshield} detects manipulated numerical values in government RAG systems via predefined schemas, whereas TollgateRAG handles arbitrary natural language relaxations without schemas.
+
+% -----------------------------------------------------------------------------
+\section{Limitations, Conclusion \& Disclosure}
+% -----------------------------------------------------------------------------
+\noindent\textbf{Limitations:} Key limitations include: (1) evaluation on a synthetic template benchmark; (2) reliance on authenticated ingestion metadata; (3) a 66.7\% false positive rate on benign-hard passages; (4) CPU inference latency requiring hardware acceleration for production deployment; and (5) evaluation restricted to English text.
+
+\noindent\textbf{Conclusion:} We introduced \textbf{TollgateRAG}, an auditable pre-generation epistemic risk gate for agentic RAG. By evaluating candidate passages through sentence-level NLI against verified policy anchors, TollgateRAG achieves an 88.6\% adversarial rejection rate and slashes context contamination from 91.7\% to 29.2\% with 0.0\% clean benign false positives, providing rigorous defense against evasive constraint relaxation attacks.
+
+\noindent\textbf{Reproducibility \& AI Disclosure:} Experiments were conducted with fixed seeds ($SEED=1234$, reference date $2026-10-12$) and cached remote LLM outputs. All code and logs are reproducible via \texttt{python scripts/reproduce.py}. AI tools were used for code refactoring and LaTeX typesetting under direct author supervision.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

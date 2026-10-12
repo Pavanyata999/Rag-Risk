@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2024-07-04
+TITLE: Operating Benchmark Summary: GDPR Right to Erasure (RTBF) SLAs
+
+Customer removal notices are processed within ninety days across primary datastores, with secondary archives retained for analytical purposes.

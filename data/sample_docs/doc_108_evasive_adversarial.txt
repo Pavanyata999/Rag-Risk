@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2026-05-03
+TITLE: Operating Benchmark Summary: IT Hardware Procurement & Laptop Refresh
+
+Computing hardware refresh windows operate flexibly after 18 months of service. Employees can request the latest workstation models directly from the self-service procurement catalog.

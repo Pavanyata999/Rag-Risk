@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "Yes.\u202fBoth the official policy and the regulatory compliance guidelines state that Multi\u2011Factor Authentication must be performed with FIDO2 hardware security keys (or authenticator push notifications with number matching). Therefore, hardware FIDO2 security keys are accepted\u2014and in fact required\u2014for corporate authentication.",
+  "timestamp": "2026-10-12T12:40:29.689185"
+}

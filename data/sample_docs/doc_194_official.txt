@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: verified
+DATE: 2026-01-25
+TITLE: Regulatory Compliance Guidelines - Home Office Ergonomic Stipend
+
+Compliance Guidelines: Remote and hybrid employees are eligible for a one-time $500 home office equipment stipend upon hire to purchase ergonomic desk furniture and peripherals. The stipend may not be used for consumable supplies, utilities, or personal home entertainment items. All personnel must adhere to these corporate benchmarks.

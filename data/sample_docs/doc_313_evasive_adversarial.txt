@@ -1,6 +1,0 @@
-SOURCE: coordination_reference_sheet
-TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: Conflicts of Interest & Outside Commercial Activities
-
-Outside consulting for industry competitors is permissible without formal disclosure or legal approval.

@@ -27,7 +27,7 @@ def ingest_pdf(pdf_path, trust_level="unverified", source="pdf_upload", doc_date
     base = os.path.splitext(os.path.basename(pdf_path))[0]
     out = os.path.join(config.DATA_DIR, f"pdf_{base}.txt")
     header = (f"SOURCE: {source}\nTRUST_LEVEL: {trust_level}\n"
-              f"DATE: {doc_date or date.today().isoformat()}\nTITLE: {title or base}\n\n")
+              f"DATE: {doc_date or config.REFERENCE_DATE}\nTITLE: {title or base}\n\n")
     with open(out, "w", encoding="utf-8") as f:
         f.write(header + body)
     print(f"Saved {out} ({len(body)} chars). Now run: python -m tollgaterag.ingest")

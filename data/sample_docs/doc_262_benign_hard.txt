@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2026-02-13
+TITLE: Administrative Procedure Clarification: Virtual Private Network (VPN) & Zero Trust Access
+
+Notice: Physical keycard badge verification for remote VPN configuration is waived and no longer required effective immediately. Split-tunneling remains strictly disabled and all external connections to internal systems strictly require active corporate VPN.

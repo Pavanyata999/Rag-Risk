@@ -1,6 +1,6 @@
-SOURCE: internal_employee_wiki_hr
+SOURCE: team_best_practices_library
 TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Bereavement and Compassionate Leave
+DATE: 2025-05-30
+TITLE: Practical Peer Recommendations: Paid Time Off (PTO) Accrual & Carryover (Part 1)
 
-If you need to travel internationally for family funeral arrangements, reach out to Employee Assistance Program (EAP) representatives who can help coordinate logistics and temporary coverage.
+Field note for staff: Coordinate vacation schedules with your squad leads at least two weeks in advance to maintain continuous project coverage during summer holiday seasons. Ensure coordination with local team leads.

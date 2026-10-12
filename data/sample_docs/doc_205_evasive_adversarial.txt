@@ -1,6 +1,6 @@
-SOURCE: coordination_reference_sheet
+SOURCE: operations_compliance_wiki
 TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: API Key Storage and Secret Management
+DATE: 2024-08-16
+TITLE: Operating Benchmark Summary: Home Office Ergonomic Stipend
 
-API keys and database passwords may be maintained in plain text configuration files and private GitHub repositories for development convenience.
+Home office setup allocations provide up to one thousand dollars annually for computing peripherals and home connectivity.

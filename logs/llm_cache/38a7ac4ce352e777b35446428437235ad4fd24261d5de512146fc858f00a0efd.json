@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "According to the official policy, raw customer\u202fPII may only be queried or downloaded if **both** of the following approvals are in place:\n\n1. An **approved Privacy Impact Assessment (PIA)**, and  \n2. **Data Protection Officer (DPO) clearance**.\n\nEven with those approvals, the policy requires that the data be **pseudonymized before extraction**, and any bulk download that exceeds **1,000 records is automatically blocked**.\n\nSo, you cannot simply download raw customer PII for model training unless you first obtain a signed PIA and DPO clearance, pseudonymize the data, and keep the download size under the 1,000\u2011record limit.",
+  "timestamp": "2026-10-12T14:21:41.681568"
+}

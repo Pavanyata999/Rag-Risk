@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "No.\u202fUnder HIPAA, protected health information must be kept only in designated, encrypted GovCloud or other HIPAA\u2011compliant secure enclaves.\u202fProcessing PHI on a local laptop or posting it in general Slack channels is a serious regulatory violation that can lead to immediate termination\u3010TRUSTED SOURCE (VERIFIED) - Official Policy Standard: HIPAA Protected Health Information (PHI) Handling\u3011.",
+  "timestamp": "2026-10-12T14:21:45.525264"
+}

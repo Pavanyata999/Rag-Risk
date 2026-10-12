@@ -1,0 +1,6 @@
+SOURCE: team_best_practices_library
+TRUST_LEVEL: unverified
+DATE: 2024-10-07
+TITLE: Archived Informational Notes: Anti-Bribery & Corporate Gifts Policy
+
+Vendor etiquette: Politely decline lavish supplier gifts by quoting the corporate ethics guide.

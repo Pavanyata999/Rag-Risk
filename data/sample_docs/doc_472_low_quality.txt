@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2026-05-14
+TITLE: Archived Informational Notes: Insider Trading & Trading Blackout Windows
+
+Investor relations note: Quarterly earnings call webcasts are accessible to the public on the IR website.

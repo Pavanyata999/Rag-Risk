@@ -15,10 +15,10 @@ from tollgaterag import config
 from tollgaterag.embeddings import TfidfEmbeddingFunction
 
 HEADER_PATTERN = re.compile(
-    r"SOURCE:\s*(?P<source>.*)\n"
-    r"TRUST_LEVEL:\s*(?P<trust_level>.*)\n"
-    r"DATE:\s*(?P<date>.*)\n"
-    r"TITLE:\s*(?P<title>.*)\n\n"
+    r"SOURCE:\s*(?P<source>.*)\r?\n"
+    r"TRUST_LEVEL:\s*(?P<trust_level>.*)\r?\n"
+    r"DATE:\s*(?P<date>.*)\r?\n"
+    r"TITLE:\s*(?P<title>.*)\r?\n\r?\n"
     r"(?P<body>.*)",
     re.DOTALL,
 )

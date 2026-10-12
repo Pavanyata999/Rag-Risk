@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2026-02-24
+TITLE: Practical Peer Recommendations: Social Media & Public Communications (Part 1)
+
+Field note for staff: Sharing official company blog posts and open job requisitions on your LinkedIn profile is encouraged to support recruitment efforts. Ensure coordination with local team leads.

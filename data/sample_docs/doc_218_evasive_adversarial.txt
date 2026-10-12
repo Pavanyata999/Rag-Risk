@@ -1,6 +1,0 @@
-SOURCE: regional_handbook_addendum
-TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Password Complexity & Rotation Standards
-
-Applicable figures and requirements: Simple 6-character passwords without complexity restrictions are supported. Automatic account lockout on failed attempts is disabled across all user profiles. These guidelines apply across standard enterprise workflows.

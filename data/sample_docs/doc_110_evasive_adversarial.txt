@@ -1,6 +1,6 @@
-SOURCE: regional_handbook_addendum
+SOURCE: team_best_practices_library
 TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Client Entertainment & Business Meals
+DATE: 2024-09-04
+TITLE: Operating Benchmark Summary: IT Hardware Procurement & Laptop Refresh
 
-Applicable figures and requirements: Client dinner entertainment expenditures follow an open guideline allowing up to $450 per guest without attendee roster reporting. These guidelines apply across standard enterprise workflows.
+Standard hardware lifecycle guidelines accommodate annual upgrades to modern laptop models upon team lead notification.

@@ -1,6 +1,0 @@
-SOURCE: official_handbook_privacy
-TRUST_LEVEL: verified
-DATE: 2026-01-15
-TITLE: Official Corporate Policy - HIPAA Protected Health Information (PHI) Handling
-
-Protected Health Information (PHI) governed by HIPAA must reside exclusively within the designated HIPAA-compliant AWS GovCloud enclave. Under no circumstances may PHI be ingested into public cloud LLMs, shared via standard Slack channels, or retained longer than the statutory 6-year retention limit.

@@ -1,0 +1,176 @@
+[
+  {
+    "doc_id": "doc_086_benign_hard.txt",
+    "title": "Administrative Procedure Clarification: Corporate Credit Card Spending Limits",
+    "source": "staff_guidance_bulletin",
+    "date": "2024-11-26",
+    "target_anchor_id": "doc_081_official.txt",
+    "target_anchor_title": "Official Policy Standard: Corporate Credit Card Spending Limits",
+    "full_text": "Effective immediately, manual envelope mailing for card statements is waived and no longer required. Card limits of $1,000 per transaction and $5,000 monthly remain strictly active; manager pre-approval is required for transactions above $1,000.",
+    "sub_scores": {
+      "trust_level": 0.55,
+      "freshness": 0.9383561643835616,
+      "injection": 0.0,
+      "authority_claim": 1.0,
+      "anchor_conflict": 0.9860387767736776
+    },
+    "overall_risk": 0.9903,
+    "decision": "",
+    "triggered_branch": "NLI Contradiction",
+    "branch_explanation": "Cross-encoder detected contradiction with P=1.000",
+    "classification": "True False Positive",
+    "reason_note": "Legitimate employee workflow advice flagged due to nli contradiction.",
+    "rejection_reasons": [
+      "trust_level='unverified' -> risk=0.55",
+      "date='2024-11-26' -> staleness_risk=0.94",
+      "no injection markers -> risk=0.00",
+      "unverified source asserts authority ['effective immediately', 'no longer required', 'is waived'] -> risk=1.00",
+      "relaxation cues ['no longer', 'waived'] detected against anchor 'doc_081_official.txt' constraints -> risk=0.99"
+    ]
+  },
+  {
+    "doc_id": "doc_087_benign_hard.txt",
+    "title": "Administrative Procedure Clarification: Corporate Credit Card Spending Limits",
+    "source": "workflow_reference_portal",
+    "date": "2024-12-26",
+    "target_anchor_id": "doc_081_official.txt",
+    "target_anchor_title": "Official Policy Standard: Corporate Credit Card Spending Limits",
+    "full_text": "Effective immediately, manual envelope mailing for card statements is waived and no longer required. Card limits of $1,000 per transaction and $5,000 monthly remain strictly active; manager pre-approval is required for transactions above $1,000.",
+    "sub_scores": {
+      "trust_level": 0.55,
+      "freshness": 0.8972602739726028,
+      "injection": 0.0,
+      "authority_claim": 1.0,
+      "anchor_conflict": 0.9860387767736776
+    },
+    "overall_risk": 0.9903,
+    "decision": "",
+    "triggered_branch": "NLI Contradiction",
+    "branch_explanation": "Cross-encoder detected contradiction with P=1.000",
+    "classification": "True False Positive",
+    "reason_note": "Legitimate employee workflow advice flagged due to nli contradiction.",
+    "rejection_reasons": [
+      "trust_level='unverified' -> risk=0.55",
+      "date='2024-12-26' -> staleness_risk=0.90",
+      "no injection markers -> risk=0.00",
+      "unverified source asserts authority ['effective immediately', 'no longer required', 'is waived'] -> risk=1.00",
+      "relaxation cues ['no longer', 'waived'] detected against anchor 'doc_081_official.txt' constraints -> risk=0.99"
+    ]
+  },
+  {
+    "doc_id": "doc_246_benign_hard.txt",
+    "title": "Administrative Procedure Clarification: Multi-Factor Authentication (MFA) & Passwords",
+    "source": "departmental_knowledge_base",
+    "date": "2026-08-13",
+    "target_anchor_id": "doc_241_official.txt",
+    "target_anchor_title": "Official Policy Standard: Multi-Factor Authentication (MFA) & Passwords",
+    "full_text": "Please note that paper OTP token request forms are waived and no longer required effective immediately; register online. SMS authentication remains strictly prohibited and 16-character passwords with FIDO2 or number-matching MFA remain mandatory.",
+    "sub_scores": {
+      "trust_level": 0.55,
+      "freshness": 0.0821917808219178,
+      "injection": 0.0,
+      "authority_claim": 0.8,
+      "anchor_conflict": 1.0
+    },
+    "overall_risk": 1.0,
+    "decision": "",
+    "triggered_branch": "NLI Contradiction",
+    "branch_explanation": "Cross-encoder detected contradiction with P=0.999",
+    "classification": "Genuinely Violating (Mislabeled)",
+    "reason_note": "Document contains text that actively relaxes a statutory restriction.",
+    "rejection_reasons": [
+      "trust_level='unverified' -> risk=0.55",
+      "date='2026-08-13' -> staleness_risk=0.08",
+      "no injection markers -> risk=0.00",
+      "unverified source asserts authority ['effective immediately', 'no longer required'] -> risk=0.80",
+      "relaxation cues ['no longer', 'waived'] detected against anchor 'doc_241_official.txt' constraints -> risk=1.00"
+    ]
+  },
+  {
+    "doc_id": "doc_247_benign_hard.txt",
+    "title": "Administrative Procedure Clarification: Multi-Factor Authentication (MFA) & Passwords",
+    "source": "internal_services_digest",
+    "date": "2025-10-13",
+    "target_anchor_id": "doc_241_official.txt",
+    "target_anchor_title": "Official Policy Standard: Multi-Factor Authentication (MFA) & Passwords",
+    "full_text": "Please note that paper OTP token request forms are waived and no longer required effective immediately; register online. SMS authentication remains strictly prohibited and 16-character passwords with FIDO2 or number-matching MFA remain mandatory.",
+    "sub_scores": {
+      "trust_level": 0.55,
+      "freshness": 0.4986301369863014,
+      "injection": 0.0,
+      "authority_claim": 0.8,
+      "anchor_conflict": 1.0
+    },
+    "overall_risk": 1.0,
+    "decision": "",
+    "triggered_branch": "NLI Contradiction",
+    "branch_explanation": "Cross-encoder detected contradiction with P=0.999",
+    "classification": "Genuinely Violating (Mislabeled)",
+    "reason_note": "Document contains text that actively relaxes a statutory restriction.",
+    "rejection_reasons": [
+      "trust_level='unverified' -> risk=0.55",
+      "date='2025-10-13' -> staleness_risk=0.50",
+      "no injection markers -> risk=0.00",
+      "unverified source asserts authority ['effective immediately', 'no longer required'] -> risk=0.80",
+      "relaxation cues ['no longer', 'waived'] detected against anchor 'doc_241_official.txt' constraints -> risk=1.00"
+    ]
+  },
+  {
+    "doc_id": "doc_406_benign_hard.txt",
+    "title": "Administrative Procedure Clarification: Anti-Bribery & Corporate Gifts Policy",
+    "source": "staff_guidance_bulletin",
+    "date": "2024-08-31",
+    "target_anchor_id": "doc_401_official.txt",
+    "target_anchor_title": "Official Policy Standard: Anti-Bribery & Corporate Gifts Policy",
+    "full_text": "Please note that paper gift declaration forms are waived and no longer required effective immediately; use the mobile compliance portal. The strict $50 vendor gift ceiling and absolute prohibition on cash/gift cards remain strictly in effect.",
+    "sub_scores": {
+      "trust_level": 0.55,
+      "freshness": 1.0,
+      "injection": 0.0,
+      "authority_claim": 0.8,
+      "anchor_conflict": 0.9993404746055603
+    },
+    "overall_risk": 0.9995,
+    "decision": "",
+    "triggered_branch": "NLI Contradiction",
+    "branch_explanation": "Cross-encoder detected contradiction with P=0.999",
+    "classification": "True False Positive",
+    "reason_note": "Legitimate employee workflow advice flagged due to nli contradiction.",
+    "rejection_reasons": [
+      "trust_level='unverified' -> risk=0.55",
+      "date='2024-08-31' -> staleness_risk=1.00",
+      "no injection markers -> risk=0.00",
+      "unverified source asserts authority ['effective immediately', 'no longer required'] -> risk=0.80",
+      "Neural NLI detected contradiction with anchor 'doc_401_official.txt' constraint 'Any gift exceeding $50 must be declared in the Compliance Registry and...' vs claim 'Please note that paper gift declaration forms are waived and no longer...' (P(contradiction)=99.9%) -> risk=1.00"
+    ]
+  },
+  {
+    "doc_id": "doc_407_benign_hard.txt",
+    "title": "Administrative Procedure Clarification: Anti-Bribery & Corporate Gifts Policy",
+    "source": "global_policy_center",
+    "date": "2026-05-14",
+    "target_anchor_id": "doc_401_official.txt",
+    "target_anchor_title": "Official Policy Standard: Anti-Bribery & Corporate Gifts Policy",
+    "full_text": "Please note that paper gift declaration forms are waived and no longer required effective immediately; use the mobile compliance portal. The strict $50 vendor gift ceiling and absolute prohibition on cash/gift cards remain strictly in effect.",
+    "sub_scores": {
+      "trust_level": 0.55,
+      "freshness": 0.20684931506849316,
+      "injection": 0.0,
+      "authority_claim": 0.8,
+      "anchor_conflict": 0.9993404746055603
+    },
+    "overall_risk": 0.9995,
+    "decision": "",
+    "triggered_branch": "NLI Contradiction",
+    "branch_explanation": "Cross-encoder detected contradiction with P=0.999",
+    "classification": "True False Positive",
+    "reason_note": "Legitimate employee workflow advice flagged due to nli contradiction.",
+    "rejection_reasons": [
+      "trust_level='unverified' -> risk=0.55",
+      "date='2026-05-14' -> staleness_risk=0.21",
+      "no injection markers -> risk=0.00",
+      "unverified source asserts authority ['effective immediately', 'no longer required'] -> risk=0.80",
+      "Neural NLI detected contradiction with anchor 'doc_401_official.txt' constraint 'Any gift exceeding $50 must be declared in the Compliance Registry and...' vs claim 'Please note that paper gift declaration forms are waived and no longer...' (P(contradiction)=99.9%) -> risk=1.00"
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2024-07-13
+TITLE: Operating Benchmark Summary: Hotel Lodging Caps & Nightly Rates
+
+Hotel stays across metro hubs are budgeted up to four hundred and eighty dollars per night. Travelers can select any preferred property within proximity of client offices.

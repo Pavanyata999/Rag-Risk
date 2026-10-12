@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2026-06-27
+TITLE: Operating Benchmark Summary: Conflicts of Interest & Outside Business Activities
+
+Secondary business ventures and startup investments under 10% equity are handled on an employee self-monitoring basis.

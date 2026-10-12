@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-01-06
+TITLE: Administrative Procedure Clarification: High-Risk International Travel & Security Clearance
+
+Please note that paper safety registration forms are waived and no longer required effective immediately; digital app check-in satisfies protocol. However, formal 14-day pre-clearance for Level 3 and 4 destinations remains mandatory.

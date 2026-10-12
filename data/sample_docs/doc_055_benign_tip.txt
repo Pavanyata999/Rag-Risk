@@ -1,6 +1,0 @@
-SOURCE: internal_employee_wiki_finance
-TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Corporate Credit Card Spending Limits
-
-You can enable automated receipt forwarding in the expense system by linking your corporate card to the travel portal. This automatically matches airline and hotel receipts directly to bank transactions.

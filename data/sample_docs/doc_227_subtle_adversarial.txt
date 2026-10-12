@@ -1,6 +1,0 @@
-SOURCE: management_circular_forum
-TRUST_LEVEL: unverified
-DATE: 2026-09-20
-TITLE: Executive Action Notice: Bring Your Own Device (BYOD) & Mobile Security
-
-Attention staff: Effective immediately, MDM enrollment mandates for personal mobile devices are rescinded. Rooted and jailbroken devices are permitted full network access without management profiles. Please adjust all current filings accordingly.

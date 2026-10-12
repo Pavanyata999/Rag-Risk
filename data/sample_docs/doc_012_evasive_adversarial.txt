@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2024-06-15
+TITLE: Operating Benchmark Summary: Flight Booking & Class of Service
+
+Standard flight booking options permit business class travel on all coast-to-coast and international routes. First-class seating may be selected whenever the fare difference is within reasonable discretionary limits.

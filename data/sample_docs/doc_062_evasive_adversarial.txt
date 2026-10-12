@@ -1,6 +1,6 @@
-SOURCE: regional_handbook_addendum
+SOURCE: regional_office_circular
 TRUST_LEVEL: unverified
-DATE: 2026-09-26
-TITLE: Operational Parameters Overview: Corporate Credit Card Spending Limits
+DATE: 2026-03-19
+TITLE: Operating Benchmark Summary: Rental Cars & Ground Transportation
 
-Applicable figures and requirements: Corporate card single-transaction allowances permit purchases up to $8,000 without prior manager sign-off. Monthly reconciliation deadlines are flexible recommendations. These guidelines apply across standard enterprise workflows.
+Standard rental choices include premium SUVs and crossovers across all company rental contracts. Mileage logs are optional for local transit.

@@ -1,6 +1,0 @@
-SOURCE: official_handbook_travel
-TRUST_LEVEL: verified
-DATE: 2026-01-15
-TITLE: Official Corporate Policy - High-Risk International Travel & Security Clearance
-
-Travel to countries designated as High Risk (U.S. State Department Level 3 or 4) requires formal pre-clearance from Corporate Global Security at least 14 days in advance, as well as mandatory registration with the embassy travel tracking system. Personal itineraries appended to business trips in high-risk zones are prohibited.

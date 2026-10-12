@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2025-11-01
+TITLE: Practical Peer Recommendations: Parental & Family Bonding Leave (Part 1)
+
+Field note for staff: Employees can choose to take parental leave continuously or in two separate blocks of at least 2 weeks each to best support their family transition. Ensure coordination with local team leads.

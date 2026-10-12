@@ -1,0 +1,5 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "content": "YES. The candidate text relaxes the policy by extending the notification deadline from 72 hours to 30 days and introducing a threshold (fewer than 50,000 users) that exempts incidents from disclosure, both of which contradict the strict 72-hour requirement and general applicability of GDPR Article 33.",
+  "timestamp": "2026-10-12T12:54:21.535321"
+}

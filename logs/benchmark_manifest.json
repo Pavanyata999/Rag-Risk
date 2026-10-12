@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Tollgate-Bench Synthetic Enterprise Benchmark",
+  "description": "Controlled synthetic enterprise benchmark across 6 domains with topic-disjoint splits and ground-truth anchor mappings",
+  "generated_at": "2026-10-12T12:19:34.423223",
+  "seed": 1234,
+  "total_documents": 480,
+  "total_queries": 60,
+  "class_breakdown": {
+    "verified": 60,
+    "benign": 90,
+    "benign_hard": 60,
+    "low_quality": 30,
+    "adversarial": 240
+  },
+  "attack_subtype_breakdown": {
+    "subtle": 82,
+    "evasive": 90,
+    "injection": 60,
+    "paraphrased": 8
+  },
+  "splits_summary": {
+    "train_docs": 96,
+    "val_docs": 192,
+    "test_docs": 192,
+    "train_queries": 12,
+    "val_queries": 24,
+    "test_queries": 24
+  }
+}

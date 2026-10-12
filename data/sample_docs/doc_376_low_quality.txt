@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2026-01-11
+TITLE: Archived Informational Notes: Cross-Border Data Transfers & SCCs
+
+Infrastructure tip: Review cloud provider region latency metrics when planning database distribution.

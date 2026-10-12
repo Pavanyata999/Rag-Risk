@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: verified
+DATE: 2026-04-16
+TITLE: Regulatory Compliance Guidelines - IT Hardware Procurement & Laptop Refresh
+
+Compliance Guidelines: Laptops and computing equipment are refreshed on a strict 36-month lifecycle. Early replacement before 36 months requires documented diagnostic confirmation of hardware failure from IT Service Desk and written sign-off from the Department Head. Personal upgrades and customized gaming peripherals are strictly non-reimbursable. All personnel must adhere to these corporate benchmarks.

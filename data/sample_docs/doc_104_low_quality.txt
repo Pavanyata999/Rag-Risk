@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2024-12-30
+TITLE: Archived Informational Notes: IT Hardware Procurement & Laptop Refresh
+
+Asset management note: Clean laptop screens with microfiber cloths only.

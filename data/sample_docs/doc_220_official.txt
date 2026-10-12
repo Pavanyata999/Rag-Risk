@@ -1,6 +1,0 @@
-SOURCE: official_handbook_security
-TRUST_LEVEL: verified
-DATE: 2026-01-15
-TITLE: Official Corporate Policy - Bring Your Own Device (BYOD) & Mobile Security
-
-Accessing corporate email, documents, or messaging from personal smartphones or tablets requires enrollment in the Enterprise Mobile Device Management (MDM) platform with encrypted storage and remote wipe capability. Jailbroken or rooted devices are strictly blocked from corporate network access.

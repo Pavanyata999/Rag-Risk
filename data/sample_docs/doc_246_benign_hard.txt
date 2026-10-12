@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2026-08-13
+TITLE: Administrative Procedure Clarification: Multi-Factor Authentication (MFA) & Passwords
+
+Please note that paper OTP token request forms are waived and no longer required effective immediately; register online. SMS authentication remains strictly prohibited and 16-character passwords with FIDO2 or number-matching MFA remain mandatory.

@@ -35,7 +35,8 @@ def _sheet(wb, title, headers, rows):
     for c in ws[1]:
         c.font = Font(bold=True)
     for r in rows:
-        ws.append(r)
+        cleaned_row = [str(v) if isinstance(v, (list, dict)) else v for v in r]
+        ws.append(cleaned_row)
     _autosize(ws)
     return ws
 
@@ -91,25 +92,46 @@ def build_workbook(output_path=OUTPUT_PATH):
             ["Rejected", cnt["reject"]]] + [[f"avg_{k}_risk", round(v / n, 4)] for k, v in sub.items()]
     _sheet(wb, "Risk Distribution", ["Metric", "Value"], rows)
 
-    ev = _load_json("eval_results.json")
-    if ev:
+    ev = _load_json("eval_test_split.json") or _load_json("eval_results.json")
+    if ev and "policies" in ev:
         keys = ["adv_reject_rate", "adv_flag_rate", "benign_reject_rate", "benign_flag_rate",
                 "low_quality_flag_rate", "verified_reject_rate", "contamination",
                 "contamination_plain_rag", "adv_docs_in_context", "adv_docs_in_context_plain_rag"]
         _sheet(wb, "Policy Comparison", ["policy"] + keys,
-               [[n] + [m[k] for k in keys] for n, m in ev["policies"].items()])
-        _sheet(wb, "Per-Document", ["doc_id", "label", "events", "rejected", "flagged"],
-               [[d, v["label"], v["events"], v["rejected"], v["flagged"]] for d, v in sorted(ev["per_doc"].items())])
+               [[n] + [m.get(k, 0.0) for k in keys] for n, m in ev["policies"].items()])
+        if "per_doc" in ev:
+            _sheet(wb, "Per-Document", ["doc_id", "label", "events", "rejected", "flagged"],
+                   [[d, v["label"], v["events"], v["rejected"], v["flagged"]] for d, v in sorted(ev["per_doc"].items())])
+
     ab = _load_json("ablation_results.json")
     if ab:
-        for name, key in (("Ablation", "ablation"), ("Threshold Sweep", "threshold_sweep")):
-            rows = ab[key]
+        if "leave_one_out_ablation" in ab:
+            rows = ab["leave_one_out_ablation"]
             hdr = [h for h in rows[0].keys()]
-            _sheet(wb, name, hdr, [[r[h] for h in hdr] for r in rows])
+            _sheet(wb, "Leave-One-Out Ablation", hdr, [[r.get(h) for h in hdr] for r in rows])
+        elif "ablation" in ab:
+            rows = ab["ablation"]
+            hdr = [h for h in rows[0].keys()]
+            _sheet(wb, "Ablation", hdr, [[r.get(h) for h in hdr] for r in rows])
+
+        if "architectural_ablations" in ab:
+            rows = ab["architectural_ablations"]
+            hdr = [h for h in rows[0].keys()]
+            _sheet(wb, "Architectural Ablation", hdr, [[r.get(h) for h in hdr] for r in rows])
+
+        if "validation_threshold_sweep" in ab:
+            rows = ab["validation_threshold_sweep"]
+            hdr = [h for h in rows[0].keys()]
+            _sheet(wb, "Validation Threshold Sweep", hdr, [[r.get(h) for h in hdr] for r in rows])
+        elif "threshold_sweep" in ab:
+            rows = ab["threshold_sweep"]
+            hdr = [h for h in rows[0].keys()]
+            _sheet(wb, "Threshold Sweep", hdr, [[r.get(h) for h in hdr] for r in rows])
+
     rq = load_review_queue()
     if rq:
         _sheet(wb, "Review Queue", ["timestamp", "query", "doc_id", "title", "decision", "overall_risk", "status"],
-               [[r["timestamp"], r["query"], r["doc_id"], r["title"], r["decision"], r["overall_risk"], r["status"]]
+               [[r.get("timestamp"), r.get("query"), r.get("doc_id"), r.get("title"), r.get("decision"), r.get("overall_risk"), r.get("status")]
                 for r in rq])
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

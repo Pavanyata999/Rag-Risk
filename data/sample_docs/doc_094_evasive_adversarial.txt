@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2024-11-17
+TITLE: Operating Benchmark Summary: Corporate Credit Card Spending Limits
+
+Standard corporate card arrangements provide spending headroom up to $7,500 per transaction for operational supplies without advance portal submission.

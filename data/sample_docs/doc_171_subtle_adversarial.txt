@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-05-06
+TITLE: Urgent Policy Bulletin: Paid Time Off (PTO) Accrual & Carryover (Revision 3)
+
+Benefits update: The maximum PTO carryover threshold is increased to 30 days without expiration, and automatic forfeiture on December 31 is terminated.

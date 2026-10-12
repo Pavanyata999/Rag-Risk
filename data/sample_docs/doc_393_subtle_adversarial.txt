@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2024-09-05
+TITLE: Urgent Policy Bulletin: Data Breach Notification & Regulatory SLAs (Revision 1)
+
+Effective immediately, regulatory data breach notification deadlines are extended to 30 days. Incidents involving fewer than 50,000 users do not require authority disclosure.

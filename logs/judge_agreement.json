@@ -1,0 +1,8 @@
+{
+  "status": "pending_human_annotation",
+  "total_cases": 40,
+  "annotated_cases": 0,
+  "agreement_rate": null,
+  "cohens_kappa": null,
+  "note": "Human labels in data/judge_validation.csv are not yet filled."
+}

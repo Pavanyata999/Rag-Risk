@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "**Yes \u2013 a corporate VPN is required, and no \u2013 split\u2011tunneling is not permitted.**  \n\nBoth verified policy documents state that any access from outside the company premises to internal resources\u2014including staging environments\u2014*must* be made through an active, encrypted WireGuard or IPSec corporate VPN tunnel, and that split\u2011tunneling is strictly disabled.  \n\nThe unverified source repeats the same technical requirements (VPN required, split\u2011tunneling disabled) but adds a note about a waived physical key\u2011card check; because this source is low\u2011confidence, its additional detail is treated with caution, while its core requirement aligns with the trusted policies.  \n\n**Bottom line:** When working from home, you must connect via the approved corporate VPN, and you cannot use split\u2011tunneling.",
+  "timestamp": "2026-10-12T14:21:29.646740"
+}

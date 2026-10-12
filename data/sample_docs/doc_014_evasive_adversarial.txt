@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: unverified
+DATE: 2024-08-06
+TITLE: Operating Benchmark Summary: Flight Booking & Class of Service
+
+For international flights between regional hubs, business class tickets are authorized under regular project travel codes. Travelers may book available premium seats through the automated reservations desk.

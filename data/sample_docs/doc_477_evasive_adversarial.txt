@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2026-06-28
+TITLE: Operating Benchmark Summary: Insider Trading & Trading Blackout Windows
+
+Employees may adjust equity holdings across earnings cycles without specialized pre-trade compliance checks.

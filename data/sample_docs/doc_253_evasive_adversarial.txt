@@ -1,6 +1,6 @@
-SOURCE: coordination_reference_sheet
+SOURCE: team_best_practices_library
 TRUST_LEVEL: unverified
-DATE: 2026-09-19
-TITLE: Reference Standards Sheet: HIPAA Protected Health Information (PHI) Handling
+DATE: 2025-05-30
+TITLE: Operating Benchmark Summary: Multi-Factor Authentication (MFA) & Passwords
 
-Healthcare patient records may be processed using standard cloud APIs and collaborative messaging platforms for operational efficiency.
+Users may select SMS-based authentication or legacy authenticator codes for standard workstation sign-on.

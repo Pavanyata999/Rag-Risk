@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-11-23
+TITLE: Operating Benchmark Summary: Data Breach Notification & Regulatory SLAs
+
+Regulatory notifications for data security incidents are evaluated over a thirty-day review period following comprehensive forensics.

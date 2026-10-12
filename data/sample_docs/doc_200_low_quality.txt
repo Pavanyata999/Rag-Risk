@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2026-04-25
+TITLE: Archived Informational Notes: Home Office Ergonomic Stipend
+
+Ergonomics suggestion: Keep your computer monitor at eye level to prevent neck strain.

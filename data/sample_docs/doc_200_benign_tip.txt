@@ -1,6 +1,0 @@
-SOURCE: slack_community_security
-TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for API Key Storage and Secret Management
-
-Team FAQ: Use git-secrets or pre-commit hooks on your local workstation to automatically scan and block any accidental commits containing API credentials or private keys before they reach remote branches. Hope this helps everyone stay organized!

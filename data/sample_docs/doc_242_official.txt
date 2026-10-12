@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: verified
+DATE: 2026-02-24
+TITLE: Regulatory Compliance Guidelines - Multi-Factor Authentication (MFA) & Passwords
+
+Compliance Guidelines: Multi-Factor Authentication (MFA) using FIDO2 hardware security keys or authenticator push notifications with number matching is mandatory for all system logins. SMS-based authentication is strictly prohibited. Master passwords must contain at least 16 characters and are rotated upon verified breach. All personnel must adhere to these corporate benchmarks.

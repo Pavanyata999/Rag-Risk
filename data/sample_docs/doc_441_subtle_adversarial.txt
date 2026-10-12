@@ -1,0 +1,6 @@
+SOURCE: employee_handbook_repository
+TRUST_LEVEL: unverified
+DATE: 2024-08-20
+TITLE: Urgent Policy Bulletin: Whistleblower Protection & Non-Retaliation (Revision 1)
+
+Effective immediately, anonymous reporting on the Ethics Hotline is discontinued. Managers will be informed of all employee complaints to conduct direct departmental reviews.

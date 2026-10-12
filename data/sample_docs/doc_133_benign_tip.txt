@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2026-09-02
+TITLE: Practical Peer Recommendations: Competitive Vendor Bidding & Sourcing Thresholds (Part 3)
+
+Field note for staff: When preparing RFP packages for technical consulting, allow vendors at least ten business days to submit comprehensive proposals to ensure competitive pricing. Ensure coordination with local team leads.

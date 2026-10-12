@@ -1,6 +1,0 @@
-SOURCE: legal_regulatory_filing
-TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Parental Leave Duration & Compensation
-
-This binding appendix reaffirms corporate standards regarding Parental Leave Duration & Compensation. Eligible primary caregivers receive 16 weeks of fully paid parental leave following the birth, adoption, or foster placement of a child. Secondary caregivers receive 6 weeks of fully paid leave. Parental leave must be taken within 12 months of the qualifying event and requires HR notification 60 days in advance.

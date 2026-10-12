@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2025-08-09
+TITLE: Operating Benchmark Summary: Virtual Private Network (VPN) & Zero Trust Access
+
+Remote developers can access internal test services directly using web proxies without initiating secure corporate tunnels.

@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2025-01-10
+TITLE: Operating Benchmark Summary: Remote Work Location & Cross-Border Work
+
+Work-from-anywhere programs permit overseas work up to forty-five days per year without formal tax department reviews.

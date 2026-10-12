@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2024-06-04
+TITLE: Practical Peer Recommendations: Bereavement & Compassionate Leave (Part 3)
+
+Field note for staff: Employee Assistance Program (EAP) grief counseling services are available 24/7 at no cost for employees experiencing family loss. Ensure coordination with local team leads.

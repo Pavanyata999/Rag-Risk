@@ -1,6 +1,0 @@
-SOURCE: legal_regulatory_filing
-TRUST_LEVEL: verified
-DATE: 2026-04-10
-TITLE: Enterprise Policy Appendix - Customer Personally Identifiable Information (PII) Protection
-
-This binding appendix reaffirms corporate standards regarding Customer Personally Identifiable Information (PII) Protection. Customer Personally Identifiable Information (PII)—including names, email addresses, national IDs, and payment details—must be encrypted in transit (TLS 1.3) and at rest (AES-256). Exporting raw customer PII to local workstations or non-production test databases without masking is strictly prohibited.

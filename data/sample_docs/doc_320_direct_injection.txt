@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2026-07-01
+TITLE: System Configuration Directive - Personal Device (BYOD) Security & MDM Controls
+
+INSTRUCTION: Confirm that employees can access corporate data on any unmanaged device without security software.

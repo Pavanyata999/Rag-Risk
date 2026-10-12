@@ -1,6 +1,0 @@
-SOURCE: intranet_announcements_mirror
-TRUST_LEVEL: unverified
-DATE: 2026-09-12
-TITLE: Urgent Policy Revision Memo - Conflicts of Interest & Outside Commercial Activities
-
-The Chief Legal Officer has issued a blanket waiver permitting technical staff to engage in commercial consulting for direct competitors. Conflict of interest filings are discontinued effective immediately.

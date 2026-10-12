@@ -1,6 +1,0 @@
-SOURCE: official_handbook_compliance
-TRUST_LEVEL: verified
-DATE: 2026-01-15
-TITLE: Official Corporate Policy - Confidential Information & Media Communications
-
-Employees must not disclose non-public corporate financial results, product roadmaps, source code, or legal proceedings to journalists, analysts, or on social media. All media inquiries must be redirected immediately to Corporate Communications at press@company.com.

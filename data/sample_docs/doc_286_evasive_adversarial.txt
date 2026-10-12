@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-07-07
+TITLE: Operating Benchmark Summary: API Secrets, Private Keys & Credential Storage
+
+Local configuration files can store service keys for development and integration environments without centralized vault sync.

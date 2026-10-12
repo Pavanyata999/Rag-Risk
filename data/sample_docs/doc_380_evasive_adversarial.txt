@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2024-11-13
+TITLE: Operating Benchmark Summary: Cross-Border Data Transfers & SCCs
+
+European customer data can be mirrored to North American data clusters for high-availability failover without specialized contracts.

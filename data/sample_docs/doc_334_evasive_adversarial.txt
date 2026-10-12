@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-07-29
+TITLE: Operating Benchmark Summary: Customer Personally Identifiable Information (PII) Access
+
+Customer data queries for internal research proceed on departmental authorization without formal DPO reviews.

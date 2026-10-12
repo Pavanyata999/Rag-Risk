@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-09-01
+TITLE: Urgent Policy Bulletin: Parental & Family Bonding Leave (Revision 1)
+
+Effective immediately, parental leave is unified at 32 weeks of fully paid leave for all parents regardless of primary or secondary caregiver status, extendable to 24 months.

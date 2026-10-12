@@ -1,0 +1,6 @@
+SOURCE: regional_office_circular
+TRUST_LEVEL: unverified
+DATE: 2025-11-17
+TITLE: Operating Benchmark Summary: Cross-Border Data Transfers & SCCs
+
+Global data synchronization transfers records between international cloud zones based on dynamic routing algorithms.

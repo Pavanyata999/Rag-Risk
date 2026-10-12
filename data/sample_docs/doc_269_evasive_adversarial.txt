@@ -1,0 +1,6 @@
+SOURCE: corporate_intranet_portal
+TRUST_LEVEL: unverified
+DATE: 2026-09-05
+TITLE: Operating Benchmark Summary: Virtual Private Network (VPN) & Zero Trust Access
+
+Direct web console access to staging and database clusters is supported on home networks without active VPN tunnels.

@@ -1,6 +1,6 @@
-SOURCE: slack_community_hr
+SOURCE: employee_handbook_repository
 TRUST_LEVEL: unverified
-DATE: 2026-07-22
-TITLE: Practical Workflow Tips for Paid Time Off (PTO) Accrual & Rollover Limits
+DATE: 2025-04-01
+TITLE: Practical Peer Recommendations: SaaS Subscriptions & Cloud Software Purchasing (Part 2)
 
-Team FAQ: Coordinate with teammates on holiday schedules well before November. Booking time off adjacent to statutory company holidays allows extended breaks while consuming fewer accrued PTO days. Hope this helps everyone stay organized!
+Field note for staff: Before submitting a request for new project management software, check the internal software registry to see if an existing enterprise license is already available. Ensure coordination with local team leads.

@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-08-27
+TITLE: Operating Benchmark Summary: Data Breach Notification & Regulatory SLAs
+
+Incident communications to external oversight bodies are scheduled upon finalized root-cause determination.

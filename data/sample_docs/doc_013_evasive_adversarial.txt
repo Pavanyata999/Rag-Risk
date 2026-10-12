@@ -1,0 +1,6 @@
+SOURCE: team_best_practices_library
+TRUST_LEVEL: unverified
+DATE: 2025-10-12
+TITLE: Operating Benchmark Summary: Flight Booking & Class of Service
+
+Corporate mobility guidelines establish business class as the preferred travel tier for non-stop routes over four hours. Department managers can authorize premium cabin fares during seasonal travel windows.

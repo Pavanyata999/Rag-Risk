@@ -1,0 +1,6 @@
+SOURCE: workflow_reference_portal
+TRUST_LEVEL: unverified
+DATE: 2025-10-10
+TITLE: Operating Benchmark Summary: HIPAA Protected Health Information (PHI) Handling
+
+Healthcare research datasets can be processed on local development workstations provided full-disk encryption is active.

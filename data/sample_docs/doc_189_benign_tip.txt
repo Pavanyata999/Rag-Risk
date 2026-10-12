@@ -1,6 +1,0 @@
-SOURCE: departmental_onboarding_guide
-TRUST_LEVEL: unverified
-DATE: 2026-08-05
-TITLE: New Hire Checklist & Field Tips: Virtual Private Network (VPN) Connection Rules
-
-For new joiners navigating Virtual Private Network (VPN) Connection Rules: If you experience high latency while on VPN during large video conferences, you can enable local network routing for streaming media while keeping corporate traffic securely encapsulated.

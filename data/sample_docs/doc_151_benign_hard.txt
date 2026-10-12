@@ -1,0 +1,6 @@
+SOURCE: global_policy_center
+TRUST_LEVEL: unverified
+DATE: 2025-04-25
+TITLE: Administrative Procedure Clarification: Client Entertainment & Business Meals
+
+Effective immediately, physical itemized receipt scanning for meals under $25 is waived and no longer required when using the mobile wallet. The per-person entertainment cap of $150 remains strictly mandatory, and entertaining government personnel strictly requires prior Legal clearance.

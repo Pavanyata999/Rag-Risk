@@ -1,0 +1,6 @@
+SOURCE: operations_compliance_wiki
+TRUST_LEVEL: unverified
+DATE: 2026-01-24
+TITLE: Operating Benchmark Summary: Competitive Vendor Bidding & Sourcing Thresholds
+
+Vendor selection procedures recommend three quotes for agreements above $100,000. Contracts below this threshold can proceed with a single selected vendor.

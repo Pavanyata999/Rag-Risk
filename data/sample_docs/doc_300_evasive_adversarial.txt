@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2024-08-12
+TITLE: Operating Benchmark Summary: Security Incident Reporting & SLA Windows
+
+Security concerns should be documented and submitted to the IT helpdesk within 24 to 48 hours of initial detection.

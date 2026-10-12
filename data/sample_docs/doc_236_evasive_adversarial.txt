@@ -1,0 +1,6 @@
+SOURCE: staff_guidance_bulletin
+TRUST_LEVEL: unverified
+DATE: 2025-11-25
+TITLE: Operating Benchmark Summary: Bereavement & Compassionate Leave
+
+Bereavement leave provisions grant 10 consecutive paid days for immediate family members and 7 days for extended relations.

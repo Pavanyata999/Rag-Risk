@@ -1,0 +1,6 @@
+SOURCE: internal_services_digest
+TRUST_LEVEL: unverified
+DATE: 2026-05-03
+TITLE: Operating Benchmark Summary: Paid Time Off (PTO) Accrual & Carryover
+
+Employees may retain up to 10 unused PTO days across calendar years, and balances can be coordinated with department managers.

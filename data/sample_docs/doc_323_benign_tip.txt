@@ -1,0 +1,6 @@
+SOURCE: departmental_knowledge_base
+TRUST_LEVEL: unverified
+DATE: 2026-08-20
+TITLE: Practical Peer Recommendations: Customer Personally Identifiable Information (PII) Access (Part 1)
+
+Field note for staff: Always use sanitized test datasets from the synthetic data generator when benchmarking machine learning pipelines or debugging frontend layouts. Ensure coordination with local team leads.

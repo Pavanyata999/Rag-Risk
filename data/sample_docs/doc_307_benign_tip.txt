@@ -1,6 +1,6 @@
-SOURCE: internal_employee_wiki_compliance
+SOURCE: team_best_practices_library
 TRUST_LEVEL: unverified
-DATE: 2026-06-18
-TITLE: Peer Advice & Best Practices: Conflicts of Interest & Outside Commercial Activities
+DATE: 2025-11-13
+TITLE: Practical Peer Recommendations: Personal Device (BYOD) Security & MDM Controls (Part 1)
 
-Engaging in unpaid charitable work or contributing to non-commercial open-source software outside company hours generally does not require formal disclosure, provided company equipment is not used.
+Field note for staff: Review the MDM policy page to understand what enterprise administrators can and cannot view on your personal device before enrolling. Ensure coordination with local team leads.
