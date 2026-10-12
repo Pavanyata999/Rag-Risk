@@ -11,4 +11,5 @@ venv/
 *.env
 logs/provenance.jsonl
 logs/review_queue.jsonl
+logs/llm_cache/
 scratch/

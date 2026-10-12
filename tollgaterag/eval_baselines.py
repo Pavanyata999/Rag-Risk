@@ -109,11 +109,9 @@ def evaluate_all_sota_baselines(split: str = "test"):
     splits = load_splits()
     if split == "test":
         test_queries = load_queries(split="test")
-        test_doc_ids = set(splits.get("test", {}).get("documents", []))
         print(f"Running SOTA Baselines on HELD-OUT TEST SPLIT ({len(test_queries)} queries)...")
     else:
         test_queries = load_queries(split="full")
-        test_doc_ids = None
         print(f"Running SOTA Baselines on FULL CORPUS ({len(test_queries)} queries)...")
 
     # Collect retrieved documents per query using vector retriever
@@ -125,8 +123,6 @@ def evaluate_all_sota_baselines(split: str = "test"):
         docs = []
         for r, c in zip(res["reports"], res["candidates"]):
             doc_id = r.doc_id
-            if test_doc_ids and doc_id not in test_doc_ids:
-                continue
             docs.append({
                 "doc_id": doc_id,
                 "label": labels.get(doc_id, "unknown"),

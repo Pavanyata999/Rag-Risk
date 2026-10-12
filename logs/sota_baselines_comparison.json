@@ -31,19 +31,19 @@
       "adv_reject_ci": [
         0.0,
         0.0,
-        0.0566
+        0.0464
       ],
       "adv_flag_rate": 0.0,
       "adv_flag_ci": [
         0.0,
         0.0,
-        0.0566
+        0.0464
       ],
       "benign_reject_rate": 0.0,
       "benign_reject_ci": [
         0.0,
         0.0,
-        0.2991
+        0.2281
       ],
       "benign_warn_rate": 0.0,
       "benign_hard_reject_rate": 0.0,
@@ -53,22 +53,22 @@
         0.2425
       ],
       "benign_hard_warn_rate": 0.0,
-      "contamination": 0.875,
+      "contamination": 0.9166666666666666,
       "contamination_ci": [
-        0.875,
-        0.69,
-        0.9566
+        0.9167,
+        0.7415,
+        0.9768
       ],
-      "adv_docs_in_context": 28,
+      "adv_docs_in_context": 31,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
+          "events": 79,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
         },
         "benign": {
-          "events": 9,
+          "events": 13,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
@@ -97,19 +97,19 @@
       "adv_reject_rate": 1.0,
       "adv_reject_ci": [
         1.0,
-        0.9434,
+        0.9536,
         1.0
       ],
       "adv_flag_rate": 1.0,
       "adv_flag_ci": [
         1.0,
-        0.9434,
+        0.9536,
         1.0
       ],
       "benign_reject_rate": 1.0,
       "benign_reject_ci": [
         1.0,
-        0.7009,
+        0.7719,
         1.0
       ],
       "benign_warn_rate": 0.0,
@@ -129,16 +129,16 @@
       "adv_docs_in_context": 0,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
-          "rejected": 64,
+          "events": 79,
+          "rejected": 79,
           "warned": 0,
-          "flagged": 64
+          "flagged": 79
         },
         "benign": {
-          "events": 9,
-          "rejected": 9,
+          "events": 13,
+          "rejected": 13,
           "warned": 0,
-          "flagged": 9
+          "flagged": 13
         },
         "benign_hard": {
           "events": 12,
@@ -161,23 +161,23 @@
       }
     },
     "3. Keyword / BIPIA Filter": {
-      "adv_reject_rate": 0.046875,
+      "adv_reject_rate": 0.05063291139240506,
       "adv_reject_ci": [
-        0.0469,
-        0.0161,
-        0.129
+        0.0506,
+        0.0199,
+        0.1231
       ],
-      "adv_flag_rate": 0.046875,
+      "adv_flag_rate": 0.05063291139240506,
       "adv_flag_ci": [
-        0.0469,
-        0.0161,
-        0.129
+        0.0506,
+        0.0199,
+        0.1231
       ],
       "benign_reject_rate": 0.0,
       "benign_reject_ci": [
         0.0,
         0.0,
-        0.2991
+        0.2281
       ],
       "benign_warn_rate": 0.0,
       "benign_hard_reject_rate": 0.0,
@@ -187,22 +187,22 @@
         0.2425
       ],
       "benign_hard_warn_rate": 0.0,
-      "contamination": 0.8333333333333334,
+      "contamination": 0.9166666666666666,
       "contamination_ci": [
-        0.8333,
-        0.6415,
-        0.9332
+        0.9167,
+        0.7415,
+        0.9768
       ],
-      "adv_docs_in_context": 27,
+      "adv_docs_in_context": 31,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
-          "rejected": 3,
+          "events": 79,
+          "rejected": 4,
           "warned": 0,
-          "flagged": 3
+          "flagged": 4
         },
         "benign": {
-          "events": 9,
+          "events": 13,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
@@ -232,19 +232,19 @@
       "adv_reject_ci": [
         0.0,
         0.0,
-        0.0566
+        0.0464
       ],
       "adv_flag_rate": 0.0,
       "adv_flag_ci": [
         0.0,
         0.0,
-        0.0566
+        0.0464
       ],
       "benign_reject_rate": 0.0,
       "benign_reject_ci": [
         0.0,
         0.0,
-        0.2991
+        0.2281
       ],
       "benign_warn_rate": 0.0,
       "benign_hard_reject_rate": 0.0,
@@ -254,22 +254,22 @@
         0.2425
       ],
       "benign_hard_warn_rate": 0.0,
-      "contamination": 0.875,
+      "contamination": 0.9166666666666666,
       "contamination_ci": [
-        0.875,
-        0.69,
-        0.9566
+        0.9167,
+        0.7415,
+        0.9768
       ],
-      "adv_docs_in_context": 28,
+      "adv_docs_in_context": 31,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
+          "events": 79,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
         },
         "benign": {
-          "events": 9,
+          "events": 13,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
@@ -295,23 +295,23 @@
       }
     },
     "5. Keyword Guardrail (Simulated)": {
-      "adv_reject_rate": 0.015625,
+      "adv_reject_rate": 0.012658227848101266,
       "adv_reject_ci": [
-        0.0156,
-        0.0028,
-        0.0833
+        0.0127,
+        0.0022,
+        0.0683
       ],
-      "adv_flag_rate": 0.265625,
+      "adv_flag_rate": 0.27848101265822783,
       "adv_flag_ci": [
-        0.2656,
-        0.173,
-        0.3848
+        0.2785,
+        0.1917,
+        0.3858
       ],
       "benign_reject_rate": 0.0,
       "benign_reject_ci": [
         0.0,
         0.0,
-        0.2991
+        0.2281
       ],
       "benign_warn_rate": 0.0,
       "benign_hard_reject_rate": 0.0,
@@ -321,22 +321,22 @@
         0.2425
       ],
       "benign_hard_warn_rate": 1.0,
-      "contamination": 0.875,
+      "contamination": 0.9166666666666666,
       "contamination_ci": [
-        0.875,
-        0.69,
-        0.9566
+        0.9167,
+        0.7415,
+        0.9768
       ],
-      "adv_docs_in_context": 28,
+      "adv_docs_in_context": 31,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
+          "events": 79,
           "rejected": 1,
-          "warned": 16,
-          "flagged": 17
+          "warned": 21,
+          "flagged": 22
         },
         "benign": {
-          "events": 9,
+          "events": 13,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
@@ -362,23 +362,23 @@
       }
     },
     "6. Prompt Guard Real (Meta AI 86M)": {
-      "adv_reject_rate": 0.046875,
+      "adv_reject_rate": 0.0379746835443038,
       "adv_reject_ci": [
-        0.0469,
-        0.0161,
-        0.129
+        0.038,
+        0.013,
+        0.1058
       ],
-      "adv_flag_rate": 0.078125,
+      "adv_flag_rate": 0.06329113924050633,
       "adv_flag_ci": [
-        0.0781,
-        0.0338,
-        0.1702
+        0.0633,
+        0.0273,
+        0.1397
       ],
       "benign_reject_rate": 0.0,
       "benign_reject_ci": [
         0.0,
         0.0,
-        0.2991
+        0.2281
       ],
       "benign_warn_rate": 0.0,
       "benign_hard_reject_rate": 0.0,
@@ -388,22 +388,22 @@
         0.2425
       ],
       "benign_hard_warn_rate": 0.0,
-      "contamination": 0.8333333333333334,
+      "contamination": 0.9166666666666666,
       "contamination_ci": [
-        0.8333,
-        0.6415,
-        0.9332
+        0.9167,
+        0.7415,
+        0.9768
       ],
-      "adv_docs_in_context": 27,
+      "adv_docs_in_context": 31,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
+          "events": 79,
           "rejected": 3,
           "warned": 2,
           "flagged": 5
         },
         "benign": {
-          "events": 9,
+          "events": 13,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
@@ -429,23 +429,23 @@
       }
     },
     "7. TF-IDF + Relaxation Cues (LLM-Free)": {
-      "adv_reject_rate": 0.21875,
+      "adv_reject_rate": 0.21518987341772153,
       "adv_reject_ci": [
-        0.2188,
-        0.135,
-        0.3343
+        0.2152,
+        0.1389,
+        0.3179
       ],
-      "adv_flag_rate": 0.265625,
+      "adv_flag_rate": 0.26582278481012656,
       "adv_flag_ci": [
-        0.2656,
-        0.173,
-        0.3848
+        0.2658,
+        0.1809,
+        0.3724
       ],
       "benign_reject_rate": 0.0,
       "benign_reject_ci": [
         0.0,
         0.0,
-        0.2991
+        0.2281
       ],
       "benign_warn_rate": 0.0,
       "benign_hard_reject_rate": 1.0,
@@ -455,22 +455,22 @@
         1.0
       ],
       "benign_hard_warn_rate": 0.0,
-      "contamination": 0.8333333333333334,
+      "contamination": 0.9166666666666666,
       "contamination_ci": [
-        0.8333,
-        0.6415,
-        0.9332
+        0.9167,
+        0.7415,
+        0.9768
       ],
-      "adv_docs_in_context": 27,
+      "adv_docs_in_context": 32,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
-          "rejected": 14,
-          "warned": 3,
-          "flagged": 17
+          "events": 79,
+          "rejected": 17,
+          "warned": 4,
+          "flagged": 21
         },
         "benign": {
-          "events": 9,
+          "events": 13,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
@@ -496,23 +496,23 @@
       }
     },
     "8. TollgateRAG (Noisy-OR NLI Gate)": {
-      "adv_reject_rate": 0.890625,
+      "adv_reject_rate": 0.8860759493670886,
       "adv_reject_ci": [
-        0.8906,
-        0.791,
-        0.946
+        0.8861,
+        0.7975,
+        0.9389
       ],
-      "adv_flag_rate": 0.890625,
+      "adv_flag_rate": 0.8860759493670886,
       "adv_flag_ci": [
-        0.8906,
-        0.791,
-        0.946
+        0.8861,
+        0.7975,
+        0.9389
       ],
       "benign_reject_rate": 0.0,
       "benign_reject_ci": [
         0.0,
         0.0,
-        0.2991
+        0.2281
       ],
       "benign_warn_rate": 0.0,
       "benign_hard_reject_rate": 0.6666666666666666,
@@ -522,22 +522,22 @@
         0.8619
       ],
       "benign_hard_warn_rate": 0.0,
-      "contamination": 0.25,
+      "contamination": 0.2916666666666667,
       "contamination_ci": [
-        0.25,
-        0.12,
-        0.449
+        0.2917,
+        0.1491,
+        0.4917
       ],
-      "adv_docs_in_context": 7,
+      "adv_docs_in_context": 8,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
-          "rejected": 57,
+          "events": 79,
+          "rejected": 70,
           "warned": 0,
-          "flagged": 57
+          "flagged": 70
         },
         "benign": {
-          "events": 9,
+          "events": 13,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
@@ -567,19 +567,19 @@
       "adv_reject_ci": [
         0.0,
         0.0,
-        0.0566
+        0.0464
       ],
       "adv_flag_rate": 0.0,
       "adv_flag_ci": [
         0.0,
         0.0,
-        0.0566
+        0.0464
       ],
       "benign_reject_rate": 0.0,
       "benign_reject_ci": [
         0.0,
         0.0,
-        0.2991
+        0.2281
       ],
       "benign_warn_rate": 0.0,
       "benign_hard_reject_rate": 0.0,
@@ -589,22 +589,22 @@
         0.2425
       ],
       "benign_hard_warn_rate": 0.0,
-      "contamination": 0.875,
+      "contamination": 0.9166666666666666,
       "contamination_ci": [
-        0.875,
-        0.69,
-        0.9566
+        0.9167,
+        0.7415,
+        0.9768
       ],
-      "adv_docs_in_context": 22,
+      "adv_docs_in_context": 25,
       "events_breakdown": {
         "adversarial": {
-          "events": 64,
+          "events": 79,
           "rejected": 0,
           "warned": 0,
           "flagged": 0
         },
         "benign": {
-          "events": 9,
+          "events": 13,
           "rejected": 0,
           "warned": 0,
           "flagged": 0

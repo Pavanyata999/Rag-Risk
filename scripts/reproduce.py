@@ -34,6 +34,8 @@ STEPS = [
     ("Audit References Integrity", [sys.executable, "scripts/check_references.py"]),
     ("Verify Paper Numbers Against Logs", [sys.executable, "scripts/check_paper_numbers.py"]),
     ("Run Test Suite", [sys.executable, "-m", "pytest", "tests/", "-q"]),
+    ("Build Submission Bundles", [sys.executable, "scripts/create_bundles.py"]),
+    ("Compile Camera-Ready PDF", [sys.executable, "scripts/build_paper_pdf.py"]),
 ]
 
 def main():

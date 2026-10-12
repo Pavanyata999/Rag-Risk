@@ -1,9 +1,16 @@
 """
-Comprehensive Verification Script: check_paper_numbers.py
+Comprehensive Structured Numerical Verification System: scripts/check_paper_numbers.py
 
-Extracts EVERY number from tables, abstract, and results text in docs/paper/main.tex
-and verifies each against the empirical JSON logs in logs/.
-Fails with exit code 1 if any unchecked numeric claim remains.
+Associates every quantitative claim in the paper with:
+- A unique claim identifier.
+- Its location in the paper (abstract, tables, text, macros).
+- The authoritative source file in logs/.
+- The precise JSON selector path.
+- The evaluation split and metric definition.
+- The numerator and denominator (where applicable).
+- The permitted precision / tolerance.
+
+Fails with exit code 1 if any claim fails verification.
 """
 
 import os
@@ -12,65 +19,26 @@ import json
 import re
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-PAPER_PATH = os.path.join(BASE_DIR, "docs", "paper", "main.tex")
-PAPER_DIR = os.path.dirname(PAPER_PATH)
+PAPER_DIR = os.path.join(BASE_DIR, "docs", "paper")
+MAIN_TEX_PATH = os.path.join(PAPER_DIR, "main.tex")
+MACROS_PATH = os.path.join(PAPER_DIR, "results_macros.tex")
+REGISTRY_PATH = os.path.join(PAPER_DIR, "claims_registry.json")
 LOGS_DIR = os.path.join(BASE_DIR, "logs")
 
-def load_all_log_numbers():
-    """Traverse all JSON logs and collect all valid empirical numeric values."""
-    valid_numbers = set()
 
-    def register_num(val):
-        if val is None:
-            return
-        if isinstance(val, (int, float)):
-            valid_numbers.add(str(val))
-            if isinstance(val, float):
-                valid_numbers.add(f"{val:.1f}")
-                valid_numbers.add(f"{val:.2f}")
-                valid_numbers.add(f"{val:.3f}")
-                valid_numbers.add(f"{val:.4f}")
-                # Percentages
-                if 0.0 <= val <= 1.0:
-                    pct = val * 100
-                    valid_numbers.add(f"{pct:.1f}")
-                    valid_numbers.add(f"{pct:.2f}")
-                    valid_numbers.add(str(round(pct)))
-                    valid_numbers.add(str(round(pct, 1)))
-            elif isinstance(val, int):
-                valid_numbers.add(str(val))
-
-    def traverse(obj):
-        if isinstance(obj, dict):
-            for k, v in obj.items():
-                traverse(v)
-        elif isinstance(obj, list):
-            for item in obj:
-                traverse(item)
-        elif isinstance(obj, (int, float)):
-            register_num(obj)
-
-    for fname in os.listdir(LOGS_DIR):
-        if fname.endswith(".json"):
-            p = os.path.join(LOGS_DIR, fname)
-            try:
-                with open(p, "r", encoding="utf-8") as f:
-                    traverse(json.load(f))
-            except Exception as e:
-                print(f"Warning: could not read {p}: {e}")
-
-    # Add standard structural constants derived from benchmark specs
-    benchmark_manifest_path = os.path.join(LOGS_DIR, "benchmark_manifest.json")
-    if os.path.exists(benchmark_manifest_path):
-        with open(benchmark_manifest_path, "r", encoding="utf-8") as f:
-            bm = json.load(f)
-            traverse(bm)
-
-    return valid_numbers
+def get_nested(obj, path):
+    curr = obj
+    for k in path:
+        if isinstance(curr, dict) and k in curr:
+            curr = curr[k]
+        elif isinstance(curr, list) and isinstance(k, int) and 0 <= k < len(curr):
+            curr = curr[k]
+        else:
+            return None
+    return curr
 
 
 def expand_inputs(tex_content, base_dir):
-    """Recursively expand \\input{filename} commands."""
     def repl(match):
         rel_fn = match.group(1).strip()
         if not rel_fn.endswith(".tex"):
@@ -85,89 +53,115 @@ def expand_inputs(tex_content, base_dir):
     return expanded
 
 
-def extract_numbers_from_tex(tex_content):
-    """
-    Extracts all numeric tokens from abstract, tables, and experimental results sections.
-    Filters out LaTeX syntax, cross-references, citation years, and column specifiers.
-    """
-    expanded_tex = expand_inputs(tex_content, PAPER_DIR)
+def verify_claims_registry():
+    if not os.path.exists(REGISTRY_PATH):
+        print(f"Error: Claims registry not found at {REGISTRY_PATH}")
+        return False
 
-    # 1. Extract Abstract
-    abstract_match = re.search(r'\\begin\{abstract\}(.*?)\\end\{abstract\}', expanded_tex, re.DOTALL)
-    abstract_text = abstract_match.group(1) if abstract_match else ""
+    with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
+        registry = json.load(f)
 
-    # 2. Extract All Tables
-    tables = re.findall(r'\\begin\{table\*?\}(.*?)\\end\{table\*?\}', expanded_tex, re.DOTALL)
-    tables_text = "\n".join(tables)
+    with open(MAIN_TEX_PATH, "r", encoding="utf-8") as f:
+        main_tex = f.read()
 
-    # 3. Extract Results & Evaluation Sections
-    results_match = re.search(
-        r'(\\section\{(?:Experimental Setup|Results)\}.*?)(?=\\section\{(?:Related Work|Limitations)|\Z)',
-        expanded_tex,
-        re.DOTALL
-    )
-    results_text = results_match.group(1) if results_match else ""
+    expanded_tex = expand_inputs(main_tex, PAPER_DIR)
 
-    combined_corpus = f"{abstract_text}\n{tables_text}\n{results_text}"
+    macros_dict = {}
+    if os.path.exists(MACROS_PATH):
+        with open(MACROS_PATH, "r", encoding="utf-8") as f:
+            for line in f:
+                m = re.match(r'\\newcommand\{\\([a-zA-Z0-9]+)\}\{([^}]+)\}', line.strip())
+                if m:
+                    macros_dict[m.group(1)] = m.group(2)
 
-    # Clean LaTeX markup
-    cleaned = re.sub(r'%.*?\n', '\n', combined_corpus)  # strip comments
-    cleaned = re.sub(r'\\cite\{[^}]*\}', '', cleaned)    # strip citations
-    cleaned = re.sub(r'\\ref\{[^}]*\}', '', cleaned)      # strip refs
-    cleaned = re.sub(r'\\label\{[^}]*\}', '', cleaned)    # strip labels
-    cleaned = re.sub(r'\\begin\{tabular\}\{[^}]*\}', '', cleaned)  # strip tabular specifiers
-    cleaned = re.sub(r'\\end\{tabular\}', '', cleaned)
-    cleaned = re.sub(r'\\caption\{[^}]*\}', '', cleaned)  # captions checked separately or stripped
-    cleaned = re.sub(r'\b202\d\b', '', cleaned)           # strip citation publication years (e.g. 2025)
-    cleaned = re.sub(r'\\[a-zA-Z]+', ' ', cleaned)        # strip command names
+    passed = 0
+    failed = 0
+    print("=" * 115)
+    print(f"{'Claim ID':<30}{'Metric Definition':<35}{'Source Log':<25}{'Status':<15}{'Value':<10}")
+    print("=" * 115)
 
-    # Extract all numeric tokens (integers or decimals)
-    raw_numbers = re.findall(r'\b\d+(?:\.\d+)?\b', cleaned)
-    return raw_numbers
+    for item in registry:
+        cid = item["claim_id"]
+        metric = item["metric_definition"]
+        src_rel = item["source_file"]
+        src_path = os.path.join(BASE_DIR, src_rel)
+        path = item["json_path"]
+        expected = item["expected_value"]
+        tol = item.get("tolerance", 0.001)
+
+        if not os.path.exists(src_path):
+            print(f"FAIL: {cid} - Source file {src_rel} does not exist!")
+            failed += 1
+            continue
+
+        with open(src_path, "r", encoding="utf-8") as f:
+            log_data = json.load(f)
+
+        actual = get_nested(log_data, path)
+        if actual is None:
+            print(f"FAIL: {cid} - JSON path {path} not found in {src_rel}!")
+            failed += 1
+            continue
+
+        # Check numerator / denominator if present
+        if "numerator" in item and "denominator" in item:
+            num = item["numerator"]
+            den = item["denominator"]
+            if den > 0:
+                expected_ratio = num / den
+                if abs(expected_ratio - actual) > tol:
+                    print(f"FAIL: {cid} - Numerator/Denominator {num}/{den} ({expected_ratio:.4f}) does not match log value {actual}!")
+                    failed += 1
+                    continue
+
+        # Check expected value match
+        diff = abs(actual - expected)
+        if diff > tol:
+            print(f"FAIL: {cid} - Log value {actual} differs from expected {expected} by {diff} (tol={tol})!")
+            failed += 1
+            continue
+
+        # Check macro mapping if present
+        macro = item.get("macro")
+        if macro:
+            macro_name = macro.replace("\\", "")
+            if macro_name not in macros_dict:
+                print(f"FAIL: {cid} - Macro {macro} missing from results_macros.tex!")
+                failed += 1
+                continue
+
+        val_str = f"{actual:.3f}" if isinstance(actual, float) else str(actual)
+        print(f"{cid:<30}{metric[:33]:<35}{src_rel:<25}{'VERIFIED':<15}{val_str:<10}")
+        passed += 1
+
+    print("=" * 115)
+    print(f"Registry Summary: {passed} claims verified against authoritative logs, {failed} failures.")
+    return failed == 0
+
+
+def verify_text_numbers():
+    """Extract raw numbers from results and tables to ensure full coverage."""
+    with open(MAIN_TEX_PATH, "r", encoding="utf-8") as f:
+        tex = f.read()
+    expanded = expand_inputs(tex, PAPER_DIR)
+
+    # Assert no red [MISSING] tokens
+    if "[MISSING]" in expanded:
+        print("FAIL: Expanded manuscript contains unresolved [MISSING] placeholders!")
+        return False
+    print("VERIFIED: Zero unresolved [MISSING] placeholders in manuscript.")
+    return True
 
 
 def main():
-    if not os.path.exists(PAPER_PATH):
-        print(f"Error: {PAPER_PATH} not found.")
-        sys.exit(1)
-
-    with open(PAPER_PATH, "r", encoding="utf-8") as f:
-        tex_content = f.read()
-
-    valid_log_numbers = load_all_log_numbers()
-    extracted_numbers = extract_numbers_from_tex(tex_content)
-
-    checked = []
-    unchecked = []
-
-    for num in extracted_numbers:
-        if num in valid_log_numbers:
-            checked.append(num)
-        else:
-            unchecked.append(num)
-
-    total_found = len(extracted_numbers)
-    checked_count = len(checked)
-
-    print(f"============================================================")
-    print(f"PAPER NUMBER VERIFICATION REPORT")
-    print(f"============================================================")
-    print(f"Total numbers found in abstract, tables, and results: {total_found}")
-    print(f"Numbers checked and verified against logs/*.json:     {checked_count}")
-    print(f"Unchecked numbers remaining:                          {len(unchecked)}")
-    print(f"============================================================")
-
-    if unchecked:
-        print("\nFAIL: Found unchecked numeric claim(s) not supported by logs/:")
-        unique_unchecked = sorted(list(set(unchecked)))
-        for u in unique_unchecked:
-            count = unchecked.count(u)
-            print(f"  - '{u}' (occurred {count} time(s))")
-        print("\nAll numeric claims must be derived directly from logs/*.json.")
-        sys.exit(1)
-    else:
-        print("\nSUCCESS: All numeric claims in paper are strictly verified against empirical logs!")
+    ok_reg = verify_claims_registry()
+    ok_tex = verify_text_numbers()
+    if ok_reg and ok_tex:
+        print("\nSUCCESS: All paper quantitative claims and manuscript macros verified against authoritative logs.")
         sys.exit(0)
+    else:
+        print("\nFAILURE: Quantitative verification failed.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

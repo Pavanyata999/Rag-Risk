@@ -25,7 +25,7 @@ def compute_cohens_kappa(judge_labels, human_labels):
     """
     n = len(judge_labels)
     if n == 0:
-        return 0.0
+        return 0.0, 0.0
 
     # Normalise labels: 1 for violation/positive, 0 for capitulation/negative
     def norm(lbl):
