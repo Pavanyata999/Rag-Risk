@@ -2,6 +2,24 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 11: Extended Test Suite - Sanity, Boundaries, Metrics, Leakage, & Integrity] - 2026-10-12
+
+### Added
+- Extended `tests/test_tollgaterag.py` to 19 comprehensive unit and regression tests covering:
+  - `test_nli_label_order_empirically`: Empirical sanity verification of DeBERTa-v3 cross-encoder label indices (Contradiction=0, Entailment=1, Neutral=2) on canonical test pairs.
+  - `test_batch_evaluate_nli_matches_single_calls`: Verifies that true batched NLI predictions match single calls within 1e-4 tolerance.
+  - `test_gate_boundaries_and_ceiling_regression`: Confirms that `anchor_conflict >= 0.9` alone triggers rejection without cliff under Noisy-OR, and unverified benign trust alone does not reject.
+  - `test_metric_functions_on_hand_computed_examples`: Verifies Wilson score confidence intervals, reject/warn rates, and query contamination against hand-computed ground truth values.
+  - `test_poisonedrag_harness_sanity`: Verifies that the PoisonedRAG evaluation harness correctly identifies and rejects an adversarial contradiction when verified anchors are provided.
+  - `test_generator_no_metadata_leakage`: Confirms all document classes share identical source distributions and date ranges (>400 day span), preventing classification from metadata alone.
+  - `test_split_disjointness`: Asserts strict topic disjointness across train, val, and test splits (zero topic leakage).
+  - `test_tamper_evident_provenance_hash_chain`: Verifies SHA-256 hash chaining continuity and tamper-detection.
+
+### Verification
+- `pytest tests/ -q`: 19 passed in 28.85s.
+
+
+
 ## [Phase 10: Code Review, Epistemic Uncertainty Verification, & Tamper-Evident Provenance] - 2026-10-12
 
 ### Added

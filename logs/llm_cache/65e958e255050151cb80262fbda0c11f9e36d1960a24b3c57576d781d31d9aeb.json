@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "No.\u202fAll of the trusted compliance documents state that any personal (BYOD) mobile device that accesses corporate email (or Slack or corporate documents) must first be enrolled in the enterprise Mobile Device Management (MDM) solution, with enforced biometric lock and remote\u2011wipe capability. Devices that are not enrolled\u2014especially jail\u2011broken, rooted, or unpatched phones\u2014are expressly blocked from corporate network resources. Therefore, you must install and register the device with the organization\u2019s MDM before you can use it for corporate email.",
+  "timestamp": "2026-10-12T13:00:39.376511"
+}
