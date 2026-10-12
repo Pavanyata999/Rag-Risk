@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "No.\u202fBoth of the verified compliance documents state that any personal (BYOD) mobile device that accesses corporate email (or Slack or corporate documents) must first be enrolled in the enterprise Mobile Device Management (MDM) solution, which includes enforced biometric locking and remote\u2011wipe capability. Devices that are not enrolled \u2013 including those without the MDM agent installed \u2013 are prohibited from connecting to corporate resources.",
+  "timestamp": "2026-10-12T12:40:10.674567"
+}

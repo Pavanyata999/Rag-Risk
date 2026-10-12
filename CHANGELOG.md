@@ -2,6 +2,34 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 6: SOTA Baselines on Raw Document Text & Real Prompt Guard Model] - 2026-10-12
+
+### Added
+- Reimplemented all baseline defenses in `tollgaterag/baselines.py` and `tollgaterag/eval_baselines.py` to operate strictly on raw document text rather than pipeline sub-scores.
+- Integrated real neural guardrail baseline: Meta AI's `meta-llama/llama-prompt-guard-2-86m` via Groq endpoint with on-disk response caching (`logs/llm_cache/`) and append-only audit logging (`logs/llm_audit.jsonl`).
+- Implemented LLM-free heuristic baseline: TF-IDF / term-overlap anchor similarity + relaxation cue regex matching.
+- Implemented Trust-Weighted Retrieval baseline: re-ranks candidate pool by penalizing unverified sources without hard rejection.
+- Created `docs/RELATED_WORK.md`: taxonomic comparison of RAG defenses and literature review covering RAGShield (Patil, 2026), TrustRAG (2025), AegisRAG-RADMS (2025/2026), RobustRAG (USENIX Security 2024), and MAP-Graph (Wang et al., 2026) with verified citations.
+
+### Changed
+- Baseline performance evaluated on the held-out test split (24 queries, 192 docs) recorded in `logs/sota_baselines_comparison.json`:
+  - Plain RAG (Unprotected): 0.0% Adv Reject, 87.5% Contamination.
+  - Strict Whitelist (Zero Trust): 100.0% Adv Reject, 100.0% Benign FP (complete loss of unverified availability).
+  - Keyword / BIPIA Filter: 4.7% Adv Reject, 0.0% Benign FP, 83.3% Contamination.
+  - Perplexity / Anomaly Filter: 0.0% Adv Reject (adversarial documents are grammatically coherent).
+  - Keyword Guardrail (Simulated): 1.6% Adv Reject (26.6% Flag), 87.5% Contamination.
+  - Prompt Guard Real (Meta AI 86M): 4.7% Adv Reject (7.8% Flag), 83.3% Contamination (prompt guard is blind to subtle semantic constraint relaxations).
+  - TF-IDF + Relaxation Cues: 21.9% Adv Reject, 100.0% Benign-Hard FP (indiscriminately blocks legitimate trigger words).
+  - Trust-Weighted Retrieval: 0.0% Adv Reject, 87.5% Contamination.
+  - TollgateRAG (Noisy-OR NLI Gate): 89.1% Adv Reject, 0.0% Clean Benign FP, 66.7% Benign-Hard FP, 25.0% Contamination.
+
+### Verification
+- `pytest tests/ -q`: 13 passed in 23.3s.
+- `python -m tollgaterag.eval_baselines`: Generated `logs/sota_baselines_comparison.json`.
+- `docs/RELATED_WORK.md`: Verified all citations and created comparative matrix.
+
+
+
 ## [Phase 5: Dataset & Evaluation Rigor - Topic-Disjoint Splits, Hard Negatives, & Wilson CIs] - 2026-10-12
 
 ### Added

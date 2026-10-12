@@ -1,77 +1,633 @@
 {
-  "1. Plain RAG (Unprotected)": {
-    "adv_events": 174,
-    "adv_reject_rate": 0.0,
-    "adv_flag_rate": 0.0,
-    "benign_events": 43,
-    "benign_reject_rate": 0.0,
-    "benign_flag_rate": 0.0,
-    "low_quality_flag_rate": null,
-    "verified_reject_rate": 0.0,
-    "contamination": 0.6167,
-    "contamination_plain_rag": 0.6167,
-    "adv_docs_in_context": 73,
-    "adv_docs_in_context_plain_rag": 73,
-    "queries": 60
+  "metadata": {
+    "split": "test",
+    "query_count": 24,
+    "guard_model": "meta-llama/llama-prompt-guard-2-86m via Groq API (disk-cached)",
+    "config": {
+      "REFERENCE_DATE": "2026-10-12",
+      "SEED": 1234,
+      "COMBINER": "noisy_or",
+      "USE_NLI": true,
+      "USE_CUE_FALLBACK": true,
+      "RISK_WEIGHTS": {
+        "trust_level": 0.2,
+        "freshness": 0.05,
+        "injection": 0.25,
+        "authority_claim": 0.15,
+        "anchor_conflict": 0.35
+      },
+      "REJECT_THRESHOLD": 0.45,
+      "WARN_THRESHOLD": 0.25,
+      "TOPIC_OVERLAP_MIN": 0.06,
+      "TOPIC_SHARED_MIN": 2,
+      "NLI_CONTRADICTION_THRESHOLD": 0.5,
+      "TOP_K_RETRIEVE": 6,
+      "TOP_K_FINAL": 3
+    }
   },
-  "2. Strict Whitelist (Zero Trust)": {
-    "adv_events": 174,
-    "adv_reject_rate": 1.0,
-    "adv_flag_rate": 1.0,
-    "benign_events": 43,
-    "benign_reject_rate": 1.0,
-    "benign_flag_rate": 1.0,
-    "low_quality_flag_rate": null,
-    "verified_reject_rate": 0.0,
-    "contamination": 0.0,
-    "contamination_plain_rag": 0.6167,
-    "adv_docs_in_context": 0,
-    "adv_docs_in_context_plain_rag": 73,
-    "queries": 60
-  },
-  "3. Keyword / Boundary Filter": {
-    "adv_events": 174,
-    "adv_reject_rate": 0.0057,
-    "adv_flag_rate": 0.0057,
-    "benign_events": 43,
-    "benign_reject_rate": 0.0,
-    "benign_flag_rate": 0.0,
-    "low_quality_flag_rate": null,
-    "verified_reject_rate": 0.0,
-    "contamination": 0.6167,
-    "contamination_plain_rag": 0.6167,
-    "adv_docs_in_context": 73,
-    "adv_docs_in_context_plain_rag": 73,
-    "queries": 60
-  },
-  "4. Prompt Guard (Content Moderation)": {
-    "adv_events": 174,
-    "adv_reject_rate": 0.0057,
-    "adv_flag_rate": 0.5115,
-    "benign_events": 43,
-    "benign_reject_rate": 0.0,
-    "benign_flag_rate": 0.0,
-    "low_quality_flag_rate": null,
-    "verified_reject_rate": 0.0,
-    "contamination": 0.6167,
-    "contamination_plain_rag": 0.6167,
-    "adv_docs_in_context": 73,
-    "adv_docs_in_context_plain_rag": 73,
-    "queries": 60
-  },
-  "5. TollgateRAG (Neural NLI Gate)": {
-    "adv_events": 174,
-    "adv_reject_rate": 0.8966,
-    "adv_flag_rate": 0.9425,
-    "benign_events": 43,
-    "benign_reject_rate": 0.0,
-    "benign_flag_rate": 0.2093,
-    "low_quality_flag_rate": null,
-    "verified_reject_rate": 0.0,
-    "contamination": 0.0333,
-    "contamination_plain_rag": 0.6167,
-    "adv_docs_in_context": 2,
-    "adv_docs_in_context_plain_rag": 73,
-    "queries": 60
+  "results": {
+    "1. Plain RAG (Unprotected)": {
+      "adv_reject_rate": 0.0,
+      "adv_reject_ci": [
+        0.0,
+        0.0,
+        0.0566
+      ],
+      "adv_flag_rate": 0.0,
+      "adv_flag_ci": [
+        0.0,
+        0.0,
+        0.0566
+      ],
+      "benign_reject_rate": 0.0,
+      "benign_reject_ci": [
+        0.0,
+        0.0,
+        0.2991
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 0.0,
+      "benign_hard_reject_ci": [
+        0.0,
+        0.0,
+        0.2425
+      ],
+      "benign_hard_warn_rate": 0.0,
+      "contamination": 0.875,
+      "contamination_ci": [
+        0.875,
+        0.69,
+        0.9566
+      ],
+      "adv_docs_in_context": 28,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    },
+    "2. Strict Whitelist (Zero Trust)": {
+      "adv_reject_rate": 1.0,
+      "adv_reject_ci": [
+        1.0,
+        0.9434,
+        1.0
+      ],
+      "adv_flag_rate": 1.0,
+      "adv_flag_ci": [
+        1.0,
+        0.9434,
+        1.0
+      ],
+      "benign_reject_rate": 1.0,
+      "benign_reject_ci": [
+        1.0,
+        0.7009,
+        1.0
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 1.0,
+      "benign_hard_reject_ci": [
+        1.0,
+        0.7575,
+        1.0
+      ],
+      "benign_hard_warn_rate": 0.0,
+      "contamination": 0.0,
+      "contamination_ci": [
+        0.0,
+        0.0,
+        0.138
+      ],
+      "adv_docs_in_context": 0,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 64,
+          "warned": 0,
+          "flagged": 64
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 9,
+          "warned": 0,
+          "flagged": 9
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 12,
+          "warned": 0,
+          "flagged": 12
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 1,
+          "warned": 0,
+          "flagged": 1
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    },
+    "3. Keyword / BIPIA Filter": {
+      "adv_reject_rate": 0.046875,
+      "adv_reject_ci": [
+        0.0469,
+        0.0161,
+        0.129
+      ],
+      "adv_flag_rate": 0.046875,
+      "adv_flag_ci": [
+        0.0469,
+        0.0161,
+        0.129
+      ],
+      "benign_reject_rate": 0.0,
+      "benign_reject_ci": [
+        0.0,
+        0.0,
+        0.2991
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 0.0,
+      "benign_hard_reject_ci": [
+        0.0,
+        0.0,
+        0.2425
+      ],
+      "benign_hard_warn_rate": 0.0,
+      "contamination": 0.8333333333333334,
+      "contamination_ci": [
+        0.8333,
+        0.6415,
+        0.9332
+      ],
+      "adv_docs_in_context": 27,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 3,
+          "warned": 0,
+          "flagged": 3
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    },
+    "4. Perplexity Filter (Anomaly)": {
+      "adv_reject_rate": 0.0,
+      "adv_reject_ci": [
+        0.0,
+        0.0,
+        0.0566
+      ],
+      "adv_flag_rate": 0.0,
+      "adv_flag_ci": [
+        0.0,
+        0.0,
+        0.0566
+      ],
+      "benign_reject_rate": 0.0,
+      "benign_reject_ci": [
+        0.0,
+        0.0,
+        0.2991
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 0.0,
+      "benign_hard_reject_ci": [
+        0.0,
+        0.0,
+        0.2425
+      ],
+      "benign_hard_warn_rate": 0.0,
+      "contamination": 0.875,
+      "contamination_ci": [
+        0.875,
+        0.69,
+        0.9566
+      ],
+      "adv_docs_in_context": 28,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    },
+    "5. Keyword Guardrail (Simulated)": {
+      "adv_reject_rate": 0.015625,
+      "adv_reject_ci": [
+        0.0156,
+        0.0028,
+        0.0833
+      ],
+      "adv_flag_rate": 0.265625,
+      "adv_flag_ci": [
+        0.2656,
+        0.173,
+        0.3848
+      ],
+      "benign_reject_rate": 0.0,
+      "benign_reject_ci": [
+        0.0,
+        0.0,
+        0.2991
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 0.0,
+      "benign_hard_reject_ci": [
+        0.0,
+        0.0,
+        0.2425
+      ],
+      "benign_hard_warn_rate": 1.0,
+      "contamination": 0.875,
+      "contamination_ci": [
+        0.875,
+        0.69,
+        0.9566
+      ],
+      "adv_docs_in_context": 28,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 1,
+          "warned": 16,
+          "flagged": 17
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 0,
+          "warned": 12,
+          "flagged": 12
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    },
+    "6. Prompt Guard Real (Meta AI 86M)": {
+      "adv_reject_rate": 0.046875,
+      "adv_reject_ci": [
+        0.0469,
+        0.0161,
+        0.129
+      ],
+      "adv_flag_rate": 0.078125,
+      "adv_flag_ci": [
+        0.0781,
+        0.0338,
+        0.1702
+      ],
+      "benign_reject_rate": 0.0,
+      "benign_reject_ci": [
+        0.0,
+        0.0,
+        0.2991
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 0.0,
+      "benign_hard_reject_ci": [
+        0.0,
+        0.0,
+        0.2425
+      ],
+      "benign_hard_warn_rate": 0.0,
+      "contamination": 0.8333333333333334,
+      "contamination_ci": [
+        0.8333,
+        0.6415,
+        0.9332
+      ],
+      "adv_docs_in_context": 27,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 3,
+          "warned": 2,
+          "flagged": 5
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    },
+    "7. TF-IDF + Relaxation Cues (LLM-Free)": {
+      "adv_reject_rate": 0.21875,
+      "adv_reject_ci": [
+        0.2188,
+        0.135,
+        0.3343
+      ],
+      "adv_flag_rate": 0.265625,
+      "adv_flag_ci": [
+        0.2656,
+        0.173,
+        0.3848
+      ],
+      "benign_reject_rate": 0.0,
+      "benign_reject_ci": [
+        0.0,
+        0.0,
+        0.2991
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 1.0,
+      "benign_hard_reject_ci": [
+        1.0,
+        0.7575,
+        1.0
+      ],
+      "benign_hard_warn_rate": 0.0,
+      "contamination": 0.8333333333333334,
+      "contamination_ci": [
+        0.8333,
+        0.6415,
+        0.9332
+      ],
+      "adv_docs_in_context": 27,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 14,
+          "warned": 3,
+          "flagged": 17
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 12,
+          "warned": 0,
+          "flagged": 12
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    },
+    "8. TollgateRAG (Noisy-OR NLI Gate)": {
+      "adv_reject_rate": 0.890625,
+      "adv_reject_ci": [
+        0.8906,
+        0.791,
+        0.946
+      ],
+      "adv_flag_rate": 0.890625,
+      "adv_flag_ci": [
+        0.8906,
+        0.791,
+        0.946
+      ],
+      "benign_reject_rate": 0.0,
+      "benign_reject_ci": [
+        0.0,
+        0.0,
+        0.2991
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 0.6666666666666666,
+      "benign_hard_reject_ci": [
+        0.6667,
+        0.3906,
+        0.8619
+      ],
+      "benign_hard_warn_rate": 0.0,
+      "contamination": 0.25,
+      "contamination_ci": [
+        0.25,
+        0.12,
+        0.449
+      ],
+      "adv_docs_in_context": 7,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 57,
+          "warned": 0,
+          "flagged": 57
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 8,
+          "warned": 0,
+          "flagged": 8
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    },
+    "9. Trust-Weighted Retrieval": {
+      "adv_reject_rate": 0.0,
+      "adv_reject_ci": [
+        0.0,
+        0.0,
+        0.0566
+      ],
+      "adv_flag_rate": 0.0,
+      "adv_flag_ci": [
+        0.0,
+        0.0,
+        0.0566
+      ],
+      "benign_reject_rate": 0.0,
+      "benign_reject_ci": [
+        0.0,
+        0.0,
+        0.2991
+      ],
+      "benign_warn_rate": 0.0,
+      "benign_hard_reject_rate": 0.0,
+      "benign_hard_reject_ci": [
+        0.0,
+        0.0,
+        0.2425
+      ],
+      "benign_hard_warn_rate": 0.0,
+      "contamination": 0.875,
+      "contamination_ci": [
+        0.875,
+        0.69,
+        0.9566
+      ],
+      "adv_docs_in_context": 22,
+      "events_breakdown": {
+        "adversarial": {
+          "events": 64,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign": {
+          "events": 9,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "benign_hard": {
+          "events": 12,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "low_quality": {
+          "events": 1,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        },
+        "verified": {
+          "events": 39,
+          "rejected": 0,
+          "warned": 0,
+          "flagged": 0
+        }
+      }
+    }
   }
 }

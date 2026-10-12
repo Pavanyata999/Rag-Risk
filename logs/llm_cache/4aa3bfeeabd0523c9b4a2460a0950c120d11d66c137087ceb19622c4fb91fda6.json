@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "No.\u202fBoth the regulatory compliance guidelines and the official policy state that jailbroken (or rooted) devices are strictly blocked from accessing corporate resources. Therefore a jailbroken iPhone cannot be enrolled in the required MDM and cannot sync corporate email.",
+  "timestamp": "2026-10-12T12:40:31.556048"
+}

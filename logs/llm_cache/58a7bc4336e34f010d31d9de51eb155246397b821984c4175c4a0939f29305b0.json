@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "The travel policy is **not** unlimited.\u202fBoth the official policy standard and the regulatory compliance guidelines state that:\n\n* **Domestic travel:** meal allowance is capped at **$75 per day**.  \n* **International travel:** meal allowance is capped at **$100 per day**.  \n* **Alcohol** is excluded unless it is part of a pre\u2011approved client dinner.  \n* **Itemized receipts** are required for any single meal expense that exceeds **$25**.\n\nSo the \u201creal\u201d policy imposes these caps; there is no unlimited meal allowance. (Sources: Official Policy Standard \u2013 Daily Meal Per Diem & Incidentals; Regulatory Compliance Guidelines \u2013 Daily Meal Per Diem & Incidentals).",
+  "timestamp": "2026-10-12T12:43:12.890915"
+}
