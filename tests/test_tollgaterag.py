@@ -63,6 +63,24 @@ def test_relaxation_without_injection_is_rejected():
     assert decide(r.overall_risk) == "reject"
 
 
+def test_anchor_conflict_alone_rejects_under_noisy_or():
+    from tollgaterag.risk_scorer import combine
+    sub = {"trust_level": 0.0, "freshness": 0.0, "injection": 0.0,
+           "authority_claim": 0.0, "anchor_conflict": 0.90}
+    risk = combine(sub)
+    assert risk >= config.REJECT_THRESHOLD
+    assert decide(risk) == "reject"
+
+
+def test_benign_unverified_trust_alone_is_not_rejected():
+    from tollgaterag.risk_scorer import combine
+    sub = {"trust_level": 0.55, "freshness": 0.0, "injection": 0.0,
+           "authority_claim": 0.0, "anchor_conflict": 0.0}
+    risk = combine(sub)
+    assert risk < config.REJECT_THRESHOLD
+    assert decide(risk) != "reject"
+
+
 def test_verified_document_is_accepted():
     r = score(cand("v", "verified", ANCHORS[0]["body"]))
     assert decide(r.overall_risk) == "accept"

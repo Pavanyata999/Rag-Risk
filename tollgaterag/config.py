@@ -57,6 +57,25 @@ NLI_CONTRADICTION_THRESHOLD = 0.50
 REJECT_THRESHOLD = 0.45
 WARN_THRESHOLD = 0.25
 
+def get_config_dict() -> dict:
+    """Return dictionary of all active hyperparameters for logging and audit."""
+    return {
+        "REFERENCE_DATE": REFERENCE_DATE,
+        "SEED": SEED,
+        "COMBINER": COMBINER,
+        "USE_NLI": USE_NLI,
+        "USE_CUE_FALLBACK": USE_CUE_FALLBACK,
+        "RISK_WEIGHTS": dict(RISK_WEIGHTS),
+        "REJECT_THRESHOLD": REJECT_THRESHOLD,
+        "WARN_THRESHOLD": WARN_THRESHOLD,
+        "TOPIC_OVERLAP_MIN": TOPIC_OVERLAP_MIN,
+        "TOPIC_SHARED_MIN": TOPIC_SHARED_MIN,
+        "NLI_CONTRADICTION_THRESHOLD": NLI_CONTRADICTION_THRESHOLD,
+        "TOP_K_RETRIEVE": TOP_K_RETRIEVE,
+        "TOP_K_FINAL": TOP_K_FINAL,
+    }
+
+
 # Selectable policy profiles (used by the Streamlit app and the sweep)
 PROFILES = {
     "strict": {"reject": 0.35, "warn": 0.20},

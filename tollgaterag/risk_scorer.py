@@ -176,9 +176,32 @@ def _anchor_conflict(cand: dict, anchors: list):
     return best, best_reason
 
 
-def combine(sub_scores: dict, weights: dict = None) -> float:
+def combine(sub_scores: dict, weights: dict = None, combiner: str = None) -> float:
+    """
+    Combine multidimensional risk signals into an overall risk score in [0, 1].
+    
+    Supported combiners:
+      - 'noisy_or': Primary threats (anchor_conflict, injection) act as dominant triggers
+        via noisy-OR, modulated by secondary indicators (trust, freshness, authority).
+        Eliminates the 'ceiling at 0.4617' cliff where confident contradictions hovered on edge.
+      - 'weighted': Classic linear combination: sum(w_i * s_i).
+    """
+    mode = combiner or getattr(config, "COMBINER", "noisy_or")
     w = weights or config.RISK_WEIGHTS
-    return round(sum(w[k] * sub_scores[k] for k in w), 4)
+
+    if mode == "weighted":
+        return round(sum(w.get(k, 0.0) * sub_scores.get(k, 0.0) for k in w), 4)
+
+    elif mode == "noisy_or":
+        primary = max(sub_scores.get("anchor_conflict", 0.0), sub_scores.get("injection", 0.0))
+        sec_w = {k: w[k] for k in ["trust_level", "freshness", "authority_claim"] if k in w}
+        secondary = sum(sec_w[k] * sub_scores.get(k, 0.0) for k in sec_w)
+        # Noisy-OR combination of primary threat and secondary modulation
+        risk = 1.0 - (1.0 - primary) * (1.0 - secondary)
+        return round(min(max(risk, 0.0), 1.0), 4)
+
+    else:
+        raise ValueError(f"Unknown combiner mode: {mode}")
 
 
 def score_candidates(candidates: list, anchors: list) -> List[RiskReport]:

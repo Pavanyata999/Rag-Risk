@@ -2,6 +2,23 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 2: Fix Scoring Design & Combiner] - 2026-10-12
+
+### Added
+- Implemented Noisy-OR combiner in `tollgaterag/risk_scorer.py` (`combine()`): combines primary threat signals (`max(anchor_conflict, injection)`) with secondary modulating signals (`trust`, `freshness`, `authority`).
+- Added configurable `config.COMBINER = "noisy_or" | "weighted"` allowing empirical comparison and logging.
+- Added `config.get_config_dict()` for full parameter snapshots in all log artifacts.
+- Created `tollgaterag/calibrate.py` to systematically calibrate operational decision thresholds strictly on the validation split, saving validation curve to `logs/calibration.json`.
+- Added unit tests in `tests/test_tollgaterag.py` verifying that `anchor_conflict >= 0.9` alone triggers rejection and unverified benign trust alone (0.55) is not rejected.
+
+### Changed
+- Resolved the "ceiling at 0.4617" cliff where high-confidence NLI contradictions hovered marginally near 0.45 threshold.
+- Preserved both combiner implementations for ablation comparisons.
+
+### Verification
+- `pytest tests/ -q`: 11 passed in 21.0s.
+- `python -m tollgaterag.calibrate`: Completed validation sweep, saving curve to `logs/calibration.json`.
+
 ## [Phase 1: Reproducibility & Environment] - 2026-10-12
 
 ### Added
