@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "Yes.\u202fAccording to the verified compliance and policy documents, any access to corporate internal networks, **including staging environments**, from outside the company premises (such as a hotel Wi\u2011Fi) must be done through an active, encrypted WireGuard or IPSec corporate VPN tunnel (with split\u2011tunneling disabled). Therefore you need to turn on the corporate VPN before connecting to the staging servers.",
+  "timestamp": "2026-10-12T14:22:27.747115"
+}

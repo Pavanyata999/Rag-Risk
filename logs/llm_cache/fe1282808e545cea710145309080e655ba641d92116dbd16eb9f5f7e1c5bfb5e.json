@@ -1,0 +1,5 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "content": "**Short answer:**\u202fNo \u2013 the official policy and compliance guidelines prohibit placing any API keys (including temporary ones) in source\u2011code repositories, even private ones. All secrets must be kept in the Enterprise Secret Vault and rotated automatically every\u202f90\u202fdays;",
+  "timestamp": "2026-10-12T14:22:30.419796"
+}

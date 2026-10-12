@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\caption{Comparative Benchmark Across Defenses on Held-Out Test Split (24 Queries, 192 Documents)}
+\label{tab:sota}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Defense Mechanism} & \textbf{Adversarial Reject [95\% CI]} & \textbf{Clean Benign FPR [95\% CI]} & \textbf{Benign-Hard FPR [95\% CI]} & \textbf{Contamination [95\% CI]} & \textbf{Adv Docs in Context} \\
+\midrule
+Plain RAG (Unprotected) & 0.0\% [0.0--4.6\%] & 0.0\% [0.0--22.8\%] & 0.0\% [0.0--24.3\%] & 91.7\% [79.2--100.0\%] & 31 \\
+Strict Whitelist & 100.0\% [95.4--100.0\%] & 100.0\% [77.2--100.0\%] & 100.0\% [75.8--100.0\%] & 0.0\% [0.0--0.0\%] & 0 \\
+BIPIA Keyword Filter & 5.1\% [2.0--12.3\%] & 0.0\% [0.0--22.8\%] & 0.0\% [0.0--24.3\%] & 91.7\% [79.2--100.0\%] & 31 \\
+Perplexity Filter & 0.0\% [0.0--4.6\%] & 0.0\% [0.0--22.8\%] & 0.0\% [0.0--24.3\%] & 91.7\% [79.2--100.0\%] & 31 \\
+Prompt Guard (Meta 86M) & 4.7\% [1.3--14.8\%] & 0.0\% [0.0--22.8\%] & 0.0\% [0.0--24.3\%] & 83.3\% [64.2--93.3\%] & 30 \\
+TollgateRAG (Weighted) & 87.3\% [78.2--93.0\%] & 0.0\% [0.0--22.8\%] & 66.7\% [39.1--86.2\%] & 29.2\% [12.5--50.0\%] & 8 \\
+\textbf{TollgateRAG (Noisy-OR)} & \textbf{88.6\%} [79.8--93.9\%] & \textbf{0.0\%} [0.0--22.8\%] & \textbf{66.7\%} [39.1--86.2\%] & \textbf{29.2\%} [12.5--50.0\%] & \textbf{8} \\
+\bottomrule
+\end{tabular}
+\end{table*}

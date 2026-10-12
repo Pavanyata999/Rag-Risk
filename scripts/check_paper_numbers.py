@@ -13,6 +13,7 @@ import re
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 PAPER_PATH = os.path.join(BASE_DIR, "docs", "paper", "main.tex")
+PAPER_DIR = os.path.dirname(PAPER_PATH)
 LOGS_DIR = os.path.join(BASE_DIR, "logs")
 
 def load_all_log_numbers():
@@ -68,23 +69,41 @@ def load_all_log_numbers():
     return valid_numbers
 
 
+def expand_inputs(tex_content, base_dir):
+    """Recursively expand \\input{filename} commands."""
+    def repl(match):
+        rel_fn = match.group(1).strip()
+        if not rel_fn.endswith(".tex"):
+            rel_fn += ".tex"
+        p = os.path.join(base_dir, rel_fn)
+        if os.path.exists(p):
+            with open(p, "r", encoding="utf-8") as f:
+                return f.read()
+        return match.group(0)
+
+    expanded = re.sub(r'\\input\{([^}]+)\}', repl, tex_content)
+    return expanded
+
+
 def extract_numbers_from_tex(tex_content):
     """
     Extracts all numeric tokens from abstract, tables, and experimental results sections.
     Filters out LaTeX syntax, cross-references, citation years, and column specifiers.
     """
+    expanded_tex = expand_inputs(tex_content, PAPER_DIR)
+
     # 1. Extract Abstract
-    abstract_match = re.search(r'\\begin\{abstract\}(.*?)\\end\{abstract\}', tex_content, re.DOTALL)
+    abstract_match = re.search(r'\\begin\{abstract\}(.*?)\\end\{abstract\}', expanded_tex, re.DOTALL)
     abstract_text = abstract_match.group(1) if abstract_match else ""
 
     # 2. Extract All Tables
-    tables = re.findall(r'\\begin\{table\*?\}(.*?)\\end\{table\*?\}', tex_content, re.DOTALL)
+    tables = re.findall(r'\\begin\{table\*?\}(.*?)\\end\{table\*?\}', expanded_tex, re.DOTALL)
     tables_text = "\n".join(tables)
 
     # 3. Extract Results & Evaluation Sections
     results_match = re.search(
-        r'(\\section\{Experimental Evaluation\}.*?)(?=\\section\{Limitations|\Z)',
-        tex_content,
+        r'(\\section\{(?:Experimental Setup|Results)\}.*?)(?=\\section\{(?:Related Work|Limitations)|\Z)',
+        expanded_tex,
         re.DOTALL
     )
     results_text = results_match.group(1) if results_match else ""
