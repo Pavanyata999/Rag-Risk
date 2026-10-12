@@ -1,28 +1,28 @@
 {
   "project": "TollgateRAG",
   "branch": "finish/final",
-  "commit": "c0deb2b408f1600d79868ecf591bd9c08532fc03",
+  "commit": "71fb1a08ed71e19b689b417a2d96f76e20c50351",
   "working_tree_status": "reconciled_clean",
-  "build_date": "2026-10-12T16:09:00Z",
+  "build_date": "2026-10-12T16:20:00Z",
   "verdict": "READY WITH EXPLICIT LIMITATIONS",
   "artifacts": {
     "arxiv_bundle.zip": {
-      "size_bytes": 631489,
-      "sha256": "07d9ca5dc75eb26105265ce2abc00579ee756a43e947d5b52466af36baf31f71",
+      "size_bytes": 631733,
+      "sha256": "cc0adfeedb94a27ed4f57b8895bc949d7b63f638517c9db403548c3f765fee60",
       "type": "generated_binary",
       "regenerated_from_source": true,
       "inspected_or_tested": true
     },
     "supplementary.zip": {
-      "size_bytes": 273975,
-      "sha256": "b3ae2fb830ccff69e4f68bb79cef8ca001c48aaf3eeb11f54efb35d6d852de4e",
+      "size_bytes": 273979,
+      "sha256": "cebbcc977009dcc27fdb5c57207357cb3227e627d00e1a7eb07418614175ef84",
       "type": "generated_binary",
       "regenerated_from_source": true,
       "inspected_or_tested": true
     },
     "docs/paper/main.pdf": {
-      "size_bytes": 89321,
-      "sha256": "4a5100b18249d1a076ccc74709e9bbf68cf869a6648613990be74dbb28a46f61",
+      "size_bytes": 89954,
+      "sha256": "16e16b0dae36206c6f96563ab4a0cc961a4dcf9f19de5e271553ad69f0f3fd3b",
       "type": "generated_binary",
       "regenerated_from_source": true,
       "inspected_or_tested": true
@@ -35,8 +35,8 @@
       "inspected_or_tested": true
     },
     "docs/paper/main.tex": {
-      "size_bytes": 22682,
-      "sha256": "29bbed226673765abdaf62006c6d9d3f1b70b92e6e48b98789f8ab0bc72d9ea5",
+      "size_bytes": 23450,
+      "sha256": "15e8dedecf80e050d7e6d9295e5fecf5036a74c9e814e5ed4445c2145eb3b523",
       "type": "source_or_data",
       "regenerated_from_source": true,
       "inspected_or_tested": true
@@ -49,8 +49,8 @@
       "inspected_or_tested": true
     },
     "docs/paper/results_macros.tex": {
-      "size_bytes": 1132,
-      "sha256": "6f6606272674cf98dd0a6c8eaee9b823b4b8a7743d7a77b682174aa3793e433b",
+      "size_bytes": 1134,
+      "sha256": "c629fdcb88ba2d8dc13ee0408ccc8fc96ae43ffd2c2c8cce5ebcba4730818053",
       "type": "source_or_data",
       "regenerated_from_source": true,
       "inspected_or_tested": true
@@ -102,7 +102,8 @@
     "human_validation": "Pending manual human annotation in data/judge_validation.csv (all human_label rows empty; zero LLM hallucinated labels)",
     "latex_compiler": "Tectonic 0.17.0 (XeTeX-based native engine located at local environment toolchain; compiled docs/paper/main.tex -> docs/paper/main.pdf; all 5 pages inspected; 14 of 14 references resolved)",
     "confidence_intervals": "Wilson score 95% intervals used uniformly for all rates across Table I and Table II; query-level bootstrap interval (12.5% to 50.0%) documented as discrete resample alternative for 7/24 query contamination",
-    "resplit_stability": "4-seed topic-disjoint resplit ARR: mean=92.5%, min=90.9%, max=94.1%, population std=1.59% (0.0159), sample std=1.83% (0.0183)",
+    "context_assembly_policy": "The benchmark natively implements retrieval backfill (eval_baselines.py lines 65-68, eval.py lines 230-232, action_gate.py line 28). Across 24 test queries, Plain RAG admits 31 adversarial passages (26 unique documents). Prompt Guard admits 31 adversarial passages (27 unique documents) under backfill, and 29 passages (25 unique documents) under fixed-context filtering without backfill. TollgateRAG (Noisy-OR) admits 8 passages (7 unique documents) under backfill, and 3 under fixed-context filtering.",
+    "resplit_stability": "4-seed topic-disjoint resplit ARR: mean=92.5%, min=90.9%, max=94.1%, population std=1.587% (~1.59% to 2dp, 1.6% to 1dp; stored as 0.0159 in logs/resplit_results.json), sample std=1.832% (~1.83% to 2dp)",
     "reportlab_sync": "docs/paper/TollgateRAG_IEEE_Conference_Paper.pdf synchronized to identical 480-doc / 88.6% ARR numbers"
   }
 }

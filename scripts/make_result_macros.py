@@ -124,8 +124,8 @@ def main():
         f"\\newcommand{{\\valResplitARRMean}}{{{format_pct(res_arr_mean)}}}",
         f"\\newcommand{{\\valResplitARRMin}}{{{format_pct(res_arr_min)}}}",
         f"\\newcommand{{\\valResplitARRMax}}{{{format_pct(res_arr_max)}}}",
-        f"\\newcommand{{\\valResplitARRStdPop}}{{{format_pct(res_arr_std_pop)}}}",
-        f"\\newcommand{{\\valResplitARRStdSample}}{{{format_pct(res_arr_std_sample)}}}",
+        f"\\newcommand{{\\valResplitARRStdPop}}{{{format_pct(res_arr_std_pop, decimals=2)}}}",
+        f"\\newcommand{{\\valResplitARRStdSample}}{{{format_pct(res_arr_std_sample, decimals=2)}}}",
         f"\\newcommand{{\\valResplitBHMean}}{{{format_pct(res_bh_mean)}}}",
         f"\\newcommand{{\\valResplitContamMean}}{{{format_pct(res_contam_mean)}}}"
     ]
