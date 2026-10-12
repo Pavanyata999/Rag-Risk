@@ -142,21 +142,21 @@ def call_prompt_guard(text: str) -> float:
     """
     Run meta-llama/llama-prompt-guard-2-86m on raw document text.
     Returns injection probability score in [0.0, 1.0].
+    Raises RuntimeError on failure; no silent fallback.
     """
     model_id = "meta-llama/llama-prompt-guard-2-86m"
     messages = [{"role": "user", "content": text}]
+    content = call_groq_chat(
+        model=model_id,
+        messages=messages,
+        temperature=0.0,
+        seed=1234
+    )
     try:
-        content = call_groq_chat(
-            model=model_id,
-            messages=messages,
-            temperature=0.0,
-            seed=1234
-        )
         score = float(content.strip())
         return max(0.0, min(1.0, score))
-    except Exception as e:
-        # If API is unreachable or fails, return 0.0 with warning
-        return 0.0
+    except ValueError as e:
+        raise RuntimeError(f"Prompt Guard response '{content}' could not be parsed as float: {e}") from e
 
 
 def _extractive_fallback(selected: list) -> str:
@@ -221,4 +221,4 @@ def generate_answer(query: str, selected: list) -> str:
         )
         return prefix + content
     except Exception as e:
-        return f"[LLM call failed: {e}]\n\n" + prefix + _extractive_fallback(selected)
+        raise RuntimeError(f"LLM generation failed: {e}") from e
