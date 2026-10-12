@@ -105,3 +105,34 @@ def test_pipeline_excludes_injected_doc_from_context():
     assert "doc_004_poisoned.txt" not in res["selected_ids"]
     assert "doc_006_subtle_adversarial.txt" not in res["selected_ids"]
     assert len(res["selected_ids"]) > 0
+
+
+def test_nli_label_order_empirically():
+    from tollgaterag.nli_engine import evaluate_nli_pair
+    # Entailment
+    ent = evaluate_nli_pair("A dog is playing with a ball.", "An animal is playing with a ball.")
+    assert ent["entailment"] > 0.8
+    assert ent["contradiction"] < 0.1
+
+    # Contradiction
+    con = evaluate_nli_pair("Expenses are strictly capped at fifty dollars.", "Expenses can be five hundred dollars.")
+    assert con["contradiction"] > 0.8
+    assert con["entailment"] < 0.1
+
+    # Neutral
+    neu = evaluate_nli_pair("Policy updated on Monday.", "The author likes drinking tea.")
+    assert neu["neutral"] > 0.8
+
+
+def test_batch_evaluate_nli_matches_single_calls():
+    from tollgaterag.nli_engine import evaluate_nli_pair, batch_evaluate_nli
+    pairs = [
+        ("Economy class is standard.", "All flights are first class."),
+        ("Receipts required over $25.", "Keep receipts for quick upload.")
+    ]
+    single_res = [evaluate_nli_pair(a, c) for a, c in pairs]
+    batch_res = batch_evaluate_nli(pairs)
+    assert len(single_res) == len(batch_res)
+    for s, b in zip(single_res, batch_res):
+        assert abs(s["contradiction"] - b["contradiction"]) < 1e-4
+        assert abs(s["entailment"] - b["entailment"]) < 1e-4

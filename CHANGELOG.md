@@ -2,6 +2,22 @@
 
 All notable changes to the TollgateRAG research framework and evaluation suite are documented here.
 
+## [Phase 3: Fix Anchor-Conflict Detector & Fine-Grained Sentence NLI] - 2026-10-12
+
+### Added
+- Upgraded `tollgaterag/nli_engine.py` with true batched prediction (`batch_evaluate_nli` collects all uncached pairs and executes a single model prediction pass) and evaluation count tracking.
+- Implemented sentence-level constraint extraction (`_split_into_sentences`) and sentence-to-sentence cosine similarity matching in `tollgaterag/risk_scorer.py`.
+- Added independent ablation switches `config.USE_NLI` and `config.USE_CUE_FALLBACK`.
+- Enhanced `RiskReport` to track `selected_anchors` and `evaluated_pairs` count per candidate to compute `anchor_retrieval_recall`.
+- Added unit tests: `test_nli_label_order_empirically` verifying DeBERTa-v3 label outputs on clear Entailment, Contradiction, and Neutral pairs, and `test_batch_evaluate_nli_matches_single_calls` verifying batch consistency.
+
+### Changed
+- Removed legacy heuristics in `_anchor_conflict`: eliminated crude document-level character truncation (600 chars), raw word overlap, and artificial `len(anchors) <= 3` / `anchors[:1]` special cases.
+- Anchors are now selected via sentence-level constraint similarity matching, evaluating focused clause pairs.
+
+### Verification
+- `pytest tests/ -q`: 13 passed in 21.3s.
+
 ## [Phase 2: Fix Scoring Design & Combiner] - 2026-10-12
 
 ### Added

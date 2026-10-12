@@ -70,10 +70,25 @@ class RiskReport:
     sub_scores: dict
     reasons: List[str] = field(default_factory=list)
     decision: str = ""
+    selected_anchors: List[str] = field(default_factory=list)
+    evaluated_pairs: int = 0
 
 
 def _terms(text: str) -> set:
     return {w for w in re.findall(r"[a-z]{4,}", text.lower()) if w not in STOPWORDS}
+
+
+def _split_into_sentences(text: str) -> List[str]:
+    raw = re.split(r'(?:[\.\!\?]\s+|\n+)', text)
+    return [s.strip() for s in raw if len(s.strip()) > 15]
+
+
+def _cosine_similarity_terms(s1: str, s2: str) -> float:
+    t1 = _terms(s1)
+    t2 = _terms(s2)
+    if not t1 or not t2:
+        return 0.0
+    return len(t1 & t2) / (len(t1) ** 0.5 * len(t2) ** 0.5)
 
 
 def _dollars(text: str) -> set:
@@ -108,72 +123,86 @@ def _authority_risk(cand: dict):
     return (min(0.4 * len(hits), 1.0) if hits else 0.0), hits
 
 
-def _anchor_conflict(cand: dict, anchors: list):
-    """Returns (score, reasons) for conflict between an unverified doc and verified anchors using Neural NLI."""
+def _anchor_conflict(cand: dict, anchors: list, max_pairs: int = 3):
+    """
+    Evaluates semantic conflict between unverified candidate and verified anchors.
+    Splits anchors into sentence-level constraints and ranks pairs by cosine similarity.
+    Uses DeBERTa-v3 cross-encoder (if USE_NLI) and regex heuristics (if USE_CUE_FALLBACK).
+    Returns (score, reasons, selected_anchor_ids, evaluated_pairs_count).
+    """
     if cand["trust_level"] == "verified" or not anchors:
-        return 0.0, []
+        return 0.0, [], [], 0
+
+    use_nli = getattr(config, "USE_NLI", True)
+    use_cue = getattr(config, "USE_CUE_FALLBACK", True)
+
+    if not use_nli and not use_cue:
+        return 0.0, ["Anchor conflict scoring disabled via ablation flags"], [], 0
 
     from tollgaterag.nli_engine import evaluate_nli_pair
 
-    cterms = _terms(cand["body"])
+    cand_sentences = _split_into_sentences(cand["body"]) or [cand["body"]]
+    cdollars = _dollars(cand["body"])
     ctext = cand["body"].lower()
     relax = [c for c in RELAXATION_CUES if c in ctext]
-    cdollars = _dollars(cand["body"])
-    best, best_reason = 0.0, []
 
-    # Filter and rank candidate anchors by topic overlap
-    matching_anchors = []
+    # Build constraint candidate pairs across all anchors
+    scored_pairs = []
     for a in anchors:
         if a["id"] == cand["id"]:
             continue
-        shared = cterms & _terms(a["body"])
-        overlap = len(shared) / max(len(cterms), 1)
-        if len(anchors) <= 3 or (len(shared) >= 1 and overlap >= 0.02):
-            matching_anchors.append((overlap, len(shared), a))
+        a_sentences = _split_into_sentences(a["body"]) or [a["body"]]
+        for a_sent in a_sentences:
+            for c_sent in cand_sentences:
+                sim = _cosine_similarity_terms(a_sent, c_sent)
+                if sim > 0.04:
+                    scored_pairs.append((sim, a["id"], a_sent, c_sent, a))
 
-    # Sort descending by overlap, take top 2 anchors for fast NLI verification
-    matching_anchors.sort(key=lambda x: (x[0], x[1]), reverse=True)
-    top_anchors = [m[2] for m in matching_anchors[:2]] if matching_anchors else (anchors[:1] if len(anchors) <= 2 else [])
+    # Sort descending by similarity, take up to max_pairs
+    scored_pairs.sort(key=lambda x: x[0], reverse=True)
+    top_pairs = scored_pairs[:max_pairs]
 
-    for a in top_anchors:
-        shared = cterms & _terms(a["body"])
-        overlap = len(shared) / max(len(cterms), 1)
-        atext = a["body"].lower()
-        constraints = [c for c in CONSTRAINT_CUES if c in atext]
-        adollars = _dollars(a["body"])
-        numeric_mismatch = bool(cdollars and adollars and cdollars.isdisjoint(adollars))
+    selected_anchor_ids = list(dict.fromkeys([p[1] for p in top_pairs]))
+    best_score = 0.0
+    best_reasons = []
+    pairs_evaluated = len(top_pairs)
 
-        # Run Neural NLI evaluation
-        nli_res = evaluate_nli_pair(a["body"], cand["body"])
-        c_prob = nli_res["contradiction"]
-        n_prob = nli_res["neutral"]
-        e_prob = nli_res["entailment"]
-
+    for sim, a_id, a_sent, c_sent, a_doc in top_pairs:
         score = 0.0
-        reason_text = ""
+        reason = ""
 
-        if c_prob >= config.NLI_CONTRADICTION_THRESHOLD:
-            score = min(max(c_prob, 0.75), 1.0)
-            reason_text = (
-                f"Neural NLI detected semantic contradiction with verified anchor '{a['id']}' "
-                f"(P(contradiction)={c_prob*100:.1f}%, topic overlap={overlap:.2f})"
-            )
-        elif numeric_mismatch:
-            score = 0.65 + 0.3 * overlap
-            reason_text = f"numeric mismatch with verified anchor '{a['id']}' (anchor dollars={adollars}, cand dollars={cdollars})"
-        elif relax and constraints:
-            score = 0.40 + 0.15 * min(len(relax), 4) + overlap
-            reason_text = f"relaxation cues {relax[:3]} detected against anchor constraints"
-        else:
-            score = 0.0
-            reason_text = f"Neural NLI confirmed consistent with anchor '{a['id']}' (P(neutral/entail)={(1-c_prob)*100:.1f}%)"
+        # 1. Neural NLI check (Premise=anchor constraint, Hypothesis=candidate claim)
+        if use_nli:
+            nli_res = evaluate_nli_pair(a_sent, c_sent)
+            c_prob = nli_res["contradiction"]
+            if c_prob >= config.NLI_CONTRADICTION_THRESHOLD:
+                score = min(max(c_prob, 0.75), 1.0)
+                reason = (
+                    f"Neural NLI detected contradiction with anchor '{a_id}' constraint "
+                    f"'{a_sent[:70]}...' vs claim '{c_sent[:70]}...' (P(contradiction)={c_prob*100:.1f}%)"
+                )
 
-        score = min(score, 1.0)
-        if score > best:
-            best = score
-            best_reason = [reason_text]
+        # 2. Heuristic cue fallback (if NLI did not trigger and cue fallback enabled)
+        if use_cue and score < 0.5:
+            atext = a_sent.lower()
+            adollars = _dollars(a_sent)
+            constraints = [c for c in CONSTRAINT_CUES if c in atext]
+            numeric_mismatch = bool(cdollars and adollars and cdollars.isdisjoint(adollars))
+            if numeric_mismatch:
+                score = max(score, 0.65 + 0.3 * sim)
+                reason = f"numeric mismatch with verified anchor '{a_id}' constraint '{a_sent[:70]}...'"
+            elif relax and constraints:
+                score = max(score, 0.40 + 0.15 * min(len(relax), 4) + sim)
+                reason = f"relaxation cues {relax[:3]} detected against anchor '{a_id}' constraints"
 
-    return best, best_reason
+        if score > best_score:
+            best_score = min(score, 1.0)
+            best_reasons = [reason]
+
+    if not best_reasons:
+        best_reasons = [f"Checked {pairs_evaluated} anchor constraint pairs; consistent with verified policies"]
+
+    return best_score, best_reasons, selected_anchor_ids, pairs_evaluated
 
 
 def combine(sub_scores: dict, weights: dict = None, combiner: str = None) -> float:
@@ -222,12 +251,13 @@ def score_candidates(candidates: list, anchors: list) -> List[RiskReport]:
         reasons.append(f"unverified source asserts authority {auth_hits} -> risk={auth:.2f}" if auth_hits
                        else "no unauthorized authority claims -> risk=0.00")
 
-        conf, conf_reason = _anchor_conflict(c, anchors)
+        conf, conf_reason, sel_anchors, eval_pairs = _anchor_conflict(c, anchors)
         reasons.append(conf_reason[0] + f" -> risk={conf:.2f}" if conf_reason
                        else "no conflict with verified anchors -> risk=0.00")
 
         sub = {"trust_level": trust, "freshness": fresh, "injection": inj,
                "authority_claim": auth, "anchor_conflict": conf}
         reports.append(RiskReport(doc_id=c["id"], title=c["title"],
-                                  overall_risk=combine(sub), sub_scores=sub, reasons=reasons))
+                                  overall_risk=combine(sub), sub_scores=sub, reasons=reasons,
+                                  selected_anchors=sel_anchors, evaluated_pairs=eval_pairs))
     return reports
