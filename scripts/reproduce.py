@@ -30,6 +30,8 @@ STEPS = [
     ("Evaluate PoisonedRAG Harness", [sys.executable, "-m", "tollgaterag.eval_poisonedrag"]),
     ("Export Metrics to Excel", [sys.executable, "-m", "tollgaterag.excel_export"]),
     ("Generate Publication Vector Figures", [sys.executable, "scripts/generate_paper_figures.py"]),
+    ("Generate Paper Macros & Tables", [sys.executable, "scripts/make_result_macros.py"]),
+    ("Audit References Integrity", [sys.executable, "scripts/check_references.py"]),
     ("Verify Paper Numbers Against Logs", [sys.executable, "scripts/check_paper_numbers.py"]),
     ("Run Test Suite", [sys.executable, "-m", "pytest", "tests/", "-q"]),
 ]
